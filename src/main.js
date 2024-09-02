@@ -2,7 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-// import {createInertiaApp} from '@inertiajs/vue3'
+import {createInertiaApp} from '@inertiajs/vue3'
 // import {resolvePageComponent} from ''
 // import {ZiggyVue} from '../../vendor/tightenco/ziggy/dist/vue.m'
 

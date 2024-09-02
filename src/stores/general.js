@@ -11,4 +11,5 @@ export const useGeneralStore = defineStore('general', () => {
   
 
   return { isPostOverlay, isCropperModal, isImageDisplay, increment }
-})
+},
+{persist:true})
