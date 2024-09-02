@@ -8,6 +8,7 @@ export const useGeneralStore = defineStore('general', () => {
   function increment() {
     count.value++
   }
+  
 
   return { isPostOverlay, isCropperModal, isImageDisplay, increment }
 })
