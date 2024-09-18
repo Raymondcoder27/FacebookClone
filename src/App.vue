@@ -7,7 +7,6 @@ import MainLayout from './Layouts/MainLayout.vue';
 <template>
  <MainLayout>
 
-
   </MainLayout>
 </template>
 
