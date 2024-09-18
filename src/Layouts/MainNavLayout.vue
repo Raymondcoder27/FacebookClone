@@ -26,8 +26,10 @@
 <template>
     <div id="MainNav" class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]">
         <div id="NavLeft" class="flex items-center justify-start w-[260px]">
-            A Mark Zuckerberg Production!!
             <router-link href="/" class="pl-3 min-w-[55px]">FB</router-link>
+            <div class="flex items-center justify-center p-1 rounded-full ml-2 bg-[#EFF2F5] h-[40px]">
+                <Magnify class="p-1" :size="22" fillColor="#64676B"/>
+            </div>  
         </div>
     </div>
     <slot/>
