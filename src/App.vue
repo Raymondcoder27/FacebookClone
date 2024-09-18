@@ -5,6 +5,9 @@ import MainLayout from './Layouts/MainLayout.vue';
 </script>
 
 <template>
+  <div class="flex text-red-300 text-xl underline">
+    Hello World
+  </div>
  <MainLayout>
 
   </MainLayout>
