@@ -24,7 +24,9 @@
 </script>
 
 <template>
-    <div class="w-full fixed">
-        Cool
+    <div id="MainNav" class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]">
+        <div id="NavLeft" class="flex items-center justify-start w-[260px]">
+            <Link></Link>
+        </div>
     </div>
 </template>
