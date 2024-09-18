@@ -26,7 +26,9 @@
 <template>
     <div id="MainNav" class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]">
         <div id="NavLeft" class="flex items-center justify-start w-[260px]">
-            <Link href="/" class="pl-3 min-w-[55px] text-black">FB</Link>
+            A Mark Zuckerberg Production!!
+            <router-link href="/" class="pl-3 min-w-[55px]">FB</router-link>
         </div>
     </div>
+    <slot/>
 </template>
