@@ -1,15 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import MainLayout from './Layouts/MainNavLayout.vue';
+import MainNavLayout from './Layouts/MainNavLayout.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div class="flex text-red-300 text-xl underline">
+  <!-- <div class="flex text-red-300 text-xl underline">
     Hello World
-  </div>
+  </div> -->
  <MainNavLayout>
-  Posts
+  <!-- Posts -->
   </MainNavLayout>
 </template>
 
