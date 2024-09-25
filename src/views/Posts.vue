@@ -76,7 +76,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                     </div>
                     <div class="h-[calc(100vh-115px)] overflow-auto pt-2">
                         <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
-
+                            <img src="https://picsum.photos/id/140/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
                         </div>
                     </div>
                 </div>
