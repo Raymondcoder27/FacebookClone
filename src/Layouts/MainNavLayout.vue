@@ -48,7 +48,7 @@ let showMenu = ref(false);
       <router-link to="/">
         <div
           :class="$route.path === '/' ? 'mt-1.5' : ''"
-          class="flex items-center justify-center p-1 w-full rounded-lg h-[48px] cursor-pointer"
+          class="flex items-center justify-center p-1 w-full rounded-lg h-[48px] cursor-pointer hover:bg-[#F2F2F2]"
         >
           <div>
             <Home
