@@ -65,6 +65,12 @@ let showMenu = ref(false);
             />
           </div>
         </div>
+
+        <div
+        v-if="$route.path ==='/'"
+         class="border-b-4 border-b-blue-400 rounded-md">
+
+        </div>
       </router-link>
     </div>
   </div>
