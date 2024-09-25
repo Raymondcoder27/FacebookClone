@@ -16,7 +16,9 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
 <template>
   <MainNavLayout> 
     <div class="fixed w-full bg-[#F1F2F5] h-[100%]">
-        
+        <div class="grid grid-rows-3 grid-flow-col w-full mt-[56px] h-[calc(100%-56px)]">
+
+        </div>
     </div>
   </MainNavLayout>
 </template>
