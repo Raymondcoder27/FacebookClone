@@ -58,7 +58,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                 Posts Section
             </div>
 
-            <div id="RightSection" class="pl-4 md-block hidden">
+            <div id="RightSection" class="pl-4 md:block hidden">
                 <div class="mx-auto pt-4 max-w-[340px] min-w-[250px]">
                     <div class="flex items-center justify-between border-b border-b-gray-300">
                         <div class="font-semibold">Contracts</div>
