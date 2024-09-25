@@ -21,7 +21,7 @@ const {image, placeholder} = toRefs(props)
     <div id="CreatePostBox" class="w-full bg-white rounded-lg px-3 mt-4 shadow-md">
         <div class="flex items-center py-3 border-b">
             <router-link class="mr-2">
-                <img :src="image" alt="" class="rounded-ful ml-1 min-w-[36px] max-h-[36px]">
+                <img :src="image" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
             </router-link>
             <div
             @click="isPostOverlay = true"
