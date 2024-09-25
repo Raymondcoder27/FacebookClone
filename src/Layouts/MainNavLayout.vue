@@ -100,7 +100,8 @@ let showMenu = ref(false);
         </button>
         <div class="flex items-center justify-center relative">
           <button @click="showMenu = !showMenu">
-            <img src="" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
+            <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
+            
           </button>
         </div>
     </div>
