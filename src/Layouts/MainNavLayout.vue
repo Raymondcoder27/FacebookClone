@@ -72,8 +72,8 @@ let showMenu = ref(false);
 
         </div>
       </router-link>
-      <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer">
-        
+      <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
+
       </button>
     </div>
   </div>
