@@ -61,7 +61,18 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
             <div id="RightSection" class="pl-4 md-block hidden">
                 <div class="mx-auto pt-4 max-w-[340px] min-w-[250px]">
                     <div class="flex items-center justify-between border-b border-b-gray-300">
-                        
+                        <div class="font-semibold">Contracts</div>
+                        <div class="flex items-center">
+                            <div class="p-2 hover:bg-gray-300 rounded-full cursor-pointer">
+                                <VideoImage :size="23" fillColor="#050505" />
+                            </div>
+                            <div class="p-2 hover:bg-gray-300 rounded-full cursor-pointer">
+                                <Magnify :size="23" fillColor="#050505" />
+                            </div>
+                            <div class="p-2 hover:bg-gray-300 rounded-full cursor-pointer">
+                                <DotsHorizontal :size="23" fillColor="#050505" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
