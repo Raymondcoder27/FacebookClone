@@ -36,7 +36,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Most Recent</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <AccountGroup :size="40" fillColor="#5BD7C6" />
+                        <AccountGroup :size="40" fillColor="#20A9FD" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Groups</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
