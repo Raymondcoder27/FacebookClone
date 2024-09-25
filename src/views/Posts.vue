@@ -53,6 +53,10 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                     </button>
                 </div>
             </div>
+
+            <div id="PostsSection" class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto">
+
+            </div>
         </div>
     </div>
   </MainNavLayout>
