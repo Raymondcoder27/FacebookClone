@@ -107,8 +107,9 @@ let showMenu = ref(false);
            class="absolute bg-white shadow-xl top-10 rounded-lg p-1 border mt-1 w-[330px]">
             <router-link to="/"
             @click="showMenu = !showMenu">
-            <div class="flex-items-center gap-3 rounded-lg hover:bg-gray-200 p-2">
+            <div class="flex items-center gap-3 rounded-lg hover:bg-gray-200 p-2">
               <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[35px] max-h-[35px]">
+              <span>Raymond Mwebe</span>
             </div>
             </router-link>
           </div>
