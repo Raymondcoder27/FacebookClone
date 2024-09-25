@@ -15,7 +15,6 @@ import Logout from "vue-material-design-icons/Logout.vue";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
-import FacebookMessenger from "vue-material-design-icons/FacebookMessenger.vue";
 const useGeneral = useGeneralStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } =
   storeToRefs(useGeneral);
@@ -99,6 +98,11 @@ let showMenu = ref(false);
         <button class="rounded-full p-2 hover:bg-gray-300 mx-1 cursor-pointer bg-[#E3E6EA]">
             <Bell :size="23" fillColor="#050505"/>
         </button>
+        <div class="flex items-center justify-center relative">
+          <button @click="showMenu = !showMenu">
+            
+          </button>
+        </div>
     </div>
   </div>
   <slot />
