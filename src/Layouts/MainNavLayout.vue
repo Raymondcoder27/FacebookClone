@@ -101,8 +101,20 @@ let showMenu = ref(false);
         <div class="flex items-center justify-center relative">
           <button @click="showMenu = !showMenu">
             <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
-            
           </button>
+          <div
+          v-if="showMenu"
+           class="absolute bg-white shadow-xl top-10 rounded-lg p-1 border mt-1 w-[330px]">
+            <router-link to="/"
+            @click="showMenu = !showMenu" 
+            class="flex items-center p-1 rounded-lg cursor-pointer hover:bg-[#F2F2F2]">
+              <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
+              <div class="ml-2">
+                <p class="text-sm font-semibold">John Doe</p>
+                <p class="text-xs text-gray-500">See your profile</p>
+              </div>
+            </router-link>
+          </div>
         </div>
     </div>
   </div>
