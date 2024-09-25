@@ -45,7 +45,7 @@ let showMenu = ref(false);
       id="NavCenter"
       class="hidden lg:flex items-center ml-5 justify-center w-8/12 max-w-[600px]"
     >
-      <router-link to="/">
+      <router-link to="/" class="w-full">
         <div
           :class="$route.path === '/' ? 'mt-1.5' : ''"
           class="flex items-center justify-center p-1 w-full rounded-lg h-[48px] cursor-pointer hover:bg-[#F2F2F2]"
