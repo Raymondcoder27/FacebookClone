@@ -78,6 +78,9 @@ let showMenu = ref(false);
       <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
         <StorefrontOutline class="mx-auto" :size="27" fillColor="#64676B" />
       </button>
+      <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
+        <AccountGroup class="mx-auto" :size="27" fillColor="#64676B" />
+      </button>
     </div>
   </div>
   <slot />
