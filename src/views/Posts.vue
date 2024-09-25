@@ -24,7 +24,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                         <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div>
                     </router-link>
                     <button class="flex items-center justify-center w-full cursor-pointer px-2 py-1 5 rounded-md hover:bg-[#E5E6E9]">
-                        
+                        <AccountMultiple :size="40" fillColor="#5BD7C6" />
                     </button>
                 </div>
             </div>
