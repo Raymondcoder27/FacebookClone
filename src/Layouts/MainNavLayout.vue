@@ -112,10 +112,10 @@ let showMenu = ref(false);
               <span>Raymond Mwebe</span>
             </div>
             </router-link>
-            <router-link class="w-full" as="button" :href="route('logout')" method="post">
+            <button class="w-full" as="button" @click="handleLogout" method="post">
               <Logout class="p-2" :size="30"/>
               <span>Logout</span>
-            </router-link>
+            </button>
           </div>
         </div>
     </div>
