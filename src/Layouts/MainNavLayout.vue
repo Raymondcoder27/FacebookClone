@@ -108,7 +108,7 @@ let showMenu = ref(false);
             <router-link to="/"
             @click="showMenu = !showMenu">
             <div class="flex-items-center gap-3 rounded-lg hover:bg-gray-200 p-2">
-              <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
+              <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[35px] max-h-[35px]">
             </div>
             </router-link>
           </div>
