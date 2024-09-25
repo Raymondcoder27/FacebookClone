@@ -34,7 +34,11 @@
         </div>
 
         <div id="NavCenter" class="hidden lg:flex items-center ml-5 justify-center w-8/12 max-w-[600px]">
-            <router-link></router-link>
+            <router-link to="/">
+                <div class="flex items-center justify-center p-1 w-full rounded-lg cursor-pointer">
+                    
+                </div>
+            </router-link>
         </div>
     </div>
     <slot/>
