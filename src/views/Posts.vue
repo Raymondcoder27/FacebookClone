@@ -44,8 +44,8 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Marketplace</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <TelevisionPlay :size="40" fillColor="#48C0D8" />
-                        <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Marketplace</div>
+                        <TelevisionPlay :size="40" fillColor="#9739CF" />
+                        <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Watch</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
                         <Restore :size="40" fillColor="#5BD7C6" />
