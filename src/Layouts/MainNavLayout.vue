@@ -14,7 +14,7 @@ import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
 
 const handleLogout = () => {
-  
+
 }
 
 import { useGeneralStore } from "@/stores/general";
@@ -116,8 +116,8 @@ let showMenu = ref(false);
               <span>Raymond Mwebe</span>
             </div>
             </router-link>
-            <button class="w-full" as="button" @click="handleLogout" method="post">
-              <Logout class="p-2" :size="30"/>
+            <button class="w-full flex items-center gap-3 hover:bg-gray-200 px-2 py-2.5" as="button" @click="handleLogout" method="post">
+              <Logout class="pl-2" :size="30"/>
               <span>Logout</span>
             </button>
           </div>
