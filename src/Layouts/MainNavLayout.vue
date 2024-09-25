@@ -73,7 +73,7 @@ let showMenu = ref(false);
         </div>
       </router-link>
       <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
-
+        <TelevisionPlay class="mx-auto" :size="27" fillColor="#64676B" />
       </button>
     </div>
   </div>
