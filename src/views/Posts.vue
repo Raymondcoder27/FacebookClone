@@ -55,7 +55,9 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
             </div>
 
             <div id="PostsSection" class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto">
-                Posts Section
+                <CreatePostBox 
+                image="https://picsum.photos/id/140/300/320"
+                placeholder="What's on your mind Raymond." />
             </div>
 
             <div id="RightSection" class="pl-4 md:block hidden">
@@ -77,6 +79,39 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                     <div class="h-[calc(100vh-115px)] overflow-auto pt-2">
                         <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
                             <img src="https://picsum.photos/id/140/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">John Doe</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/140/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Mpagi Ronald</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/140/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Nakimera Racheal</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/140/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Kironde Masembe</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/141/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Wanyana Leticia</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/142/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Mwebe Raphael</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/143/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Joel Mendez</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/144/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Cole Palmer</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/145/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Elon Musk</div>
                         </div>
                     </div>
                 </div>
