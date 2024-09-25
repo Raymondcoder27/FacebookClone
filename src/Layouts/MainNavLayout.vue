@@ -110,10 +110,6 @@ let showMenu = ref(false);
             <div class="flex-items-center gap-3 rounded-lg hover:bg-gray-200 p-2">
               <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]">
             </div>
-              <div class="ml-2">
-                <p class="text-sm font-semibold">John Doe</p>
-                <p class="text-xs text-gray-500">See your profile</p>
-              </div>
             </router-link>
           </div>
         </div>
