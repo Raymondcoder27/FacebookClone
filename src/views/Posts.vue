@@ -1,5 +1,6 @@
 <script setup>
 import MainNavLayout from "@/Layouts/MainNavLayout.vue";
+import CreatePostBox from "@/layouts/CreatePostBox.vue";
 
 import Magnify from "vue-material-design-icons/Magnify.vue";
 import TelevisionPlay from "vue-material-design-icons/TelevisionPlay.vue";
