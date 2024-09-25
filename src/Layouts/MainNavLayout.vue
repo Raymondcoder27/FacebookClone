@@ -15,6 +15,7 @@ import Logout from "vue-material-design-icons/Logout.vue";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+import FacebookMessenger from "vue-material-design-icons/FacebookMessenger.vue";
 const useGeneral = useGeneralStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } =
   storeToRefs(useGeneral);
@@ -80,12 +81,24 @@ let showMenu = ref(false);
       </button>
       <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
         <span class="rounded-full p-0.5 border-[2px] border-[#64676B]">
-        <AccountGroup class="mx-auto" :size="32" fillColor="#64676B" />
+        <AccountGroup class="mx-auto" :size="20" fillColor="#64676B" />
         </span>
       </button>
       <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
         <ControllerClassicOutline class="mx-auto" :size="32" fillColor="#64676B" />
       </button>
+    </div>
+
+    <div class="flex items-center justify-end mr-4 w-2/12">
+        <button class="rounded-full p-2 hover:bg-gray-300 mx-1 cursor-pointer bg-[#E3E6EA]">
+            <DotsGrid :size="23" fillColor="#050505"/>
+        </button>
+        <button class="rounded-full p-2 hover:bg-gray-300 mx-1 cursor-pointer bg-[#E3E6EA]">
+            <FacebookMessenger :size="23" fillColor="#050505"/>
+        </button>
+        <button class="rounded-full p-2 hover:bg-gray-300 mx-1 cursor-pointer bg-[#E3E6EA]">
+            <Bell :size="23" fillColor="#050505"/>
+        </button>
     </div>
   </div>
   <slot />
