@@ -35,8 +35,13 @@
 
         <div id="NavCenter" class="hidden lg:flex items-center ml-5 justify-center w-8/12 max-w-[600px]">
             <router-link href="/">
-                <div class="flex items-center justify-center p-1 w-full rounded-lg h-[48px] cursor-pointer">
-
+                <div
+                :class="$page.url === '/' ? 'mt-1.5': ''"
+                 class="flex items-center justify-center p-1 w-full rounded-lg h-[48px] cursor-pointer">
+                    <div>
+                        <Home v-if="$page.url === '/'" class="mx-auto" :size="27" fillColor="#1A73E3"/>
+                        <HomeOutline v-else class="mx-auto" :size="32" fillColor="#64676B" />
+                    </div>
                 </div>
             </router-link>
         </div>
