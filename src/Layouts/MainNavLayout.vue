@@ -30,6 +30,7 @@
             <div class="flex items-center justify-center p-1 rounded-full ml-2 bg-[#EFF2F5] h-[40px]">
                 <Magnify class="p-1" :size="22" fillColor="#64676B"/>
                 <input type="text" placeholder="Search Facebook" class="bg-[#EFF2F5] placeholder-[#64676B] lg:block hidden border-none p-0 ring-0 focus:ring-0">
+                
             </div>  
         </div>
     </div>
