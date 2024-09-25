@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import MainNavLayout from './Layouts/MainNavLayout.vue';
+import Posts from './views/Posts.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -10,6 +11,8 @@ import MainNavLayout from './Layouts/MainNavLayout.vue';
   </div> -->
  <MainNavLayout>
   <!-- Posts -->
+  <!-- <RouterView /> -->
+  <Posts/>
   </MainNavLayout>
 </template>
 
