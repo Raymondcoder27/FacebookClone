@@ -104,13 +104,17 @@ let showMenu = ref(false);
           </button>
           <div
           v-if="showMenu"
-           class="absolute bg-white shadow-xl top-10 rounded-lg p-1 border mt-1 w-[330px]">
+           class="absolute bg-white shadow-xl top-10 rounded-lg p-1 border mt-1 w-[330px] right-0">
             <router-link to="/"
             @click="showMenu = !showMenu">
             <div class="flex items-center gap-3 rounded-lg hover:bg-gray-200 p-2">
               <img src="https://picsum.photos/id/120/300/320" alt="" class="rounded-full ml-1 cursor-pointer min-w-[35px] max-h-[35px]">
               <span>Raymond Mwebe</span>
             </div>
+            </router-link>
+            <router-link class="w-full" as="button" :href="route('logout')" method="post">
+              <Logout class="p-2" :size="30"/>
+              <span>Logout</span>
             </router-link>
           </div>
         </div>
