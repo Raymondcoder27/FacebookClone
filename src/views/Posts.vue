@@ -20,7 +20,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
             <div id="LeftSection" class="lg:block hidden xl:w-[345px]">
                 <div class="pt-4 pr-4 max-w-[320px]">
                     <router-link to="/" class="flex items-center justify-start w-full cursor-pointer p-2 hover:bg-[#E5E6E9] rounded-md">
-                        
+                        <img src="" alt="" class="rounded-full ml-l min-w-[38px] max-w-[300px]">
                     </router-link>
                 </div>
             </div>
