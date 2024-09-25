@@ -13,6 +13,10 @@ import Bell from "vue-material-design-icons/Bell.vue";
 import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
 
+const handleLogout = () => {
+  
+}
+
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
