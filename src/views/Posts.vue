@@ -14,5 +14,9 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
 </script>
 
 <template>
-  <MainNavLayout> Posts </MainNavLayout>
+  <MainNavLayout> 
+    <div class="fixed w-full bg-[#F1F2F5] h-[100%]">
+        
+    </div>
+  </MainNavLayout>
 </template>
