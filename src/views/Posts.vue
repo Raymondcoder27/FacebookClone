@@ -23,7 +23,9 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                         <img src="https://picsum.photos/id/87/300/320" class="rounded-full ml-l min-w-[38px] max-h-[38px]">
                         <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div>
                     </router-link>
-                    <div class="flex items-center justify-center w-full cursor-pointer px-2 py-1 5 rounded-md"></div>
+                    <button class="flex items-center justify-center w-full cursor-pointer px-2 py-1 5 rounded-md hover:bg-[#E5E6E9]">
+                        
+                    </button>
                 </div>
             </div>
         </div>
