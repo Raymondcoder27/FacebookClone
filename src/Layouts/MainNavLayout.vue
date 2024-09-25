@@ -79,9 +79,12 @@ let showMenu = ref(false);
         <StorefrontOutline class="mx-auto" :size="27" fillColor="#64676B" />
       </button>
       <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
-        <span class="rounded-full p-1 border-[2px] border-[#64676B]">
-        <AccountGroup class="mx-auto" :size="27" fillColor="#64676B" />
+        <span class="rounded-full p-0.5 border-[2px] border-[#64676B]">
+        <AccountGroup class="mx-auto" :size="32" fillColor="#64676B" />
         </span>
+      </button>
+      <button class="flex items-center p-1 justify-center w-full rounded-lg mx-1 cursor-pointer h-[48px] hover:bg-[#F2F2F2]">
+        <ControllerClassicOutline class="mx-auto" :size="32" fillColor="#64676B" />
       </button>
     </div>
   </div>
