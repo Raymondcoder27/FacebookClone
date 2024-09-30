@@ -36,11 +36,11 @@ const {image, placeholder} = toRefs(props)
                 <div class="font-bold text-gray-400">Live Video</div>
             </button>
             <button class="flex items-center justify-center p-1 w-full rounded-lg hover:bg-[#F2F2F2] mx-l cursor-pointer">
-                <Image :size="35" fillColor="#F12848" />
+                <Image :size="35" fillColor="#43BE62" />
                 <div class="font-bold text-gray-400">Photo/Video</div>
             </button>
             <button class="flex items-center justify-center p-1 w-full rounded-lg hover:bg-[#F2F2F2] mx-l cursor-pointer">
-                <EmoticonOutline :size="35" fillColor="#F12848" />
+                <EmoticonOutline :size="35" fillColor="#F8B927" />
                 <div class="font-bold text-gray-400">Feeling/Activity</div>
             </button>
         </div>
