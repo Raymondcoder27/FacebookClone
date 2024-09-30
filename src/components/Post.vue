@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="flex items-center">
-                    <button class="rounded-full cursor-pointer">
+                    <button class="rounded-full cursor-pointer p-1.5 hover:bg-[#F2F2F2]">
                         <Delete fillColor="#64676B" />
                     </button>
                 </div>
