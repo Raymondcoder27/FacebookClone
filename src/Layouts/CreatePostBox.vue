@@ -29,5 +29,11 @@ const {image, placeholder} = toRefs(props)
                 <div class="text-left pl-2">{{ placeholder }}</div>
             </div>
         </div>
+
+        <div class="flex-items-center py-3 border-b">
+            <button class="flex items-center justify-center p-1 w-full rounded-lg hover:bg-[#F2F2F2] mx-l cursor-pointer">
+                
+            </button>
+        </div>
     </div>
 </template>
