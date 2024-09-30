@@ -17,6 +17,7 @@
 </script>
 
 <template>
-    
-
+    <div id="Post" class="w-full bg-white rounded-lg my-4 shadow-md">
+        <div class="flex items-center py-3 px-3"></div>
+    </div>
 </template>
