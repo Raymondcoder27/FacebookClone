@@ -20,7 +20,7 @@
     <div id="Post" class="w-full bg-white rounded-lg my-4 shadow-md">
         <div class="flex items-center py-3 px-3">
             <button class="mr-2">
-                <img src="" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]" src="https://picsum.photos/id/800">
+                <img  alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]" src="https://picsum.photos/id/140/300/320">
             </button>
         </div>
     </div>
