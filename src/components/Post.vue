@@ -12,6 +12,7 @@
 
     const {isImageDisplay} = storeToRefs(useGeneral)
 
+    const form = reactive({comment: null})
 
 </script>
 
