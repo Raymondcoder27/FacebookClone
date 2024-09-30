@@ -43,6 +43,7 @@
         <div id="Likes" class="px-5">
             <div class="flex-items-center justify-between py-3 border-b">
                 <ThumbUp fillColor="#1D72E2" />
+                <div class="text-sm text-gray-600 font-semi-bold">5 comments</div>
             </div>
         </div>
     </div>
