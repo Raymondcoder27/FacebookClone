@@ -23,7 +23,9 @@
                 <img  alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]" src="https://picsum.photos/id/140/300/320">
             </button>
             <div class="flex items-center justify-between p-2 rounded-full w-full">
-                
+                <div>
+                    <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div>
+                </div>
             </div>
         </div>
     </div>
