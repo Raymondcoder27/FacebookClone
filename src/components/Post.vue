@@ -25,6 +25,9 @@
             <div class="flex items-center justify-between p-2 rounded-full w-full">
                 <div>
                     <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div>
+                    <div class="flex items-center text-xs text-gray-600">
+                        <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
+                    </div>
                 </div>
             </div>
         </div>
