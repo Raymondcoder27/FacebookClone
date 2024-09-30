@@ -37,7 +37,8 @@
             </div>
         </div>
         <div class="px-5 pb-2 font-semi-bold text-[17px]">
-
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro dolores iste commodi labore repellat rerum quas voluptates aut aspernatur adipisci ipsam quaerat nihil, doloribus excepturi molestiae! Ipsum ut dicta quod.
         </div>
+        <img src="https://picsum.photos/id/189/800/800" alt="" class="mx-auto cursor-pointer">
     </div>
 </template>
