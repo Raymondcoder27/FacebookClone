@@ -6,8 +6,12 @@
     import ThumbUp from 'vue-material-design-icons/ThumbUp.vue'
     import Delete from 'vue-material-design-icons/Delete.vue'
     import Check from 'vue-material-design-icons/Check.vue'
+
     import { storeToRefs } from 'pinia';
     const useGeneral = useGeneralStore();
+
+    const {isImageDisplay} = storeToRefs(useGeneral)
+
 
 </script>
 
