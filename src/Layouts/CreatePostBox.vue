@@ -32,7 +32,8 @@ const {image, placeholder} = toRefs(props)
 
         <div class="flex-items-center py-3 border-b">
             <button class="flex items-center justify-center p-1 w-full rounded-lg hover:bg-[#F2F2F2] mx-l cursor-pointer">
-                
+                <VideoImage :size="35" fillColor="#F12848" />
+                <div class="font-bold text-gray-400">Live Video</div>
             </button>
         </div>
     </div>
