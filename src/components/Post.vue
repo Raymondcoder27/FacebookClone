@@ -42,7 +42,7 @@
         <img src="https://picsum.photos/id/189/800/800" alt="" class="mx-auto cursor-pointer">
         <div id="Likes" class="px-5">
             <div class="flex-items-center justify-between py-3 border-b">
-                
+                <ThumbUp fillColor="#1D72E2" />
             </div>
         </div>
     </div>
