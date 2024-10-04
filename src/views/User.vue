@@ -17,7 +17,7 @@
 <template>
     <Head title="User" />
     <MainNavLayout>
-        <div class="w-full pb-20">
+        <div class="w-full pb-20 min-h-[100vh]">
             <div class="w-full bg-white">
                 <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
 
