@@ -72,7 +72,7 @@
                 <div class="flex items-center justify-between pb-2">
                     <div class="flex items-center w-full mb-1">
                         <RouterLink>
-                            <img src="" alt="" class="rounded-full">
+                            <img src="https://picsum.photos/id/299/800/800" alt="" class="rounded-full min-w-[36px] max-h-[36px]">
                         </RouterLink>
                     </div>
                 </div>
