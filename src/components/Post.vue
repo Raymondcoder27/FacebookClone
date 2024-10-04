@@ -70,7 +70,11 @@
 
             <div id="Comments" class="max-h-[120px] overflow-auto pb-2 px-4">
                 <div class="flex items-center justify-between pb-2">
-                    <div class="flex items-center w-full mb-1"></div>
+                    <div class="flex items-center w-full mb-1">
+                        <RouterLink>
+                            <img src="" alt="" class="rounded-full">
+                        </RouterLink>
+                    </div>
                 </div>
             </div>
         </div>
