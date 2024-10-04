@@ -60,6 +60,9 @@
                         class="w-full mx-1 border-none p-0 text-sm ring-0 focus:outline-none bg-[#EFF2F5] placeholder-[#64676B]"
                         placeholder="Write a public comment...">
                     </div>
+                    <button class="flex items-center text-sm pl-2 rounded-full bg-blue-500 hover:bg-blue-800 text-white font-bold">
+                        <Check fillColor="#FFF" :size="20" /> Send
+                    </button>
                 </div>
             </div>
         </div>
