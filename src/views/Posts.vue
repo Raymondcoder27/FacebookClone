@@ -113,8 +113,12 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                             <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Cole Palmer</div>
                         </div>
                         <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
-                            <img src="https://picsum.photos/id/148/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <img src="https://picsum.photos/id/127/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
                             <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Elon Musk</div>
+                        </div>
+                        <div class="flex items-center justify-start cursor-pointer hover:bg-[#E5E6E9] rounded-md py-2">
+                            <img src="https://picsum.photos/id/117/300/320" alt="" class="rounded-full ml-1 min-w-[38px] max-h-[38px]">
+                            <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Gwen Shotwell</div>
                         </div>
                     </div>
                 </div>

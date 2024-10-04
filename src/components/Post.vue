@@ -41,9 +41,19 @@
         </div>
         <img src="https://picsum.photos/id/189/800/800" alt="" class="mx-auto cursor-pointer">
         <div id="Likes" class="px-5">
-            <div class="flex-items-center justify-between py-3 border-b">
+            <div class="flex items-center justify-between py-3 border-b">
                 <ThumbUp fillColor="#1D72E2" />
                 <div class="text-sm text-gray-600 font-semi-bold">5 comments</div>
+            </div>
+        </div>
+
+        <div id="Comments" class="px-3">
+            <div id="CreateComment" class="flex items-center justify-between py-2">
+                <div class="flex items-center w-full">
+                    <RouterLink>
+                        <img src="" alt="" class="rounded-full ml-1">
+                    </RouterLink>
+                </div>
             </div>
         </div>
     </div>
