@@ -65,7 +65,12 @@
                         <Check fillColor="#FFF" :size="20" /> Send
                     </button>
                     </div>
-                    
+                </div>
+            </div>
+
+            <div id="Comments" class="overflow-auto pb-2 px-4">
+                <div class="flex items-center justify-between pb-2">
+                    <div class="flex items-center w-full pb-2"></div>
                 </div>
             </div>
         </div>
