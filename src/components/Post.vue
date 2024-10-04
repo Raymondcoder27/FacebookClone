@@ -57,7 +57,8 @@
                         <input
                         v-model="form.comment" 
                         type="text" 
-                        class="w-full mx-1 border-none p-0 text-sm ring-0 focus:ring-0 bg-[#EFF2F5] placeholder-[#64676B]">
+                        class="w-full mx-1 border-none p-0 text-sm ring-0 focus:ring-0 bg-[#EFF2F5] placeholder-[#64676B]"
+                        placeholder="Write a public comment">
                     </div>
                 </div>
             </div>
