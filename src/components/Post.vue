@@ -51,7 +51,7 @@
             <div id="CreateComment" class="flex items-center justify-between py-2">
                 <div class="flex items-center w-full">
                     <RouterLink>
-                        <img src="" alt="" class="rounded-full ml-1">
+                        <img src="" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
                     </RouterLink>
                 </div>
             </div>
