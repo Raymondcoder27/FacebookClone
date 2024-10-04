@@ -53,12 +53,12 @@
                     <RouterLink>
                         <img src="https://picsum.photos/id/199/800/800" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
                     </RouterLink>
-                    <div class="flex items-center justify-center p-2 rounded-full w-full">
+                    <div class="flex items-center justify-center p-2 rounded-full w-full bg-[#EFF2F5]">
                         <input
                         v-model="form.comment" 
                         type="text" 
-                        class="w-full mx-1 border-none p-0 text-sm ring-0 focus:ring-0 bg-[#EFF2F5] placeholder-[#64676B]"
-                        placeholder="Write a public comment">
+                        class="w-full mx-1 border-none p-0 text-sm ring-0 focus:outline-none bg-[#EFF2F5] placeholder-[#64676B]"
+                        placeholder="Write a public comment...">
                     </div>
                 </div>
             </div>
