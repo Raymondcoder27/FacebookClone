@@ -20,7 +20,7 @@
         <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
             <div class="w-full bg-white">
                 <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
-
+                    <img src="https://picsum.photos/id/45/2000/320" alt="" class="rounded-b-xl">
                 </div>
             </div>
         </div>
