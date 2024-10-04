@@ -53,6 +53,9 @@
                     <RouterLink>
                         <img src="" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
                     </RouterLink>
+                    <div class="flex items-center justify-center p-2 rounded-full w-full">
+                        <input type="text" class="w-full mx-1 border-none p-0 text-sm ring-0 focus:ring-0">
+                    </div>
                 </div>
             </div>
         </div>
