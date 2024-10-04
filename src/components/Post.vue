@@ -68,9 +68,9 @@
                 </div>
             </div>
 
-            <div id="Comments" class="overflow-auto pb-2 px-4">
+            <div id="Comments" class="max-h-[120px] overflow-auto pb-2 px-4">
                 <div class="flex items-center justify-between pb-2">
-                    <div class="flex items-center w-full pb-2"></div>
+                    <div class="flex items-center w-full mb-1"></div>
                 </div>
             </div>
         </div>
