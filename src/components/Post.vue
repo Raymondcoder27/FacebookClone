@@ -78,6 +78,9 @@
                             <div class="flex items-center text-xs p-2 rounded-lg w-full bg-[#EFF2F5]">
                                 This is a comment
                             </div>
+                            <button class="rounded-full ml-2 cursor-pointer">
+                                <Delete fillColor="#64676B" />
+                            </button>
                         </div>
                     </div>
                 </div>

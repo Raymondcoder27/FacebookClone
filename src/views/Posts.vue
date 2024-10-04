@@ -61,6 +61,11 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                 image="https://picsum.photos/id/140/300/320"
                 placeholder="What's on your mind Raymond?!" />
                 <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
             </div>
 
             <div id="RightSection" class="pl-4 md:block hidden">
