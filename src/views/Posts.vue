@@ -26,31 +26,31 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
                         <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div>
                     </router-link>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <AccountMultiple :size="40" fillColor="#5BD7C6" />
+                        <AccountMultiple :size="32" fillColor="#5BD7C6" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Friends</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <Flag :size="40" fillColor="#F2682C" />
+                        <Flag :size="32" fillColor="#F2682C" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Pages</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <ClockTimeTwoOutline :size="40" fillColor="#21AAFA" />
+                        <ClockTimeTwoOutline :size="32" fillColor="#21AAFA" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Most Recent</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <AccountGroup :size="40" fillColor="#20A9FD" />
+                        <AccountGroup :size="32" fillColor="#20A9FD" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Groups</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <StorefrontOutline :size="40" fillColor="#48C0D8" />
+                        <StorefrontOutline :size="32" fillColor="#48C0D8" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Marketplace</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <TelevisionPlay :size="40" fillColor="#9739CF" />
+                        <TelevisionPlay :size="32" fillColor="#9739CF" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Watch</div>
                     </button>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
-                        <Restore :size="40" fillColor="#5BD7C6" />
+                        <Restore :size="32" fillColor="#5BD7C6" />
                         <div class="text-gray-800 font-extrabold pl-3 text-[15px]">Memories</div>
                     </button>
                 </div>
