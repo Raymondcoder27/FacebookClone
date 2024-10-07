@@ -24,7 +24,9 @@
 
                     <div id="ProfileInfo" class="flex md:flex-row flex-col items-center justify-between px-4">
                         <div class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center">
-                            
+                            <div class="relative">
+                                <img src="" alt="" class="rounded-full border-4 border-white">
+                            </div>
                         </div>
                     </div>
                 </div>
