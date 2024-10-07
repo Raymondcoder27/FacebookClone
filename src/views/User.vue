@@ -25,15 +25,17 @@
                     <div id="ProfileInfo" class="flex md:flex-row flex-col items-center justify-between px-4">
                         <div class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center">
                             <div class="relative">
+                                
                                 <img src="https://picsum.photos/id/200/500/500" alt="" class="rounded-full h-[165px] w-[165px] border-4 border-white">
                                 <button
                                 @click="isCropperModal = true" 
                                 class="absolute right-0 bg-gray-200 hover:bg-gray-300 rounded-full p-1.5 cursor-pointer top-[100px]">
-                                <Camera :size="25" />
+                                <!-- <Camera :size="25" /> -->
+                                <p class="text-black">Hey</p>
                             </button>
                             </div>
                             <div class="md:mt-4 text-center md:text-left -mt-3">
-                                <div class="text-sm font-extrabold pt-1">
+                                <div class="text-md font-extrabold pt-1">
                                     Raymond Mwebe
                                 </div>
                                 <div class="font-bold text-gray-600">
