@@ -33,7 +33,9 @@
                             </button>
                             </div>
                             <div class="md:mt-4 text-center md:text-left -mt-3">
-                                
+                                <div class="text-sm font-extrabold pt-1">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
