@@ -11,7 +11,7 @@ import Posts from './views/Posts.vue';
   </div> -->
  <MainNavLayout>
   <!-- Posts -->
-  <!-- <RouterView /> -->
+  <RouterView />
   <Posts/>
   </MainNavLayout>
 </template>
