@@ -34,7 +34,10 @@
                             </div>
                             <div class="md:mt-4 text-center md:text-left -mt-3">
                                 <div class="text-sm font-extrabold pt-1">
-                                    
+                                    Raymond Mwebe
+                                </div>
+                                <div class="font-bold text-gray-600">
+                                    234 friends
                                 </div>
                             </div>
                         </div>
