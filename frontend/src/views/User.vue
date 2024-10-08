@@ -71,6 +71,18 @@
                         <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
                             About
                         </button>
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
+                            Friends
+                        </button>
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
+                            Videos
+                        </button>
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
+                            Photos
+                        </button>
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
+                            Checkins
+                        </button>
                     </div>
                 </div>
             </div>
