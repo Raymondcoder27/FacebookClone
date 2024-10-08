@@ -47,7 +47,7 @@
                                     <img src="https://picsum.photos/id/145/500/500" alt="" class="rounded-full -ml-3 boarder-white border-2 z-[6] w-[40px]">
                                     <img src="https://picsum.photos/id/146/500/500" alt="" class="rounded-full -ml-3 boarder-white border-2 z-[5] w-[40px]">
                                     <img src="https://picsum.photos/id/147/500/500" alt="" class="rounded-full -ml-3 boarder-white border-2 z-[4] w-[40px]">
-                                    <img src="https://picsum.photos/id/148/500/500" alt="" class="rounded-full -ml-3 boarder-white border-2 z-[3] w-[40px]">
+                                    <img src="https://picsum.photos/id/149/500/500" alt="" class="rounded-full -ml-3 boarder-white border-2 z-[3] w-[40px]">
                                 </div>
                             </div>
                         </div>
@@ -58,6 +58,10 @@
                             <Pen class="-mr-2 mr-1" :size="20" />Edit Profile
                         </button>
                     </RouterLink>
+                    </div>
+
+                    <div class="flex items-center w-full border-t h-[50px] py-[4px]">
+
                     </div>
                 </div>
             </div>
