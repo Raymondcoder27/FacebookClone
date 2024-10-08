@@ -170,7 +170,7 @@ defineProps({ posts: Object, user: Object });
               </div>
             </div>
 
-            <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
+            <!-- <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
               <div class="font-extrabold pb-2 text-xl">Photos</div>
               <div class="flex flex-wrap items-center justify-start w-full">
                 <span class="w-1/3">
@@ -180,7 +180,7 @@ defineProps({ posts: Object, user: Object });
                   />
                 </span>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
