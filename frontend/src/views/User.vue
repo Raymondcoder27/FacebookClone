@@ -86,6 +86,9 @@
                     </div>
                 </div>
             </div>
+            <div class="flex-cols md-flex w-full justify-between md:px-0">
+                
+            </div>
         </div>
     </MainNavLayout>
 </template>
