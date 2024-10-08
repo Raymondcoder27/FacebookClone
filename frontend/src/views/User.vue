@@ -41,13 +41,13 @@
                                 </div>
                                 <div class="flex md:justify-start justify-center md:-mt-1">
                                     <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
-                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[10] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[9] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[8] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[7] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[6] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[5] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[4] w-[40px]">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2 z-[3] w-[40px]">
                                 </div>
                             </div>
                         </div>
