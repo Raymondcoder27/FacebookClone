@@ -170,6 +170,10 @@ defineProps({ posts: Object, user: Object });
                 </button>
               </div>
             </div>
+
+            <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
+                
+            </div>
           </div>
         </div>
       </div>
