@@ -60,13 +60,13 @@
                     </RouterLink>
                     </div>
 
-                    <div class="flex items-center w-full border-t h-[50px] py-[4px]">
+                    <div class="flex border-t h-[50px] py-[4px]">
                         <button
                         class="w-[85px]">
                             <div class="flex items-center justify-center text-blue-500 w-full font-bold rounded-lg font-bold text-[15px] h-[45px]">
                             </div>
                         </button>
-                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px]">
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] ">
 
                         </button>
                     </div>
