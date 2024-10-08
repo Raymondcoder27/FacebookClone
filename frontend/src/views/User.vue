@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-cols md-flex w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)]">
+            <div class="flex-cols md-flex w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)] px-2 mx-auto">
 
             </div>
         </div>
