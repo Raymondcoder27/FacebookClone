@@ -39,6 +39,9 @@
                                 <div class="font-bold text-gray-600">
                                     234 friends
                                 </div>
+                                <div class="flex md:justify-start justify-center md:-mt-1">
+                                    <img src="https://picsum.photos/id/141/500/500" alt="" class="rounded-full -ml-1 boarder-white border-2">
+                                </div>
                             </div>
                         </div>
                     </div>
