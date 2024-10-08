@@ -141,12 +141,15 @@ defineProps({ posts: Object, user: Object });
           </div>
         </div>
       </div>
+
+
+
       <div
         class="flex-cols md-flex w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)] px-2 mx-auto"
       >
         <div id="LeftSection" class="w-full mt-4 mr-4 md:w-5/12">
           <div class="bg-white p-3 rounded-lg shadow-lg">
-            <div class="font-extrabold pb-2 text-xl">
+            <!-- <div class="font-extrabold pb-2 text-xl"> -->
               <div class="font-extrabold pb-2 text-xl">Intro</div>
               <div class="pb-5">
                 <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
@@ -168,9 +171,10 @@ defineProps({ posts: Object, user: Object });
                   Add features
                 </button>
               </div>
-            </div>
+            <!-- </div> -->
+          </div>
 
-            <!-- <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
+          <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
               <div class="font-extrabold pb-2 text-xl">Photos</div>
               <div class="flex flex-wrap items-center justify-start w-full">
                 <span class="w-1/3">
@@ -180,8 +184,7 @@ defineProps({ posts: Object, user: Object });
                   />
                 </span>
               </div>
-            </div> -->
-          </div>
+            </div>
         </div>
       </div>
     </div>
