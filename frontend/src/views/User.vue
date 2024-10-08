@@ -186,6 +186,10 @@ defineProps({ posts: Object, user: Object });
               </div>
             </div>
         </div>
+
+        <div id="PostsSection" class="w-full md:w-7/12 overflow-auto">
+            
+        </div>
       </div>
     </div>
   </MainNavLayout>
