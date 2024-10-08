@@ -15,7 +15,7 @@ defineProps({ posts: Object, user: Object });
 </script>
 
 <template>
-  <Head title="User"/>
+  <Head title="User" />
   <MainNavLayout>
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
@@ -148,7 +148,6 @@ defineProps({ posts: Object, user: Object });
           <div class="bg-white p-3 rounded-lg shadow-lg">
             <div class="font-extrabold pb-2 text-xl">
               <div class="font-extrabold pb-2 text-xl">Intro</div>
-
               <div class="pb-5">
                 <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
                   Add bio
@@ -172,16 +171,21 @@ defineProps({ posts: Object, user: Object });
             </div>
 
             <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
-                <div class="font-extrabold pb-2 text-xl">Photos</div>
-                <div class="flex flex-wrap items-center justify-start w-full">
-                    <span class="w-1/3">
-                        <img src="https://picsum.photos/id/78/300/300" class="aspect-square object-cover p-1 rounded-lg cursor-pointer">
-                    </span>
-                </div>
+              <div class="font-extrabold pb-2 text-xl">Photos</div>
+              <div class="flex flex-wrap items-center justify-start w-full">
+                <span class="w-1/3">
+                  <img
+                    src="https://picsum.photos/id/78/300/300"
+                    class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
+                  />
+                </span>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div id="PostSection" class="w-full overflow-auto md:w-7/12">
+        <!-- 
+        <div id="PostSection" class="w-full overflow-auto md:w-7/12">
             <CreatePostBox 
                 image="https://picsum.photos/id/140/300/320"
                 placeholder="What's on your mind Raymond?!" />
@@ -191,8 +195,7 @@ defineProps({ posts: Object, user: Object });
                 <Post />
                 <Post />
                 <Post />
-          </div>
-        </div>
+          </div> -->
       </div>
     </div>
   </MainNavLayout>
