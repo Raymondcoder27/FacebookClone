@@ -89,10 +89,10 @@
             <div class="flex-cols md-flex w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)] px-2 mx-auto">
                 <div id="LeftSection" class="w-full mt-4 mr-4 md:w-5/12">
                     <div class="bg-white p-3 rounded-lg shadow-lg">
-                        
-                    </div>
+                        <div class="font-extrabold pb-2 text-xl">
                     <div class="font-extrabold pb-2 text-xl">Intro</div>
-                    <div class="pb-5">
+
+                            <div class="pb-5">
                         <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
                     </div>
                     <div class="pb-5">
@@ -104,6 +104,8 @@
                     <div class="pb-5">
                         <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add features</button>
                     </div>
+                        </div>
+                    </div>                   
                 </div>
             </div>
         </div>
