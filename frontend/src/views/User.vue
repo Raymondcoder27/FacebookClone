@@ -188,7 +188,15 @@ defineProps({ posts: Object, user: Object });
         </div>
 
         <div id="PostsSection" class="w-full md:w-7/12 overflow-auto">
-            
+            <CreatePostBox 
+                image="https://picsum.photos/id/140/300/320"
+                placeholder="What's on your mind Raymond?!" />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
         </div>
       </div>
     </div>
