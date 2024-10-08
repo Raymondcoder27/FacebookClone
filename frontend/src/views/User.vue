@@ -173,12 +173,16 @@ defineProps({ posts: Object, user: Object });
 
             <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
                 <div class="font-extrabold pb-2 text-xl">Photos</div>
-                <div class="flex flex-wrap items-center justify-center w-full">
+                <div class="flex flex-wrap items-center justify-start w-full">
                     <span class="w-1/3">
                         <img src="https://picsum.photos/id/78/300/300" class="aspect-square object-cover p-1 rounded-lg cursor-pointer">
                     </span>
                 </div>
             </div>
+          </div>
+
+          <div id="PostSection" class="w-full overflow-auto md:w-7/12">
+
           </div>
         </div>
       </div>
