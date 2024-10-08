@@ -15,7 +15,7 @@ defineProps({ posts: Object, user: Object });
 </script>
 
 <template>
-  <Head title="User" />
+  <Head title="User"/>
   <MainNavLayout>
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
