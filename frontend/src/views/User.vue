@@ -87,7 +87,9 @@
                 </div>
             </div>
             <div class="flex-cols md-flex w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)] px-2 mx-auto">
+                <div id="LeftSection" class="w-full mt-4 mr-4 md:w-5/12">
 
+                </div>
             </div>
         </div>
     </MainNavLayout>
