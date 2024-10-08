@@ -90,7 +90,7 @@
                 <div id="LeftSection" class="w-full mt-4 mr-4 md:w-5/12">
                     <div class="font-extrabold pb-2 text-xl">Intro</div>
                     <div class="pb-5">
-                        <div class="w-full bg-gray-200 rounded-lg p-2 font-bold"></div>
+                        <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
                     </div>
                 </div>
             </div>
