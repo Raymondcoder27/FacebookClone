@@ -51,6 +51,11 @@
                                 </div>
                             </div>
                         </div>
+
+                        <RouterLink to="/"
+                        class="flex justify-center w-7/12 md:w-[160px] items-baseline my-4 bg-gray-200 rounded-lg cursor-pointer">
+                        <Pen :size="20" />Edit Profile
+                    </RouterLink>
                     </div>
                 </div>
             </div>
