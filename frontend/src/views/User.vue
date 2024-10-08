@@ -172,7 +172,8 @@ defineProps({ posts: Object, user: Object });
             </div>
 
             <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
-                
+                <div class="font-extrabold pb-2 text-xl">Photots</div>
+                <div class="flex flex-wrap items-center justify-center w-full"></div>
             </div>
           </div>
         </div>
