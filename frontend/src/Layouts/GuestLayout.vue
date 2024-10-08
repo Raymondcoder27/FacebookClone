@@ -5,7 +5,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 </script>
 
 <template>
-    <div class="h-[100vh] flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="h-[100vh] flex flex-col pt-[100px] sm:pt-0 bg-gray-100">
         <div>
             <RouterLink>
                 <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
