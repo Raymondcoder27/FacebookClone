@@ -66,8 +66,9 @@
                             <div class="flex items-center justify-center text-blue-500 w-full font-bold rounded-lg text-[15px] h-[45px] cursor-pointer">
                                 Posts
                             </div>
+                            <div class="border-b-4 border-blue-400 rounded-md"></div>
                         </button>
-                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] ">
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px] text-[15px] text-[15px] h-[48px] font-bold rounded-lg mx-l cursor-pointer">
 
                         </button>
                     </div>
