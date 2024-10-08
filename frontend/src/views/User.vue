@@ -64,8 +64,10 @@
                         <button
                         class="w-[85px]">
                             <div class="flex items-center justify-center text-blue-500 w-full font-bold rounded-lg font-bold text-[15px] h-[45px]">
-
                             </div>
+                        </button>
+                        <button class="flex items-center justify-center p-1 hover:bg-[#F2F2F2] w-[85px]">
+
                         </button>
                     </div>
                 </div>
