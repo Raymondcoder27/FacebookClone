@@ -63,8 +63,8 @@
                     <div class="flex items-center w-full border-t h-[50px] py-[4px]">
                         <button
                         class="w-[85px]">
-                            <div class="flex items-center justify-center text-blue-500 w-full font-bold rounded-lg font-bold">
-                                
+                            <div class="flex items-center justify-center text-blue-500 w-full font-bold rounded-lg font-bold text-[15px] h-[45px]">
+
                             </div>
                         </button>
                     </div>
