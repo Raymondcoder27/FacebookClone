@@ -92,6 +92,15 @@
                     <div class="pb-5">
                         <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
                     </div>
+                    <div class="pb-5">
+                        <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
+                    </div>
+                    <div class="pb-5">
+                        <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
+                    </div>
+                    <div class="pb-5">
+                        <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">Add bio</button>
+                    </div>
                 </div>
             </div>
         </div>
