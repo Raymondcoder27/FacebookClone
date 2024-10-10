@@ -2,6 +2,7 @@
 import MainNavLayout from "@/Layouts/MainNavLayout.vue";
 import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
+// import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
@@ -33,7 +34,9 @@ defineProps({ posts: Object, user: Object });
                     v-model="form.email"
                     required
                     autofocs
-                    autocomplete="username">
+                    autocomplete="username"
+                    placeholder="Email"/>
+                    <InputError class="mt-2" :message="form.errors.Email"
                 </InputLabel>
             </div>
         </form>
