@@ -53,6 +53,12 @@ defineProps({ posts: Object, user: Object });
                     <InputError class="mt-2" :message="form.errors.password"/>
             </div>
 
+            <div>
+                <PrimaryButton class="ml-4" :disabled="form.processing">
+                    Login
+                </PrimaryButton>
+            </div>
+
             <div class="block mt-4">
                 <label for="" class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember"/>
@@ -68,9 +74,7 @@ defineProps({ posts: Object, user: Object });
                 <!-- <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Login
                 </PrimaryButton> -->
-                <PrimaryButton class="ml-4" :disabled="form.processing">
-                    Login
-                </PrimaryButton>
+               
             </div>
         </form>
     </div>
