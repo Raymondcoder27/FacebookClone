@@ -60,10 +60,15 @@ defineProps({ posts: Object, user: Object });
             </div>
 
             <div class="flex items-center justify-center mt-4">
-                <RouterLink
+                <!-- <RouterLink
                 v-if="canReset"
                 :href=""
                 class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2">
+                    Forgot your password?
+                </RouterLink> -->
+                <RouterLink
+                v-if="canReset"
+                class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Forgot your password?
                 </RouterLink>
 
