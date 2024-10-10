@@ -19,7 +19,7 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <GuestLayout>
+  <MainNavLayout>
     <div class="w-full min-h-[100vh] bg-[#F1F2F5] z-50 h-screen">
 
         <div class="mb-4 font-medium text-sm text-green-600">
@@ -97,5 +97,5 @@ defineProps({ posts: Object, user: Object });
 
         </form>
     </div>
-  </GuestLayout>
+  </MainNavLayout>
 </template>
