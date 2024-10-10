@@ -76,8 +76,8 @@ defineProps({ posts: Object, user: Object });
                 </PrimaryButton> -->
             </div>
             <div class="border-b border-b-gray-200"></div>
-            <div class="flex items-center">
-                
+            <div class="flex items-center justify-center pt-6 pb-2">
+
             </div>
             <PrimaryButton class="ml-4" :disabled="form.processing">
                     Login
