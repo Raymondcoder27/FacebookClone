@@ -65,7 +65,7 @@ defineProps({ posts: Object, user: Object });
                     Forgot your password?
                 </RouterLink>
 
-                <PrimaryButton class="ml-4" :class="{'opacity-25':form.processing}">
+                <PrimaryButton class="ml-4" :class="{'opacity-25':form.processing}" :disabled="form.processing">
                     Login
                 </PrimaryButton>
             </div>
