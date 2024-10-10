@@ -3,6 +3,7 @@ import MainNavLayout from "@/Layouts/MainNavLayout.vue";
 import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
 import PrimaryButton from "@/components/PrimaryButton.vue";
+import GuestLayout from "@/Layouts/GuestLayout.vue";
 // import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
@@ -18,7 +19,7 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <!-- <MainNavLayout> -->
+  <GuestLayout>
     <div class="w-full min-h-[100vh] bg-[#F1F2F5] z-50 h-screen">
 
         <div class="mb-4 font-medium text-sm text-green-600">
@@ -87,5 +88,5 @@ defineProps({ posts: Object, user: Object });
 
         </form>
     </div>
-  <!-- </MainNavLayout> -->
+  </GuestLayout>
 </template>
