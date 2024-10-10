@@ -67,11 +67,11 @@ defineProps({ posts: Object, user: Object });
                 class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2">
                     Forgot your password?
                 </RouterLink> -->
-                <RouterLink
+                <!-- <RouterLink
                 v-if="canReset"
                 class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Forgot your password?
-                </RouterLink>
+                </RouterLink> -->
                 <!-- <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Login
                 </PrimaryButton> -->
