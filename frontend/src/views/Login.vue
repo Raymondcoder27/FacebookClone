@@ -42,6 +42,7 @@ defineProps({ posts: Object, user: Object });
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
+                    v-model="form.email"
                     required
                     autofocs
                     autocomplete="username"
@@ -54,7 +55,7 @@ defineProps({ posts: Object, user: Object });
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
-                    v-model="form.email"
+                    v-model="form.password"
                     required
                     autofocs
                     autocomplete="username"
