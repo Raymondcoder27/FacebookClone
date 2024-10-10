@@ -1,5 +1,5 @@
 <script setup>
-
+    import MainNavLayout from '@/Layouts/MainNavLayout.vue';
 </script>
 
 <template>
