@@ -54,8 +54,15 @@ defineProps({ posts: Object, user: Object });
 
             <div class="block mt-4">
                 <label for="" class="flex items-center">
-                    <span class="text-sm ml-2 text-gray-600"></span>
+                    <Checkbox name="remember" v-model:checked="form.remember"/>
+                    <span class="text-sm ml-2 text-gray-600">Remember me</span>
                 </label>
+            </div>
+
+            <div class="flex items-center justify-center mt-4">
+                <RouterLink>
+                    Forgot your password?
+                </RouterLink>
             </div>
         </form>
     </div>
