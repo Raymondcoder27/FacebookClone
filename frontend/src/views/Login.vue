@@ -38,6 +38,19 @@ defineProps({ posts: Object, user: Object });
                     placeholder="Email"/>
                     <InputError class="mt-2" :message="form.errors.email"/>
             </div>
+
+            <div class="mt-4">
+                <TextInput
+                    id="password"
+                    type="password"
+                    class="mt-1 block w-full"
+                    v-model="form.email"
+                    required
+                    autofocs
+                    autocomplete="username"
+                    placeholder="Email"/>
+                    <InputError class="mt-2" :message="form.errors.password"/>
+            </div>
         </form>
     </div>
   <!-- </MainNavLayout> -->
