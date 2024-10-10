@@ -19,6 +19,10 @@ defineProps({ posts: Object, user: Object });
   <!-- <MainNavLayout> -->
     <div class="w-full min-h-[100vh] bg-[#F1F2F5] z-50 h-screen">
 
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ status }}
+        </div>
+
     </div>
   <!-- </MainNavLayout> -->
 </template>
