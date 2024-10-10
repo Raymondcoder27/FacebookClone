@@ -76,6 +76,13 @@ defineProps({ posts: Object, user: Object });
                 </PrimaryButton> -->
             </div>
             <div class="border-b border-b-gray-200"></div>
+            <div class="flex items-center">
+                
+            </div>
+            <PrimaryButton class="ml-4" :disabled="form.processing">
+                    Login
+                </PrimaryButton>
+
         </form>
     </div>
   <!-- </MainNavLayout> -->
