@@ -26,7 +26,7 @@ defineProps({ posts: Object, user: Object });
 
         <form action="" @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Email">
+                <!-- <InputLabel for="email" value="Email"> -->
                     <TextInput
                     id="email"
                     type="email"
@@ -36,8 +36,7 @@ defineProps({ posts: Object, user: Object });
                     autofocs
                     autocomplete="username"
                     placeholder="Email"/>
-                    <InputError class="mt-2" :message="form.errors.Email"
-                </InputLabel>
+                    <InputError class="mt-2" :message="form.errors.email"/>
             </div>
         </form>
     </div>
