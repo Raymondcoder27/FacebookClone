@@ -71,12 +71,11 @@ defineProps({ posts: Object, user: Object });
                 class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Forgot your password?
                 </RouterLink>
-
                 <!-- <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Login
                 </PrimaryButton> -->
-               
             </div>
+            <div class="border-b border-b-gray-200"></div>
         </form>
     </div>
   <!-- </MainNavLayout> -->
