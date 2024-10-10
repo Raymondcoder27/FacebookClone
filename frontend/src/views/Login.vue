@@ -53,7 +53,7 @@ defineProps({ posts: Object, user: Object });
                     <InputError class="mt-2" :message="form.errors.password"/>
             </div>
 
-            <div>
+            <div class="flex items-center justify-center pt-4">
                 <PrimaryButton class="ml-4" :disabled="form.processing">
                     Login
                 </PrimaryButton>
