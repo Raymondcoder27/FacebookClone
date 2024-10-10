@@ -51,6 +51,12 @@ defineProps({ posts: Object, user: Object });
                     placeholder="Email"/>
                     <InputError class="mt-2" :message="form.errors.password"/>
             </div>
+
+            <div class="block mt-4">
+                <label for="" class="flex items-center">
+                    <span class="text-sm ml-2 text-gray-600"></span>
+                </label>
+            </div>
         </form>
     </div>
   <!-- </MainNavLayout> -->
