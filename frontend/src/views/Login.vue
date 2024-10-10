@@ -1,10 +1,24 @@
 <script setup>
-    import MainNavLayout from '@/Layouts/MainNavLayout.vue';
+import MainNavLayout from "@/Layouts/MainNavLayout.vue";
+import CreatePostBox from "@/Layouts/CreatePostBox.vue";
+import Post from "@/components/Post.vue";
+
+import Camera from "vue-material-design-icons/Camera.vue";
+import Pen from "vue-material-design-icons/Pen.vue";
+
+import { useGeneralStore } from "@/stores/general";
+import { storeToRefs } from "pinia";
+const useGeneral = useGeneralStore();
+const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+
+defineProps({ posts: Object, user: Object });
 </script>
 
 <template>
-     <MainNavLayout>
-        <div class="font-semibold items-center justify-center flex bg-gray-100">Hello Login Page!!</div>
+  <Head title="User" />
+  <!-- <MainNavLayout> -->
+    <div class="w-full min-h-[100vh] bg-[#F1F2F5]">
 
-     </MainNavLayout>
+    </div>
+  <!-- </MainNavLayout> -->
 </template>
