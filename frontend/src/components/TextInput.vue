@@ -5,6 +5,12 @@
     defineEmits=('update:modelValue')
 
     const input = ref(null)
+
+    onMounted(()=>{
+        if(input.value.hasAttribute('Autofocus')){
+            input.value.focus()
+        }
+    })
 </script>
 <template>
     <input
