@@ -2,6 +2,7 @@
 import MainNavLayout from "@/Layouts/MainNavLayout.vue";
 import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
+import PrimaryButton from "@/components/PrimaryButton.vue";
 // import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
@@ -63,6 +64,10 @@ defineProps({ posts: Object, user: Object });
                 <RouterLink>
                     Forgot your password?
                 </RouterLink>
+
+                <PrimaryButton >
+                    Login
+                </PrimaryButton>
             </div>
         </form>
     </div>
