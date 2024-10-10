@@ -9,11 +9,11 @@ import Posts from './views/Posts.vue';
   <!-- <div class="flex text-red-300 text-xl underline">
     Hello World
   </div> -->
- <MainNavLayout>
+ <!-- <MainNavLayout> -->
   <!-- Posts -->
   <RouterView />
   <Posts/>
-  </MainNavLayout>
+  <!-- </MainNavLayout> -->
 </template>
 
 <style scoped>
