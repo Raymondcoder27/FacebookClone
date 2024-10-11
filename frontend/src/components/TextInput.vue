@@ -1,8 +1,8 @@
 <script setup>
     import { onMounted, ref } from 'vue';
-    defineProps=(['modelValue', 'placeholder'])
+    defineProps(['modelValue', 'placeholder'])
 
-    defineEmits=('update:modelValue')
+    defineEmits('update:modelValue')
 
     const input = ref(null)
 
