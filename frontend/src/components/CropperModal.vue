@@ -33,10 +33,10 @@ const crop = () => {
 
   let data = new FormData()
     data.append('image', fileInput.value.files[0] || '')
-    data.append('height', coordinates.height)
-    data.append('width', coordinates.width)
-    data.append('left', coordinates.left)
-    data.append('top', coordinates.top)
+    data.append('height', coordinates.height || '')
+    data.append('width', coordinates.width || '')
+    data.append('left', coordinates.left || '')
+    data.append('top', coordinates.top || '')
 }
 </script>
 
