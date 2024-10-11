@@ -44,7 +44,7 @@ defineProps({ posts: Object, user: Object });
       </div>
     </form> -->
     <div
-      class="bg-white border border-black shadow-black shadow-md text-lg text-black justify-center flex text-center rounded-md"
+      class="bg-blue border border-black shadow-black shadow-md text-lg text-black justify-center flex text-center rounded-md"
     >
       Hello World
     </div>
