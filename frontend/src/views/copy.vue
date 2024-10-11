@@ -45,16 +45,6 @@ defineProps({ posts: Object, user: Object });
 
         <form action="" @submit.prevent="submit">
           <div>
-            <!-- <InputLabel for="email" value="Email"> -->
-            <!-- <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocs
-                    autocomplete="username"
-                    placeholder="Email"/> -->
             <TextInput
               id="email"
               type="email"
@@ -89,20 +79,6 @@ defineProps({ posts: Object, user: Object });
           </div>
 
           <div class="flex items-center justify-center mt-4">
-            <!-- <RouterLink
-                v-if="canReset"
-                :href=""
-                class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2">
-                    Forgot your password?
-                </RouterLink> -->
-            <!-- <RouterLink
-                v-if="canReset"
-                class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Forgot your password?
-                </RouterLink> -->
-            <!-- <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Login
-                </PrimaryButton> -->
           </div>
           <div class="border-b border-b-gray-200"></div>
           <div class="flex items-center justify-center pt-6 pb-2">
