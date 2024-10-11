@@ -9,6 +9,19 @@
     import Plus from 'vue-material-design-icons/Plus.vue'
 
     const emit = defineEmits(['showModal'])
+
+    let fileInput = ref(null)
+    let cropper = ref(null)
+    let uploadedImage = ref(null)
+    let croppedImage = {
+        file: null,
+        imageUrl: null,
+        height: null,
+        width: null,
+        left: null,
+        top: null
+    }
+
 </script>
 
 <template>
