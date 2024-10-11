@@ -21,13 +21,28 @@ defineProps({ posts: Object, user: Object });
 <template>
   <Head title="Login" />
   <!-- <GuestLayout> -->
-    <div class="w-full min-h-[100vh] bg-white text-center">
-      <!-- <div class="w-full bg-red-300">
+  <div class="w-full min-h-[100vh] bg-white text-center">
+    <!-- <div class="w-full bg-red-300">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
       </div> -->
 
-     Hello World!!
-     
-    </div>
+    <form action="" @submit.prevent="submit">
+      <div>
+        <TextInput
+          id="email"
+          type="email"
+          class="mt-1 block w-full"
+          v-model="form.email"
+          required
+          autofocs
+          autocomplete="username"
+          placeholder="Email"
+        />
+        Hello World!!
+
+        <InputError class="mt-2" :message="form.errors.email" />
+      </div>
+    </form>
+  </div>
   <!-- </GuestLayout> -->
 </template>
