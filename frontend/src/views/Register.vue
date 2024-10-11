@@ -34,6 +34,18 @@ defineProps({ posts: Object, user: Object });
       <!-- <img src="/public/icons/FacebookLogo.png" class="text-sm" alt=""> -->
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
+            <TextInput
+            id="email"
+            type="email"
+            class="mt-1 block w-full"
+            required
+            autofocus
+            autocomplete="username"
+            placeholder="Name"
+          />
+
+
+
           <TextInput
             id="email"
             type="email"
@@ -57,6 +69,18 @@ defineProps({ posts: Object, user: Object });
             autofocus
             autocomplete="username"
             placeholder="Password"
+          />
+        </div>
+
+        <div class="mt-4">
+          <TextInput
+            id="password"
+            type="password"
+            class="mt-1 block w-full"
+            required
+            autofocus
+            autocomplete="username"
+            placeholder="Confirm Password"
           />
         </div>
 
