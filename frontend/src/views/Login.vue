@@ -20,7 +20,7 @@ defineProps({ posts: Object, user: Object });
 
 
 <template>
-  <Head title="Login" />
+  <Head title="Log in" />
   <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
 
   <GuestLayout>
@@ -53,15 +53,25 @@ defineProps({ posts: Object, user: Object });
             type="password"
             class="mt-1 block w-full"
             required
-            autofocs
+            autofocus
             autocomplete="username"
-            placeholder="Email"
+            placeholder="Password"
           />
         </div>
 
         <div class="flex items-center justify-center pt-4">
           <PrimaryButton class="w-full text-sm"> Login </PrimaryButton>
         </div>
+
+
+        <div class="border-b border-b-gray-200"></div>
+          <div class="flex items-center justify-center pt-6 pb-2">
+            <RouterLink
+              class="px-5 py-3 text-white bg-[#42B792] hover:bg-[#37A621] text-[20px] font-bold rounded-lg"
+            >
+              Create a new account.
+            </RouterLink>
+          </div>
       </form>
     </div>
   </GuestLayout>
