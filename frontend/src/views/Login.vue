@@ -20,13 +20,13 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <GuestLayout>
-    <div class="w-full min-h-[100vh] bg-[#F1F2F5] text-center">
-      <div class="w-full bg-white">
-        <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]"></div>
+  <!-- <GuestLayout> -->
+    <div class="w-full min-h-[100vh] bg-black text-center">
+      <div class="w-full bg-red-300">
+        <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
       </div>
 
-     Hello World!!
+     <!-- Hello World!! -->
     </div>
-  </GuestLayout>
+  <!-- </GuestLayout> -->
 </template>
