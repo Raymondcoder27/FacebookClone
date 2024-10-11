@@ -26,7 +26,7 @@ defineProps({ posts: Object, user: Object });
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
       </div> -->
 
-    <form action="" @submit.prevent="submit">
+    <!-- <form action="" @submit.prevent="submit">
       <div>
         <TextInput
           id="email"
@@ -34,7 +34,7 @@ defineProps({ posts: Object, user: Object });
           class="mt-1 block w-full"
           v-model="form.email"
           required
-          autofocs
+          autofocus
           autocomplete="username"
           placeholder="Email"
         />
@@ -42,7 +42,7 @@ defineProps({ posts: Object, user: Object });
 
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
-    </form>
+    </form> -->
   </div>
   <!-- </GuestLayout> -->
 </template>
