@@ -16,8 +16,9 @@
 </script>
 <template>
     <input
+    :placeholder="placeholder"
     :value="modelValue"
     ref="input"
     @input="$emit('update:modelValue', $event.target.value)" type="text" 
-    class="border-gray-300 focus:border-indigo-500 focus:boder-indigo-500 rounded-md shadow-md">
+    class="border-gray-300 focus:border-indigo-500 focus:boder-indigo-500 rounded-md shadow-md p-4">
 </template>
