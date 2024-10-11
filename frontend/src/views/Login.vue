@@ -73,6 +73,12 @@ defineProps({ posts: Object, user: Object });
               placeholder="Email"
             />
           </div>
+
+          <div class="flex items-center justify-center pt-4">
+            <PrimaryButton class="w-full" :disabled="form.processing">
+              Login
+            </PrimaryButton>
+          </div>
     </form>
   </div>
   <!-- </GuestLayout> -->
