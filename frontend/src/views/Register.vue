@@ -35,8 +35,8 @@ defineProps({ posts: Object, user: Object });
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
             <TextInput
-            id="email"
-            type="email"
+            id="name"
+            type="name"
             class="mt-1 block w-full"
             required
             autofocus
