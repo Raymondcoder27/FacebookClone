@@ -21,7 +21,7 @@ defineProps({ posts: Object, user: Object });
 
 
 <template>
-  <Head title="Log in" />
+  <Head title="Register" />
   <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
 
   <GuestLayout>
@@ -78,7 +78,7 @@ defineProps({ posts: Object, user: Object });
             <RouterLink
               class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
             >
-              Create a new account.
+              Log in.
             </RouterLink>
           </div>
       </form>
