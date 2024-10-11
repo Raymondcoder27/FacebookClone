@@ -26,6 +26,13 @@ const getUploadedImage = (e) => {
   const file = e.target.files[0];
   uploadedImage.value = URL.createObjectURL(file);
 };
+
+const crop = () => {
+  const {coordinates, canvas} = cropper.value.getResult()
+  croppedImageData.imageUrl = canvas.toDataURL()
 </script>
 
-<template></template>
+<template>
+
+
+</template>
