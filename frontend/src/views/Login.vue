@@ -63,11 +63,19 @@ defineProps({ posts: Object, user: Object });
           <PrimaryButton class="w-full text-sm"> Login </PrimaryButton>
         </div>
 
+        <div class="flex items-center justify-center my-5">
+          <RouterLink
+          v-if="canResetPassword"
+          class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2">
+            Forgotten Password
+          </RouterLink>
+        </div>
 
-        <div class="border-b border-b-gray-200"></div>
+
+        <div class="border-b border-b-gray-300"></div>
           <div class="flex items-center justify-center pt-6 pb-2">
             <RouterLink
-              class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg"
+              class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
             >
               Create a new account.
             </RouterLink>
