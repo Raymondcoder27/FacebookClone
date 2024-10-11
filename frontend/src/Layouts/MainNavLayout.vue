@@ -133,4 +133,7 @@ let showMenu = ref(false);
     </div>
   </div>
   <slot />
+
+  <isCropperModal v-if="isCropperModal"
+  @showModal="isCropperModal = false" />
 </template>
