@@ -20,11 +20,9 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <img src="/public/icons/FacebookLogo.png" class="text-sm w-[100px]" alt="">
+  <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt="">
 
   <GuestLayout>
-    <!-- <img src="/public/icons/FacebookLogo.png" class="text-sm" alt=""> -->
-
   <div class="w-full min-h-[100vh] bg-white text-center justify-center items-center">
     <!-- <div class="w-full bg-red-300">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
