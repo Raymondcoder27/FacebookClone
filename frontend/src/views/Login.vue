@@ -43,11 +43,21 @@ defineProps({ posts: Object, user: Object });
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
     </form> -->
-    <div
-      class="bg-blue border border-black shadow-black shadow-md text-lg text-black justify-center flex text-center rounded-md"
-    >
-      Hello World
-    </div>
+    <div>
+        <TextInput
+          id="email"
+          type="email"
+          class="mt-1 block w-full"
+          v-model="form.email"
+          required
+          autofocus
+          autocomplete="username"
+          placeholder="Email"
+        />
+        Hello World!!
+
+        <InputError class="mt-2" :message="form.errors.email" />
+      </div>
   </div>
   <!-- </GuestLayout> -->
 </template>
