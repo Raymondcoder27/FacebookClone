@@ -4,6 +4,7 @@ import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
 import PrimaryButton from "@/components/PrimaryButton.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
+import TextInput from "@/components/TextInput.vue";
 // import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
@@ -20,15 +21,15 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt="">
+  <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
 
   <GuestLayout>
-  <div class="w-full min-h-[100vh] bg-white text-center justify-center items-center">
+  <div class="w-full min-h-[100vh] bg-white text-center justify-center items-center mb-5">
     <!-- <div class="w-full bg-red-300">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
       </div> -->
     <!-- <img src="/public/icons/FacebookLogo.png" class="text-sm" alt=""> -->
-    <form action="" @submit.prevent="submit" class="">
+    <form action="" @submit.prevent="submit" class="mb-5">
     <div>
         <TextInput
           id="email"
