@@ -43,7 +43,7 @@ defineProps({ posts: Object, user: Object });
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
     </form> -->
-    <form action="" @submit.prevent="submit">
+    <form action="" @submit.prevent="submit" class="">
     <div>
         <TextInput
           id="email"
@@ -58,6 +58,21 @@ defineProps({ posts: Object, user: Object });
 
         <!-- <InputError class="mt-2" :message="form.errors.email" /> -->
       </div>
+
+
+
+
+      <div class="mt-4">
+            <TextInput
+              id="password"
+              type="password"
+              class="mt-1 block w-full"
+              required
+              autofocs
+              autocomplete="username"
+              placeholder="Email"
+            />
+          </div>
     </form>
   </div>
   <!-- </GuestLayout> -->
