@@ -43,8 +43,11 @@ defineProps({ posts: Object, user: Object });
         <InputError class="mt-2" :message="form.errors.email" />
       </div>
     </form> -->
-    <div class="bg-white border border-black shadow-black shadow-md text-lg text-black justify-center flex w-fit text-center">Hello World</div>
-
+    <div
+      class="bg-white border border-black shadow-black shadow-md text-lg text-black justify-center flex text-center rounded-md"
+    >
+      Hello World
+    </div>
   </div>
   <!-- </GuestLayout> -->
 </template>
