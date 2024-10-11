@@ -1,29 +1,31 @@
 <script setup>
-    import {ref} from 'vue'
-    import {useRoute, useRouter} from 'vue-router'
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-    import {Cropper, CircleStencil} from 'vue-advanced-cropper'
-    import 'vue-advanced-cropper/dist/style.css'
+import { Cropper, CircleStencil } from "vue-advanced-cropper";
+import "vue-advanced-cropper/dist/style.css";
 
-    import Close from 'vue-material-design-icons/Close.vue'
-    import Plus from 'vue-material-design-icons/Plus.vue'
+import Close from "vue-material-design-icons/Close.vue";
+import Plus from "vue-material-design-icons/Plus.vue";
 
-    const emit = defineEmits(['showModal'])
+const emit = defineEmits(["showModal"]);
 
-    let fileInput = ref(null)
-    let cropper = ref(null)
-    let uploadedImage = ref(null)
-    let croppedImage = {
-        file: null,
-        imageUrl: null,
-        height: null,
-        width: null,
-        left: null,
-        top: null
-    }
+let fileInput = ref(null);
+let cropper = ref(null);
+let uploadedImage = ref(null);
+let croppedImage = {
+  file: null,
+  imageUrl: null,
+  height: null,
+  width: null,
+  left: null,
+  top: null,
+};
 
+const getUploadedImage = (e) => {
+  const file = e.target.files[0];
+  uploadedImage.value = URL.createObjectURL(file);
+};
 </script>
 
-<template>
-    
-</template>
+<template></template>
