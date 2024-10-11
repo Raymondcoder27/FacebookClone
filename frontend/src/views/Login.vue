@@ -25,7 +25,7 @@ defineProps({ posts: Object, user: Object });
 
   <GuestLayout>
     <div
-      class="w-full min-h-[100vh] bg-white text-center justify-center items-center mb-5"
+      class="w-full max-h-[50vh] bg-white text-center justify-center items-center mb-5"
     >
       <!-- <div class="w-full bg-red-300">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
@@ -67,7 +67,7 @@ defineProps({ posts: Object, user: Object });
         <div class="border-b border-b-gray-200"></div>
           <div class="flex items-center justify-center pt-6 pb-2">
             <RouterLink
-              class="px-5 py-3 text-white bg-[#42B792] hover:bg-[#37A621] text-[20px] font-bold rounded-lg"
+              class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg"
             >
               Create a new account.
             </RouterLink>
