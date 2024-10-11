@@ -20,85 +20,13 @@ defineProps({ posts: Object, user: Object });
 
 <template>
   <Head title="Login" />
-  <MainNavLayout>
-    <div class="w-full min-h-[100vh] bg-[#F1F2F5]">
+  <GuestLayout>
+    <div class="w-full min-h-[100vh] bg-[#F1F2F5] text-center">
       <div class="w-full bg-white">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]"></div>
       </div>
 
-      <form action="" @submit.prevent="submit">
-          <div>
-            <!-- <InputLabel for="email" value="Email"> -->
-            <!-- <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocs
-                    autocomplete="username"
-                    placeholder="Email"/> -->
-            <TextInput
-              id="email"
-              type="email"
-              class="mt-1 block w-full"
-              v-model="form.email"
-              required
-              autofocs
-              autocomplete="username"
-              placeholder="Email"
-            />
-            <InputError class="mt-2" :message="form.errors.email" />
-          </div>
-
-          <div class="mt-4">
-            <TextInput
-              id="password"
-              type="password"
-              class="mt-1 block w-full"
-              v-model="form.password"
-              required
-              autofocs
-              autocomplete="username"
-              placeholder="Email"
-            />
-            <InputError class="mt-2" :message="form.errors.password" />
-          </div>
-
-          <div class="flex items-center justify-center pt-4">
-            <PrimaryButton class="w-full" :disabled="form.processing">
-              Login
-            </PrimaryButton>
-          </div>
-
-          <div class="flex items-center justify-center mt-4">
-            <!-- <RouterLink
-                v-if="canReset"
-                :href=""
-                class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2">
-                    Forgot your password?
-                </RouterLink> -->
-            <!-- <RouterLink
-                v-if="canReset"
-                class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Forgot your password?
-                </RouterLink> -->
-            <!-- <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Login
-                </PrimaryButton> -->
-          </div>
-          <div class="border-b border-b-gray-200"></div>
-          <div class="flex items-center justify-center pt-6 pb-2">
-            <RouterLink
-              class="px-5 py-3 text-white bg-[#42B792] hover:bg-[#37A621] text-[20px] font-bold rounded-lg"
-            >
-              Create a new account.
-            </RouterLink>
-          </div>
-          <PrimaryButton class="ml-4" :disabled="form.processing">
-            Login
-          </PrimaryButton>
-        </form>
+     Hello World!!
     </div>
-  </MainNavLayout>
+  </GuestLayout>
 </template>
