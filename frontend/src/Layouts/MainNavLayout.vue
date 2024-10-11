@@ -13,9 +13,12 @@ import Bell from "vue-material-design-icons/Bell.vue";
 import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
 
+import isCropperModal from "@/components/CropperModal.vue";
+
 const handleLogout = () => {
 
 }
+
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
