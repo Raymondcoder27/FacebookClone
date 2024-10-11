@@ -43,9 +43,11 @@ defineProps({ posts: Object, user: Object });
             autocomplete="username"
             placeholder="Name"
           />
+          </div>
 
 
 
+          <div class="mt-4">
           <TextInput
             id="email"
             type="email"
