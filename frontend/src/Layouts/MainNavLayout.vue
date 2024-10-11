@@ -13,7 +13,7 @@ import Bell from "vue-material-design-icons/Bell.vue";
 import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
 
-import isCropperModal from "@/components/CropperModal.vue";
+import CropperModal from "@/components/CropperModal.vue";
 
 const handleLogout = () => {
 
@@ -133,7 +133,6 @@ let showMenu = ref(false);
     </div>
   </div>
   <slot />
-
-  <isCropperModal v-if="isCropperModal"
+  <CropperModal v-if="isCropperModal"
   @showModal="isCropperModal = false" />
 </template>
