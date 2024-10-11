@@ -90,23 +90,23 @@ defineProps({ posts: Object, user: Object });
           <PrimaryButton class="w-full text-sm"> Login </PrimaryButton>
         </div>
 
-        <div class="flex items-center justify-center my-5">
+        <div class="flex items-center justify-center my-3">
           <RouterLink
           v-if="canResetPassword"
           class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Forgotten Password
+            Already Registered?
           </RouterLink>
         </div>
 
 
-        <div class="border-b border-b-gray-300"></div>
-          <div class="flex items-center justify-center pt-6 pb-2">
+        <!-- <div class="border-b border-b-gray-300"></div>
+          <div class="flex items-center justify-center pt-4 pb-2">
             <RouterLink
-              class="px-5 py-1 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
+              class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
             >
               Log in.
             </RouterLink>
-          </div>
+          </div> -->
       </form>
     </div>
   </GuestLayout>
