@@ -68,7 +68,7 @@ defineProps({ posts: Object, user: Object });
           <RouterLink
           v-if="canResetPassword"
           class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Forgotten Password
+            Forgot Password?
           </RouterLink>
         </div>
 
