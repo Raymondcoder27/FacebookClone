@@ -70,7 +70,11 @@ const crop = () => {
                 </div>
 
                 <div class="mx-auto w-[350px]">
-
+                  <Cropper 
+                  class="object-cover"
+                  ref="cropper"
+                  :stencil-component="CircleStencil"
+                  :src="uploadedImage" />
                 </div>
               </div>
             </div>
