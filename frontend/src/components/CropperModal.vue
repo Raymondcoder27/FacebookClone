@@ -69,7 +69,7 @@ const crop = () => {
                   <input type="file" id="image" ref="fileInput" @change="getUploadedImage" class="hidden">
                 </div>
 
-                <div class="mx-auto w-[350px]">
+                <div class="w-[350px] mx-auto">
                   <Cropper 
                   class="object-cover"
                   ref="cropper"
