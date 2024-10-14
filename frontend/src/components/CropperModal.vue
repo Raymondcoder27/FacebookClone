@@ -59,6 +59,14 @@ const crop = () => {
               <Close :size="28" fillColor="#5E6771"/>
               </div>
             </div>
+
+            <div class="flex items-center bg-white px-4 pb-4">
+              <div>
+                <div class="my-4">
+                  <label for="" class="flex items-center justify-center font-bold p-2 rounded-lg w-full cursor-pointer"></label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
