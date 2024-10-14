@@ -69,7 +69,7 @@ const crop = () => {
                   <input type="file" id="image" ref="fileInput" @change="getUploadedImage" class="hidden">
                 </div>
 
-                <div class="w-[350px] mx-auto">
+                <div class="w-[350px] mx-auto" v-if="uploadedImage">
                   <Cropper 
                   class="object-cover"
                   ref="cropper"
