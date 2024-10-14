@@ -63,7 +63,9 @@ const crop = () => {
             <div class="flex items-center bg-white px-4 pb-4">
               <div>
                 <div class="my-4">
-                  <label for="" class="flex items-center justify-center font-bold p-2 rounded-lg w-full cursor-pointer"></label>
+                  <label for="" class="flex items-center justify-center font-bold p-2 rounded-lg w-full cursor-pointer">
+                    <Plus  :size="20"/>Upload Photo
+                  </label>
                 </div>
               </div>
             </div>
