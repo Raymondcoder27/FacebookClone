@@ -45,5 +45,4 @@ const crop = () => {
 
 <template>
 
-
 </template>
