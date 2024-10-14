@@ -53,6 +53,9 @@ const crop = () => {
               <div class="text-[22px] font-extrabold w-full text-center">
                 Update Profile picture
               </div>
+              <div class="absolute right-3 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer p-1.5">
+
+              </div>
             </div>
           </div>
         </div>
