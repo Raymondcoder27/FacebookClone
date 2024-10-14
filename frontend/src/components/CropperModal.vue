@@ -44,7 +44,7 @@ const crop = () => {
 </script>
 
 <template>
-    <div class="fixed z-10">
+    <div class="fixed z-50">
       <div class="fixed inset-0 bg-white bg-opacity-60"></div>
       <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex flex-col min-h-full justify-center items-center py-2">
