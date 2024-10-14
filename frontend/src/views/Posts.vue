@@ -24,7 +24,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
         <div class="grid grid-rows-3 grid-flow-col w-full mt-[56px] max-w-[1600px] h-[calc(100%-56px)] mx-auto px-4">
             <div id="LeftSection" class="lg:block hidden xl:w-[345px]">
                 <div class="pt-4 pr-4 max-w-[320px]">
-                    <router-link to="/" class="flex items-center justify-start w-full cursor-pointer p-2 hover:bg-[#E5E6E9] rounded-md">
+                    <router-link to="/user" class="flex items-center justify-start w-full cursor-pointer p-2 hover:bg-[#E5E6E9] rounded-md">
                         <img src="https://picsum.photos/id/87/300/320" class="rounded-full ml-l min-w-[38px] max-h-[38px]">
                         <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div>
                     </router-link>
