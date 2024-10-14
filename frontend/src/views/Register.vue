@@ -93,6 +93,7 @@ defineProps({ posts: Object, user: Object });
         <div class="flex items-center justify-center my-3">
           <RouterLink
           v-if="canResetPassword"
+          to="/login"
           class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Already Registered?
           </RouterLink>

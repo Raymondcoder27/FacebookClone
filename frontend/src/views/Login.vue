@@ -76,6 +76,7 @@ defineProps({ posts: Object, user: Object });
         <div class="border-b border-b-gray-300"></div>
           <div class="flex items-center justify-center pt-6 pb-2">
             <RouterLink
+            to="/register"
               class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
             >
               Create a new account.
