@@ -56,7 +56,7 @@ const crop = () => {
               <div
               @click="$emit('showModal', false)"
                class="absolute right-3 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer p-1.5">
-
+              <Close :size="28" fillColor="#5E6771"/>
               </div>
             </div>
           </div>
