@@ -28,7 +28,7 @@ const getUploadedImage = (e) => {
 };
 
 const crop = () => {
-  const {coordinates, canvas} = cropper.value.getResult()
+  const { coordinates, canvas } = cropper.value.getResult()
   croppedImageData.imageUrl = canvas.toDataURL()
 
   let data = new FormData()
