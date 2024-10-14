@@ -68,6 +68,10 @@ const crop = () => {
                   </label>
                   <input type="file" id="image" ref="fileInput" @change="getUploadedImage" class="hidden">
                 </div>
+
+                <div class="mx-auto w-[350px]">
+
+                </div>
               </div>
             </div>
           </div>
