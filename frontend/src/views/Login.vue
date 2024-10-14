@@ -63,7 +63,7 @@ defineProps({ posts: Object, user: Object });
         <div class="flex items-center justify-center pt-4">
           <PrimaryButton class="w-full text-sm">
             <RouterLink
-            to="/home"
+            to="/home">
               Login
             </RouterLink>
            </PrimaryButton>
