@@ -66,6 +66,7 @@ const crop = () => {
                   <label for="" class="flex items-center justify-center font-bold p-2 rounded-lg w-full cursor-pointer">
                     <Plus  :size="20"/>Upload Photo
                   </label>
+                  <input type="file" id="image" ref="fileInput" @change="getUploadedImage" class="hidden">
                 </div>
               </div>
             </div>
