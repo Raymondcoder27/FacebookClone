@@ -1,6 +1,6 @@
 <script setup>
     import {ref, reactive} from 'vue';
-    import {useRouter} from 'vue-router';
+    import {useRoute, useRouter} from 'vue-router';
 
     import VideoImage from 'vue-material-design-icons/VideoImage.vue';
     import Image from 'vue-material-design-icons/Image.vue';
