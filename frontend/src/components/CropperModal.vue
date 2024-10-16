@@ -84,6 +84,11 @@ const crop = () => {
                   @click="$emit('showModal', false)"
                   class="w-full justify-center rounded-md py-2 text-gray-600 hover:text-gray-800 font-bold hover:shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-0">
                 Cancel</button>
+                <button
+                v-if="uploadedImage"
+                @click="crop">
+
+                </button>
                 </div>
               </div>
             </div>
