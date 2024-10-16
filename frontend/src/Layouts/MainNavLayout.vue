@@ -135,7 +135,7 @@ let showMenu = ref(false);
   <CropperModal
    v-if="isCropperModal"
   @showModal="isCropperModal = false" />
-  <ImageDisplay
+  <!-- <ImageDisplay
   v-if="isImageDisplay"
-  />
+  /> -->
 </template>
