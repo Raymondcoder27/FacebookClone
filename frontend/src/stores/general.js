@@ -1,15 +1,13 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import {useStorage} from '@pinia/plugin-persistedstate'
 
 export const useGeneralStore = defineStore('general', () => {
   const isPostOverlay = ref(false)
   const isCropperModal = ref(false)
   const isImageDisplay = ref(null)
-  function increment() {
-    count.value++
-  }
   
 
-  return { isPostOverlay, isCropperModal, isImageDisplay, increment }
+  return { isPostOverlay, isCropperModal, isImageDisplay}
 },
 {persist:true})
