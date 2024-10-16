@@ -23,8 +23,7 @@ const handleLogout = () => {
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } =
-  storeToRefs(useGeneral);
+const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 let showMenu = ref(false);
 </script>
