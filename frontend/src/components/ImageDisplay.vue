@@ -12,7 +12,7 @@
         <Close
         @click="isImageDisplay = null" fillColor="#000000" :size="30" class="absolute right-0 p-1 m-3 bg-gray-800 rounded-full cursor-pointer" />
         <div class="grid h-screen place-items-center">
-            <img src="" alt="" class="h-screen p-10 object-scale-down">
+            <img :src="isImageDisplay" alt="" class="h-screen p-10 object-scale-down">
         </div>
     </div>
 </template>
