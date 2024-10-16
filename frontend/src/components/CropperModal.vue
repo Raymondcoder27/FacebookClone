@@ -88,7 +88,7 @@ const crop = () => {
                 v-if="uploadedImage"
                 @click="crop"
                 type="button"
-                class="">
+                class="w-full rounded-md bg-blue-500 py-2 text-white font-bold shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-0">
                 </button>
                 </div>
               </div>
