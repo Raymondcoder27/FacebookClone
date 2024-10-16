@@ -16,6 +16,14 @@
     const {isPostOverlay} = storeToRefs(useGeneral);
 
     const emit = defineEmits(['showModal']);
+
+    let ImageDisplay = ref(null);
+
+    const form = reactive({
+        text: null,
+        image: null,
+    })
+    let error = ref(null);
 </script>
 
 <template>
