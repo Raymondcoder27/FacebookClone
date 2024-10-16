@@ -45,19 +45,19 @@ const crop = () => {
 
 <template>
     <div class="fixed z-50">
-      <div class="fixed inset-0 z-40 bg-white bg-opacity-60"></div>
-      <div class="fixed inset-0 z-50 overflow-y-auto">
+      <div class="fixed inset-0 bg-white bg-opacity-60"></div>
+      <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex flex-col min-h-full justify-center items-center py-2">
           <div class="transform overflow-hidden rounded-lg bg-white shadow-2xl transition-all max-w-xl">
             <div class="flex items-center py-4 border-b border-b-gray-300">
               <div class="text-[22px] font-extrabold w-full text-center">
                 Update Profile picture
               </div>
-              <div
+              <!-- <div
               @click="$emit('showModal', false)"
                class="absolute right-3 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer p-1.5">
               <Close :size="28" fillColor="#5E6771"/>
-              </div>
+              </div> -->
             </div>
 
             <div class="flex items-center bg-white px-4 pb-4">
