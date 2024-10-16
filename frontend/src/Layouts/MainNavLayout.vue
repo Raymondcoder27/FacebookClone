@@ -14,6 +14,7 @@ import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
 
 import CropperModal from "@/components/CropperModal.vue";
+import ImageDisplay from "@/components/ImageDisplay.vue";
 
 const handleLogout = () => {
 
@@ -136,7 +137,7 @@ let showMenu = ref(false);
    v-if="isCropperModal"
   @showModal="isCropperModal = false" />
 
-  <!-- <ImageDisplay
+  <ImageDisplay
   v-if="isImageDisplay"
-  /> -->
+  />
 </template>
