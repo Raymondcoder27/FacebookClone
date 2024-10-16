@@ -86,7 +86,9 @@ const crop = () => {
                 Cancel</button>
                 <button
                 v-if="uploadedImage"
-                @click="crop">
+                @click="crop"
+                type="button"
+                class="">
                 </button>
                 </div>
               </div>
