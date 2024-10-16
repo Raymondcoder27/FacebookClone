@@ -179,7 +179,7 @@ defineProps({ posts: Object, user: Object });
               <div class="flex flex-wrap items-center justify-start w-full">
                 <span class="w-1/3">
                   <img
-                  @click="isImageDisplay = 'https://picsum.photos/id/299/800/800'"
+                  @click="isImageDisplay = 'https://picsum.photos/id/78/800/800'"
                     src="https://picsum.photos/id/78/300/300"
                     class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                   />
