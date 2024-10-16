@@ -72,7 +72,7 @@
                 <div class="flex items-center justify-between pb-2">
                     <div class="flex items-center w-full mb-1">
                         <RouterLink to="/">
-                            <img @click="isImageDisplay = https://picsum.photos/id/299/800/800" src="https://picsum.photos/id/299/800/800" alt="" class="rounded-full min-w-[36px] max-h-[36px]">
+                            <img @click="isImageDisplay = 'https://picsum.photos/id/299/800/800'" src="https://picsum.photos/id/299/800/800" alt="" class="rounded-full min-w-[36px] max-h-[36px]">
                         </RouterLink>
                         <div class="flex items-center w-full">
                             <div class="flex items-center text-xs p-2 rounded-lg w-full bg-[#EFF2F5]">
