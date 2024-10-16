@@ -39,7 +39,7 @@ const crop = () => {
     data.append('top', coordinates.top || '')
 
     //send to backend
-    emit ("showModal", false)
+    emit ('showModal', false)
 }
 </script>
 
