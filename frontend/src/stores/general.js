@@ -1,6 +1,8 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import { useStorage } from '@pinia/plugin-persistedstate'
+// import { useStorage } from '@pinia/plugin-persistedstate'
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate'
+
 
 export const useGeneralStore = defineStore('general', () => {
   const isPostOverlay = ref(false)
