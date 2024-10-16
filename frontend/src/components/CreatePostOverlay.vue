@@ -9,7 +9,13 @@
     import ChevronDown from 'vue-material-design-icons/ChevronDown.vue';
     import Earth from 'vue-material-design-icons/Earth.vue';
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
+
     import {useGeneralStore} from '@/stores/general';
+    import {storeToRefs} from 'pinia';
+    const useGeneral = useGeneralStore();
+    const {isPostOverlay} = storeToRefs(useGeneral);
+
+    const emit = defineEmits(['close']);
 </script>
 
 <template>
