@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <div class="fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-80">
-        
+    <div id="ImageDisplay" class="fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-80">
+
     </div>
 </template>
