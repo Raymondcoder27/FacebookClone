@@ -15,7 +15,7 @@
     const useGeneral = useGeneralStore();
     const {isPostOverlay} = storeToRefs(useGeneral);
 
-    const emit = defineEmits(['close']);
+    const emit = defineEmits(['showModal']);
 </script>
 
 <template>
