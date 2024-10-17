@@ -21,4 +21,7 @@ func main() {
 		AllowCredentials: true,
 	}
 	r.Use(cors.New(config))
+
+	r.GET("/", controllers.Posts)
+	r.GET("/user", controllers.User)
 }
