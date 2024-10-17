@@ -42,7 +42,7 @@
             <div class="bg-white w-full mx-auto shadow-xl rounded-xl max-w-[600px]">
                 <div class="flex items-center relative mx-1 my-3.5">
                     <div class="font-extrabold w-full text-center text-[22px]">
-
+                        Create Post
                     </div>
                 </div>
             </div>
