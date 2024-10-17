@@ -1,9 +1,23 @@
 package main
 
-func init() {
+import (
+	"example.com/facebookclone/initializers"
+	"github.com/gin-contrib/cors"
+	"github.com/gin-gonic/gin"
+)
 
+func init() {
+	initializers.ConnectToDB()
 }
 
 func main() {
+	r := gin.Default()
 
+	config := cors.Config{
+		AllowOrigns:      []string{"*"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Authorization", "Content-Type"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+	}
 }

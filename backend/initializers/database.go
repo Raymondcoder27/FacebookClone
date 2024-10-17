@@ -21,11 +21,11 @@ func MigrateDB() {
 
 	err2 := DB.AutoMigrate(&models.Post{})
 	if err != nil {
-		log.Printf("Error migrating Comment Database: %v", err2)
+		log.Printf("Error migrating Post Database: %v", err2)
 	}
 
 	err3 := DB.AutoMigrate(&models.User{})
 	if err != nil {
-		log.Printf("Error migrating Comment Database: %v", err3)
+		log.Printf("Error migrating User Database: %v", err3)
 	}
 }
