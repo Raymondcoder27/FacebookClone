@@ -8,7 +8,9 @@ import (
 )
 
 func init() {
+	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
+	initializers.MigrateDB()
 }
 
 func main() {
