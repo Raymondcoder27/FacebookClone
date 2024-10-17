@@ -47,7 +47,7 @@
                     <div
                     @click="isPostOverlay = false" 
                     class="absolute right-3 p-1.5 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer">
-
+                    <Close :size="28" fillColor="#5E6771" />
                     </div>
                 </div>
             </div>
