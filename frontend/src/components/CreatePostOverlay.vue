@@ -82,11 +82,11 @@
                             <div class="flex items-center">
                                 <label for="image" class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
                                     <Image :size="27" fillColor="#43BE62" />
+                                </label>
                                     <input id="image" type="file" class="hidden" @input="getUploadedImage($event)">
                                     <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
-                                        
+                                        <EmoticonOutline :size="27" fillColor="#F8B927" />
                                     </button>
-                                </label>
                             </div>
                         </div>
                     </div>
