@@ -106,6 +106,7 @@ defineProps({ posts: Object, user: Object });
               Log in.
             </RouterLink>
           </div> -->
+          
       </form>
     </div>
   </GuestLayout>
