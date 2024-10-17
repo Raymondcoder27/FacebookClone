@@ -73,6 +73,14 @@
                                 class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
                                 fillColor="#5E6771"
                                  />
+                                 <img :src="ImageDisplay" alt="" class="rounded-lg mx-auto">
+                            </div>
+                        </div>
+
+                        <div class="border-2 rounded-xl mt-4 shadow-sm flex items-center justify-between">
+                            <div class="font-extrabold p-4">Add to your post</div>
+                            <div class="flex items-center">
+                                <label for="image" class="hover:bg-gray-200 rounded-full p-2 cursor-pointer"></label>
                             </div>
                         </div>
                     </div>
