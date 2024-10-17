@@ -20,4 +20,5 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}
+	r.Use(cors.New(config))
 }
