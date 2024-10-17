@@ -88,11 +88,19 @@
                                         <EmoticonOutline :size="27" fillColor="#F8B927" />
                                     </button>
                                     <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
-                                        <VideoImage :size="27" fillColor="#F8B927" />
+                                        <VideoImage :size="27" fillColor="#F12848" />
                                     </button>
                                     <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
-                                        <DotsHorizontal :size="27" fillColor="#F8B927" />
+                                        <DotsHorizontal :size="27" fillColor="#050505" />
                                     </button>
+                            </div>
+                        </div>
+
+                        <div v-if="error">
+                            <div class="w-full bg-red-100 text-red-700 rounded-lg mt-3 text-center">
+                                <div class="p-0.5">
+                                    {{ error }}
+                                </div>
                             </div>
                         </div>
                     </div>
