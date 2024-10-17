@@ -29,9 +29,13 @@ const useGeneral = useGeneralStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 let showMenu = ref(false);
+
+const user = ref(null);
 </script>
 
 <template>
+
+  {{user}}
   <div
     id="MainNav"
     class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]"
