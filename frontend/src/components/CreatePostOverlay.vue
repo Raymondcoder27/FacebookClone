@@ -66,8 +66,13 @@
                         </div>
                         <div class="max-h-[350px] overflow-auto">
                             <textarea name="" id="" cols="30" rows="3" placeholder="What's on your mind?" class="w-full border-0 mt-4 focus:ring-0 text-[22px]"></textarea>
-                            <div class="p-2 border border-gray-300 rounded-lg relative">
-                                <Close class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer" />
+                            <div v-if="form.image" class="p-2 border border-gray-300 rounded-lg relative">
+                                <Close
+                                :size="24"
+                                @click="clearImage()"
+                                class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
+                                fillColor="#5E6771"
+                                 />
                             </div>
                         </div>
                     </div>
