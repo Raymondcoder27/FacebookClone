@@ -29,6 +29,11 @@
         uploadedImage.value = URL.createObjectURL(file);
         form.image = e.target.files[0];
     }
+
+    const clearImage = () => {
+        ImageDisplay.value = null;
+        form.image = null;
+    }
 </script>
 
 <template>
