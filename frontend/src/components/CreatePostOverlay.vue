@@ -80,7 +80,13 @@
                         <div class="border-2 rounded-xl mt-4 shadow-sm flex items-center justify-between">
                             <div class="font-extrabold p-4">Add to your post</div>
                             <div class="flex items-center">
-                                <label for="image" class="hover:bg-gray-200 rounded-full p-2 cursor-pointer"></label>
+                                <label for="image" class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                                    <Image :size="27" fillColor="#43BE62" />
+                                    <input id="image" type="file" class="hidden" @input="getUploadedImage($event)">
+                                    <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                                        
+                                    </button>
+                                </label>
                             </div>
                         </div>
                     </div>
