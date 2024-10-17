@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="max-h-[350px] overflow-auto">
-
+                            <textarea name="" id="" cols="30" rows="3" placeholder="What's on your mind?" class="w-full border-0 mt-4 focus:ring-0 text-[22px]"></textarea>
                         </div>
                     </div>
                 </div>
