@@ -137,7 +137,7 @@ let showMenu = ref(false);
   <slot />
   <CropperModal
    v-if="isPostOverlay"
-  @showModal="isCreatePostOverlay = false" />
+  @showModal="isPostOverlay = false" />
 
 
   <CropperModal
