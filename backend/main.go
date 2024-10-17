@@ -1,6 +1,7 @@
 package main
 
 import (
+	"example.com/facebookclone/controllers"
 	"example.com/facebookclone/initializers"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -22,6 +23,6 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.GET("/", controller.Posts)
-	r.GET("/user", controller.User)
+	r.GET("/", controllers.Posts)
+	r.GET("/user", controllers.User)
 }
