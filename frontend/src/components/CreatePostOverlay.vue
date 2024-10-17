@@ -58,7 +58,8 @@
                             <div class="ml-4">
                                 <div class="font-extrabold">Raymond Mwebe</div>
                                 <div class="flex items-center justify-between bg-gray-200 px-2 rounded-lg w-[100px] p-0.5">
-
+                                    <Earth :size="18" />
+                                    <ChevronDown :size="18" class="pr-10 pl-1" />
                                 </div>
                             </div>
                         </div>
