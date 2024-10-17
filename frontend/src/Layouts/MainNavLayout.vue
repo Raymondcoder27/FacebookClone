@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
+
 import Magnify from "vue-material-design-icons/Magnify.vue";
 import Home from "vue-material-design-icons/Home.vue";
 import HomeOutline from "vue-material-design-icons/HomeOutline.vue";
@@ -15,7 +17,6 @@ import Logout from "vue-material-design-icons/Logout.vue";
 
 import CropperModal from "@/components/CropperModal.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
-import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
 const handleLogout = () => {
 
