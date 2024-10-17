@@ -26,7 +26,7 @@
     let error = ref(null);
 
     const getUploadedImage = (e) => {
-        ImageDisplay.value = URL.createObjectURL(file);
+        ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
         form.image = e.target.files[0];
     }
 
