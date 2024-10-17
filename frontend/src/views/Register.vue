@@ -87,7 +87,7 @@ defineProps({ posts: Object, user: Object });
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm"> Login </PrimaryButton>
+          <PrimaryButton class="w-full text-sm"> Register </PrimaryButton>
         </div>
 
         <div class="flex items-center justify-center my-3">
