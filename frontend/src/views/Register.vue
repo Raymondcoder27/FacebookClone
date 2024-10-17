@@ -99,7 +99,6 @@ defineProps({ posts: Object, user: Object });
           </RouterLink>
         </div>
 
-
         <!-- <div class="border-b border-b-gray-300"></div>
           <div class="flex items-center justify-center pt-4 pb-2">
             <RouterLink
