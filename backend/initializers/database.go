@@ -1,6 +1,11 @@
 package initializers
 
-import "gorm.io/gorm"
+import (
+	"log"
+
+	"example.com/facebookclone/models"
+	"gorm.io/gorm"
+)
 
 var DB *gorm.DB
 
@@ -9,5 +14,18 @@ func ConnectToDB() {
 }
 
 func MigrateDB() {
-	err := DB.AutoMigrate()
+	err := DB.AutoMigrate(&models.Comment{})
+	if err != nil {
+		log.Printf("Error migrating Comment Database: %v", err)
+	}
+
+	err2 := DB.AutoMigrate(&models.Post{})
+	if err != nil {
+		log.Printf("Error migrating Comment Database: %v", err2)
+	}
+
+	err3 := DB.AutoMigrate(&models.User{})
+	if err != nil {
+		log.Printf("Error migrating Comment Database: %v", err3)
+	}
 }
