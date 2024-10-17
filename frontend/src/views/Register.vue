@@ -57,7 +57,6 @@ defineProps({ posts: Object, user: Object });
             placeholder="Email"
           />
           <!-- Hello World!! -->
-
           <!-- <InputError class="mt-2" :message="form.errors.email" /> -->
         </div>
 
@@ -106,7 +105,7 @@ defineProps({ posts: Object, user: Object });
               Log in.
             </RouterLink>
           </div> -->
-          
+
       </form>
     </div>
   </GuestLayout>
