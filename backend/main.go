@@ -22,6 +22,6 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.GET("/", controllers.Posts)
-	r.GET("/user", controllers.User)
+	r.GET("/", controller.Posts)
+	r.GET("/user", controller.User)
 }
