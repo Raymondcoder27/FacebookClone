@@ -87,6 +87,12 @@
                                     <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
                                         <EmoticonOutline :size="27" fillColor="#F8B927" />
                                     </button>
+                                    <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                                        <VideoImage :size="27" fillColor="#F8B927" />
+                                    </button>
+                                    <button class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                                        <DotsHorizontal :size="27" fillColor="#F8B927" />
+                                    </button>
                             </div>
                         </div>
                     </div>
