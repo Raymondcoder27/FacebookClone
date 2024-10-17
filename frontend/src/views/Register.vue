@@ -19,7 +19,6 @@ const canResetPassword = true
 defineProps({ posts: Object, user: Object });
 </script>
 
-
 <template>
   <Head title="Register" />
   <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
