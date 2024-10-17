@@ -53,7 +53,9 @@
 
                 <div class="border-t border-t-gray-300">
                     <div class="p-4">
-                        <div class="flex items-center"></div>
+                        <div class="flex items-center">
+                            <img src="" alt="" class="rounded-full ml-1 min-w-[45px] max-h-[45px]">
+                        </div>
                     </div>
                 </div>
             </div>
