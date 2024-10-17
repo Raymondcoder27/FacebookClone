@@ -50,6 +50,12 @@
                     <Close :size="28" fillColor="#5E6771" />
                     </div>
                 </div>
+
+                <div class="border-t border-t-gray-300">
+                    <div class="p-4">
+                        <div class="flex items-center"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
