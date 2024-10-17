@@ -104,7 +104,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-extrabold rounded-lg p-1.5 mt-3"></button>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-extrabold rounded-lg p-1.5 mt-3">Post</button>
                     </div>
                 </div>
             </div>
