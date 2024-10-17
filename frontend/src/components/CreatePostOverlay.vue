@@ -44,6 +44,11 @@
                     <div class="font-extrabold w-full text-center text-[22px]">
                         Create Post
                     </div>
+                    <div
+                    @click="isPostOverlay = false" 
+                    class="absolute right-3 p-1.5 rounded-full bg-gray-200 hover:bg-gray-300 cursor-pointer">
+
+                    </div>
                 </div>
             </div>
         </div>
