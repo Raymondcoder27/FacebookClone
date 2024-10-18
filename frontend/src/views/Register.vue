@@ -20,7 +20,7 @@ const canResetPassword = true
 defineProps({ posts: Object, user: Object });
 
 
-const submit = async () => {
+const register = async () => {
   console.log("Registering...");
 
   try{
@@ -106,7 +106,7 @@ const submit = async () => {
 
         <div class="flex items-center justify-center pt-4">
           <PrimaryButton class="w-full text-sm"
-         "> Register </PrimaryButton>
+          @click="register()"> Register </PrimaryButton>
         </div>
 
         <div class="flex items-center justify-center my-3">

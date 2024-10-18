@@ -322,28 +322,28 @@ func UserShow(c *gin.Context) {
 }
 
 // Update user profile image
-func UserUpdateImage(c *gin.Context) {
-	// Get user from context (set by authentication middleware)
-	user, _ := c.Get("user")
+// func UserUpdateImage(c *gin.Context) {
+// 	// Get user from context (set by authentication middleware)
+// 	user, _ := c.Get("user")
 
-	// Validate image file
-	file, err := c.FormFile("image")
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Image file is required"})
-		return
-	}
+// 	// Validate image file
+// 	file, err := c.FormFile("image")
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Image file is required"})
+// 		return
+// 	}
 
-	// Use the ImageService to update the image
-	if err := services.UpdateImage(user.(models.User), file, c); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update image"})
-		return
-	}
+// 	// Use the ImageService to update the image
+// 	if err := services.UpdateImage(user.(models.User), file, c); err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update image"})
+// 		return
+// 	}
 
-	// Save updated user
-	if err := initializers.DB.Save(&user).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save user image"})
-		return
-	}
+// 	// Save updated user
+// 	if err := initializers.DB.Save(&user).Error; err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save user image"})
+// 		return
+// 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Profile image updated successfully", "user": user})
-}
+// 	c.JSON(http.StatusOK, gin.H{"message": "Profile image updated successfully", "user": user})
+// }
