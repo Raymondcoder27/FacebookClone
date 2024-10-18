@@ -44,8 +44,10 @@ func Login(c *gin.Context) {
 		Email    string
 		Password string
 	}
+
+	//Bind the request body to the body struct
 	if c.Bind(&body) != nil {
-		c.JSON(400, gin.H{"message": "Invalid email or password."})
+		c.JSON(400, gin.H{"message": "User not found."})
 	}
 
 	//Look up requested user

@@ -3,6 +3,7 @@ package main
 import (
 	"example.com/facebookclone/controllers"
 	"example.com/facebookclone/initializers"
+	"example.com/facebookclone/middleware"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -25,7 +26,8 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.GET("/register", controllers.Signup)
-	r.GET("/login", controllers.Login)
+	r.POST("/register", controllers.Signup)
+	r.POST("/login", controllers.Login)
+	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
 	r.Run()
 }
