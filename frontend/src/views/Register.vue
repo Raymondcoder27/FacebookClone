@@ -22,25 +22,16 @@ defineProps({ posts: Object, user: Object });
 
 const register = async () => {
   console.log("Registering...");
-  // const response = await fetch("http://localhost:8000/api/register", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     email: email.value,
-  //     password: password.value,
-  //   }),
-  // });
-  // const data = await response.json();
-  // console.log(data);
 
   try{
-    await axios.post('/register', {
+    await api.post('/register', {
       name: username.value,
       email: email.value,
       password: password.value,
     });
+
+      // const data = await response.json();
+  // console.log(data);
   }
   catch (error) {
     console.log(error);
@@ -114,7 +105,8 @@ const register = async () => {
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm"> Register </PrimaryButton>
+          <PrimaryButton class="w-full text-sm"
+          @click="register()"> Register </PrimaryButton>
         </div>
 
         <div class="flex items-center justify-center my-3">
