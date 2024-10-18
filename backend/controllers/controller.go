@@ -81,7 +81,7 @@ func UpdateUserImage(c *gin.Context) {
 	user.Image = "/images/old_image.png"
 
 	// Update the image using the service
-	updatedUser, err := services.UpdateImage(&user, fileHeader, width, height, left, top)
+	updatedUser, err := services.UpdateUserImage(&user, fileHeader, width, height, left, top)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
