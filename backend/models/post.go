@@ -10,4 +10,5 @@ type Post struct {
 	User     User      `gorm:"foreignKey:UserID" json:"user"`     // Relationship to User
 	Comments []Comment `gorm:"foreignKey:PostID" json:"comments"` // Relationship to Comments
 	Image    string    `json:"image"`                             // Add 'Image' field to hold image URL
+	Text     string    `json:"text"`                              // Add 'Text' field to hold post text
 }
