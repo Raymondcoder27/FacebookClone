@@ -9,5 +9,5 @@ func GetAllPosts(c *gin.Context) {
 	var posts []models.Post
 
 	//querry posts and preload related comments and user
-	if err := 
+	if err := DB.Preload
 }
