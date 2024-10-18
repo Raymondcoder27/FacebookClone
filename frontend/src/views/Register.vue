@@ -20,7 +20,7 @@ const canResetPassword = true
 defineProps({ posts: Object, user: Object });
 
 
-const register = async () => {
+const submit = async () => {
   console.log("Registering...");
 
   try{
@@ -54,7 +54,7 @@ const register = async () => {
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
             <TextInput
-            id="name"
+            id="username"
             type="name"
             class="mt-1 block w-full"
             required
@@ -87,7 +87,7 @@ const register = async () => {
             class="mt-1 block w-full"
             required
             autofocus
-            autocomplete="username"
+            autocomplete="password"
             placeholder="Password"
           />
         </div>
@@ -106,7 +106,7 @@ const register = async () => {
 
         <div class="flex items-center justify-center pt-4">
           <PrimaryButton class="w-full text-sm"
-          @click="register()"> Register </PrimaryButton>
+         "> Register </PrimaryButton>
         </div>
 
         <div class="flex items-center justify-center my-3">
