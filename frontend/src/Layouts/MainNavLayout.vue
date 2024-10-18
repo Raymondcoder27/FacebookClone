@@ -67,7 +67,7 @@ const user = ref(null);
         >
           <div>
             <Home
-              v-if="$route.path === '/'"
+              v-if="$route.path === '/home'"
               class="mx-auto"
               :size="27"
               fillColor="#1A73E3"
