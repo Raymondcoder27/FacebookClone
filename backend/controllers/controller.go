@@ -105,3 +105,47 @@ func GetPosts(c *gin.Context) {
 	// Custom response formatting if needed
 	c.JSON(http.StatusOK, gin.H{"posts": posts})
 }
+
+// CreatePost handles creating a new post
+func CreatePost(c *gin.Context) {
+	// Validate the text field
+	text := c.PostForm("text")
+	if text == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
+		return
+	}
+
+	// Initialize a new post
+	var post models.Post
+
+	// Handle image upload if provided
+	fileHeader, err := c.FormFile("image")
+	if err == nil && fileHeader != nil {
+		width, _ := strconv.Atoi(c.PostForm("width"))
+		height, _ := strconv.Atoi(c.PostForm("height"))
+		left, _ := strconv.Atoi(c.PostForm("left"))
+		top, _ := strconv.Atoi(c.PostForm("top"))
+
+		updatedPost, err := services.UpdateImage(&post, fileHeader, width, height, left, top)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
+			return
+		}
+		post = *updatedPost
+	}
+
+	// Assume the user is authenticated, and their ID is available in the context
+	userID := c.MustGet("userID").(uint) // This depends on how you've set up authentication
+
+	post.UserID = userID
+	post.Text = text
+
+	// Save the post to the database
+	if err := models.DB.Create(&post).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
+		return
+	}
+
+	// Return success response
+	c.JSON(http.StatusOK, gin.H{"post": post})
+}
