@@ -159,7 +159,7 @@ func DeletePost(c *gin.Context) {
 	var post models.Post
 
 	// Find the post
-	if err := models.DB.First(&post, postID).Error; err != nil {
+	if err := initializers.DB.First(&post, postID).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Post not found"})
 		return
 	}
@@ -176,7 +176,7 @@ func DeletePost(c *gin.Context) {
 	}
 
 	// Delete the post
-	if err := models.DB.Delete(&post).Error; err != nil {
+	if err := initializers.DB.Delete(&post).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not delete post"})
 		return
 	}

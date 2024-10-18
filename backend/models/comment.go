@@ -10,4 +10,5 @@ type Comment struct {
 	UserID  uint   `json:"user_id"`                       // Foreign key for User
 	Post    Post   `gorm:"foreignKey:PostID" json:"post"` // Relationship to Post
 	User    User   `gorm:"foreignKey:UserID" json:"user"` // Relationship to User
+	Text    string `json:"text"`                          // Add 'Text' field to hold comment text
 }
