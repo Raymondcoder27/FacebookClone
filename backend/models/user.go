@@ -10,4 +10,5 @@ type User struct {
 	Password string    `json:"password"`
 	Posts    []Post    `gorm:"foreignKey:UserID" json:"posts"`    // Relationship to Posts
 	Comments []Comment `gorm:"foreignKey:UserID" json:"comments"` // Relationship to Comments
+	Image    string
 }
