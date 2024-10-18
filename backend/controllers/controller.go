@@ -90,3 +90,18 @@ func UpdateUserImage(c *gin.Context) {
 	// Return the updated user with the new image
 	c.JSON(http.StatusOK, gin.H{"user": updatedUser})
 }
+
+// GetPosts returns a list of all posts with user and comments
+func GetPosts(c *gin.Context) {
+	var posts []models.Post
+
+	// Fetch posts with associated User and Comments, order by created_at descending
+	err := models.DB.Preload("User").Preload("Comments.User").Order("created_at desc").Find(&posts).Error
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not retrieve posts"})
+		return
+	}
+
+	// Custom response formatting if needed
+	c.JSON(http.StatusOK, gin.H{"posts": posts})
+}
