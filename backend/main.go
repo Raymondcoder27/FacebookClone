@@ -1,6 +1,7 @@
 package main
 
 import (
+	"example.com/facebookclone/auth"
 	"example.com/facebookclone/controllers"
 	"example.com/facebookclone/initializers"
 	"example.com/facebookclone/middleware"
@@ -26,9 +27,9 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.POST("/register", controllers.Signup)
-	r.POST("/login", controllers.Login)
-	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
+	r.POST("/register", auth.Signup)
+	r.POST("/login", auth.Login)
+	r.GET("/validate", middleware.RequireAuth, auth.Validate)
 
 	// Protected routes (middleware required)
 	authGroup := r.Group("/", middleware.RequireAuth)
