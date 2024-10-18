@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
 
 	"example.com/facebookclone/contracts"
@@ -141,11 +143,44 @@ func CreatePost(c *gin.Context) {
 	post.Text = text
 
 	// Save the post to the database
-	if err := models.DB.Create(&post).Error; err != nil {
+	if err := initializers.DB.Create(&post).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
 		return
 	}
 
 	// Return success response
 	c.JSON(http.StatusOK, gin.H{"post": post})
+}
+
+// DeletePost deletes a post by its ID
+func DeletePost(c *gin.Context) {
+	// Get the post ID from the URL parameter
+	postID := c.Param("id")
+	var post models.Post
+
+	// Find the post
+	if err := models.DB.First(&post, postID).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Post not found"})
+		return
+	}
+
+	// Check if the post has an associated image and delete it
+	if post.Image != "" {
+		imagePath := filepath.Join("public/images", filepath.Base(post.Image))
+		if _, err := os.Stat(imagePath); err == nil {
+			if err := os.Remove(imagePath); err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not delete image"})
+				return
+			}
+		}
+	}
+
+	// Delete the post
+	if err := models.DB.Delete(&post).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not delete post"})
+		return
+	}
+
+	// Return success response
+	c.JSON(http.StatusOK, gin.H{"message": "Post deleted"})
 }
