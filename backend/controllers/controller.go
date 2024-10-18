@@ -17,7 +17,8 @@ func GetAllPosts(c *gin.Context) {
 	}
 
 	//map posts to the post response format
-	var postsResponse []contracts.PostResponse
+	var postResponses []contracts.PostResponse
+
 	for _, post := range posts {
 		postResponse := contracts.PostResponse{
 			ID:        post.ID,
@@ -31,5 +32,25 @@ func GetAllPosts(c *gin.Context) {
 				Image: "",
 			},
 		}
+
+		//map comments to the comment response format
+		var commentsResponse []contracts.CommentResponse
+
+		for _, comment := range post.Comments {
+			commentResponse := contracts.CommentResponse{
+				ID:   comment.ID,
+				Text: comment.Text,
+				User: contracts.UserResponse{
+					ID:    comment.User.ID,
+					Name:  comment.User.Name,
+					Email: comment.User.Email,
+					Image: "",
+				},
+			}
+			commentsResponse = append(commentsResponse, commentResponse)
+		}
+		postResponses = append(postResponses, postResponse)
 	}
+
+	c.JSON(200, gin.H{"posts": postResponses})
 }
