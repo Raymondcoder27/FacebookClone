@@ -47,7 +47,7 @@ func Login(c *gin.Context) {
 
 	//Bind the request body to the body struct
 	if c.Bind(&body) != nil {
-		c.JSON(400, gin.H{"message": "User not found."})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "User not found."})
 	}
 
 	//Look up requested user
