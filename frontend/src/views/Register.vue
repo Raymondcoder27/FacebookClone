@@ -5,6 +5,7 @@ import Post from "@/components/Post.vue";
 import PrimaryButton from "@/components/PrimaryButton.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import TextInput from "@/components/TextInput.vue";
+import api from "@/api";
 // import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
@@ -17,6 +18,34 @@ const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true
 
 defineProps({ posts: Object, user: Object });
+
+
+const register = async () => {
+  console.log("Registering...");
+  // const response = await fetch("http://localhost:8000/api/register", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     email: email.value,
+  //     password: password.value,
+  //   }),
+  // });
+  // const data = await response.json();
+  // console.log(data);
+
+  try{
+    await axios.post('/register', {
+      name: username.value,
+      email: email.value,
+      password: password.value,
+    });
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 </script>
 
 <template>
