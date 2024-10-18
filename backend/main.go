@@ -29,5 +29,24 @@ func main() {
 	r.POST("/register", controllers.Signup)
 	r.POST("/login", controllers.Login)
 	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
+
+	// Protected routes (middleware required)
+	authGroup := r.Group("/", middleware.RequireAuth)
+	{
+		authGroup.GET("/", controllers.GetPosts)              // Home route to get posts
+		authGroup.POST("/post", controllers.CreatePost)       // Route to create a post
+		authGroup.DELETE("/post/:id", controllers.DeletePost) // Route to delete a post
+
+		authGroup.POST("/comment", controllers.CreateComment)       // Route to create a comment
+		authGroup.DELETE("/comment/:id", controllers.DeleteComment) // Route to delete a comment
+
+		authGroup.GET("/user/:id", controllers.GetUser)                   // Route to get user details
+		authGroup.POST("/user/update-image", controllers.UpdateUserImage) // Route to update user image
+
+		authGroup.GET("/profile", controllers.EditProfile)      // Route to edit profile
+		authGroup.PATCH("/profile", controllers.UpdateProfile)  // Route to update profile
+		authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
+	}
+
 	r.Run()
 }
