@@ -23,6 +23,8 @@ func ConnectToDB() {
 
 	dsn := os.Getenv("DB")
 
+	log.Println("Connecting to database with DSN:", dsn)
+
 	if dsn == "" {
 		log.Fatal("Database url is not set")
 	}
