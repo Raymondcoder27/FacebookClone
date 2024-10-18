@@ -96,7 +96,7 @@ func GetPosts(c *gin.Context) {
 	var posts []models.Post
 
 	// Fetch posts with associated User and Comments, order by created_at descending
-	err := models.DB.Preload("User").Preload("Comments.User").Order("created_at desc").Find(&posts).Error
+	err := initializers.DB.Preload("User").Preload("Comments.User").Order("created_at desc").Find(&posts).Error
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not retrieve posts"})
 		return
