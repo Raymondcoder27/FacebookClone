@@ -61,7 +61,38 @@ func GetAllPosts(c *gin.Context) {
 	c.JSON(200, gin.H{"posts": postResponses})
 }
 
-// UpdateUserImage updates the user's profile picture
+// // UpdateUserImage updates the user's profile picture
+// func UpdateUserImage(c *gin.Context) {
+// 	// Get the uploaded file from the request
+// 	fileHeader, err := c.FormFile("image")
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid file upload"})
+// 		return
+// 	}
+
+// 	// Get cropping dimensions from the form
+// 	width, _ := strconv.Atoi(c.PostForm("width"))
+// 	height, _ := strconv.Atoi(c.PostForm("height"))
+// 	left, _ := strconv.Atoi(c.PostForm("left"))
+// 	top, _ := strconv.Atoi(c.PostForm("top"))
+
+// 	// Fetch the user from your database (e.g., based on session or JWT token)
+// 	var user models.User // In a real case, you would get the user from DB
+// 	// Simulating fetching user. Replace with DB logic:
+// 	user.ID = 1
+// 	user.Image = "/images/old_image.png"
+
+// 	// Update the image using the service
+// 	updatedUser, err := services.UpdateUserImage(&user, fileHeader, width, height, left, top)
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+// 		return
+// 	}
+
+// 	// Return the updated user with the new image
+// 	c.JSON(http.StatusOK, gin.H{"user": updatedUser})
+// }
+
 func UpdateUserImage(c *gin.Context) {
 	// Get the uploaded file from the request
 	fileHeader, err := c.FormFile("image")
@@ -76,16 +107,29 @@ func UpdateUserImage(c *gin.Context) {
 	left, _ := strconv.Atoi(c.PostForm("left"))
 	top, _ := strconv.Atoi(c.PostForm("top"))
 
+	userID, exists := c.Get("userID")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "User not authenticated"})
+		return
+	}
+
 	// Fetch the user from your database (e.g., based on session or JWT token)
-	var user models.User // In a real case, you would get the user from DB
-	// Simulating fetching user. Replace with DB logic:
-	user.ID = 1
-	user.Image = "/images/old_image.png"
+	var user models.User
+	if err := initializers.DB.Where("id = ?", userID).First(&user).Error; err != nil { // Replace `userID` appropriately
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "User not found"})
+		return
+	}
 
 	// Update the image using the service
 	updatedUser, err := services.UpdateUserImage(&user, fileHeader, width, height, left, top)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Save the updated user model to the database
+	if err := initializers.DB.Save(updatedUser).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save user image"})
 		return
 	}
 
@@ -183,4 +227,123 @@ func DeletePost(c *gin.Context) {
 
 	// Return success response
 	c.JSON(http.StatusOK, gin.H{"message": "Post deleted"})
+}
+
+func CommentStore(c *gin.Context) {
+	// Get request data
+	var requestBody struct {
+		Text   string `json:"text" binding:"required"`
+		PostID uint   `json:"post_id" binding:"required"`
+	}
+
+	if err := c.ShouldBindJSON(&requestBody); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Get user from context (set by authentication middleware)
+	user, _ := c.Get("user")
+
+	// Create the comment
+	comment := models.Comment{
+		Text:   requestBody.Text,
+		UserID: user.(models.User).ID,
+		PostID: requestBody.PostID,
+	}
+
+	// Save to the database
+	if err := initializers.DB.Create(&comment).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create comment"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Comment created successfully", "comment": comment})
+}
+
+// Destroy a comment by ID
+func CommentDestroy(c *gin.Context) {
+	// Get comment ID from the URL
+	id := c.Param("id")
+
+	// Find the comment
+	var comment models.Comment
+	if err := initializers.DB.First(&comment, id).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Comment not found"})
+		return
+	}
+
+	// Delete the comment
+	if err := initializers.DB.Delete(&comment).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete comment"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Comment deleted successfully"})
+}
+
+// Show posts of the logged-in user
+func UserIndex(c *gin.Context) {
+	// Get user from context (set by authentication middleware)
+	user, _ := c.Get("user")
+
+	// Find posts of the user
+	var posts []models.Post
+	if err := initializers.DB.Where("user_id = ?", user.(models.User).ID).Order("created_at desc").Find(&posts).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get posts"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"posts": posts})
+}
+
+// Show a specific user by ID along with their posts
+func UserShow(c *gin.Context) {
+	// Get user ID from the URL
+	id := c.Param("id")
+
+	// Find user by ID
+	var user models.User
+	if err := initializers.DB.First(&user, id).Error; err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "User not found"})
+		return
+	}
+
+	// Find posts of the user
+	var posts []models.Post
+	if err := initializers.DB.Where("user_id = ?", id).Order("created_at desc").Find(&posts).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get posts"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"user":  user,
+		"posts": posts,
+	})
+}
+
+// Update user profile image
+func UserUpdateImage(c *gin.Context) {
+	// Get user from context (set by authentication middleware)
+	user, _ := c.Get("user")
+
+	// Validate image file
+	file, err := c.FormFile("image")
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Image file is required"})
+		return
+	}
+
+	// Use the ImageService to update the image
+	if err := services.UpdateImage(user.(models.User), file, c); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update image"})
+		return
+	}
+
+	// Save updated user
+	if err := initializers.DB.Save(&user).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save user image"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Profile image updated successfully", "user": user})
 }
