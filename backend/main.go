@@ -25,6 +25,6 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.GET("/", controllers.Posts)
-	r.GET("/user", controllers.User)
+	r.GET("/register", controllers.Signup)
+	r.GET("/login", controllers.Login)
 }
