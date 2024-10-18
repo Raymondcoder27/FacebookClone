@@ -27,4 +27,5 @@ func main() {
 
 	r.GET("/register", controllers.Signup)
 	r.GET("/login", controllers.Login)
+	r.Run()
 }
