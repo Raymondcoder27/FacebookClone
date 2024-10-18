@@ -5,7 +5,7 @@ import Post from "@/components/Post.vue";
 import PrimaryButton from "@/components/PrimaryButton.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import TextInput from "@/components/TextInput.vue";
-import api from "@/api";
+import api from "@/config/api";
 // import TextInput from "@"
 
 import Camera from "vue-material-design-icons/Camera.vue";
