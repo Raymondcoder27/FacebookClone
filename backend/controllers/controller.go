@@ -16,6 +16,7 @@ import (
 
 func Signup(c *gin.Context) {
 	var body struct {
+		Name     string
 		Email    string
 		Password string
 	}
