@@ -32,6 +32,11 @@ const submit = async () => {
       
       //store the token in local storage
       localStorage.setItem('token', token)
+
+      await api.get("/validate")
+      localStorage.getItem('token', token)
+
+      
       router.push("/home")
     }catch(error){
       console.error("error logging in.")
