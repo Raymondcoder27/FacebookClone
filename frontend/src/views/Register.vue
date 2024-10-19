@@ -13,6 +13,7 @@ import Pen from "vue-material-design-icons/Pen.vue";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+import router from "@/router";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true
@@ -29,6 +30,7 @@ const register = async () => {
       email: email.value,
       password: password.value,
     });
+    router.push("/login")
 
       // const data = await response.json();
   // console.log(data);

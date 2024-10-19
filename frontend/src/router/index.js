@@ -27,6 +27,7 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView,
+       meta: { requiresAuth: true }, 
     },
     {
       path: '/about',
@@ -34,7 +35,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
+       meta: { requiresAuth: true }, 
     },
     {
       path: '/user',
@@ -42,7 +44,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/User.vue')
+      component: () => import('../views/User.vue'),
+       meta: { requiresAuth: true }, 
     },
     {
       path: '/register',
@@ -50,7 +53,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Register.vue')
+      component: () => import('../views/Register.vue'),
+      meta: { requiresAuth: false }, 
     },
     {
       path: '/login',
@@ -58,7 +62,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Login.vue')
+      component: () => import('../views/Login.vue'),
+      meta: { requiresAuth: false }, 
     },
     {
       path: '/posts',
@@ -66,9 +71,24 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Posts.vue')
+      component: () => import('../views/Posts.vue'),
+      meta: { requiresAuth: true }, 
     }
   ]
 })
+
+
+
+// Navigation Guard
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('token'); // Check for token
+
+  if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
+    // If the route requires auth and user is not authenticated
+    next({ name: 'login' }); // Redirect to login
+  } else {
+    next(); // Proceed to the route
+  }
+});
 
 export default router

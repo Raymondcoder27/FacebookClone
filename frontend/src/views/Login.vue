@@ -9,6 +9,7 @@ import TextInput from "@/components/TextInput.vue";
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
+import { useRouter } from "vue-router";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
@@ -17,6 +18,26 @@ const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true
 
 defineProps({ posts: Object, user: Object });
+
+const submit = async () => {
+    console.log("logging in...")
+
+    try{
+      await api.post("/login", {
+        email: email.value,
+        password: password.value,
+      });
+      //assuming response contains a token
+      const token = response.data.token;
+      
+      //store the token in local storage
+      localStorage.setItem('token', token)
+      router.push("/home")
+    }catch(error){
+      console.error("error logging in.")
+      alert("Login failed, please check your credentials.")
+    }
+}
 </script>
 
 
@@ -35,6 +56,7 @@ defineProps({ posts: Object, user: Object });
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
           <TextInput
+          v-model="email"
             id="email"
             type="email"
             class="mt-1 block w-full"
@@ -50,6 +72,7 @@ defineProps({ posts: Object, user: Object });
 
         <div class="mt-4">
           <TextInput
+          v-model="password"
             id="password"
             type="password"
             class="mt-1 block w-full"
