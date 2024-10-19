@@ -36,11 +36,11 @@ const submit = async () => {
       await api.get("/validate")
       localStorage.getItem('token', token)
 
-      
+
       router.push("/home")
     }catch(error){
       console.error("error logging in.")
-      alert("Login failed, please check your credentials.")
+      // alert("Login failed, please check your credentials.")
     }
 }
 </script>
