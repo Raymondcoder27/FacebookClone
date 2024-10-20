@@ -29,7 +29,7 @@ const submit = async () => {
     console.log("logging in...")
 
     try{
-      await api.post("/login", {
+     const response = await api.post("/login", {
         email: email.value,
         password: password.value,
       });
