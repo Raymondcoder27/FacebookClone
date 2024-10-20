@@ -25,29 +25,52 @@ const password = ref('')
 
 defineProps({ posts: Object, user: Object });
 
+// const submit = async () => {
+//     console.log("logging in...")
+
+//     try{
+//      const response = await api.post("/login", {
+//         email: email.value,
+//         password: password.value,
+//       });
+//       //assuming response contains a token
+//       const token = response.data.token;
+      
+//       //store the token in local storage
+//       localStorage.setItem('token', token)
+
+//       await api.get("/validate")
+//       localStorage.getItem('token', token)
+
+//       router.push("/home")
+//     }catch(error){
+//       console.error("error logging in.")
+//       // alert("Login failed, please check your credentials.")
+//     }
+// }
+
+
+const error = ref(null);
+
 const submit = async () => {
     console.log("logging in...")
 
-    try{
-     const response = await api.post("/login", {
-        email: email.value,
-        password: password.value,
-      });
-      //assuming response contains a token
-      const token = response.data.token;
-      
-      //store the token in local storage
-      localStorage.setItem('token', token)
+    try {
+        const response = await api.post("/login", {
+            email: email.value,
+            password: password.value,
+        });
+        const token = response.data.token;
 
-      await api.get("/validate")
-      localStorage.getItem('token', token)
+        localStorage.setItem('token', token);
+        await api.get("/validate");
 
-      router.push("/home")
-    }catch(error){
-      console.error("error logging in.")
-      // alert("Login failed, please check your credentials.")
+        router.push("/home");
+    } catch (error) {
+        error.value = "Login failed. Please check your credentials.";
     }
-}
+};
+
 </script>
 
 
