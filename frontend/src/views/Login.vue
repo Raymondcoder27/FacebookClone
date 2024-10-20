@@ -19,6 +19,9 @@ const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true
 
+const email = ref('')
+const password = ref('')
+
 defineProps({ posts: Object, user: Object });
 
 const submit = async () => {
