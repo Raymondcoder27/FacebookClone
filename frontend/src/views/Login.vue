@@ -6,10 +6,12 @@ import PrimaryButton from "@/components/PrimaryButton.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import TextInput from "@/components/TextInput.vue";
 // import TextInput from "@"
+import api from "@/config/api";
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
+import router from "@/router";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
@@ -35,7 +37,6 @@ const submit = async () => {
 
       await api.get("/validate")
       localStorage.getItem('token', token)
-
 
       router.push("/home")
     }catch(error){
