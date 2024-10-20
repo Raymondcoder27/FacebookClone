@@ -88,7 +88,6 @@ const submit = async () => {
             class="mt-1 block w-full"
             required
             autofocus
-            autocomplete="username"
             placeholder="Password"
           />
         </div>
