@@ -48,6 +48,7 @@ func Login(c *gin.Context) {
 	//Bind the request body to the body struct
 	if c.Bind(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password."})
+		return
 	}
 
 	//Look up requested user
@@ -57,12 +58,14 @@ func Login(c *gin.Context) {
 	if user.ID == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "User not found."})
 		return
+		return
 	}
 
 	//compare passed in password with saved password
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(body.Password))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to hash password"})
+		return
 	}
 
 	//Generate a JWT token
@@ -75,6 +78,7 @@ func Login(c *gin.Context) {
 	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to create token."})
+		return
 	}
 
 	//return with the user
