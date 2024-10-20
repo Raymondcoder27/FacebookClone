@@ -12,6 +12,7 @@ import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
 // import { useRouter } from "vue-router";
 import router from "@/router";
+import {ref} from "vue"
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
