@@ -58,7 +58,6 @@ func Login(c *gin.Context) {
 	if user.ID == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "User not found."})
 		return
-		return
 	}
 
 	//compare passed in password with saved password
