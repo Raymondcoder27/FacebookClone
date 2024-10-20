@@ -88,6 +88,7 @@ const submit = async () => {
             class="mt-1 block w-full"
             required
             autofocus
+            autocomplete="password"
             placeholder="Password"
           />
         </div>
@@ -95,7 +96,6 @@ const submit = async () => {
         <div class="flex items-center justify-center pt-4">
           <PrimaryButton class="w-full text-sm">
             <RouterLink
-            type="button"
             to="/home">
               Login
             </RouterLink>
