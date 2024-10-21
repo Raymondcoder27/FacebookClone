@@ -17,6 +17,8 @@ import {ref} from "vue"
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+
+const authStore = useAuthStore()
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true
