@@ -61,9 +61,16 @@ const submit = async () => {
             password: password.value,
         });
         const token = response.data.token;
+        console.log(token)
 
         localStorage.setItem('token', token);
+
+
+        
+        localStorage.getItem('token', token)
         await api.get("/validate");
+
+        // localStorage.getItem('token', token)
 
         router.push("/home");
     } catch (error) {
