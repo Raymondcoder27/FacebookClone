@@ -67,11 +67,8 @@ const submit = async () => {
 
 
 
-        localStorage.getItem('token', token)
-        await api.get("/validate", {
-          headers: application/JSON,
-          bearer: token,
-        });
+        // localStorage.getItem('token', token)
+        await api.get("/validate");
 
         // localStorage.getItem('token', token)
 
