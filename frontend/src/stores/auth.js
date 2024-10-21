@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import router from '@/router'
-import api from '@/api'  // Use the axios instance
+import api from '@/config/api'  // Use the axios instance
 
 export const useAuthStore = defineStore('auth', () => {
   // State
