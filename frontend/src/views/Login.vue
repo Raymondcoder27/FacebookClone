@@ -7,6 +7,7 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
 import TextInput from "@/components/TextInput.vue";
 // import TextInput from "@"
 import api from "@/config/api";
+import { useAuthStore } from "@/stores/auth";
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
