@@ -34,15 +34,10 @@ let showMenu = ref(false);
 
 const user = async () => {
     console.log("retrieving user...");
-
     error.value = null; // Reset error state before attempting login
-
     try {
-        // Call the login action from the auth store
         await api.get('/posts');
 
-        // On successful login, navigate to the home page
-        // router.push("/home");
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
