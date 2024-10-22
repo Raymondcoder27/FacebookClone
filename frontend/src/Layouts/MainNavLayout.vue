@@ -39,7 +39,7 @@ onMounted(() => {
   //     console.log(user);
   //   }
   userDetails.value = user
-  console.log(user)
+  console.log(userDetails)
 });
 </script>
 

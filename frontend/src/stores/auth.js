@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('auth', () => {
 
       if (response.status === 200) {
         const tokenResponse = response.data.token  // Assuming the token is in response.data.token
-        localStorage.setItem('user', JSON.stringify(email))  // Assuming email as user identifier
+        localStorage.setItem('user', JSON.stringify())  // Assuming email as user identifier
         localStorage.setItem('token', tokenResponse)  // Store token as a string
         user.value = email
         token.value = tokenResponse
