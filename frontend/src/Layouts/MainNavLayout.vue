@@ -32,14 +32,14 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-onMounted(() => {
-  const userDetails = api.get("/validate");
+// onMounted(() => {
+//   const userDetails = api.get("/validate");
 
-  // const userDetails = authStore.validate();
-  // const user = ref(
-  localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
-  console.log(userDetails);
-});
+//   // const userDetails = authStore.validate();
+//   // const user = ref(
+//   localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
+//   console.log(userDetails);
+// });
 </script>
 
 <template>
