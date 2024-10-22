@@ -36,7 +36,7 @@ const user = async () => {
     console.log("retrieving user...");
     error.value = null; // Reset error state before attempting login
     try {
-        await api.get('/posts');
+        await api.get('/validate');
 
     } catch (err) {
         // Set error message if login fails
