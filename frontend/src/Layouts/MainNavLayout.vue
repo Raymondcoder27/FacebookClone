@@ -32,7 +32,7 @@ const userDetails = ref(null)
 
 onMounted(() => {
   const user = ref(
-    localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
+    localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
   )
   // const user = api.get("/validate");
   //   if (response.status === 200) {
