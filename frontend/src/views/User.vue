@@ -12,6 +12,16 @@ const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 defineProps({ posts: Object, user: Object });
+
+
+onMounted(() => {
+  const userDetails = api.get("/validate");
+
+  // const userDetails = authStore.validate();
+  // const user = ref(
+  localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
+  console.log(userDetails);
+});
 </script>
 
 <template>
