@@ -31,6 +31,23 @@ export const useAuthStore = defineStore('auth', () => {
     } catch (error) {
       throw new Error('Invalid credentials')  // Handle login failure
     }
+
+
+
+
+
+    try {
+      const response = await api.get('/validate')
+      if (response.status === 200) {
+        // If validation succeeds, return true or set user data
+        localStorage.setItem('userDetails', JSON.stringify(response.data))
+        return true
+      }
+    } catch (error) {
+      // If the validation fails, logout the user
+      logout()
+      return false
+    }
   }
 
   const validate = async () => {
