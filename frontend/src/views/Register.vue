@@ -26,7 +26,7 @@ const register = async () => {
 
   try{
     await api.post('/register', {
-      name: username.value,
+      // name: username.value,
       email: email.value,
       password: password.value,
     });
@@ -37,13 +37,15 @@ const register = async () => {
   }
   catch (error) {
     console.log(error);
+    // error.value = error
   }
 }
 </script>
 
 <template>
-  <Head title="Register" />
+  <!-- <Head title="Register" /> -->
   <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
+  <div v-if="error" class="text-red-500">{{ error }}</div>
 
   <GuestLayout>
     <div
