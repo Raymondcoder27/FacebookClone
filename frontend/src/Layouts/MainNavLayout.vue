@@ -30,13 +30,11 @@ const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral
 
 let showMenu = ref(false);
 
-// const user = ref(null);
-
 const user = async () => {
     console.log("retrieving user...");
     error.value = null; // Reset error state before attempting login
     try {
-        await api.get('/validate');
+       const response = await api.get('/validate');
 
     } catch (err) {
         // Set error message if login fails
@@ -51,7 +49,7 @@ const user = async () => {
     id="MainNav"
     class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]"
   >
-  {{user}}
+  {{response}}
 
     <div id="NavLeft" class="flex items-center justify-start w-[260px]">
       <router-link to="/home" class="pl-3 min-w-[55px]">
