@@ -23,20 +23,24 @@ const handleLogout = () => {};
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+import { useAuthStore } from "@/stores/auth";
 const useGeneral = useGeneralStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } =
   storeToRefs(useGeneral);
 
 let showMenu = ref(false);
 const userDetails = ref(null)
+const authStore = useAuthStore()
 
 onMounted(() => {
-  const userDetails = api.get("/validate");
+  // const userDetails = api.get("/validate");
 
-  
-  const user = ref(
+  const userDetails = authStore.validate()
+
+
+  // const user = ref(
     localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
-  )
+  // )
   //   if (response.status === 200) {
   //     console.log(user);
   //   }
