@@ -43,11 +43,7 @@ export const useAuthStore = defineStore('auth', () => {
         localStorage.setItem('userDetails', JSON.stringify(response.data))
         return true
       }
-    } catch (error) {
-      // If the validation fails, logout the user
-      logout()
-      return false
-    }
+    } 
   }
 
   const validate = async () => {
