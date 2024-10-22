@@ -35,8 +35,7 @@ const authStore = useAuthStore()
 onMounted(() => {
   // const userDetails = api.get("/validate");
 
-  const userDetails = authStore.validate()
-
+  const userDetails = authStore.validate();
   // const user = ref(
     localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
   // )
