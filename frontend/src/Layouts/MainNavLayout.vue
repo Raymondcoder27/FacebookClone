@@ -33,12 +33,23 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 
 
+// const getUserDetails = async () => {
+//   // const token = authStore.token
+//   const response = await api.get("/user");
+//   userDetails.value = response.data
+//   console.log(userDetails)
+// }
+
+
 const getUserDetails = async () => {
-  // const token = authStore.token
-  const response = await api.get("/user");
-  userDetails.value = response.data
-  console.log(userDetails)
-}
+  const token = authStore.token; // Fetch the token from the authStore
+  const response = await api.get("/user", {
+    headers: {
+      Authorization: `Bearer ${token}`, // Attach the token
+    },
+  });
+  userDetails.value = response.data;
+};
 
 
 onMounted(() => {
