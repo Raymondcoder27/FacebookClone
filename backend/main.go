@@ -34,7 +34,7 @@ func main() {
 	// Protected routes (middleware required)
 	authGroup := r.Group("/", middleware.RequireAuth)
 	{
-		authGroup.GET("/", controllers.GetAllPosts)           // Home route to get posts
+		authGroup.GET("/posts", controllers.GetAllPosts)      // Home route to get posts
 		authGroup.POST("/post", controllers.CreatePost)       // Route to create a post
 		authGroup.DELETE("/post/:id", controllers.DeletePost) // Route to delete a post
 
