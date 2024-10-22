@@ -30,10 +30,14 @@ const { isPostOverlay, isCropperModal, isImageDisplay } =
 let showMenu = ref(false);
 
 onMounted(() => {
-  const user = api.get("/validate");
-    if (response.status === 200) {
-      console.log(user);
-    }
+  const user = ref(
+    localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
+  )
+  // const user = api.get("/validate");
+  //   if (response.status === 200) {
+  //     console.log(user);
+  //   }
+  console.log(user)
 });
 </script>
 
