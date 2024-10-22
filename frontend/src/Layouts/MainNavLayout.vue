@@ -36,6 +36,10 @@ const user = async () => {
     try {
        const response = await api.get('/validate');
 
+       if (response.status === 200) {
+        const userDetails = response.data
+       }
+
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
@@ -49,7 +53,7 @@ const user = async () => {
     id="MainNav"
     class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]"
   >
-  {{response}}
+  {{userDetails}}
 
     <div id="NavLeft" class="flex items-center justify-start w-[260px]">
       <router-link to="/home" class="pl-3 min-w-[55px]">
