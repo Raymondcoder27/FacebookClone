@@ -37,14 +37,7 @@ onMounted(() => {
 
   const userDetails = authStore.validate();
   // const user = ref(
-  localStorage.getItem("userDetails")
-    ? JSON.parse(localStorage.getItem("userDetails"))
-    : null;
-  // )
-  //   if (response.status === 200) {
-  //     console.log(user);
-  //   }
-  // userDetails.value = user
+  localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
   console.log(userDetails);
 });
 </script>
