@@ -46,7 +46,7 @@ onMounted(() => {
     id="MainNav"
     class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]"
   >
-    {{ user }}
+    {{user}}
 
     <div id="NavLeft" class="flex items-center justify-start w-[260px]">
       <router-link to="/home" class="pl-3 min-w-[55px]">
