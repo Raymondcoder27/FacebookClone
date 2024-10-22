@@ -36,14 +36,12 @@ export const useAuthStore = defineStore('auth', () => {
 
 
 
-    try {
       const response = await api.get('/validate')
       if (response.status === 200) {
         // If validation succeeds, return true or set user data
         localStorage.setItem('userDetails', JSON.stringify(response.data))
         return true
       }
-    } 
   }
 
   const validate = async () => {
