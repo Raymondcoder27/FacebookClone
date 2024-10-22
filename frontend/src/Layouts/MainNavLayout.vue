@@ -14,6 +14,7 @@ import FacebookMessenger from "vue-material-design-icons/FacebookMessenger.vue";
 import Bell from "vue-material-design-icons/Bell.vue";
 import Logout from "vue-material-design-icons/Logout.vue";
 // Removed unused imports for brevity
+import api from "@/config/api";
 
 import CropperModal from "@/components/CropperModal.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
@@ -29,7 +30,7 @@ const { isPostOverlay, isCropperModal, isImageDisplay } =
 let showMenu = ref(false);
 
 onMounted(() => {
-   api.get("/validate");
+  const user = api.get("/validate");
 
     if (response.status === 200) {
       console.log(user);
