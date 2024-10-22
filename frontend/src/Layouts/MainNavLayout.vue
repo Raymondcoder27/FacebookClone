@@ -29,16 +29,11 @@ const { isPostOverlay, isCropperModal, isImageDisplay } =
 let showMenu = ref(false);
 
 onMounted(() => {
-  try {
-    const user = api.get("/validate");
+   api.get("/validate");
 
     if (response.status === 200) {
       console.log(user);
     }
-  } catch (err) {
-    // Set error message if login fails
-    error.value = "Login failed. Please check your credentials.";
-  }
 });
 </script>
 
