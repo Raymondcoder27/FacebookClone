@@ -29,21 +29,23 @@ const { isPostOverlay, isCropperModal, isImageDisplay } =
   storeToRefs(useGeneral);
 
 let showMenu = ref(false);
-const userDetails = ref(null)
-const authStore = useAuthStore()
+const userDetails = ref(null);
+const authStore = useAuthStore();
 
 onMounted(() => {
   // const userDetails = api.get("/validate");
 
   const userDetails = authStore.validate();
   // const user = ref(
-    localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
+  localStorage.getItem("userDetails")
+    ? JSON.parse(localStorage.getItem("userDetails"))
+    : null;
   // )
   //   if (response.status === 200) {
   //     console.log(user);
   //   }
   // userDetails.value = user
-  console.log(userDetails)
+  console.log(userDetails);
 });
 </script>
 
@@ -52,7 +54,7 @@ onMounted(() => {
     id="MainNav"
     class="flex w-full fixed z-50 items-center justify-between bg-white shadow-xl border-b h-[56px]"
   >
-  {{userDetails}}
+    {{ userDetails }}
     <div id="NavLeft" class="flex items-center justify-start w-[260px]">
       <router-link to="/home" class="pl-3 min-w-[55px]">
         <img src="/public/icons/FacebookLogoCircle.png" alt="" />
