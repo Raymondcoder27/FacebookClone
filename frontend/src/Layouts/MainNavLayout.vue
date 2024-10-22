@@ -37,7 +37,6 @@ onMounted(() => {
 
   const userDetails = authStore.validate()
 
-
   // const user = ref(
     localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
   // )
