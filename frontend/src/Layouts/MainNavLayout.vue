@@ -35,6 +35,7 @@ const authStore = useAuthStore();
 // onMounted(() => {
 
 const validate = async () => {
+  const token = authStore.token
   const response = await api.get("/validate");
   const userDetails = response.data
   console.log(userDetails)
