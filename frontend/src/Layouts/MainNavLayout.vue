@@ -33,6 +33,10 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 
 // onMounted(() => {
+
+const validate = async () => {
+  const userDetails = await api.get("/validate");
+}
 //   const userDetails = api.get("/validate");
 
 //   // const userDetails = authStore.validate();
@@ -41,6 +45,7 @@ const authStore = useAuthStore();
 //   console.log(userDetails);
 // });
 </script>
+
 
 <template>
   <div
