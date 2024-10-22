@@ -10,20 +10,20 @@ import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-import {onMounted} from 'vue'
+// import {onMounted} from 'vue'
 
 defineProps({ posts: Object, user: Object });
 
 
-onMounted(() => {
-  const response = api.get("/validate");
+// onMounted(() => {
+//   const response = api.get("/validate");
 
-  // const userDetails = authStore.validate();
-  localStorage.setItem('userDetails', JSON.stringify(response.data))
-  // const user = ref(
-  localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
-  console.log(userDetails);
-});
+//   // const userDetails = authStore.validate();
+//   localStorage.setItem('userDetails', JSON.stringify(response.data))
+//   // const user = ref(
+//   localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
+//   console.log(userDetails);
+// });
 </script>
 
 <template>
