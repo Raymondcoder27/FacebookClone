@@ -32,21 +32,18 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-// onMounted(() => {
 
-const validate = async () => {
-  const token = authStore.token
+const getUserDetails = async () => {
+  // const token = authStore.token
   const response = await api.get("/validate");
-  const userDetails = response.data
+  const userDetails.value = response.data
   console.log(userDetails)
 }
-//   const userDetails = api.get("/validate");
 
-//   // const userDetails = authStore.validate();
-//   // const user = ref(
-//   localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
-//   console.log(userDetails);
-// });
+
+onMounted(() => {
+  getUserDetails();
+});
 </script>
 
 
