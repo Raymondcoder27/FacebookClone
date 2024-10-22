@@ -15,9 +15,10 @@ defineProps({ posts: Object, user: Object });
 
 
 onMounted(() => {
-  const userDetails = api.get("/validate");
+  const response = api.get("/validate");
 
   // const userDetails = authStore.validate();
+  localStorage.setItem('userDetails', JSON.stringify(response.data))
   // const user = ref(
   localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
   console.log(userDetails);
@@ -26,8 +27,9 @@ onMounted(() => {
 
 <template>
   <Head title="User" />
-  {{ user }}
   <MainNavLayout>
+  {{ user }}
+
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
