@@ -31,14 +31,16 @@ let showMenu = ref(false);
 const userDetails = ref(null)
 
 onMounted(() => {
+  const userDetails = api.get("/validate");
+
+  
   const user = ref(
     localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null
   )
-  // const user = api.get("/validate");
   //   if (response.status === 200) {
   //     console.log(user);
   //   }
-  userDetails.value = user
+  // userDetails.value = user
   console.log(userDetails)
 });
 </script>
