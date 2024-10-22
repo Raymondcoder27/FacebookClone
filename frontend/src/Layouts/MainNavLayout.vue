@@ -35,8 +35,8 @@ const authStore = useAuthStore();
 
 const getUserDetails = async () => {
   // const token = authStore.token
-  const response = await api.get("/validate");
-  const userDetails.value = response.data
+  const response = await api.get("/user");
+  userDetails.value = response.data
   console.log(userDetails)
 }
 

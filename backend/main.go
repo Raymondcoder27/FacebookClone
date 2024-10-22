@@ -38,6 +38,8 @@ func main() {
 		authGroup.POST("/post", controllers.CreatePost)       // Route to create a post
 		authGroup.DELETE("/post/:id", controllers.DeletePost) // Route to delete a post
 
+		authGroup.GET("/user", controllers.GetLoggedInUser) // Route to get logged in user details
+
 		// authGroup.POST("/comment", controllers.CreateComment)       // Route to create a comment
 		// authGroup.DELETE("/comment/:id", controllers.DeleteComment) // Route to delete a comment
 
