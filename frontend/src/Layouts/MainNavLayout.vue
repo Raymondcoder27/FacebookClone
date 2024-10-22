@@ -36,6 +36,7 @@ const authStore = useAuthStore();
 
 const validate = async () => {
   const userDetails = await api.get("/validate");
+  console.log(userDetails)
 }
 //   const userDetails = api.get("/validate");
 
