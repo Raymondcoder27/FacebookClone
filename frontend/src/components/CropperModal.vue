@@ -97,7 +97,7 @@ const crop = () => {
                 <div class="flex gap-4" :class="uploadedImage ? 'pt-4': ''">
                   <button 
                   type="button"
-                  @click="$emit('showModal', false)"
+                  @click="emit('showModal', false)"
                   class="w-full justify-center rounded-md py-2 text-gray-600 hover:text-gray-800 font-bold hover:shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-0">
                 Cancel</button>
                 <button
