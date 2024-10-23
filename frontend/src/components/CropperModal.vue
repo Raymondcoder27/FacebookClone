@@ -8,7 +8,6 @@ import Close from "vue-material-design-icons/Close.vue";
 import Plus from "vue-material-design-icons/Plus.vue";
 
 const emit = defineEmits(["showModal"]);
-
 // import { watch } from 'vue';
 // watch(uploadedImage, (newValue) => {
 //   if (cropper.value) {
