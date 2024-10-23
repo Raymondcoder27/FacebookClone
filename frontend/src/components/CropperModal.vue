@@ -81,7 +81,7 @@ const crop = () => {
                     <Plus  :size="20"/>Upload Photo
                   </label>
                   <!-- <input type="file" id="image" ref="fileInput" class="hidden" @change="getUploadedImage" > -->
-                  <input type="file" id="image" ref="fileInput" class="hidden" @input="getUploadedImage($event)" >
+                  <input type="file" id="image" ref="fileInput" class="hidden" @change="getUploadedImage($event)" >
                   <!-- <input id="image" type="file" class="hidden" @input="getUploadedImage($event)"> -->
                 </div>
 
