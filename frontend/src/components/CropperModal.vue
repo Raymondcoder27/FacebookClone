@@ -18,7 +18,6 @@ const emit = defineEmits(["showModal"]);
 //   }
 // });
 
-
 let fileInput = ref(null);
 let cropper = ref(null);
 let uploadedImage = ref(null);
