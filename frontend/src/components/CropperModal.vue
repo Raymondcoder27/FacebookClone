@@ -30,7 +30,6 @@ let croppedImageData = {
   left: null,
   top: null,
 };
-
 const file = ref(null)
 
 const getUploadedImage = (e) => {
