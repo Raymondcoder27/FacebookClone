@@ -56,7 +56,6 @@ const getUploadedImage = (e) => {
 //     emit ('showModal', false)
 // }
 
-
 const crop = () => {
   if (!cropper.value) {
     console.error("No cropper instance found");
