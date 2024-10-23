@@ -124,7 +124,7 @@ const crop = () => {
                   class="object-cover"
                   ref="cropper"
                   :stencil-component="CircleStencil"
-                  :src="uploadedImage.value" />
+                  :src="uploadedImage" />
                 </div>
 
                 <div class="flex gap-4" :class="uploadedImage ? 'pt-4': ''">
