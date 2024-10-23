@@ -40,21 +40,47 @@ const getUploadedImage = (e) => {
 //     }
 
 
+// const crop = () => {
+//   const { coordinates, canvas } = cropper.value.getResult()
+//   croppedImageData.imageUrl = canvas.toDataURL()
+
+//   let data = new FormData();
+//   // data.append('image', fileInput.value.files[0] || '')
+//     data.append('image', file.value || '')
+//     data.append('height', coordinates.height || '')
+//     data.append('width', coordinates.width || '')
+//     data.append('left', coordinates.left || '')
+//     data.append('top', coordinates.top || '')
+
+//     //send to backend
+//     emit ('showModal', false)
+// }
+
+
 const crop = () => {
-  const { coordinates, canvas } = cropper.value.getResult()
-  croppedImageData.imageUrl = canvas.toDataURL()
+  if (!cropper.value) {
+    console.error("No cropper instance found");
+    return;
+  }
+  
+  const { coordinates, canvas } = cropper.value.getResult();
+  if (!coordinates) {
+    console.error("No cropping coordinates found");
+    return;
+  }
 
+  croppedImageData.imageUrl = canvas.toDataURL();
   let data = new FormData();
-  // data.append('image', fileInput.value.files[0] || '')
-    data.append('image', file.value || '')
-    data.append('height', coordinates.height || '')
-    data.append('width', coordinates.width || '')
-    data.append('left', coordinates.left || '')
-    data.append('top', coordinates.top || '')
+  data.append('image', file.value || '');
+  data.append('height', coordinates.height || '');
+  data.append('width', coordinates.width || '');
+  data.append('left', coordinates.left || '');
+  data.append('top', coordinates.top || '');
 
-    //send to backend
-    emit ('showModal', false)
-}
+  //send to backend
+  emit('showModal', false);
+};
+
 </script>
 
 <template>
