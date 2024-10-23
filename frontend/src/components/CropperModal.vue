@@ -31,6 +31,7 @@ const getUploadedImage = (e) => {
 //         form.image = e.target.files[0];
 //     }
 
+
 // const crop = () => {
 //   const { coordinates, canvas } = cropper.value.getResult()
 //   croppedImageData.imageUrl = canvas.toDataURL()
@@ -66,7 +67,7 @@ const crop = () => {
   data.append('width', coordinates.width || '');
   data.append('left', coordinates.left || '');
   data.append('top', coordinates.top || '');
-  
+
   //send to backend
   emit('showModal', false);
 };
