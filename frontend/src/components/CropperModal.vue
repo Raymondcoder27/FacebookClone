@@ -46,7 +46,7 @@ const crop = () => {
 
   let data = new FormData();
   // data.append('image', fileInput.value.files[0] || '')
-    data.append('image', fileInput.value || '')
+    data.append('image', file.value || '')
     data.append('height', coordinates.height || '')
     data.append('width', coordinates.width || '')
     data.append('left', coordinates.left || '')
@@ -91,7 +91,7 @@ const crop = () => {
                   class="object-cover"
                   ref="cropper"
                   :stencil-component="CircleStencil"
-                  :src="uploadedImage.value" />
+                  :src="uploadedImage" />
                 </div>
 
                 <div class="flex gap-4" :class="uploadedImage ? 'pt-4': ''">
