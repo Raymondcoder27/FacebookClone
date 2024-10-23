@@ -11,7 +11,6 @@ import Plus from "vue-material-design-icons/Plus.vue";
 const emit = defineEmits(["showModal"]);
 
 // import { watch } from 'vue';
-
 // watch(uploadedImage, (newValue) => {
 //   if (cropper.value) {
 //     cropper.value.refresh();  // Ensure cropper reinitializes
