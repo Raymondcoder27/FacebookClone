@@ -15,7 +15,6 @@ const emit = defineEmits(["showModal"]);
 //     cropper.value.refresh();  // Ensure cropper reinitializes
 //   }
 // });
-
 let fileInput = ref(null);
 let cropper = ref(null);
 let uploadedImage = ref(null);
