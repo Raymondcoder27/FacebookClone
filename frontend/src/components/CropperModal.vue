@@ -30,7 +30,7 @@ const file = ref(null)
 
 const getUploadedImage = (e) => {
   uploadedImage.value = URL.createObjectURL(e.target.files[0]);
-  file = e.target.files[0];
+  file.value = e.target.files[0];
 };
 
 
