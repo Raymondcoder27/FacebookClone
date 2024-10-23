@@ -45,7 +45,8 @@ const crop = () => {
   croppedImageData.imageUrl = canvas.toDataURL()
 
   let data = new FormData();
-    data.append('image', fileInput.value.files[0] || '')
+  // data.append('image', fileInput.value.files[0] || '')
+    data.append('image', fileInput.value || '')
     data.append('height', coordinates.height || '')
     data.append('width', coordinates.width || '')
     data.append('left', coordinates.left || '')
