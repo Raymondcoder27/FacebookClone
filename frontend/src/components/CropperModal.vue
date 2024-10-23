@@ -31,10 +31,6 @@ let croppedImageData = {
   top: null,
 };
 
-// const getUploadedImage = (e) => {
-//   const file = e.target.files[0];
-//   uploadedImage.value = URL.createObjectURL(file);
-// };
 const file = ref(null)
 
 const getUploadedImage = (e) => {
