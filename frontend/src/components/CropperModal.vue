@@ -66,6 +66,7 @@ const crop = () => {
   data.append('width', coordinates.width || '');
   data.append('left', coordinates.left || '');
   data.append('top', coordinates.top || '');
+  
   //send to backend
   emit('showModal', false);
 };
