@@ -93,7 +93,7 @@ const crop = () => {
 <template>
     <div class="fixed z-50">
       <div class="fixed inset-0 bg-white bg-opacity-60"></div>
-      <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex flex-col min-h-full justify-center items-center py-2">
           <!-- <div class="transform overflow-hidden rounded-lg bg-white shadow-2xl transition-all max-w-xl"> -->
           <div class="transform overflow-hidden rounded-lg bg-white shadow-2xl transition-all max-w-xl">
@@ -124,7 +124,7 @@ const crop = () => {
                   class="object-cover"
                   ref="cropper"
                   :stencil-component="CircleStencil"
-                  :src="uploadedImage" />
+                  :src="uploadedImage.value" />
                 </div>
 
                 <div class="flex gap-4" :class="uploadedImage ? 'pt-4': ''">
