@@ -104,6 +104,7 @@ const crop = () => {
                 @click="crop"
                 type="button"
                 class="w-full rounded-md bg-blue-500 py-2 text-white font-bold shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-0">
+                Crop
                 </button>
                 </div>
               </div>
