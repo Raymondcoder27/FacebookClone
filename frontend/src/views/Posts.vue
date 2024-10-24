@@ -20,7 +20,36 @@ import api from "@/config/api";
 import { useAuthStore } from "@/stores/auth";
 const userDetails = ref(null);
 const authStore = useAuthStore();
-const getUserDetails = async () => {
+// const getUserDetails = async () => {
+//   const token = authStore.token;
+//   if (!token) {
+//     console.error("No token found");
+//     return;
+//   }
+  
+//   try {
+//     // const response = await api.get("/user", {
+//     const response = await api.get("/validate", {
+//       headers: {
+//         Authorization: `${token}`,
+//       },
+//     });
+//     userDetails.value = response.data;
+//   } catch (error) {
+//     console.error("Failed to fetch user details", error);
+//   }
+// };
+
+
+
+// onMounted(() => {
+//   getUserDetails();
+// });
+
+onMounted(async () => {
+  await getUserDetails();
+});
+  const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
     console.error("No token found");
@@ -40,12 +69,6 @@ const getUserDetails = async () => {
   }
 };
 
-
-
-onMounted(() => {
-  getUserDetails();
-});
-
 </script>
 
 <template>
@@ -56,8 +79,8 @@ onMounted(() => {
                 <div class="pt-4 pr-4 max-w-[320px]">
                     <router-link to="/user" class="flex items-center justify-start w-full cursor-pointer p-2 hover:bg-[#E5E6E9] rounded-md">
                         <img src="https://picsum.photos/id/87/300/320" class="rounded-full ml-l min-w-[38px] max-h-[38px]">
-                        <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div>
-                        <!-- <div class="text-[15px] text-gray-800 font-extrabold pl-3">{{userDetails}}</div> -->
+                        <!-- <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div> -->
+                        <div class="text-[15px] text-gray-800 font-extrabold pl-3">{{userDetails.name}}</div>
                     </router-link>
                     <button class="flex items-center justify-start w-full cursor-pointer px-2 py-1.5 rounded-md hover:bg-[#E5E6E9]">
                         <AccountMultiple :size="32" fillColor="#5BD7C6" />
