@@ -10,7 +10,7 @@ import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-// import {onMounted} from 'vue'
+import {onMounted} from 'vue'
 
 defineProps({ posts: Object, user: Object });
 
