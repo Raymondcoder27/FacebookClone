@@ -17,6 +17,17 @@ api.interceptors.request.use((config) =>{
 //         return Promise.reject(error)
 //     }
 // )
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized request:", error.response.data); // Log unauthorized access
+      // You might want to trigger a logout here if necessary
+    }
+    return Promise.reject(error);
+  }
+);
+
 
 // Add a request interceptor to include the token in headers
 api.interceptors.request.use((config) => {
