@@ -1,4 +1,4 @@
-<!-- <script setup>
+<script setup>
 import MainNavLayout from "@/Layouts/MainNavLayout.vue";
 import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
@@ -31,6 +31,36 @@ defineProps({ posts: Object, user: Object });
 
 const error = ref(null);
 
+// const submit = async () => {
+//     console.log("logging in...")
+
+//     try {
+//         const response = await api.post("/login", {
+//             email: email.value,
+//             password: password.value,
+//         });
+//         const token = response.data.token;
+//         console.log(token)
+
+//         localStorage.setItem('token', token);
+
+
+
+//         // localStorage.getItem('token', token)
+//         await api.get("/validate", {
+//         headers: {
+//           Authorization: 'Bearer ${token.value}'
+//         },
+//         });
+
+//         // localStorage.getItem('token', token)
+
+//         router.push("/home");
+//     } catch (error) {
+//         error.value = "Login failed. Please check your credentials.";
+//     }
+// };
+
 const submit = async () => {
     console.log("logging in...");
 
@@ -42,62 +72,6 @@ const submit = async () => {
 
         // On successful login, navigate to the home page
         router.push("/home");
-    } catch (err) {
-        // Set error message if login fails
-        error.value = "Login failed. Please check your credentials.";
-    }
-};
-</script> -->
-
-
-
-<script setup>
-import MainNavLayout from "@/Layouts/MainNavLayout.vue";
-import CreatePostBox from "@/Layouts/CreatePostBox.vue";
-import Post from "@/components/Post.vue";
-import PrimaryButton from "@/components/PrimaryButton.vue";
-import GuestLayout from "@/Layouts/GuestLayout.vue";
-import TextInput from "@/components/TextInput.vue";
-import api from "@/config/api";
-import { useAuthStore } from "@/stores/auth";
-import { ref } from "vue";
-import router from "@/router";
-import { useGeneralStore } from "@/stores/general";
-import { storeToRefs } from "pinia";
-
-const authStore = useAuthStore();
-const useGeneral = useGeneralStore();
-const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-const canResetPassword = true;
-
-const email = ref('');
-const password = ref('');
-const error = ref(null);
-
-const submit = async () => {
-    console.log("logging in...");
-
-    error.value = null; // Reset error state before attempting login
-
-    try {
-        // Call the login action from the auth store
-        await authStore.login(email.value, password.value);
-
-        // Check local storage to see if the page has been reloaded
-        const reloadStatus = localStorage.getItem('hasReloaded');
-
-        if (!reloadStatus) {
-            // Set local storage flag to prevent future reloads
-            localStorage.setItem('hasReloaded', 'true');
-
-            // Reload the page after a delay
-            setTimeout(() => {
-                window.location.reload(); // Reload after a delay
-            }, 1000);
-        } else {
-            // On successful login, navigate to the home page
-            router.push("/home");
-        }
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
