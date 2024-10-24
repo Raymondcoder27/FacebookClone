@@ -16,6 +16,36 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
 
 //import router from "@/router";
 
+import api from "@/config/api";
+import { useAuthStore } from "@/stores/auth";
+const userDetails = ref(null);
+const authStore = useAuthStore();
+const getUserDetails = async () => {
+  const token = authStore.token;
+  if (!token) {
+    console.error("No token found");
+    return;
+  }
+  
+  try {
+    // const response = await api.get("/user", {
+    const response = await api.get("/validate", {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    userDetails.value = response.data;
+  } catch (error) {
+    console.error("Failed to fetch user details", error);
+  }
+};
+
+
+
+onMounted(() => {
+  getUserDetails();
+});
+
 </script>
 
 <template>
