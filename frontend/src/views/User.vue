@@ -14,6 +14,7 @@ import {onMounted} from 'vue'
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 
+const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
