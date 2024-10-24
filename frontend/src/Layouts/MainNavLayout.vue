@@ -39,15 +39,36 @@ const authStore = useAuthStore();
 //   console.log(userDetails)
 // }
 
+// const getUserDetails = async () => {
+//   const token = authStore.token; // Fetch the token from the authStore
+//   const response = await api.get("/user", {
+//     headers: {
+//       Authorization: `Bearer ${token}`, // Attach the token
+//     },
+//   });
+//   userDetails.value = response.data;
+// };
+
 const getUserDetails = async () => {
-  const token = authStore.token; // Fetch the token from the authStore
-  const response = await api.get("/user", {
-    headers: {
-      Authorization: `Bearer ${token}`, // Attach the token
-    },
-  });
-  userDetails.value = response.data;
+  const token = authStore.token;
+  if (!token) {
+    console.error("No token found");
+    return;
+  }
+  
+  try {
+    const response = await api.get("/user", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    userDetails.value = response.data;
+  } catch (error) {
+    console.error("Failed to fetch user details", error);
+  }
 };
+
+
 
 onMounted(() => {
   getUserDetails();
