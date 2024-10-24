@@ -15,15 +15,28 @@ const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 defineProps({ posts: Object, user: Object });
 
 
-// onMounted(() => {
-//   const response = api.get("/validate");
-
-//   // const userDetails = authStore.validate();
-//   localStorage.setItem('userDetails', JSON.stringify(response.data))
-//   // const user = ref(
-//   localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
-//   console.log(userDetails);
-// });
+onMounted(async () => {
+  await getUserDetails();
+});
+  const getUserDetails = async () => {
+  const token = authStore.token;
+  if (!token) {
+    console.error("No token found");
+    return;
+  }
+  
+  try {
+    // const response = await api.get("/user", {
+    const response = await api.get("/validate", {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    userDetails.value = response.data;
+  } catch (error) {
+    console.error("Failed to fetch user details", error);
+  }
+};
 </script>
 
 <template>
