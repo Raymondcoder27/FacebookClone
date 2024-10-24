@@ -109,6 +109,12 @@ const getUserDetails = async () => {
   }
 };
 
+
+const logout = async () => {
+  await authStore.logout();
+  router.push("/login");
+};
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
@@ -246,7 +252,7 @@ onMounted(async () => {
             method="post"
           >
             <Logout class="pl-2" :size="30" />
-            <span>Logout</span>
+            <span @click="logout">Logout</span>
           </button>
           <div class="text-xs font-semi-bold p-2 pt-3 border-t mt-2">
             Privacy . Terms . Advertising . AdChoices . Cookies . Meta
