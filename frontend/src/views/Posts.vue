@@ -30,9 +30,9 @@ onMounted(async () => {
   await getUserDetails();
   //reload the page
     // window.location.reload();
-    setTimeout(() => {
-        window.location.reload(); // Reload after notification is shown
-      }, 1000);
+    // setTimeout(() => {
+    //     window.location.reload(); // Reload after notification is shown
+    //   }, 1000);
 });
   const getUserDetails = async () => {
   const token = authStore.token;
