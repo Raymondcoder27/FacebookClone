@@ -10,7 +10,7 @@ import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-import {onMounted} from 'vue'
+import {onMounted, ref} from 'vue'
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 
