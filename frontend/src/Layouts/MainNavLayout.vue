@@ -93,7 +93,6 @@ onMounted(async () => {
     console.error("Failed to fetch user details", error);
   }
 };
-});
 </script>
 
 
