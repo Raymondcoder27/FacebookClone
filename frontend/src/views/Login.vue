@@ -105,24 +105,25 @@ const error = ref(null);
 // };
 
 const submit = async () => {
-    console.log("logging in...");
-    
-    error.value = null; // Reset error state before attempting login
+  console.log("logging in...");
 
-    try {
-        // Call the login action from the auth store
-        await authStore.login(email.value, password.value);
-        
-        // Check if login was successful
-        if (authStore.isAuthenticated) {
-            router.push("/home");
-        } else {
-            error.value = "Login failed. Please check your credentials.";
-        }
-    } catch (err) {
-        error.value = "Login failed. Please check your credentials.";
+  error.value = null; // Reset error state before attempting login
+
+  try {
+    // Call the login action from the auth store
+    await authStore.login(email.value, password.value);
+    
+    // Since isAuthenticated is a computed property, it should automatically reflect changes
+    if (authStore.isAuthenticated) {
+      router.push("/home");
+    } else {
+      error.value = "Login failed. Please check your credentials.";
     }
+  } catch (err) {
+    error.value = "Login failed. Please check your credentials.";
+  }
 };
+
 
 
 </script>
