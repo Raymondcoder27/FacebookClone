@@ -24,11 +24,12 @@ const authStore = useAuthStore();
 // onMounted(() => {
 //   getUserDetails();
 // });
+    window.location.reload();
 
 onMounted(async () => {
   await getUserDetails();
   //reload the page
-    window.location.reload();
+    // window.location.reload();
   
 });
   const getUserDetails = async () => {
