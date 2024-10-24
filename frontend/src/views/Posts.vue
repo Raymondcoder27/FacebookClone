@@ -25,37 +25,13 @@ const authStore = useAuthStore();
 //   getUserDetails();
 // });
 
-// onMounted(async () => {
-//   await getUserDetails();
-// });
-//   const getUserDetails = async () => {
-//   const token = authStore.token;
-//   if (!token) {
-//     console.error("No token found");
-//     return;
-//   }
-  
-//   try {
-//     // const response = await api.get("/user", {
-//     const response = await api.get("/validate", {
-//       headers: {
-//         Authorization: `${token}`,
-//       },
-//     });
-//     userDetails.value = response.data;
-//   } catch (error) {
-//     console.error("Failed to fetch user details", error);
-//   }
-// };
-
-
-
-
 onMounted(async () => {
   await getUserDetails();
+  //reload the page
+    window.location.reload();
+  
 });
-
-const getUserDetails = async () => {
+  const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
     console.error("No token found");
@@ -63,6 +39,7 @@ const getUserDetails = async () => {
   }
   
   try {
+    // const response = await api.get("/user", {
     const response = await api.get("/validate", {
       headers: {
         Authorization: `${token}`,
