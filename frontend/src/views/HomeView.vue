@@ -1,22 +1,23 @@
 <script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
-// import { onMounted } from 'vue';
-// import { useAuthStore } from '@/stores/auth';
+import { ref, onMounted } from 'vue';
+import { useAuthStore } from '@/stores/auth';
 
-// const authStore = useAuthStore()
+const authStore = useAuthStore();
+const hasReloaded = ref(false); // Track if the page has been reloaded
 
-// onMounted(() => {
-//   // const userDetails = api.get("/validate");
+onMounted(() => {
+  // Fetch user details or perform any necessary setup
+  const userDetails = authStore.validate();
+  console.log(userDetails);
 
-//   const userDetails = authStore.validate();
-//   // const user = ref(
-//   // localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
-//   console.log(userDetails);
-// });
-
- setTimeout(() => {
-        window.location.reload(); // Reload after notification is shown
-      }, 1000);
+  // Reload the page only if it hasn't been reloaded before
+  if (!hasReloaded.value) {
+    hasReloaded.value = true; // Set to true to prevent future reloads
+    setTimeout(() => {
+      window.location.reload(); // Reload after a delay
+    }, 1000);
+  }
+});
 </script>
 
 <template>
