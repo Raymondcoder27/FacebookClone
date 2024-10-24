@@ -89,9 +89,6 @@ const authStore = useAuthStore();
 
 
 
-onMounted(async () => {
-  await getUserDetails();
-});
 
 const getUserDetails = async () => {
   const token = authStore.token;
@@ -103,14 +100,19 @@ const getUserDetails = async () => {
   try {
     const response = await api.get("/validate", {
       headers: {
-        Authorization: `${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
-    userDetails.value = response.data;
+    userDetails.value = response.data; // Storing user details
   } catch (error) {
     console.error("Failed to fetch user details", error);
   }
 };
+
+// Ensure this runs when the component mounts
+onMounted(async () => {
+  await getUserDetails();
+});
 
 </script>
 
