@@ -13,6 +13,9 @@ export const useAuthStore = defineStore('auth', () => {
   )
   const returnUrl = ref('/')
 
+  // Computed property for authentication state
+  const isAuthenticated = computed(() => !!token.value);
+
   // Actions
   const login = async (email, password) => {
     try {
@@ -38,7 +41,7 @@ export const useAuthStore = defineStore('auth', () => {
   const validate = async () => {
     const token = localStorage.getItem('token');
     console.log("Validating token:", token); // Log the token
-    
+
     try {
       const response = await api.get('/validate')
       if (response.status === 200) {
@@ -66,6 +69,7 @@ export const useAuthStore = defineStore('auth', () => {
     user,
     token,
     returnUrl,
+    isAuthenticated,
     login,
     validate,
     logout
