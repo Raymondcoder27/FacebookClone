@@ -33,7 +33,7 @@ api.interceptors.response.use(
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `${token}`;
       console.log("Adding token to headers:", config.headers.Authorization); // Log the header
     }
     return config;
