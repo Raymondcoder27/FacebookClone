@@ -2,22 +2,39 @@
 import { ref, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 
+import api from "@/config/api";
+
+const userDetails = ref(null);
+defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
-const hasReloaded = ref(false); // Track if the page has been reloaded
 
-onMounted(() => {
-  // Fetch user details or perform any necessary setup
-  const userDetails = authStore.validate();
-  console.log(userDetails);
 
-  // Reload the page only if it hasn't been reloaded before
-  if (!hasReloaded.value) {
-    hasReloaded.value = true; // Set to true to prevent future reloads
-    setTimeout(() => {
-      window.location.reload(); // Reload after a delay
-    }, 1000);
-  }
+// const authStore = useAuthStore();
+// const hasReloaded = ref(false); // Track if the page has been reloaded
+
+
+onMounted(async () => {
+  await getUserDetails();
 });
+  const getUserDetails = async () => {
+  const token = authStore.token;
+  if (!token) {
+    console.error("No token found");
+    return;
+  }
+  
+  try {
+    // const response = await api.get("/user", {
+    const response = await api.get("/validate", {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
+    userDetails.value = response.data;
+  } catch (error) {
+    console.error("Failed to fetch user details", error);
+  }
+};
 </script>
 
 <template>
