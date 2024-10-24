@@ -112,29 +112,18 @@ const submit = async () => {
     try {
         // Call the login action from the auth store
         await authStore.login(email.value, password.value);
-
-        // Check local storage to see if the page has been reloaded
-        const reloadStatus = localStorage.getItem('hasReloaded');
-
-        if (!reloadStatus) {
-            // Set local storage flag to prevent future reloads
-            localStorage.setItem('hasReloaded', 'true');
-
-            // Reload the page after a delay
-            setTimeout(() => {
-                window.location.reload(); // Reload after a delay
-            }, 1000);
-        } else {
-            // Clear the reload flag after page reload
-            localStorage.removeItem('hasReloaded');
-            // On successful login, navigate to the home page
+        
+        // Check if login was successful
+        if (authStore.isAuthenticated) {
             router.push("/home");
+        } else {
+            error.value = "Login failed. Please check your credentials.";
         }
     } catch (err) {
-        // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
     }
 };
+
 
 </script>
 
