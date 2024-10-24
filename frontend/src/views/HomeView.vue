@@ -13,6 +13,10 @@
 //   // localStorage.getItem("userDetails") ? JSON.parse(localStorage.getItem("userDetails")) : null;
 //   console.log(userDetails);
 // });
+
+ setTimeout(() => {
+        window.location.reload(); // Reload after notification is shown
+      }, 1000);
 </script>
 
 <template>
