@@ -11,8 +11,10 @@ import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 import {onMounted} from 'vue'
+import { useAuthStore } from "@/stores/auth";
 
 defineProps({ posts: Object, user: Object });
+const authStore = useAuthStore();
 
 
 onMounted(async () => {
