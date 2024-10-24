@@ -60,7 +60,7 @@ const getUserDetails = async () => {
     // const response = await api.get("/user", {
     const response = await api.get("/validate", {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `${token}`,
       },
     });
     userDetails.value = response.data;
