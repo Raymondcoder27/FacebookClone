@@ -32,14 +32,12 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-
 // const getUserDetails = async () => {
 //   // const token = authStore.token
 //   const response = await api.get("/user");
 //   userDetails.value = response.data
 //   console.log(userDetails)
 // }
-
 
 const getUserDetails = async () => {
   const token = authStore.token; // Fetch the token from the authStore
@@ -50,7 +48,6 @@ const getUserDetails = async () => {
   });
   userDetails.value = response.data;
 };
-
 
 onMounted(() => {
   getUserDetails();
