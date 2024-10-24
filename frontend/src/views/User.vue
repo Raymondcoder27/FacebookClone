@@ -29,7 +29,7 @@ defineProps({ posts: Object, user: Object });
 <template>
   <Head title="User" />
   <MainNavLayout>
-  {{ user }}
+  <!-- {{ user }} -->
 
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
@@ -61,7 +61,9 @@ defineProps({ posts: Object, user: Object });
                 </button>
               </div>
               <div class="md:mt-4 text-center md:text-left -mt-3">
-                <div class="text-md font-extrabold pt-1">Raymond Mwebe</div>
+                <!-- <div class="text-md font-extrabold pt-1">Raymond Mwebe</div> -->
+                <div v-if="userDetails" class="text-md font-extrabold pt-1">{{ userDetails.name }}</div>
+
                 <div class="font-bold text-gray-600">234 friends</div>
                 <div class="flex md:justify-start justify-center md:-mt-1">
                   <img
