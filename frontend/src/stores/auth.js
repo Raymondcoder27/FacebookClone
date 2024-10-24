@@ -36,6 +36,9 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   const validate = async () => {
+    const token = localStorage.getItem('token');
+    console.log("Validating token:", token); // Log the token
+    
     try {
       const response = await api.get('/validate')
       if (response.status === 200) {
