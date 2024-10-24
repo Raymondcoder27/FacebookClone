@@ -103,29 +103,6 @@ const submit = async () => {
         error.value = "Login failed. Please check your credentials.";
     }
 };
-
-// const submit = async () => {
-//   console.log("logging in...");
-
-//   error.value = null; // Reset error state before attempting login
-
-//   try {
-//     // Call the login action from the auth store
-//     await authStore.login(email.value, password.value);
-    
-//     // Since isAuthenticated is a computed property, it should automatically reflect changes
-//     if (authStore.isAuthenticated) {
-//       router.push("/home");
-//     } else {
-//       error.value = "Login failed. Please check your credentials.";
-//     }
-//   } catch (err) {
-//     error.value = "Login failed. Please check your credentials.";
-//   }
-// };
-
-
-
 </script>
 
 
@@ -174,11 +151,11 @@ const submit = async () => {
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm" type="submit">
-            <!-- <RouterLink
-            type="submit"> -->
+          <PrimaryButton class="w-full text-sm">
+            <RouterLink
+            to="/home">
               Login
-            <!-- </RouterLink> -->
+            </RouterLink>
            </PrimaryButton>
         </div>
 
