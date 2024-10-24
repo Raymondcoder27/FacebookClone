@@ -184,11 +184,11 @@ const submit = async () => {
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm">
-            <RouterLink
-            type="submit">
+          <PrimaryButton class="w-full text-sm" type="submit">
+            <!-- <RouterLink
+            type="submit"> -->
               Login
-            </RouterLink>
+            <!-- </RouterLink> -->
            </PrimaryButton>
         </div>
 
