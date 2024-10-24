@@ -74,55 +74,55 @@ const email = ref('');
 const password = ref('');
 const error = ref(null);
 
-// const submit = async () => {
-//     console.log("logging in...");
-
-//     error.value = null; // Reset error state before attempting login
-
-//     try {
-//         // Call the login action from the auth store
-//         await authStore.login(email.value, password.value);
-
-//         // Check local storage to see if the page has been reloaded
-//         const reloadStatus = localStorage.getItem('hasReloaded');
-
-//         if (!reloadStatus) {
-//             // Set local storage flag to prevent future reloads
-//             localStorage.setItem('hasReloaded', 'true');
-
-//             // Reload the page after a delay
-//             setTimeout(() => {
-//                 window.location.reload(); // Reload after a delay
-//             }, 1000);
-//         } else {
-//             // On successful login, navigate to the home page
-//             router.push("/home");
-//         }
-//     } catch (err) {
-//         // Set error message if login fails
-//         error.value = "Login failed. Please check your credentials.";
-//     }
-// };
-
 const submit = async () => {
-  console.log("logging in...");
+    console.log("logging in...");
 
-  error.value = null; // Reset error state before attempting login
+    error.value = null; // Reset error state before attempting login
 
-  try {
-    // Call the login action from the auth store
-    await authStore.login(email.value, password.value);
-    
-    // Since isAuthenticated is a computed property, it should automatically reflect changes
-    if (authStore.isAuthenticated) {
-      router.push("/home");
-    } else {
-      error.value = "Login failed. Please check your credentials.";
+    try {
+        // Call the login action from the auth store
+        await authStore.login(email.value, password.value);
+
+        // Check local storage to see if the page has been reloaded
+        const reloadStatus = localStorage.getItem('hasReloaded');
+
+        if (!reloadStatus) {
+            // Set local storage flag to prevent future reloads
+            localStorage.setItem('hasReloaded', 'true');
+
+            // Reload the page after a delay
+            setTimeout(() => {
+                window.location.reload(); // Reload after a delay
+            }, 1000);
+        } else {
+            // On successful login, navigate to the home page
+            router.push("/home");
+        }
+    } catch (err) {
+        // Set error message if login fails
+        error.value = "Login failed. Please check your credentials.";
     }
-  } catch (err) {
-    error.value = "Login failed. Please check your credentials.";
-  }
 };
+
+// const submit = async () => {
+//   console.log("logging in...");
+
+//   error.value = null; // Reset error state before attempting login
+
+//   try {
+//     // Call the login action from the auth store
+//     await authStore.login(email.value, password.value);
+    
+//     // Since isAuthenticated is a computed property, it should automatically reflect changes
+//     if (authStore.isAuthenticated) {
+//       router.push("/home");
+//     } else {
+//       error.value = "Login failed. Please check your credentials.";
+//     }
+//   } catch (err) {
+//     error.value = "Login failed. Please check your credentials.";
+//   }
+// };
 
 
 
