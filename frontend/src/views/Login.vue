@@ -71,8 +71,8 @@ const submit = async () => {
         await authStore.login(email.value, password.value);
 
         // On successful login, navigate to the home page
-        
-        router.push("/home");
+
+        // router.push("/home");
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
@@ -126,11 +126,12 @@ const submit = async () => {
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm">
-            <RouterLink
+          <PrimaryButton class="w-full text-sm" type="submit" @click="submit">
+            <!-- <RouterLink
             to="/home">
               Login
-            </RouterLink>
+            </RouterLink> -->
+              Login
            </PrimaryButton>
         </div>
 
