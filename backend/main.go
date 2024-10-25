@@ -51,6 +51,7 @@ func main() {
 		// authGroup.PATCH("/profile", controllers.UpdateProfile)  // Route to update profile
 		// authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
 	}
+	r.Static("/images", "./public") // Serve images from the /public directory in the backend
 
 	r.Run()
 }
