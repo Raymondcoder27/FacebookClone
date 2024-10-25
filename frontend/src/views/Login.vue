@@ -71,6 +71,7 @@ const submit = async () => {
         await authStore.login(email.value, password.value);
 
         // On successful login, navigate to the home page
+        
         router.push("/home");
     } catch (err) {
         // Set error message if login fails
