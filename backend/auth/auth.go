@@ -40,20 +40,64 @@ func Signup(c *gin.Context) {
 	c.JSON(200, gin.H{"message": "User created"})
 }
 
+// func Login(c *gin.Context) {
+// 	//Get the email and password off the request body
+// 	var body struct {
+// 		Email    string
+// 		Password string
+// 	}
+
+// 	//Bind the request body to the body struct
+// 	if c.Bind(&body) != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password."})
+// 		return
+// 	}
+
+// 	//Look up requested user
+// 	var user models.User
+// 	initializers.DB.First(&user, "email = ?", body.Email)
+
+// 	if user.ID == 0 {
+// 		c.JSON(http.StatusBadRequest, gin.H{"message": "User not found."})
+// 		return
+// 	}
+
+// 	//compare passed in password with saved password
+// 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(body.Password))
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to hash password"})
+// 		return
+// 	}
+
+// 	//Generate a JWT token
+// 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+// 		"sub": user.ID,
+// 		"exp": time.Now().Add(time.Hour * 24 * 30).Unix(),
+// 	})
+
+// 	//sign and get the complete encoded token as a string using the secret
+// 	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to create token."})
+// 		return
+// 	}
+
+// 	//return with the user
+// 	c.JSON(http.StatusOK, gin.H{"token": tokenString})
+// }
+
 func Login(c *gin.Context) {
-	//Get the email and password off the request body
 	var body struct {
 		Email    string
 		Password string
 	}
 
-	//Bind the request body to the body struct
 	if c.Bind(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password."})
 		return
 	}
 
-	//Look up requested user
+	// Look up user by email
 	var user models.User
 	initializers.DB.First(&user, "email = ?", body.Email)
 
@@ -62,27 +106,25 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	//compare passed in password with saved password
+	// Compare passwords
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(body.Password))
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to hash password"})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Incorrect password."})
 		return
 	}
 
-	//Generate a JWT token
+	// Generate a JWT token
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"sub": user.ID,
 		"exp": time.Now().Add(time.Hour * 24 * 30).Unix(),
 	})
 
-	//sign and get the complete encoded token as a string using the secret
 	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Failed to create token."})
 		return
 	}
 
-	//return with the user
 	c.JSON(http.StatusOK, gin.H{"token": tokenString})
 }
 
