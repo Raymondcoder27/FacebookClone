@@ -24,7 +24,7 @@
     const userDetails = ref(null);
     const authStore = useAuthStore();
     const router = useRouter();
-    
+
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
@@ -65,7 +65,8 @@ onMounted(async () => {
             </button>
             <div class="flex items-center justify-between p-2 rounded-full w-full">
                 <div>
-                    <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div>
+                    <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
+                    <div class="font-extrabold text-[15px]">{{userDetails?.name}}</div>
                     <div class="flex items-center text-xs text-gray-600">
                       14h  <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
                     </div>
