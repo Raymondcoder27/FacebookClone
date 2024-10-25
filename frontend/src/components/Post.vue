@@ -14,6 +14,47 @@
 
     const form = reactive({comment: null})
 
+
+
+    import { useAuthStore } from '@/stores/auth';
+    import api from '@/config/api';
+    import { onMounted, ref } from 'vue';
+    import { useRouter } from 'vue-router';
+
+    const userDetails = ref(null);
+    const authStore = useAuthStore();
+    const router = useRouter();
+    
+const getUserDetails = async () => {
+  const token = authStore.token;
+  if (!token) {
+    console.error("No token found");
+    return;
+  }
+  
+  try {
+    const response = await api.get("/validate", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    userDetails.value = response.data; // Storing user details
+  } catch (error) {
+    console.error("Failed to fetch user details", error);
+  }
+};
+
+
+const logout = async () => {
+  await authStore.logout();
+  router.push("/login");
+};
+
+// Ensure this runs when the component mounts
+onMounted(async () => {
+  await getUserDetails();
+});
+
 </script>
 
 <template>
