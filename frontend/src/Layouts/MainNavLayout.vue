@@ -243,9 +243,9 @@ onMounted(async () => {
                 alt=""
                 class="rounded-full ml-1 cursor-pointer min-w-[35px] max-h-[35px]"
               />
-              <span>Raymond Mwebe</span>
+              <!-- <span>Raymond Mwebe</span> -->
               <!-- <span>{{userDetails.user.name}}</span> -->
-              <!-- <span>{{userDetails}}</span> -->
+              <span v-if="userDetails">{{userDetails?.name}}</span>
             </div>
           </router-link>
           <button
