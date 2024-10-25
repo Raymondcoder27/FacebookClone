@@ -19,7 +19,7 @@ import api from "@/config/api";
 import CropperModal from "@/components/CropperModal.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
 
-const handleLogout = () => {};
+// const handleLogout = () => {};
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
@@ -251,7 +251,7 @@ onMounted(async () => {
           <button
             class="w-full flex items-center gap-3 hover:bg-gray-200 px-2 py-2.5 rounded-lg"
             as="button"
-            @click="handleLogout"
+            @click="logout"
             method="post"
           >
             <Logout class="pl-2" :size="30" />
