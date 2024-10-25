@@ -11,7 +11,7 @@
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 
     import {defineEmits} from 'vue';
-    import {onMounted, reactive} from 'vue';
+    import {onMounted} from 'vue';
     import {useAuthStore} from '@/stores/auth';
     import api from '@/config/api';
 
