@@ -81,7 +81,7 @@ onMounted(async () => {
                         <div class="flex items-center">
                             <img src="https://picsum.photos/id/87/300/320" alt="" class="rounded-full ml-1 min-w-[45px] max-h-[45px]">
                             <div class="ml-4">
-                                <div class="font-extrabold">Raymond Mwebe</div>
+                                <div class="font-extrabold">{{userDetails?.name}}</div>
                                 <div class="flex items-center justify-between bg-gray-200 px-2 rounded-lg w-[100px] p-0.5">
                                     <Earth :size="18" />
                                     <span class="font-bold pl-1.5 text-[13px]">Public</span>
