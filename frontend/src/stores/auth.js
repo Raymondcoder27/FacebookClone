@@ -29,11 +29,13 @@ export const useAuthStore = defineStore('auth', () => {
         user.value = email
         token.value = tokenResponse
 
+
+        setTimeout(() => {
+          window.location.reload(); // Reload after notification is shown
+        }, 1000);
         // After successful login, redirect the user to the home or returnUrl
         router.push(returnUrl.value || '/')
-        // setTimeout(() => {
-          window.location.reload(); // Reload after notification is shown
-        // }, 1000);
+        
       }
     } catch (error) {
       throw new Error('Invalid credentials')  // Handle login failure
