@@ -51,16 +51,16 @@ onMounted(async () => {
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
-          <!-- <img
+          <img
             src="https://picsum.photos/id/45/2000/320"
             alt=""
             class="rounded-b-xl"
-          /> -->
-          <img
+          />
+          <!-- <img
             :src="userDetails?.image"
             alt=""
             class="rounded-b-xl"
-          />
+          /> -->
 
           <div
             id="ProfileInfo"
@@ -70,8 +70,13 @@ onMounted(async () => {
               class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center"
             >
               <div class="relative">
-                <img
+                <!-- <img
                   src="https://picsum.photos/id/200/500/500"
+                  alt=""
+                  class="rounded-full h-[165px] w-[165px] border-4 border-white"
+                /> -->
+                <img
+                  :src="userDetails?.image"
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 />
