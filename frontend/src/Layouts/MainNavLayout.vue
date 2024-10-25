@@ -234,7 +234,7 @@ onMounted(async () => {
           v-if="showMenu"
           class="absolute bg-white shadow-xl top-10 rounded-lg p-1 border mt-1 w-[330px] right-0"
         >
-          <router-link to="/" @click="showMenu = !showMenu">
+          <router-link to="/user" @click="showMenu = !showMenu">
             <div
               class="flex items-center gap-3 rounded-lg hover:bg-gray-200 p-2"
             >
