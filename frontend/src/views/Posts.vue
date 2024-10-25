@@ -103,7 +103,7 @@ onMounted(async () => {
             <div id="PostsSection" class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto">
                 <CreatePostBox 
                 image="https://picsum.photos/id/140/300/320"
-                :placeholder="'What\'s on your mind' + userDetails.name + '?!''" />
+                :placeholder="'What\'s on your mind ' + userDetails.name + '?!'" />
                 <Post />
                 <Post />
                 <Post />
