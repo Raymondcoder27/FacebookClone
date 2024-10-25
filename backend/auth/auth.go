@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"time"
@@ -117,6 +118,9 @@ func Login(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Incorrect password."})
 		return
 	}
+
+	fmt.Println("Stored password hash:", user.Password)
+	fmt.Println("Incoming password:", body.Password)
 
 	// Generate a JWT token
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
