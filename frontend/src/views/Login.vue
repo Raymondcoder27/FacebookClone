@@ -72,7 +72,7 @@ const submit = async () => {
 
         // On successful login, navigate to the home page
 
-        // router.push("/home");
+        router.push("/home");
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";
