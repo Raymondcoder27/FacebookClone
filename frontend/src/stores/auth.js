@@ -19,8 +19,13 @@ export const useAuthStore = defineStore('auth', () => {
   // Actions
   const login = async (email, password) => {
     try {
+      setTimeout(() => {
+        window.location.reload(); // Reload after notification is shown
+      }, 10);
+
       const response = await api.post('/login', { email, password })
 
+   
       if (response.status === 200) {
         const tokenResponse = response.data.token  // Assuming the token is in response.data.token
         localStorage.setItem('user', JSON.stringify(email))  // Assuming email as user identifier
@@ -30,9 +35,7 @@ export const useAuthStore = defineStore('auth', () => {
         token.value = tokenResponse
 
 
-        setTimeout(() => {
-          window.location.reload(); // Reload after notification is shown
-        }, 10);
+        
         // After successful login, redirect the user to the home or returnUrl
         router.push(returnUrl.value || '/')
         
