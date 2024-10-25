@@ -92,8 +92,13 @@ func Login(c *gin.Context) {
 		Password string
 	}
 
-	if c.Bind(&body) != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password."})
+	// if c.BindJSON(&body) != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password."})
+	// 	return
+	// }
+
+	if err := c.BindJSON(&body); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid email or password.", "error": err.Error()})
 		return
 	}
 
