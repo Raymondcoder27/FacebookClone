@@ -68,13 +68,16 @@ const submit = async () => {
 
     try {
         // Call the login action from the auth store
-        await authStore.login(email.value, password.value);
+        // await authStore.login(email.value, password.value);
 
-        // On successful login, navigate to the home page
-      //    setTimeout(() => {
-      //   window.location.reload(); // Reload after notification is shown
-      //   // router.push("/home");
-      // }, 1000);
+        //login
+        const response = await api.post("/login", {
+            email: email.value,
+            password: password.value,
+        });
+        const token = response.data.token;
+        console.log(token)
+
 
         // router.push("/home");
     } catch (err) {
