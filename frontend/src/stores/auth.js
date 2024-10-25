@@ -53,7 +53,16 @@ export const useAuthStore = defineStore('auth', () => {
    const login = async (email, password) => {
     console.log("Attempting to log in with:", { email, password }); // Log input credentials
     try {
-      const response = await api.post('/login', { email, password });
+      // const response = await api.post('/login', { email, password });
+
+      const response = await api.post('/login', 
+        { email, password },
+        {
+          headers: {
+            'Content-Type': 'application/json' // Ensure the content type is set to JSON
+          }
+        }
+      );
       console.log("Login response:", response); // Log the entire response
 
       if (response.status !== 200) {
