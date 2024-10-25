@@ -14,7 +14,7 @@ export const useAuthStore = defineStore('auth', () => {
   const returnUrl = ref('/')
 
   // Computed property for authentication state
-  const isAuthenticated = computed(() => !!token.value);
+  // const isAuthenticated = computed(() => !!token.value);
 
   // Actions
   const login = async (email, password) => {
@@ -69,7 +69,7 @@ export const useAuthStore = defineStore('auth', () => {
     user,
     token,
     returnUrl,
-    isAuthenticated,
+    // isAuthenticated,
     login,
     validate,
     logout
