@@ -17,33 +17,64 @@ export const useAuthStore = defineStore('auth', () => {
   // const isAuthenticated = computed(() => !!token.value);
 
   // Actions
-  const login = async (email, password) => {
-    try {
-      const response = await api.post('/login', { email, password })
+  // const login = async (email, password) => {
+  //   try {
+  //     const response = await api.post('/login', { email, password })
    
+  //     if (response.status === 200) {
+  //       const tokenResponse = response.data.token  // Assuming the token is in response.data.token
+  //       localStorage.setItem('user', JSON.stringify(email))  // Assuming email as user identifier
+  //       localStorage.setItem('token', tokenResponse)  // Store token as a string
+  //       console.log("Token stored:", tokenResponse); 
+  //       user.value = email
+  //       token.value = tokenResponse
+
+  //           setTimeout(() => {
+  //       // router.push('/home' || '/')
+  //       window.location.assign('/home'); // Reload after notification is shown
+  //     });
+        
+  //       // After successful login, redirect the user to the home or returnUrl
+  //       // router.push(returnUrl.value || '/')
+  //       // router.push('/home' || '/')
+
+        
+  //     }
+  //   } catch (error) {
+  //     throw new Error('Invalid credentials')  // Handle login failure
+  //   }
+
+  // }
+
+
+
+
+   // Actions
+   const login = async (email, password) => {
+    console.log("Attempting to log in with:", { email, password }); // Log input credentials
+    try {
+      const response = await api.post('/login', { email, password });
+      console.log("Login response:", response); // Log the entire response
+
       if (response.status === 200) {
-        const tokenResponse = response.data.token  // Assuming the token is in response.data.token
-        localStorage.setItem('user', JSON.stringify(email))  // Assuming email as user identifier
-        localStorage.setItem('token', tokenResponse)  // Store token as a string
-        console.log("Token stored:", tokenResponse); 
-        user.value = email
-        token.value = tokenResponse
+        const tokenResponse = response.data.token;  // Assuming the token is in response.data.token
+        if (tokenResponse) {
+          localStorage.setItem('user', JSON.stringify(email));  // Store email as user identifier
+          localStorage.setItem('token', tokenResponse);  // Store token as a string
+          console.log("Token stored:", tokenResponse); 
+          user.value = email;
+          token.value = tokenResponse;
 
-            setTimeout(() => {
-        // router.push('/home' || '/')
-        window.location.assign('/home'); // Reload after notification is shown
-      });
-        
-        // After successful login, redirect the user to the home or returnUrl
-        // router.push(returnUrl.value || '/')
-        // router.push('/home' || '/')
-
-        
+          // Redirect after storing the token
+          window.location.assign('/home'); // Reload after notification is shown
+        } else {
+          console.error("Token not found in response data."); // Handle missing token
+        }
       }
     } catch (error) {
-      throw new Error('Invalid credentials')  // Handle login failure
+      console.error("Error during login:", error.message); // Log error details
+      throw new Error('Invalid credentials');  // Handle login failure
     }
-
   }
 
   const validate = async () => {
