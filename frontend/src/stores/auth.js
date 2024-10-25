@@ -19,12 +19,10 @@ export const useAuthStore = defineStore('auth', () => {
   // Actions
   const login = async (email, password) => {
     try {
+      const response = await api.post('/login', { email, password })
       setTimeout(() => {
         window.location.reload(); // Reload after notification is shown
-      }, 10);
-
-      const response = await api.post('/login', { email, password })
-
+      });
    
       if (response.status === 200) {
         const tokenResponse = response.data.token  // Assuming the token is in response.data.token
