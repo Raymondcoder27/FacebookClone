@@ -10,6 +10,15 @@
     import Earth from 'vue-material-design-icons/Earth.vue';
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 
+    import {defineEmits} from 'vue';
+    import {onMounted, ref, reactive} from 'vue';
+    import {useAuthStore} from '@/stores/auth';
+    import api from '@/config/api';
+
+    const userDetails = ref(null);
+    const authStore = useAuthStore();
+    const router = useRouter();
+
     import {useGeneralStore} from '@/stores/general';
     import {storeToRefs} from 'pinia';
     const useGeneral = useGeneralStore();
@@ -18,6 +27,7 @@
     const emit = defineEmits(['showModal']);
 
     let ImageDisplay = ref(null);
+
 
     const form = reactive({
         text: null,
