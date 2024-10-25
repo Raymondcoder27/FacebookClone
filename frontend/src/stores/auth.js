@@ -32,7 +32,7 @@ export const useAuthStore = defineStore('auth', () => {
             setTimeout(() => {
         router.push('/home' || '/')
         window.location.reload(); // Reload after notification is shown
-      }, 100);
+      });
         
         // After successful login, redirect the user to the home or returnUrl
         // router.push(returnUrl.value || '/')
