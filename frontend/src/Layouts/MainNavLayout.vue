@@ -243,6 +243,7 @@ onMounted(async () => {
               />
               <span>Raymond Mwebe</span>
               <!-- <span>{{userDetails.user.name}}</span> -->
+              <span>{{userDetails}}</span>
             </div>
           </router-link>
           <button
