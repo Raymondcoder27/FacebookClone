@@ -71,6 +71,9 @@ const submit = async () => {
         await authStore.login(email.value, password.value);
 
         // On successful login, navigate to the home page
+         setTimeout(() => {
+        window.location.reload(); // Reload after notification is shown
+      }, 1000);
 
         router.push("/home");
     } catch (err) {
