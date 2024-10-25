@@ -71,11 +71,12 @@ const submit = async () => {
         await authStore.login(email.value, password.value);
 
         // On successful login, navigate to the home page
-         setTimeout(() => {
-        window.location.reload(); // Reload after notification is shown
-      }, 1000);
+      //    setTimeout(() => {
+      //   window.location.reload(); // Reload after notification is shown
+      //   // router.push("/home");
+      // }, 1000);
 
-        router.push("/home");
+        // router.push("/home");
     } catch (err) {
         // Set error message if login fails
         error.value = "Login failed. Please check your credentials.";

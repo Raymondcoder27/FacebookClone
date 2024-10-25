@@ -32,7 +32,9 @@ export const useAuthStore = defineStore('auth', () => {
 
         
         // After successful login, redirect the user to the home or returnUrl
-        router.push(returnUrl.value || '/')
+        // router.push(returnUrl.value || '/')
+        router.push('/home' || '/')
+
         
       }
     } catch (error) {
