@@ -15,9 +15,6 @@ const authStore = useAuthStore();
 
 onMounted(async () => {
   await getUserDetails();
-  setTimeout(() => {
-        window.location.reload(); // Reload after notification is shown
-      }, 1000);
 });
 
   const getUserDetails = async () => {
