@@ -56,6 +56,10 @@ export const useAuthStore = defineStore('auth', () => {
       const response = await api.post('/login', { email, password });
       console.log("Login response:", response); // Log the entire response
 
+      if (response.status !== 200) {
+        console.error("Response data:", response.data); // Log the error response
+    }
+
       if (response.status === 200) {
         const tokenResponse = response.data.token;  // Assuming the token is in response.data.token
         if (tokenResponse) {
