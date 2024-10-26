@@ -16,28 +16,25 @@ import { storeToRefs } from "pinia";
 import router from "@/router";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-const canResetPassword = true
+const canResetPassword = true;
 
 defineProps({ posts: Object, user: Object });
-
 
 const register = async () => {
   console.log("Registering...");
 
-  try{
-    await api.post('/register', {
+  try {
+    await api.post("/register", {
       // name: username.value,
       email: email.value,
       password: password.value,
     });
-    router.push("/login")
-
-  }
-  catch (error) {
+    router.push("/login");
+  } catch (error) {
     console.log(error);
     // error.value = error
   }
-}
+};
 </script>
 
 <template>
@@ -55,7 +52,7 @@ const register = async () => {
       <!-- <img src="/public/icons/FacebookLogo.png" class="text-sm" alt=""> -->
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
-            <TextInput
+          <TextInput
             id="username"
             type="name"
             class="mt-1 block w-full"
@@ -64,11 +61,9 @@ const register = async () => {
             autocomplete="username"
             placeholder="Name"
           />
-          </div>
+        </div>
 
-
-
-          <div class="mt-4">
+        <div class="mt-4">
           <TextInput
             id="email"
             type="email"
@@ -107,15 +102,17 @@ const register = async () => {
         </div>
 
         <div class="flex items-center justify-center pt-4">
-          <PrimaryButton class="w-full text-sm"
-          @click="register()"> Register </PrimaryButton>
+          <PrimaryButton class="w-full text-sm" @click="register()">
+            Register
+          </PrimaryButton>
         </div>
 
         <div class="flex items-center justify-center my-3">
           <RouterLink
-          v-if="canResetPassword"
-          to="/login"
-          class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            v-if="canResetPassword"
+            to="/login"
+            class="hover:underline font-bold text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             Already Registered?
           </RouterLink>
         </div>
@@ -128,7 +125,6 @@ const register = async () => {
               Log in.
             </RouterLink>
           </div> -->
-
       </form>
     </div>
   </GuestLayout>
