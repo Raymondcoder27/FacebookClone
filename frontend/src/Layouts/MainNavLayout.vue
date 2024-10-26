@@ -48,7 +48,7 @@ const authStore = useAuthStore();
 //     console.error("No token found");
 //     return;
 //   }
-  
+
 //   try {
 //     // const response = await api.get("/user", {
 //     const response = await api.get("/validate", {
@@ -61,8 +61,6 @@ const authStore = useAuthStore();
 //     console.error("Failed to fetch user details", error);
 //   }
 // };
-
-
 
 // onMounted(async () => {
 //   await getUserDetails();
@@ -73,7 +71,7 @@ const authStore = useAuthStore();
 //     console.error("No token found");
 //     return;
 //   }
-  
+
 //   try {
 //     // const response = await api.get("/user", {
 //     const response = await api.get("/validate", {
@@ -87,16 +85,13 @@ const authStore = useAuthStore();
 //   }
 // };
 
-
-
-
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
     console.error("No token found");
     return;
   }
-  
+
   try {
     const response = await api.get("/validate", {
       headers: {
@@ -109,7 +104,6 @@ const getUserDetails = async () => {
   }
 };
 
-
 const logout = async () => {
   await authStore.logout();
   router.push("/login");
@@ -121,7 +115,6 @@ onMounted(async () => {
 });
 
 // alert(JSON.stringify(userDetails));
-
 </script>
 
 
@@ -244,7 +237,7 @@ onMounted(async () => {
               />
               <!-- <span>Raymond Mwebe</span> -->
               <!-- <span>{{userDetails.user.name}}</span> -->
-              <span v-if="userDetails">{{userDetails?.name}}</span>
+              <span v-if="userDetails">{{ userDetails?.name }}</span>
             </div>
           </router-link>
           <button
