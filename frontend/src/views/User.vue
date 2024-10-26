@@ -10,7 +10,7 @@ import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-import {onMounted, ref} from 'vue'
+import { onMounted, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 
@@ -18,17 +18,16 @@ const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
-
 onMounted(async () => {
   await getUserDetails();
 });
-  const getUserDetails = async () => {
+const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
     console.error("No token found");
     return;
   }
-  
+
   try {
     const response = await api.get("/validate", {
       headers: {
@@ -86,7 +85,9 @@ onMounted(async () => {
               </div>
               <div class="md:mt-4 text-center md:text-left -mt-3">
                 <!-- <div class="text-md font-extrabold pt-1">Raymond Mwebe</div> -->
-                <div v-if="userDetails" class="text-md font-extrabold pt-1">{{ userDetails }}</div>
+                <div v-if="userDetails" class="text-md font-extrabold pt-1">
+                  {{ userDetails }}
+                </div>
 
                 <div class="font-bold text-gray-600">234 friends</div>
                 <div class="flex md:justify-start justify-center md:-mt-1">
@@ -182,62 +183,63 @@ onMounted(async () => {
         </div>
       </div>
 
-
-
       <div
         class="flex flex-col md:flex-row w-full justify-between md:px-0 max-w-[1100px] h-[calc(100%-56px)] px-2 mx-auto"
       >
         <div id="LeftSection" class="w-full mt-4 mr-4 md:w-5/12">
           <div class="bg-white p-3 rounded-lg shadow-lg">
             <!-- <div class="font-extrabold pb-2 text-xl"> -->
-              <div class="font-extrabold pb-2 text-xl">Intro</div>
-              <div class="pb-5">
-                <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
-                  Add bio
-                </button>
-              </div>
-              <div class="pb-5">
-                <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
-                  Edit details
-                </button>
-              </div>
-              <div class="pb-5">
-                <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
-                  Add hobbies
-                </button>
-              </div>
-              <div class="pb-5">
-                <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
-                  Add features
-                </button>
-              </div>
+            <div class="font-extrabold pb-2 text-xl">Intro</div>
+            <div class="pb-5">
+              <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
+                Add bio
+              </button>
+            </div>
+            <div class="pb-5">
+              <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
+                Edit details
+              </button>
+            </div>
+            <div class="pb-5">
+              <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
+                Add hobbies
+              </button>
+            </div>
+            <div class="pb-5">
+              <button class="w-full bg-gray-200 rounded-lg p-2 font-bold">
+                Add features
+              </button>
+            </div>
             <!-- </div> -->
           </div>
 
           <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
-              <div class="font-extrabold pb-2 text-xl">Photos</div>
-              <div class="flex flex-wrap items-center justify-start w-full">
-                <span class="w-1/3">
-                  <img
-                  @click="isImageDisplay = 'https://picsum.photos/id/78/300/300'"
-                    src="https://picsum.photos/id/78/300/300"
-                    class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
-                  />
-                </span>
-              </div>
+            <div class="font-extrabold pb-2 text-xl">Photos</div>
+            <div class="flex flex-wrap items-center justify-start w-full">
+              <span class="w-1/3">
+                <img
+                  @click="
+                    isImageDisplay = 'https://picsum.photos/id/78/300/300'
+                  "
+                  src="https://picsum.photos/id/78/300/300"
+                  class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
+                />
+              </span>
             </div>
+          </div>
         </div>
 
         <div id="PostsSection" class="w-full md:w-7/12 overflow-auto">
-            <CreatePostBox 
-                image="https://picsum.photos/id/140/300/320"
-                :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"  />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+          <CreatePostBox
+            image="https://picsum.photos/id/140/300/320"
+            :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
+          />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
         </div>
       </div>
     </div>
