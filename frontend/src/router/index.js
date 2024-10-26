@@ -27,7 +27,7 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView,
-       meta: { requiresAuth: true }, 
+      meta: { requiresAuth: true },
     },
     {
       path: '/about',
@@ -36,7 +36,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
-       meta: { requiresAuth: true }, 
+      meta: { requiresAuth: true },
     },
     {
       path: '/user',
@@ -45,7 +45,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/User.vue'),
-       meta: { requiresAuth: true }, 
+      meta: { requiresAuth: true },
     },
     {
       path: '/register',
@@ -54,7 +54,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Register.vue'),
-      meta: { requiresAuth: false }, 
+      meta: { requiresAuth: false },
     },
     {
       path: '/login',
@@ -63,7 +63,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Login.vue'),
-      meta: { requiresAuth: false }, 
+      meta: { requiresAuth: false },
     },
     {
       path: '/posts',
@@ -72,7 +72,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Posts.vue'),
-      meta: { requiresAuth: true }, 
+      meta: { requiresAuth: true },
     }
   ]
 })
