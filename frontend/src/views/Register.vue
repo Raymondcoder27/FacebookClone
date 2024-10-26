@@ -46,9 +46,6 @@ const register = async () => {
     <div
       class="w-full max-h-[80vh] bg-white text-center justify-center items-center mb-5"
     >
-      <!-- <div class="w-full bg-red-300">
-        <div class="mx-auto pb-1 pt-[56px] max-w-[1100px] bg-green-400"></div>
-      </div> -->
       <!-- <img src="/public/icons/FacebookLogo.png" class="text-sm" alt=""> -->
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
