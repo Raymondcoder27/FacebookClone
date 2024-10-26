@@ -32,7 +32,6 @@ const register = async () => {
     router.push("/login");
   } catch (error) {
     console.log(error);
-    // error.value = error
   }
 };
 </script>
