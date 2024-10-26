@@ -32,7 +32,6 @@ const getUserDetails = async () => {
   }
 
   try {
-    // const response = await api.get("/user", {
     const response = await api.get("/validate", {
       headers: {
         Authorization: `${token}`,
