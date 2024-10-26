@@ -61,7 +61,6 @@ const getUserDetails = async () => {
                 class="rounded-full ml-l min-w-[38px] max-h-[38px]"
               />
               <!-- <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div> -->
-              <!-- <div class="text-[15px] text-gray-800 font-extrabold pl-3">{{userDetails.name}}</div> -->
               <div
                 v-if="userDetails"
                 class="text-[15px] text-gray-800 font-extrabold pl-3"
