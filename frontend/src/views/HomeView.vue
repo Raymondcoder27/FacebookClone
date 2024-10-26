@@ -8,11 +8,6 @@ const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
-
-// const authStore = useAuthStore();
-// const hasReloaded = ref(false); // Track if the page has been reloaded
-
-
 onMounted(async () => {
   await getUserDetails();
 });
