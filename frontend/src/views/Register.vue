@@ -109,15 +109,6 @@ const register = async () => {
             Already Registered?
           </RouterLink>
         </div>
-
-        <!-- <div class="border-b border-b-gray-300"></div>
-          <div class="flex items-center justify-center pt-4 pb-2">
-            <RouterLink
-              class="px-5 py-3 text-white bg-[#37A621] text-[20px] font-bold rounded-lg text-sm"
-            >
-              Log in.
-            </RouterLink>
-          </div> -->
       </form>
     </div>
   </GuestLayout>
