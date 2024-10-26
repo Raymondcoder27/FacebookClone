@@ -32,8 +32,6 @@ const register = async () => {
     });
     router.push("/login")
 
-      // const data = await response.json();
-  // console.log(data);
   }
   catch (error) {
     console.log(error);
