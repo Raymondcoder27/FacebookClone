@@ -31,35 +31,35 @@ defineProps({ posts: Object, user: Object });
 
 const error = ref(null);
 
-// const submit = async () => {
-//     console.log("logging in...")
+ const submit = async () => {
+     console.log("logging in...")
 
-//     try {
-//         const response = await api.post("/login", {
-//             email: email.value,
-//             password: password.value,
-//         });
-//         const token = response.data.token;
-//         console.log(token)
+     try {
+         const response = await api.post("/login", {
+             email: email.value,
+             password: password.value,
+         });
+         const token = response.data.token;
+         console.log(token)
 
-//         localStorage.setItem('token', token);
+         localStorage.setItem('token', token);
 
 
 
-//         // localStorage.getItem('token', token)
-//         await api.get("/validate", {
-//         headers: {
-//           Authorization: 'Bearer ${token.value}'
-//         },
-//         });
+         // localStorage.getItem('token', token)
+         await api.get("/validate", {
+         headers: {
+           Authorization: 'Bearer ${token.value}'
+         },
+         });
 
-//         // localStorage.getItem('token', token)
+         // localStorage.getItem('token', token)
 
-//         router.push("/home");
-//     } catch (error) {
-//         error.value = "Login failed. Please check your credentials.";
-//     }
-// };
+         router.push("/home");
+     } catch (error) {
+         error.value = "Login failed. Please check your credentials.";
+     }
+ };
 
 const submit = async () => {
     console.log("logging in...");
