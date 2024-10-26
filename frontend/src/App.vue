@@ -6,14 +6,8 @@ import Posts from './views/Posts.vue';
 </script>
 
 <template>
-  <!-- <div class="flex text-red-300 text-xl underline">
-    Hello World
-  </div> -->
- <!-- <MainNavLayout> -->
-  <!-- Posts -->
   <RouterView />
   <Posts/>
-  <!-- </MainNavLayout> -->
 </template>
 
 <style scoped>
