@@ -26,26 +26,6 @@ const getUploadedImage = (e) => {
   uploadedImage.value = URL.createObjectURL(e.target.files[0]);
   file.value = e.target.files[0];
 };
-// const getUploadedImage = (e) => {
-//         ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
-//         form.image = e.target.files[0];
-//     }
-
-// const crop = () => {
-//   const { coordinates, canvas } = cropper.value.getResult()
-//   croppedImageData.imageUrl = canvas.toDataURL()
-
-//   let data = new FormData();
-//   // data.append('image', fileInput.value.files[0] || '')
-//     data.append('image', file.value || '')
-//     data.append('height', coordinates.height || '')
-//     data.append('width', coordinates.width || '')
-//     data.append('left', coordinates.left || '')
-//     data.append('top', coordinates.top || '')
-
-//     //send to backend
-//     emit ('showModal', false)
-// }
 
 const crop = () => {
   if (!cropper.value) {
