@@ -39,7 +39,6 @@ const register = async () => {
 
 <template>
   <!-- <Head title="Register" /> -->
-  <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
   <div v-if="error" class="text-red-500">{{ error }}</div>
 
   <GuestLayout>
