@@ -1,12 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import MainNavLayout from './Layouts/MainNavLayout.vue';
-import Posts from './views/Posts.vue';
+import { RouterLink, RouterView } from "vue-router";
+import MainNavLayout from "./Layouts/MainNavLayout.vue";
+import Posts from "./views/Posts.vue";
 </script>
 
 <template>
   <RouterView />
-  <Posts/>
+  <Posts />
 </template>
 
 <style scoped>
