@@ -9,8 +9,11 @@ import ApplicationLogo from "@/components/ApplicationLogo.vue";
   >
     <div class="mt-12">
       <RouterLink to="/">
-        <!-- <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" /> -->
-        <img src="/public/icons/FacebookLogo.png" class="w-[180px] mt-3" alt="" />
+        <img
+          src="/public/icons/FacebookLogo.png"
+          class="w-[180px] mt-3"
+          alt=""
+        />
       </RouterLink>
     </div>
 
