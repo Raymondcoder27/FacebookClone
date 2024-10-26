@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_APP_BASE_URL
+  baseURL: import.meta.env.VITE_APP_BASE_URL
 })
 
-api.interceptors.request.use((config) =>{
-    return config
+api.interceptors.request.use((config) => {
+  return config
 })
 
 // api.interceptors.response.use(
@@ -31,16 +31,16 @@ api.interceptors.response.use(
 
 // Add a request interceptor to include the token in headers
 api.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `${token}`;
-      console.log("Adding token to headers:", config.headers.Authorization); // Log the header
-    }
-    return config;
-  }, (error) => {
-    return Promise.reject(error);
-  });
-  
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `${token}`;
+    console.log("Adding token to headers:", config.headers.Authorization); // Log the header
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+
 //   export default api;
 
 export default api
