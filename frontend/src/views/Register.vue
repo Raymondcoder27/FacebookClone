@@ -67,7 +67,6 @@ const register = async () => {
             autocomplete="username"
             placeholder="Email"
           />
-          <!-- Hello World!! -->
           <!-- <InputError class="mt-2" :message="form.errors.email" /> -->
         </div>
 
