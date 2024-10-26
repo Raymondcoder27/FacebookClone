@@ -74,7 +74,6 @@ const submit = async () => {
         // const response = await api.post("/login", {
         //     email: email.value,
         //     password: password.value,
-        
 
         // On successful login, navigate to the home page
       //    setTimeout(() => {
