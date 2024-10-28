@@ -171,7 +171,7 @@ const getUserDetails = async () => {
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 /> -->
                 <img
-                  src="https://picsum.photos/id/140/300/320"
+                  src="../public/user-placeholder.png"
                   alt=""
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 />
