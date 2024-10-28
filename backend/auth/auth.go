@@ -9,8 +9,6 @@ import (
 	"example.com/facebookclone/initializers"
 	"example.com/facebookclone/models"
 	"github.com/gin-gonic/gin"
-
-	// "github.com/golang-jwt/jwt"
 	"github.com/golang-jwt/jwt/v4"
 	"golang.org/x/crypto/bcrypt"
 )
