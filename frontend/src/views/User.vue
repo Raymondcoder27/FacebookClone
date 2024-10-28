@@ -71,7 +71,7 @@ const getUserDetails = async () => {
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 /> -->
                 <img
-                  :src="userDetails?.image"
+                  :src="userDetails?.email"
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 />
