@@ -61,38 +61,6 @@ func GetAllPosts(c *gin.Context) {
 	c.JSON(200, gin.H{"posts": postResponses})
 }
 
-// // UpdateUserImage updates the user's profile picture
-// func UpdateUserImage(c *gin.Context) {
-// 	// Get the uploaded file from the request
-// 	fileHeader, err := c.FormFile("image")
-// 	if err != nil {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid file upload"})
-// 		return
-// 	}
-
-// 	// Get cropping dimensions from the form
-// 	width, _ := strconv.Atoi(c.PostForm("width"))
-// 	height, _ := strconv.Atoi(c.PostForm("height"))
-// 	left, _ := strconv.Atoi(c.PostForm("left"))
-// 	top, _ := strconv.Atoi(c.PostForm("top"))
-
-// 	// Fetch the user from your database (e.g., based on session or JWT token)
-// 	var user models.User // In a real case, you would get the user from DB
-// 	// Simulating fetching user. Replace with DB logic:
-// 	user.ID = 1
-// 	user.Image = "/images/old_image.png"
-
-// 	// Update the image using the service
-// 	updatedUser, err := services.UpdateUserImage(&user, fileHeader, width, height, left, top)
-// 	if err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-// 		return
-// 	}
-
-// 	// Return the updated user with the new image
-// 	c.JSON(http.StatusOK, gin.H{"user": updatedUser})
-// }
-
 func UpdateUserImage(c *gin.Context) {
 	// Get the uploaded file from the request
 	fileHeader, err := c.FormFile("image")
