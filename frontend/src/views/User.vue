@@ -65,16 +65,16 @@ const getUserDetails = async () => {
               class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center"
             >
               <div class="relative">
-                <!-- <img
+                <img
                   src="https://picsum.photos/id/200/500/500"
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
-                /> -->
-                <img
+                />
+                <!-- <img
                   :src="`${process.env.BASE_URL}${userDetails?.image}`"
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
-                />
+                /> -->
                 <button
                   @click="isCropperModal = true"
                   class="absolute right-0 bg-gray-200 hover:bg-gray-300 rounded-full p-1.5 cursor-pointer top-[100px]"
