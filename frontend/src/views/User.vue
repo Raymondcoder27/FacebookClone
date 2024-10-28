@@ -87,7 +87,6 @@ const getUserDetails = async () => {
                 <!-- <div v-if="userDetails" class="text-md font-extrabold pt-1">
                   {{ userDetails }}
                 </div> -->
-
                 <div class="font-bold text-gray-600">234 friends</div>
                 <div class="flex md:justify-start justify-center md:-mt-1">
                   <img
