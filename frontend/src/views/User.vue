@@ -57,7 +57,6 @@ const getUserDetails = async () => {
             alt=""
             class="rounded-b-xl"
           /> -->
-
           <div
             id="ProfileInfo"
             class="flex md:flex-row flex-col items-center justify-between px-4"
