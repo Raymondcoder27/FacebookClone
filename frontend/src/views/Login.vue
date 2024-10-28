@@ -28,49 +28,49 @@ defineProps({ posts: Object, user: Object });
 
 const error = ref(null);
 
-const submit = async () => {
-  console.log("logging in...");
-
-  try {
-    const response = await api.post("/login", {
-      email: email.value,
-      password: password.value,
-    });
-    const token = response.data.token;
-    console.log(token);
-
-    localStorage.setItem("token", token);
-
-    // localStorage.getItem('token', token)
-    await api.get("/validate", {
-      headers: {
-        Authorization: "Bearer ${token.value}",
-      },
-    });
-
-    // localStorage.getItem('token', token)
-
-    router.push("/home");
-  } catch (error) {
-    error.value = "Login failed. Please check your credentials.";
-  }
-};
-
 // const submit = async () => {
-//     console.log("logging in...");
+//   console.log("logging in...");
 
-//     error.value = null; // Reset error state before attempting login
+//   try {
+//     const response = await api.post("/login", {
+//       email: email.value,
+//       password: password.value,
+//     });
+//     const token = response.data.token;
+//     console.log(token);
 
-//     try {
-//         // Call the login action from the auth store
-//         await authStore.login(email.value, password.value);
+//     localStorage.setItem("token", token);
 
-//         // router.push("/home");
-//     } catch (err) {
-//         // Set error message if login fails
-//         error.value = "Login failed. Please check your credentials.";
-//     }
+//     // localStorage.getItem('token', token)
+//     await api.get("/validate", {
+//       headers: {
+//         Authorization: "Bearer ${token.value}",
+//       },
+//     });
+
+//     // localStorage.getItem('token', token)
+
+//     router.push("/home");
+//   } catch (error) {
+//     error.value = "Login failed. Please check your credentials.";
+//   }
 // };
+
+const submit = async () => {
+    console.log("logging in...");
+
+    error.value = null; // Reset error state before attempting login
+
+    try {
+        // Call the login action from the auth store
+        await authStore.login(email.value, password.value);
+
+        // router.push("/home");
+    } catch (err) {
+        // Set error message if login fails
+        error.value = "Login failed. Please check your credentials.";
+    }
+};
 </script>
 
 
