@@ -233,7 +233,7 @@ const getUserDetails = async () => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           /> -->
           <CreatePostBox
-            image="https://picsum.photos/id/140/300/320"
+            image="../public/user-placeholder.png"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
           <Post />
