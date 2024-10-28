@@ -71,7 +71,7 @@ const getUserDetails = async () => {
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 /> -->
                 <img
-                  :src="userDetails?.image"
+                  :src="`${process.env.BASE_URL}${userDetails?.image}`"
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 />
