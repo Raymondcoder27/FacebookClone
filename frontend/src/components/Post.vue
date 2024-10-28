@@ -61,7 +61,8 @@ onMounted(async () => {
     <div id="Post" class="w-full bg-white rounded-lg my-4 shadow-md">
         <div class="flex items-center py-3 px-3">
             <button class="mr-2">
-                <img  alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]" src="https://picsum.photos/id/140/300/320">
+                <!-- <img  alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]" src="https://picsum.photos/id/140/300/320"> -->
+                <img src="../public/user-placeholder.png" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]">
             </button>
             <div class="flex items-center justify-between p-2 rounded-full w-full">
                 <div>
