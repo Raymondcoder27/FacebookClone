@@ -134,7 +134,7 @@ const getUserDetails = async () => {
             </div>
 
             <RouterLink
-              to="/home"
+              to="/user"
               class="flex justify-center w-7/12 md:w-[160px] items-baseline my-4 bg-gray-200 rounded-lg cursor-pointer"
             >
               <button class="flex items-center px-5 py-2 font-bold">
