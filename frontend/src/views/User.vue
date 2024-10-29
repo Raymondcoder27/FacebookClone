@@ -20,6 +20,7 @@ const authStore = useAuthStore();
 
 onMounted(async () => {
   await getUserDetails();
+  await api.get("/posts");
 });
 const getUserDetails = async () => {
   const token = authStore.token;
