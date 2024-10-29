@@ -58,7 +58,7 @@ func GetAllPosts(c *gin.Context) {
 		postResponses = append(postResponses, postResponse)
 	}
 
-	c.JSON(200, gin.H{"posts": postResponses})
+	c.JSON(200, gin.H{"data": postResponses})
 }
 
 func UpdateUserImage(c *gin.Context) {
