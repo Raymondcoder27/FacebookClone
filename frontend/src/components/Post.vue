@@ -64,6 +64,8 @@ const props = defineProps({
     comments: Object,
 });
 
+const {post, user, comments} = toRefs(props)
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
