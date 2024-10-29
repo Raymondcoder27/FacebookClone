@@ -71,12 +71,9 @@ const CreateComment = async () => {
         await api.post('/create-comment', {
             post_id: post.value.id,
             text: form.comment
-        },
-    {
-        preserveScroll: true,
-    })
-    }catch{
-
+        })
+    }catch(error){
+        console.error('error creating tweet:', error)
     }
 }
 
