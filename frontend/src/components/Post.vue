@@ -97,7 +97,8 @@ onMounted(async () => {
             </div>
         </div>
         <div class="px-5 pb-2 font-semi-bold text-[17px]">
-            {{post.text}}
+            <!-- {{post.text}} -->
+             Lorem ipsum dolor sit.
         </div>
         <img @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'" src="https://picsum.photos/id/189/800/800" alt="" class="mx-auto cursor-pointer">
         <div id="Likes" class="px-5">

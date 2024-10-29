@@ -65,6 +65,28 @@
   }
 };
 
+const createPost = async () => {
+  error.value = null; // Reset error state before attempting to create a post
+
+  const formData = new FormData();
+  formData.append('text', form.text);
+  formData.append('image', form.image);
+
+  try {
+    await api.post('/posts', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${authStore.token}`,
+      },
+    });
+
+    emit('showModal', false);
+  } catch (error) {
+    console.error('Failed to create post', error);
+    error.value = 'Failed to create post. Please try again.';
+  }
+};
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
@@ -139,7 +161,8 @@ onMounted(async () => {
                             </div>
                         </div>
 
-                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-extrabold rounded-lg p-1.5 mt-3">Post</button>
+                        <button
+                        @click="createPost" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-extrabold rounded-lg p-1.5 mt-3">Post</button>
                     </div>
                 </div>
             </div>
