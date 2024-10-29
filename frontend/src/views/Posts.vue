@@ -132,7 +132,7 @@ const getUserDetails = async () => {
           class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto"
         >
           <CreatePostBox
-            image="https://picsum.photos/id/140/300/320"
+            :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
           <Post />
