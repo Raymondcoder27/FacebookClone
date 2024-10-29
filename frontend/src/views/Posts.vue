@@ -135,7 +135,7 @@ const getUserDetails = async () => {
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          <Post />
+          <!-- <Post /> -->
           <Post />
         </div>
 

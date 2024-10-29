@@ -66,6 +66,7 @@ const getUserDetails = async () => {
               class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center"
             >
               <div class="relative">
+                {{userDetails}}
                 <img
                   :src="userDetails?.image"
                   alt=""
