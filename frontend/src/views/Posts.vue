@@ -57,7 +57,7 @@ const getUserDetails = async () => {
               class="flex items-center justify-start w-full cursor-pointer p-2 hover:bg-[#E5E6E9] rounded-md"
             >
               <img
-                src="https://picsum.photos/id/87/300/320"
+                :src="userDetails?.image"
                 class="rounded-full ml-l min-w-[38px] max-h-[38px]"
               />
               <!-- <div class="text-[15px] text-gray-800 font-extrabold pl-3">Raymond Mwebe</div> -->
