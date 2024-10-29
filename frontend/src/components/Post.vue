@@ -58,6 +58,12 @@ const logout = async () => {
   router.push("/login");
 };
 
+const props = defineProps({
+    user: Object,
+    post: Object,
+    comments: Object,
+});
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
