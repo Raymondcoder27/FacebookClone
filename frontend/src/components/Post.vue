@@ -25,6 +25,8 @@
     const authStore = useAuthStore();
     const router = useRouter();
 
+    const post = ref(null)
+
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
