@@ -214,7 +214,7 @@ const getUserDetails = async () => {
           <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
             <div class="font-extrabold pb-2 text-xl">Photos</div>
             <div class="flex flex-wrap items-center justify-start w-full">
-              <span class="w-1/3">
+              <span v-for="photo in posts.data" :key="photo" class="w-1/3">
                 <!-- <img
                   @click="
                     isImageDisplay = 'https://picsum.photos/id/78/300/300'
@@ -223,10 +223,11 @@ const getUserDetails = async () => {
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 /> -->
                 <img
+                v-if="photo.image"
                   @click="
                     isImageDisplay = 'userDetails?.image'
                   "
-                  :src="userDetails?.image"
+                  :src="photo?.image"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 />
                 {{ userDetails }}
