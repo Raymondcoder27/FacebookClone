@@ -79,7 +79,7 @@ const CreateComment = async () => {
 
 const deleteComment =async (id) => {
     try{
-        await api.delete('/delete-comment' + id)
+        await api.delete('/delete-comment/' + id)
     }catch(error){
         console.error('error deleting comment', error)
     }
