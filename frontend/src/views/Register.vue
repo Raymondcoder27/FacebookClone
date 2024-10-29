@@ -32,6 +32,8 @@ const register = async () => {
   } catch (error) {
     console.log(error);
   }
+
+  console.log("Registered");
 };
 </script>
 
