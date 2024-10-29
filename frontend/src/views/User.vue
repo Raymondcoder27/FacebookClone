@@ -20,13 +20,15 @@ const authStore = useAuthStore();
 onMounted(async () => {
   await getUserDetails();
   // await api.get("/posts");
-  await getPosts(),
+  await getPosts();
 });
 
 const getPosts = async() => {
   try{
     const response = await api.get("/posts")
     posts.value = response.data
+  }catch(error){
+    console.error('error fetching posts', error)
   }
 }
 const getUserDetails = async () => {
