@@ -43,7 +43,7 @@ func main() {
 
 		authGroup.GET("/user", controllers.GetLoggedInUser) // Route to get logged in user details
 
-		// authGroup.POST("/comment", controllers.CreateComment)       // Route to create a comment
+		// authGroup.POST("/create-comment", controllers.CreateComment)       // Route to create a comment
 		// authGroup.DELETE("/comment/:id", controllers.DeleteComment) // Route to delete a comment
 
 		// authGroup.GET("/user/:id", controllers.GetUser)                   // Route to get user details
