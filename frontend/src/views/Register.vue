@@ -24,7 +24,7 @@ const register = async () => {
 
   try {
     await api.post("/register", {
-      // name: username.value,
+      name: username.value,
       email: email.value,
       password: password.value,
     });
