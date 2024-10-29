@@ -85,6 +85,14 @@ const deleteComment =async (id) => {
     }
 }
 
+const deletePost =async (id) => {
+    try{
+        await api.delete('/delete-post/' + id)
+    }catch(error){
+        console.error('error deleting post', error)
+    }
+}
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
