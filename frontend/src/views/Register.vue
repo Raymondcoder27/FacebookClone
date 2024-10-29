@@ -38,13 +38,11 @@ defineProps({ posts: Object, user: Object });
 //   console.log("Registered");
 // };
 
-
 const authStore = useAuthStore();
-const username = ref('');
-const email = ref('');
-const password = ref('');
-const confirmPassword = ref('');
-
+const username = ref("");
+const email = ref("");
+const password = ref("");
+const confirmPassword = ref("");
 
 const register = async () => {
   if (password.value !== confirmPassword.value) {
@@ -100,7 +98,7 @@ const register = async () => {
 
         <div class="mt-4">
           <TextInput
-          v-model="password"
+            v-model="password"
             id="password"
             type="password"
             class="mt-1 block w-full"
@@ -113,7 +111,7 @@ const register = async () => {
 
         <div class="mt-4">
           <TextInput
-          v-model="confirmPassword"
+            v-model="confirmPassword"
             id="confirm-password"
             type="password"
             class="mt-1 block w-full"
