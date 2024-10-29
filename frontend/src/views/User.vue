@@ -83,10 +83,10 @@ const getUserDetails = async () => {
                 </button>
               </div>
               <div class="md:mt-4 text-center md:text-left -mt-3">
-                <div class="text-md font-extrabold pt-1">Raymond Mwebe</div>
-                <!-- <div v-if="userDetails" class="text-md font-extrabold pt-1">
+                <!-- <div class="text-md font-extrabold pt-1">Raymond Mwebe</div> -->
+                <div v-if="userDetails" class="text-md font-extrabold pt-1">
                   {{ userDetails }}
-                </div> -->
+                </div>
                 <div class="font-bold text-gray-600">234 friends</div>
                 <div class="flex md:justify-start justify-center md:-mt-1">
                   <img
