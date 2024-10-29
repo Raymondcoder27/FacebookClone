@@ -17,7 +17,7 @@ export const useAuthStore = defineStore('auth', () => {
   // const login = async (email, password) => {
   //   try {
   //     const response = await api.post('/login', { email, password })
-   
+
   //     if (response.status === 200) {
   //       const tokenResponse = response.data.token  // Assuming the token is in response.data.token
   //       localStorage.setItem('user', JSON.stringify(email))  // Assuming email as user identifier
@@ -30,12 +30,12 @@ export const useAuthStore = defineStore('auth', () => {
   //       // router.push('/home' || '/')
   //       window.location.assign('/home'); // Reload after notification is shown
   //     });
-        
+
   //       // After successful login, redirect the user to the home or returnUrl
   //       // router.push(returnUrl.value || '/')
   //       // router.push('/home' || '/')
 
-        
+
   //     }
   //   } catch (error) {
   //     throw new Error('Invalid credentials')  // Handle login failure
@@ -69,13 +69,13 @@ export const useAuthStore = defineStore('auth', () => {
   };
 
 
-   // Actions
-   const login = async (email, password) => {
+  // Actions
+  const login = async (email, password) => {
     console.log("Attempting to log in with:", { email, password }); // Log input credentials
     try {
       // const response = await api.post('/login', { email, password });
 
-      const response = await api.post('/login', 
+      const response = await api.post('/login',
         { email, password },
         {
           headers: {
@@ -87,14 +87,14 @@ export const useAuthStore = defineStore('auth', () => {
 
       if (response.status !== 200) {
         console.error("Response data:", response.data); // Log the error response
-    }
+      }
 
       if (response.status === 200) {
         const tokenResponse = response.data.token;  // Assuming the token is in response.data.token
         if (tokenResponse) {
           localStorage.setItem('user', JSON.stringify(email));  // Store email as user identifier
           localStorage.setItem('token', tokenResponse);  // Store token as a string
-          console.log("Token stored:", tokenResponse); 
+          console.log("Token stored:", tokenResponse);
           user.value = email;
           token.value = tokenResponse;
 
