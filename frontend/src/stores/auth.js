@@ -46,6 +46,29 @@ export const useAuthStore = defineStore('auth', () => {
 
 
 
+  const register = async (name, email, password) => {
+    try {
+      const response = await api.post('/register', {
+        name: name,
+        email: email,
+        password: password,
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log("Registration response:", response);
+
+      // Redirect to login page upon successful registration
+      if (response.status === 200) {
+        router.push('/login');
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+    }
+  };
+
+
    // Actions
    const login = async (email, password) => {
     console.log("Attempting to log in with:", { email, password }); // Log input credentials
