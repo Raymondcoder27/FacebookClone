@@ -43,6 +43,21 @@ const username = ref('');
 const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
+
+
+const register = async () => {
+  if (password.value !== confirmPassword.value) {
+    console.error("Passwords do not match!");
+    return;
+  }
+
+  try {
+    await authStore.register(username.value, email.value, password.value);
+    console.log("Registered successfully, redirecting to login...");
+  } catch (error) {
+    console.log("Error during registration:", error);
+  }
+};
 </script>
 
 <template>
