@@ -83,7 +83,7 @@ onMounted(async () => {
         <div class="px-5 pb-2 font-semi-bold text-[17px]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
         </div>
-        <img @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'" src="https://picsum.photos/id/189/800/800" alt="" class="mx-auto cursor-pointer">
+        <img @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'" :src="userDetails?.image" alt="" class="mx-auto cursor-pointer">
         <div id="Likes" class="px-5">
             <div class="flex items-center justify-between py-3 border-b">
                 <ThumbUp fillColor="#1D72E2" />
