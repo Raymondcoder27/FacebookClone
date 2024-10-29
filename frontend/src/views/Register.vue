@@ -13,6 +13,7 @@ import Pen from "vue-material-design-icons/Pen.vue";
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 import router from "@/router";
+import { useAuthStore } from "@/stores/auth";
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 const canResetPassword = true;
@@ -37,7 +38,11 @@ defineProps({ posts: Object, user: Object });
 // };
 
 
-
+const authStore = useAuthStore();
+const username = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
 </script>
 
 <template>
