@@ -178,7 +178,7 @@ func DeletePost(c *gin.Context) {
 
 	// Check if the post has an associated image and delete it
 	if post.Image != "" {
-		imagePath := filepath.Join("public/images", filepath.Base(post.Image))
+		imagePath := filepath.Join("public", filepath.Base(post.Image))
 		if _, err := os.Stat(imagePath); err == nil {
 			if err := os.Remove(imagePath); err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not delete image"})
