@@ -71,11 +71,6 @@ const getUserDetails = async () => {
                   alt=""
                   class="rounded-full h-[165px] w-[165px] border-4 border-white"
                 />
-                <!-- <img
-                  :src="`${process.env.BASE_URL}${userDetails?.image}`"
-                  alt=""
-                  class="rounded-full h-[165px] w-[165px] border-4 border-white"
-                /> -->
                 <button
                   @click="isCropperModal = true"
                   class="absolute right-0 bg-gray-200 hover:bg-gray-300 rounded-full p-1.5 cursor-pointer top-[100px]"
@@ -215,7 +210,7 @@ const getUserDetails = async () => {
           <div class="bg-white p-3 mt-4 rounded-lg shadow-lg">
             <div class="font-extrabold pb-2 text-xl">Photos</div>
             <div class="flex flex-wrap items-center justify-start w-full">
-              <span v-for="photo in posts.data" :key="photo" class="w-1/3">
+              <span v-for="photo in posts" :key="photo" class="w-1/3">
                 <!-- <img
                   @click="
                     isImageDisplay = 'https://picsum.photos/id/78/300/300'
