@@ -10,6 +10,8 @@ import { onMounted, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 
+const posts = ref([])
+
 const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
