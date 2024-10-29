@@ -142,6 +142,7 @@ export const useAuthStore = defineStore('auth', () => {
     token,
     returnUrl,
     // isAuthenticated,
+    register,
     login,
     validate,
     logout
