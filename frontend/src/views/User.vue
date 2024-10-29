@@ -253,7 +253,7 @@ const getUserDetails = async () => {
           />
 
           <div v-for="post in posts" :key="post">
-          <Post :user="post.user" :post="post" :comments="post.comments"/>
+          <Post :user="post.user" :post="post.text" :comments="post.comments"/>
           </div>
           <!-- <Post />
           <Post />
