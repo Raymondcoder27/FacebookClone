@@ -165,7 +165,7 @@ onMounted(async () => {
       <div class="flex items-center justify-center relative">
         <button @click="showMenu = !showMenu">
           <img
-            src="https://picsum.photos/id/87/300/320"
+            :src="userDetails?.image"
             alt=""
             class="rounded-full ml-1 cursor-pointer min-w-[40px] max-h-[40px]"
           />
