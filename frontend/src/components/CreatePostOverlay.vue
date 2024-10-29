@@ -71,7 +71,7 @@ const createPost = async () => {
   formData.append("image", form.image);
 
   try {
-    await api.post("/post", formData, {
+    await api.post("/create-post", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${authStore.token}`,
