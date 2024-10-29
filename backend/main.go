@@ -28,6 +28,8 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
+	r.Static("/images", "./public") // Serve images from the /public directory in the backend
+
 	r.POST("/register", auth.Signup)
 	r.POST("/login", auth.Login)
 	r.GET("/validate", middleware.RequireAuth, auth.Validate)
@@ -51,7 +53,6 @@ func main() {
 		// authGroup.PATCH("/profile", controllers.UpdateProfile)  // Route to update profile
 		// authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
 	}
-	r.Static("/images", "./public") // Serve images from the /public directory in the backend
 
 	r.Run()
 }
