@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"time"
 
 	"example.com/facebookclone/contracts"
 	"example.com/facebookclone/initializers"
@@ -58,7 +59,10 @@ func GetAllPosts(c *gin.Context) {
 		postResponses = append(postResponses, postResponse)
 	}
 
-	c.JSON(200, gin.H{"data": postResponses})
+	currentTime := time.Now()
+
+	// c.JSON(200, gin.H{"posts": postResponses})
+	c.IndentedJSON(http.StatusOK, gin.H{"code": 200, "data": postResponses, "timestamp": currentTime})
 }
 
 func UpdateUserImage(c *gin.Context) {
