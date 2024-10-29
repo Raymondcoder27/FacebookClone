@@ -15,7 +15,7 @@ import (
 // UpdateImage processes the image upload, deletes the old image if it exists, and saves the new one
 func UpdateUserImage(model *models.User, fileHeader *multipart.FileHeader, width, height, left, top int) (*models.User, error) {
 	// Define the placeholder image path (this can be customized)
-	placeholderImagePath := "/images/user-placeholder.png"
+	placeholderImagePath := "/user-placeholder.png"
 	publicPath := "public/"
 
 	// Check if the model already has an image and delete the old one (if it's not the placeholder)
