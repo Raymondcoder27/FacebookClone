@@ -66,7 +66,7 @@ const getUserDetails = async () => {
               class="flex md:flex-row flex-col gap-4 md:-mt-6 -mt-16 items-center"
             >
               <div class="relative">
-                {{userDetails}}
+                {{ userDetails }}
                 <img
                   :src="userDetails?.image"
                   alt=""
@@ -220,10 +220,8 @@ const getUserDetails = async () => {
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 /> -->
                 <img
-                v-if="photo.image"
-                  @click="
-                    isImageDisplay = 'userDetails?.image'
-                  "
+                  v-if="photo.image"
+                  @click="isImageDisplay = 'userDetails?.image'"
                   :src="photo?.image"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 />
