@@ -66,6 +66,20 @@ const props = defineProps({
 
 const {post, user, comments} = toRefs(props)
 
+const CreateComment = async () => {
+    try{
+        await api.post('/create-comment', {
+            post_id: post.value.id,
+            text: form.comment
+        },
+    {
+        preserveScroll: true,
+    })
+    }catch{
+
+    }
+}
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
