@@ -222,8 +222,7 @@ const getUserDetails = async () => {
                   src="https://picsum.photos/id/78/300/300"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 />
-    {{userDetails}}
-
+                {{ userDetails }}
               </span>
             </div>
           </div>
