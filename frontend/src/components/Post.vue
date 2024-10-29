@@ -23,7 +23,7 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 const router = useRouter();
 
-const post = ref(null);
+// const post = ref(null);
 
 const getPosts = async () => {
   try {
