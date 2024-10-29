@@ -57,19 +57,19 @@ const error = ref(null);
 // };
 
 const submit = async () => {
-    console.log("logging in...");
+  console.log("logging in...");
 
-    error.value = null; // Reset error state before attempting login
+  error.value = null; // Reset error state before attempting login
 
-    try {
-        // Call the login action from the auth store
-        await authStore.login(email.value, password.value);
+  try {
+    // Call the login action from the auth store
+    await authStore.login(email.value, password.value);
 
-        // router.push("/home");
-    } catch (err) {
-        // Set error message if login fails
-        error.value = "Login failed. Please check your credentials.";
-    }
+    // router.push("/home");
+  } catch (err) {
+    // Set error message if login fails
+    error.value = "Login failed. Please check your credentials.";
+  }
 };
 </script>
 
