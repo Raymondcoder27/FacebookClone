@@ -32,58 +32,6 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-// const getUserDetails = async () => {
-//   const token = authStore.token; // Fetch the token from the authStore
-//   const response = await api.get("/user", {
-//     headers: {
-//       Authorization: `Bearer ${token}`, // Attach the token
-//     },
-//   });
-//   userDetails.value = response.data;
-// };
-
-// const getUserDetails = async () => {
-//   const token = authStore.token;
-//   if (!token) {
-//     console.error("No token found");
-//     return;
-//   }
-
-//   try {
-//     // const response = await api.get("/user", {
-//     const response = await api.get("/validate", {
-//       headers: {
-//         Authorization: `${token}`,
-//       },
-//     });
-//     userDetails.value = response.data;
-//   } catch (error) {
-//     console.error("Failed to fetch user details", error);
-//   }
-// };
-
-// onMounted(async () => {
-//   await getUserDetails();
-// });
-//   const getUserDetails = async () => {
-//   const token = authStore.token;
-//   if (!token) {
-//     console.error("No token found");
-//     return;
-//   }
-
-//   try {
-//     // const response = await api.get("/user", {
-//     const response = await api.get("/validate", {
-//       headers: {
-//         Authorization: `${token}`,
-//       },
-//     });
-//     userDetails.value = response.data;
-//   } catch (error) {
-//     console.error("Failed to fetch user details", error);
-//   }
-// };
 
 const getUserDetails = async () => {
   const token = authStore.token;
