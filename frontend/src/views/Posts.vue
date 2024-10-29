@@ -49,7 +49,7 @@ const props = defineProps({
   comments: Object,
 });
 
-const {post,user, comments } = toRefs(props);
+const { post, user, comments } = toRefs(props);
 </script>
 
 <template>
@@ -146,16 +146,15 @@ const {post,user, comments } = toRefs(props);
           <!-- <Post /> -->
           <Post />
 
-
-           <!-- Render posts -->
-      <!-- <div v-for="post in userDetails?.posts" :key="post.id">
+          <!-- Render posts -->
+          <!-- <div v-for="post in userDetails?.posts" :key="post.id">
         <Post :user="post.user" :post="post" :comments="post.comments" />
       </div> -->
         </div>
 
         <div v-for="post in userDetails?.posts" :key="post.id">
-        <Post :user="post.user" :post="post" :comments="post.comments" />
-      </div>
+          <Post :user="post.user" :post="post" :comments="post.comments" />
+        </div>
 
         <div id="RightSection" class="pl-4 md:block hidden">
           <div class="mx-auto pt-4 max-w-[340px] min-w-[250px]">
