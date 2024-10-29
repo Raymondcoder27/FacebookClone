@@ -27,7 +27,7 @@ func Signup(c *gin.Context) {
 		return
 	}
 
-	placeholderImagePath := "images/user-placeholder.png"
+	placeholderImagePath := "./images/user-placeholder.png"
 
 	user := models.User{Name: body.Name, Email: body.Email, Password: string(hash), Image: placeholderImagePath}
 	result := initializers.DB.Create(&user)
