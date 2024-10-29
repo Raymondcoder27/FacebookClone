@@ -47,6 +47,7 @@ const register = async () => {
       <form action="" @submit.prevent="submit" class="mb-5 text-black">
         <div>
           <TextInput
+            v-model="username"
             id="username"
             type="name"
             class="mt-1 block w-full"
@@ -59,6 +60,7 @@ const register = async () => {
 
         <div class="mt-4">
           <TextInput
+            v-model="email"
             id="email"
             type="email"
             class="mt-1 block w-full"
@@ -72,6 +74,7 @@ const register = async () => {
 
         <div class="mt-4">
           <TextInput
+          v-model="password"
             id="password"
             type="password"
             class="mt-1 block w-full"
