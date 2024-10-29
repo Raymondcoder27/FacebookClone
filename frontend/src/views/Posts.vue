@@ -46,10 +46,10 @@ const getUserDetails = async () => {
 const props = defineProps({
   userDetails: Object,
   post: Object,
-  user: Object,
+  comments: Object,
 });
 
-const {post, }
+const {post,userDetails, comments } = toRefs(props);
 </script>
 
 <template>
