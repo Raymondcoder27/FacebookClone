@@ -95,7 +95,7 @@ onMounted(async () => {
             <div id="CreateComment" class="flex items-center justify-between py-2">
                 <div class="flex items-center w-full">
                     <RouterLink to="/">
-                        <img src="https://picsum.photos/id/199/800/800" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
+                        <img :src="userDetails?.image" alt="" class="rounded-full ml-1 min-w-[36px] max-h-[36px]">
                     </RouterLink>
                     <div class="flex items-center justify-center p-2 rounded-full w-full bg-[#EFF2F5]">
                         <input
@@ -116,7 +116,7 @@ onMounted(async () => {
                 <div class="flex items-center justify-between pb-2">
                     <div class="flex items-center w-full mb-1">
                         <RouterLink to="/">
-                            <img @click="isImageDisplay = 'https://picsum.photos/id/299/800/800'" src="https://picsum.photos/id/299/800/800" alt="" class="rounded-full min-w-[36px] max-h-[36px]">
+                            <img @click="isImageDisplay = 'https://picsum.photos/id/299/800/800'" :src="userDetails?.image" alt="" class="rounded-full min-w-[36px] max-h-[36px]">
                         </RouterLink>
                         <div class="flex items-center w-full">
                             <div class="flex items-center text-xs p-2 rounded-lg w-full bg-[#EFF2F5]">
