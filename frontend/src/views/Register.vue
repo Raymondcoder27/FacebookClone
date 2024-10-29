@@ -6,6 +6,7 @@ import PrimaryButton from "@/components/PrimaryButton.vue";
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 import TextInput from "@/components/TextInput.vue";
 import api from "@/config/api";
+import { ref } from "vue";
 
 import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
