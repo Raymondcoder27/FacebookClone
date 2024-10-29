@@ -19,8 +19,16 @@ const authStore = useAuthStore();
 
 onMounted(async () => {
   await getUserDetails();
-  await api.get("/posts");
+  // await api.get("/posts");
+  await getPosts(),
 });
+
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data
+  }
+}
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
@@ -240,7 +248,7 @@ const getUserDetails = async () => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
 
-          <div v-for="post in posts" :key="post">
+          <div v-for="post in posts.data" :key="post">
           <Post :user="post.user" :post="post" :comments="post.comments"/>
           </div>
           <!-- <Post />
