@@ -124,39 +124,81 @@ func GetPosts(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"posts": posts})
 }
 
-// CreatePost handles creating a new post
+// // CreatePost handles creating a new post
+// func CreatePost(c *gin.Context) {
+// 	// Validate the text field
+// 	text := c.PostForm("text")
+// 	image := c.PostForm("image")
+// 	if text == "" {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
+// 		return
+// 	}
+
+// 	if image == "" {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Image is required"})
+// 		return
+// 	}
+
+// 	// Initialize a new post
+// 	var post models.Post
+
+// 	// Handle image upload if provided
+// 	fileHeader, err := c.FormFile("image")
+// 	if err == nil && fileHeader != nil {
+// 		width, _ := strconv.Atoi(c.PostForm("width"))
+// 		height, _ := strconv.Atoi(c.PostForm("height"))
+// 		left, _ := strconv.Atoi(c.PostForm("left"))
+// 		top, _ := strconv.Atoi(c.PostForm("top"))
+
+// 		updatedPost, err := services.UpdateImage(&post, fileHeader, width, height, left, top)
+// 		if err != nil {
+// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
+// 			return
+// 		}
+// 		post = *updatedPost
+// 	}
+
+// 	// Assume the user is authenticated, and their ID is available in the context
+// 	userID := c.MustGet("userID").(uint) // This depends on how you've set up authentication
+
+// 	post.UserID = userID
+// 	post.Text = text
+// 	post.Image = image
+
+// 	// Save the post to the database
+// 	if err := initializers.DB.Create(&post).Error; err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
+// 		return
+// 	}
+
+// 	// Return success response
+// 	c.JSON(http.StatusOK, gin.H{"post": post})
+// }
+
 func CreatePost(c *gin.Context) {
-	// Validate the text field
+	// Get the text field
 	text := c.PostForm("text")
 	if text == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
 		return
 	}
 
-	// Initialize a new post
-	var post models.Post
-
 	// Handle image upload if provided
+	var imagePath string
 	fileHeader, err := c.FormFile("image")
-	if err == nil && fileHeader != nil {
-		width, _ := strconv.Atoi(c.PostForm("width"))
-		height, _ := strconv.Atoi(c.PostForm("height"))
-		left, _ := strconv.Atoi(c.PostForm("left"))
-		top, _ := strconv.Atoi(c.PostForm("top"))
-
-		updatedPost, err := services.UpdateImage(&post, fileHeader, width, height, left, top)
-		if err != nil {
+	if err == nil {
+		imagePath = "./public/" // Define the path where you want to save it
+		if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
 			return
 		}
-		post = *updatedPost
 	}
 
-	// Assume the user is authenticated, and their ID is available in the context
-	userID := c.MustGet("userID").(uint) // This depends on how you've set up authentication
-
-	post.UserID = userID
+	// Populate post fields
+	var post models.Post
+	post.UserID = c.MustGet("userID").(uint) // Adjust for your authentication setup
 	post.Text = text
+	post.Image = imagePath // Store the file path
 
 	// Save the post to the database
 	if err := initializers.DB.Create(&post).Error; err != nil {
@@ -164,7 +206,6 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	// Return success response
 	c.JSON(http.StatusOK, gin.H{"post": post})
 }
 
