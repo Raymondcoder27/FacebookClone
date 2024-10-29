@@ -224,7 +224,7 @@ const getUserDetails = async () => {
                 /> -->
                 <img
                   @click="
-                    isImageDisplay = 'https://picsum.photos/id/78/300/300'
+                    isImageDisplay = 'userDetails?.image'
                   "
                   src="userDetails?.image"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
