@@ -137,10 +137,6 @@ const getUserDetails = async () => {
           />
           <Post />
           <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
         </div>
 
         <div id="RightSection" class="pl-4 md:block hidden">
