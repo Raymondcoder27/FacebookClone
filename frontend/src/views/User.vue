@@ -239,12 +239,12 @@ const getUserDetails = async () => {
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
+          <Post :user="post.user" :post="post" :comments="post.comments"/>
+          <!-- <Post />
           <Post />
           <Post />
           <Post />
-          <Post />
-          <Post />
-          <Post />
+          <Post /> -->
         </div>
       </div>
     </div>
