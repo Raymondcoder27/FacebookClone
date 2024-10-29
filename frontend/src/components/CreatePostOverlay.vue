@@ -89,7 +89,7 @@ onMounted(async () => {
                 <div class="border-t border-t-gray-300">
                     <div class="p-4">
                         <div class="flex items-center">
-                            <img src="https://picsum.photos/id/87/300/320" alt="" class="rounded-full ml-1 min-w-[45px] max-h-[45px]">
+                            <img :src="userDetails?.image" alt="" class="rounded-full ml-1 min-w-[45px] max-h-[45px]">
                             <div class="ml-4">
                                 <div class="font-extrabold">{{userDetails?.name}}</div>
                                 <div class="flex items-center justify-between bg-gray-200 px-2 rounded-lg w-[100px] p-0.5">
