@@ -194,9 +194,15 @@ func CreatePost(c *gin.Context) {
 		}
 	}
 
+	userID, exists := c.Get("userID")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "User ID not found"})
+		return
+	}
+
 	// Populate post fields
 	var post models.Post
-	post.UserID = c.MustGet("userID").(uint) // Adjust for your authentication setup
+	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
 	post.Image = imagePath // Store the file path
 
