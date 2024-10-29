@@ -171,7 +171,7 @@ const getUserDetails = async () => {
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 /> -->
                 <img
-                  src="../public/user-placeholder.png"
+                  :src="userDetails?.image"
                   alt=""
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 />
