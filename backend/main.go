@@ -28,7 +28,7 @@ func main() {
 	}
 	r.Use(cors.New(config))
 
-	r.Static("/images", "./frontend/public/images") // Serve images from the /public directory in the backend
+	r.Static("/public", "./public") // Serve images from the /public directory in the backend
 
 	r.POST("/register", auth.Signup)
 	r.POST("/login", auth.Login)
