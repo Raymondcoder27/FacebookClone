@@ -19,22 +19,25 @@ const canResetPassword = true;
 
 defineProps({ posts: Object, user: Object });
 
-const register = async () => {
-  console.log("Registering...");
+// const register = async () => {
+//   console.log("Registering...");
 
-  try {
-    await api.post("/register", {
-      name: username.value,
-      email: email.value,
-      password: password.value,
-    });
-    router.push("/login");
-  } catch (error) {
-    console.log(error);
-  }
+//   try {
+//     await api.post("/register", {
+//       name: username.value,
+//       email: email.value,
+//       password: password.value,
+//     });
+//     router.push("/login");
+//   } catch (error) {
+//     console.log(error);
+//   }
 
-  console.log("Registered");
-};
+//   console.log("Registered");
+// };
+
+
+
 </script>
 
 <template>
