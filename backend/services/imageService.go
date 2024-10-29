@@ -58,7 +58,7 @@ func UpdateImage(model *models.Post, fileHeader *multipart.FileHeader, width, he
 	}
 
 	// Update the model's image field
-	model.Image = "/images/" + imageName
+	model.Image = "public/images/" + imageName
 
 	return model, nil
 }
