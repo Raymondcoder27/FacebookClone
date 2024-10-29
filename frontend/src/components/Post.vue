@@ -80,7 +80,6 @@ const CreateComment = async () => {
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
-
   await getPosts();
 });
 </script>
