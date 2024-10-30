@@ -236,7 +236,7 @@ const getUserDetails = async () => {
                   :src="photo?.image"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 />
-                {{ userDetails }}
+                <!-- {{ userDetails }} -->
               </span>
             </div>
           </div>
