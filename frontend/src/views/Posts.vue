@@ -147,9 +147,9 @@ const props = defineProps({
           <!-- <Post /> -->
 
           <!-- Render posts -->
-          <div v-for="post in userDetails?.posts" :key="post.id">
+          <!-- <div v-for="post in userDetails?.posts" :key="post.id">
         <Post :user="post.user" :post="post" :comments="post.comments" />
-      </div>
+      </div> -->
         </div>
 
         <div v-for="post in posts" :key="post.id">

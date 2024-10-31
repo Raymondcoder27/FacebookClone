@@ -23,12 +23,12 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 const router = useRouter();
 
-// const post = ref(null);
+const posts = ref([]);
 
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
-    post.value = response.data;
+    posts.value = response.data;
   } catch (error) {
     console.error("Failed to fetch posts", error);
   }
