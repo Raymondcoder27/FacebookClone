@@ -8,16 +8,16 @@ import Delete from "vue-material-design-icons/Delete.vue";
 import Check from "vue-material-design-icons/Check.vue";
 
 import { storeToRefs } from "pinia";
+import { useAuthStore } from "@/stores/auth";
+import api from "@/config/api";
+import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+
 const useGeneral = useGeneralStore();
 
 const { isImageDisplay } = storeToRefs(useGeneral);
 
 const form = reactive({ comment: null });
-
-import { useAuthStore } from "@/stores/auth";
-import api from "@/config/api";
-import { onMounted, ref } from "vue";
-import { useRouter } from "vue-router";
 
 const userDetails = ref(null);
 const authStore = useAuthStore();
