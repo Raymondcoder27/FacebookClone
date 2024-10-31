@@ -161,7 +161,7 @@ onMounted(async () => {
           <!-- <Post /> -->
 
           <!-- Render posts -->
-          <div v-for="post in posts" :key="post.id">
+          <div v-for="post in posts.data" :key="post.id">
         <Post :user="post.user" :post="post.text" :comments="post.comments" />
       </div>
         </div>
