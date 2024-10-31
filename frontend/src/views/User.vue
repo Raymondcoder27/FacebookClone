@@ -19,12 +19,6 @@ const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
-onMounted(async () => {
-  await getUserDetails();
-  // await api.get("/posts");
-  await getPosts();
-});
-
 const getPosts = async() => {
   try{
     const response = await api.get("/posts")
@@ -51,6 +45,12 @@ const getUserDetails = async () => {
     console.error("Failed to fetch user details", error);
   }
 };
+
+onMounted(async () => {
+  await getUserDetails();
+  // await api.get("/posts");
+  await getPosts();
+});
 </script>
 
 <template>
