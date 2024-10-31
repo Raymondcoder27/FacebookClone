@@ -180,7 +180,7 @@ onMounted(async () => {
           <div class="flex items-center w-full mb-1">
             <RouterLink to="/">
               <img
-                @click="isImageDisplay = 'https://picsum.photos/id/299/800/800'"
+                @click="isImageDisplay = comment.user.image"
                 :src="userDetails?.image"
                 alt=""
                 class="rounded-full min-w-[36px] max-h-[36px]"
@@ -190,11 +190,17 @@ onMounted(async () => {
               <div
                 class="flex items-center text-xs p-2 rounded-lg w-full bg-[#EFF2F5]"
               >
-                This is a comment
+                <!-- This is a comment -->
+                 {{comment.text}}
               </div>
-              <button class="rounded-full ml-2 cursor-pointer">
+              <!-- <button class="rounded-full ml-2 cursor-pointer">
                 <Delete fillColor="#64676B" />
-              </button>
+              </button> -->
+              <button
+                                v-if="$page.props.auth.user.id === comment.user.id"
+                                @click="deleteComment(comment.id)"
+                                class="rounded-full p-1.5 ml-2 cursor-pointer hover:bg-[#F2F2F2]"
+                            >
             </div>
           </div>
         </div>
