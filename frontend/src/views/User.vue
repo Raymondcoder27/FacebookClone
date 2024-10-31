@@ -46,8 +46,6 @@ const getUserDetails = async () => {
   }
 };
 
-// defineProps({ posts: Object, user: Object })
-
 onMounted(() => {
   getUserDetails();
   getPosts();
