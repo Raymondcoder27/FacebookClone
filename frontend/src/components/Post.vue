@@ -28,7 +28,7 @@ const posts = ref([]);
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
-    posts.value = response.data;
+    posts.value = response.data.data;
   } catch (error) {
     console.error("Failed to fetch posts", error);
   }
@@ -119,7 +119,7 @@ onMounted(async () => {
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
           <div class="flex items-center text-xs text-gray-600">
-            {{ post.created_at }}  
+            <!-- {{ posts.created_at }}   -->
             <!-- 14h -->
             <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
           </div>
