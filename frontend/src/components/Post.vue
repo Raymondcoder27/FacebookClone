@@ -197,10 +197,12 @@ onMounted(async () => {
                 <Delete fillColor="#64676B" />
               </button> -->
               <button
-                                v-if="$page.props.auth.user.id === comment.user.id"
+                                v-if="userDetails?.id === comment.user.id"
                                 @click="deleteComment(comment.id)"
                                 class="rounded-full p-1.5 ml-2 cursor-pointer hover:bg-[#F2F2F2]"
                             >
+                            <Delete fillColor="#64676B"/>
+                            </button>
             </div>
           </div>
         </div>
