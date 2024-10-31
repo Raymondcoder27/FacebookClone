@@ -158,7 +158,7 @@ onMounted(async () => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
           <!-- <Post /> -->
-          <!-- <Post /> -->
+          <Post />
 
           <!-- Render posts -->
           <!-- <div v-for="post in posts" :key="post.id">
