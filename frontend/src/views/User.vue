@@ -253,7 +253,7 @@ onMounted(async () => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
 
-          <div v-for="post in posts" :key="post">
+          <div v-for="post in posts" :key="post.id">
           <Post :user="post.user" :post="post" :comments="post.comments"/>
           </div>
           <!-- <Post />
