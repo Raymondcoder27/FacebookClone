@@ -48,7 +48,6 @@ const getUserDetails = async () => {
 
 onMounted(async () => {
   await getUserDetails();
-  // await api.get("/posts");
   await getPosts();
 });
 </script>
