@@ -48,9 +48,10 @@ const getUserDetails = async () => {
 
 // defineProps({ posts: Object, user: Object })
 
-onMounted(async () => {
-  await getUserDetails();
-  await getPosts();
+onMounted(() => {
+  getUserDetails();
+  getPosts();
+  getComments();
 });
 </script>
 
