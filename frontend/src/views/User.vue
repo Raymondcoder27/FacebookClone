@@ -49,7 +49,7 @@ const getUserDetails = async () => {
 onMounted(() => {
   getUserDetails();
   getPosts();
-  getComments();
+  // getComments();
 });
 </script>
 
