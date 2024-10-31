@@ -52,7 +52,7 @@ const getUserDetails = async () => {
   }
 };
 
-const props = defineProps({
+defineProps({
   // user: Object,
   posts: Object,
   // comments: Object,
