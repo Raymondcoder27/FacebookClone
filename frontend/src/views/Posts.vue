@@ -33,10 +33,6 @@ const getPosts = async () => {
   }
 };
 
-onMounted(async () => {
-  await getUserDetails();
-  await getPosts();
-});
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
@@ -63,6 +59,11 @@ const props = defineProps({
 });
 
 // const { post, user, comments } = toRefs(props);
+
+onMounted(async () => {
+  await getUserDetails();
+  await getPosts();
+});
 </script>
 
 <template>
@@ -161,7 +162,7 @@ const props = defineProps({
 
           <!-- Render posts -->
           <div v-for="post in posts" :key="post.id">
-        <Post :user="post.user" :post="post" :comments="post.comments" />
+        <Post :user="post.user" :post="post.text" :comments="post.comments" />
       </div>
         </div>
 
