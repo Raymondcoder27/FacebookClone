@@ -92,6 +92,7 @@ const logout = async () => {
   await authStore.logout();
   router.push("/login");
 };
+console.log("Fetched posts:", posts.value);
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
@@ -113,6 +114,7 @@ onMounted(async () => {
         <!-- <img src="./public/user-placeholder.png" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]"> -->
       </button>
       <div class="flex items-center justify-between p-2 rounded-full w-full">
+        {{posts}}
         <div>
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
@@ -130,7 +132,7 @@ onMounted(async () => {
       </div>
     </div>
     <div class="px-5 pb-2 font-semi-bold text-[17px]">
-      {{ post.text }}
+      <!-- {{ post.text }} -->
       <!-- Lorem ipsum dolor sit. -->
     </div>
     <img
