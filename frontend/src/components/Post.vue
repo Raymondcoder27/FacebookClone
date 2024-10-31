@@ -130,8 +130,8 @@ onMounted(async () => {
       </div>
     </div>
     <div class="px-5 pb-2 font-semi-bold text-[17px]">
-      <!-- {{post.text}} -->
-      Lorem ipsum dolor sit.
+      {{post.text}}
+      <!-- Lorem ipsum dolor sit. -->
     </div>
     <img
       @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'"
@@ -175,8 +175,8 @@ onMounted(async () => {
         </div>
       </div>
 
-      <div id="Comments" class="max-h-[120px] overflow-auto pb-2 px-4">
-        <div class="flex items-center justify-between pb-2">
+      <div v-if="comments" id="Comments" class="max-h-[120px] overflow-auto pb-2 px-4">
+        <div class="flex items-center justify-between pb-2" v-for="comment in comments" :key="comment">
           <div class="flex items-center w-full mb-1">
             <RouterLink to="/">
               <img
