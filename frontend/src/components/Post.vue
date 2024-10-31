@@ -54,39 +54,39 @@ const getUserDetails = async () => {
 };
 
 const props = defineProps({
-    user: Object,
-    post: Object,
-    comments: Object,
+  user: Object,
+  post: Object,
+  comments: Object,
 });
 
-const {post, user, comments} = toRefs(props)
+const { post, user, comments } = toRefs(props);
 
 const CreateComment = async () => {
-    try{
-        await api.post('/create-comment', {
-            post_id: post.value.id,
-            text: form.comment
-        })
-    }catch(error){
-        console.error('error creating tweet:', error)
-    }
-}
+  try {
+    await api.post("/create-comment", {
+      post_id: post.value.id,
+      text: form.comment,
+    });
+  } catch (error) {
+    console.error("error creating tweet:", error);
+  }
+};
 
-const deleteComment =async (id) => {
-    try{
-        await api.delete('/delete-comment/' + id)
-    }catch(error){
-        console.error('error deleting comment', error)
-    }
-}
+const deleteComment = async (id) => {
+  try {
+    await api.delete("/delete-comment/" + id);
+  } catch (error) {
+    console.error("error deleting comment", error);
+  }
+};
 
-const deletePost =async (id) => {
-    try{
-        await api.delete('/delete-post/' + id)
-    }catch(error){
-        console.error('error deleting post', error)
-    }
-}
+const deletePost = async (id) => {
+  try {
+    await api.delete("/delete-post/" + id);
+  } catch (error) {
+    console.error("error deleting post", error);
+  }
+};
 
 const logout = async () => {
   await authStore.logout();
@@ -130,7 +130,7 @@ onMounted(async () => {
       </div>
     </div>
     <div class="px-5 pb-2 font-semi-bold text-[17px]">
-      {{post.text}}
+      {{ post.text }}
       <!-- Lorem ipsum dolor sit. -->
     </div>
     <img
@@ -175,8 +175,16 @@ onMounted(async () => {
         </div>
       </div>
 
-      <div v-if="comments" id="Comments" class="max-h-[120px] overflow-auto pb-2 px-4">
-        <div class="flex items-center justify-between pb-2" v-for="comment in comments" :key="comment">
+      <div
+        v-if="comments"
+        id="Comments"
+        class="max-h-[120px] overflow-auto pb-2 px-4"
+      >
+        <div
+          class="flex items-center justify-between pb-2"
+          v-for="comment in comments"
+          :key="comment"
+        >
           <div class="flex items-center w-full mb-1">
             <RouterLink to="/">
               <img
@@ -191,18 +199,18 @@ onMounted(async () => {
                 class="flex items-center text-xs p-2 rounded-lg w-full bg-[#EFF2F5]"
               >
                 <!-- This is a comment -->
-                 {{comment.text}}
+                {{ comment.text }}
               </div>
               <!-- <button class="rounded-full ml-2 cursor-pointer">
                 <Delete fillColor="#64676B" />
               </button> -->
               <button
-                                v-if="userDetails?.id === comment.user.id"
-                                @click="deleteComment(comment.id)"
-                                class="rounded-full p-1.5 ml-2 cursor-pointer hover:bg-[#F2F2F2]"
-                            >
-                            <Delete fillColor="#64676B"/>
-                            </button>
+                v-if="userDetails?.id === comment.user.id"
+                @click="deleteComment(comment.id)"
+                class="rounded-full p-1.5 ml-2 cursor-pointer hover:bg-[#F2F2F2]"
+              >
+                <Delete fillColor="#64676B" />
+              </button>
             </div>
           </div>
         </div>
