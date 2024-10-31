@@ -46,7 +46,7 @@ const getUserDetails = async () => {
   }
 };
 
-defineProps({ posts: Object, user: Object })
+// defineProps({ posts: Object, user: Object })
 
 onMounted(async () => {
   await getUserDetails();
