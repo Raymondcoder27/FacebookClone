@@ -114,7 +114,7 @@ onMounted(async () => {
         <!-- <img src="./public/user-placeholder.png" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]"> -->
       </button>
       <div class="flex items-center justify-between p-2 rounded-full w-full">
-        {{posts}}
+        <!-- {{posts}} -->
         <div>
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
