@@ -53,11 +53,6 @@ const getUserDetails = async () => {
   }
 };
 
-const logout = async () => {
-  await authStore.logout();
-  router.push("/login");
-};
-
 const props = defineProps({
     user: Object,
     post: Object,
@@ -93,6 +88,11 @@ const deletePost =async (id) => {
     }
 }
 
+const logout = async () => {
+  await authStore.logout();
+  router.push("/login");
+};
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
@@ -117,7 +117,7 @@ onMounted(async () => {
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
           <div class="flex items-center text-xs text-gray-600">
-            {{ post.created_at }} 
+            <!-- {{ post.created_at }}   -->
             <!-- 14h -->
             <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
           </div>
