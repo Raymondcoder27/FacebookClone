@@ -21,8 +21,21 @@ import { useAuthStore } from "@/stores/auth";
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
+
+const posts = ref([]);
+
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data;
+  } catch (error) {
+    console.error("Failed to fetch posts", error);
+  }
+};
+
 onMounted(async () => {
   await getUserDetails();
+  await getPosts();
 });
 const getUserDetails = async () => {
   const token = authStore.token;
