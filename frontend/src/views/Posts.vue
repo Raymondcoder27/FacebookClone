@@ -22,16 +22,16 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 
 
-const posts = ref([]);
+// const posts = ref([]);
 
-const getPosts = async () => {
-  try {
-    const response = await api.get("/posts");
-    posts.value = response.data;
-  } catch (error) {
-    console.error("Failed to fetch posts", error);
-  }
-};
+// const getPosts = async () => {
+//   try {
+//     const response = await api.get("/posts");
+//     posts.value = response.data;
+//   } catch (error) {
+//     console.error("Failed to fetch posts", error);
+//   }
+// };
 
 const getUserDetails = async () => {
   const token = authStore.token;
@@ -161,8 +161,8 @@ onMounted(async () => {
           <!-- <Post /> -->
 
           <!-- Render posts -->
-          <div v-for="post in posts.data" :key="post.id">
-        <Post :user="post.user" :post="post.text" :comments="post.comments" />
+          <div v-for="post in posts" :key="post.id">
+        <Post :user="post.user" :post="post" :comments="post.comments" />
       </div>
         </div>
 
