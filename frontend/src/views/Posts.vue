@@ -169,11 +169,6 @@ onMounted(async () => {
           <Post :user="post.user" :post="post" :comments="post.comments"/>
           </div>
         </div>
-
-        <!-- <div v-for="post in posts" :key="post.id">
-          <Post :user="post.user" :post="post" :comments="post.comments" />
-        </div> -->
-
         <div id="RightSection" class="pl-4 md:block hidden">
           <div class="mx-auto pt-4 max-w-[340px] min-w-[250px]">
             <div
