@@ -83,6 +83,7 @@ const deleteComment = async (id) => {
 const deletePost = async (id) => {
   try {
     await api.delete("/delete-post/" + id);
+    emit("postDelete")
   } catch (error) {
     console.error("error deleting post", error);
   }
