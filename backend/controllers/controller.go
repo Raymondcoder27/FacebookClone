@@ -210,6 +210,7 @@ func CreatePost(c *gin.Context) {
 	var post models.Post
 	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
+	post.Image = image
 	// post.Image = imagePath // Store the file path
 
 	// Save the post to the database
