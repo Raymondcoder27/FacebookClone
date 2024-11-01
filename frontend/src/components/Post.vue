@@ -13,6 +13,8 @@ import api from "@/config/api";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
+const emit = defineEmits();
+
 const useGeneral = useGeneralStore();
 
 const { isImageDisplay } = storeToRefs(useGeneral);
