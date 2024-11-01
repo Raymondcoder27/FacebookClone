@@ -183,7 +183,7 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	if err, imageFile := c.FormFile("image"); err != nil {
+	imageFile, err := c.FormFile("image"); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
 		return
 	}
