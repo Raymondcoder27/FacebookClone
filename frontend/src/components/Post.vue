@@ -125,9 +125,10 @@ onMounted(async () => {
           </div>
         </div>
         <div class="flex items-center">
-          <button class="rounded-full cursor-pointer p-1.5 hover:bg-[#F2F2F2]">
+          <button
+          @click="deletePost(post.id)" class="rounded-full cursor-pointer p-1.5 hover:bg-[#F2F2F2]">
             <Delete fillColor="#64676B" />
-            Delete Post
+            <!-- Delete Post -->
           </button>
         </div>
       </div>
