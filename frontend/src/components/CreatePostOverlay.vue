@@ -95,14 +95,14 @@ const getPosts = async() => {
   }
 }
 
-const handlePostAdded = () => {
-  getPosts()
-}
+// const handlePostAdded = () => {
+//   getPosts()
+// }
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
-  getPosts()
+  // getPosts()
 });
 </script>
 
