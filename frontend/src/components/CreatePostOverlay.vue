@@ -79,6 +79,7 @@ const createPost = async () => {
     });
     emit("postAdded");
     emit("showModal", false);
+  getPosts()
   } catch (error) {
     console.error("Failed to create post", error);
     error.value = "Failed to create post. Please try again.";
