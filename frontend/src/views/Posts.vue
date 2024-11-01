@@ -62,6 +62,10 @@ defineProps({
   posts: Array,
 });
 
+const handlePostDeleted = () => {
+  getPosts()
+}
+
 // const { post, user, comments } = toRefs(props);
 
 onMounted(async () => {
@@ -166,7 +170,7 @@ onMounted(async () => {
 
           <!-- Render posts -->
           <div v-for="post in posts" :key="post.id">
-        <Post :user="post.user" :post="post" :comments="post.comments" />
+        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" />
       </div>
 <!-- 
       <div v-for="post in posts" :key="post.id">
