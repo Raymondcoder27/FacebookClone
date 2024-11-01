@@ -62,7 +62,7 @@ defineProps({
 
 onMounted(async () => {
   await getUserDetails();
-  // await getPosts();
+  await getPosts();
 });
 </script>
 
