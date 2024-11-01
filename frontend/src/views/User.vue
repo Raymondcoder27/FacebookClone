@@ -46,6 +46,10 @@ const getUserDetails = async () => {
   }
 };
 
+const handlePostDeleted = () => {
+  getPosts()
+}
+
 onMounted(() => {
   getUserDetails();
   getPosts();
