@@ -77,7 +77,7 @@ const createPost = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
-
+    emit("postAdded")
     emit("showModal", false);
   } catch (error) {
     console.error("Failed to create post", error);
@@ -86,7 +86,7 @@ const createPost = async () => {
 };
 
 const handlePostAdded = () => {
-  
+
 }
 
 // Ensure this runs when the component mounts
