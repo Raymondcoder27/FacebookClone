@@ -8,7 +8,6 @@ import Posts from "./views/Posts.vue";
 import { ref, onMounted, toRefs } from "vue";
 import api from "@/config/api";
 import { useAuthStore } from "@/stores/auth";
-const userDetails = ref(null);
 const authStore = useAuthStore();
 
 const posts = ref([]);
@@ -19,25 +18,6 @@ const getPosts = async () => {
     posts.value = response.data.data;
   } catch (error) {
     console.error("Failed to fetch posts", error);
-  }
-};
-
-const getUserDetails = async () => {
-  const token = authStore.token;
-  if (!token) {
-    console.error("No token found");
-    return;
-  }
-
-  try {
-    const response = await api.get("/validate", {
-      headers: {
-        Authorization: `${token}`,
-      },
-    });
-    userDetails.value = response.data;
-  } catch (error) {
-    console.error("Failed to fetch user details", error);
   }
 };
 
