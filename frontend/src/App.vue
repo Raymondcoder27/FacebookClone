@@ -42,7 +42,6 @@ const handlePostAdded = () => {
 // const { post, user, comments } = toRefs(props);
 
 onMounted(async () => {
-  await getUserDetails();
   await getPosts();
 });
 </script>
