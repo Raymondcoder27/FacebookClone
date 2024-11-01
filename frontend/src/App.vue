@@ -4,7 +4,12 @@ import MainNavLayout from "./Layouts/MainNavLayout.vue";
 import Posts from "./views/Posts.vue";
 
 
-
+//import router from "@/router";
+import { ref, onMounted, toRefs } from "vue";
+import api from "@/config/api";
+import { useAuthStore } from "@/stores/auth";
+const userDetails = ref(null);
+const authStore = useAuthStore();
 
 const posts = ref([]);
 
