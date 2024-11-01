@@ -119,7 +119,7 @@ onMounted(async () => {
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
           <div class="flex items-center text-xs text-gray-600">
-            {{ posts.created_at }}  
+            {{ post.created_at }}  
             <!-- 14h -->
             <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
           </div>
