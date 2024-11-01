@@ -52,10 +52,14 @@ const getUserDetails = async () => {
   }
 };
 
+// defineProps({
+//   // user: Object,
+//   posts: Object,
+//   // comments: Object,
+// });
+
 defineProps({
-  // user: Object,
-  posts: Object,
-  // comments: Object,
+  posts: Array,
 });
 
 // const { post, user, comments } = toRefs(props);
