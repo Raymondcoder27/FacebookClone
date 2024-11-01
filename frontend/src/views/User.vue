@@ -251,9 +251,9 @@ onMounted(() => {
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-
+          Here
           <div v-for="post in posts" :key="post.id">
-          <Post :user="post.user" :post="post" :comments="post.comments"/>
+          <Post :user="post.user" :post="post.text" :comments="post.comments"/>
           </div>
           <!-- <Post />
           <Post />
