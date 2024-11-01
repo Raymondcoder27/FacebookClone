@@ -22,7 +22,7 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 
 
-// const posts = ref([]);
+const posts = ref([]);
 
 const getPosts = async () => {
   try {
