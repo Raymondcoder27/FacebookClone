@@ -183,7 +183,8 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	imageFile, err := c.FormFile("image"); err != nil {
+	fileHeader, err := c.FormFile("image")
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
 		return
 	}
@@ -198,6 +199,22 @@ func CreatePost(c *gin.Context) {
 	// 		return
 	// 	}
 	// }
+	// Open the image file
+
+	file, err := fileHeader.Open()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not open image file"})
+		return
+	}
+	defer file.Close()
+
+	// Read the image file data into a byte slice
+	imageData := make([]byte, fileHeader.Size)
+	_, err = file.Read(imageData)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not read image data"})
+		return
+	}
 
 	userID, exists := c.Get("userID")
 	if !exists {
@@ -209,7 +226,7 @@ func CreatePost(c *gin.Context) {
 	var post models.Post
 	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
-	post.Image = imageFile
+	post.ImageData = imageData
 	// post.Image = imagePath // Store the file path
 
 	// Save the post to the database
