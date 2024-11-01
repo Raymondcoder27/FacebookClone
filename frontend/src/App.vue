@@ -6,7 +6,7 @@ import Posts from "./views/Posts.vue";
 
 <template>
   <RouterView />
-  <Posts />
+  <Posts  @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
 </template>
 
 <style scoped>
