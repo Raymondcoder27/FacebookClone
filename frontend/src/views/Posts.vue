@@ -170,7 +170,7 @@ onMounted(async () => {
 
           <!-- Render posts -->
           <div v-for="post in posts" :key="post.id">
-        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" />
+        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
       </div>
 <!-- 
       <div v-for="post in posts" :key="post.id">
