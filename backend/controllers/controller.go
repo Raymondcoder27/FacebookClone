@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/base64"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -110,6 +111,20 @@ func UpdateUserImage(c *gin.Context) {
 }
 
 // GetPosts returns a list of all posts with user and comments
+// func GetPosts(c *gin.Context) {
+// 	var posts []models.Post
+
+// 	// Fetch posts with associated User and Comments, order by created_at descending
+// 	err := initializers.DB.Preload("User").Preload("Comments.User").Order("created_at desc").Find(&posts).Error
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not retrieve posts"})
+// 		return
+// 	}
+
+// 	// Custom response formatting if needed
+// 	c.JSON(http.StatusOK, gin.H{"posts": posts})
+// }
+
 func GetPosts(c *gin.Context) {
 	var posts []models.Post
 
@@ -120,8 +135,31 @@ func GetPosts(c *gin.Context) {
 		return
 	}
 
-	// Custom response formatting if needed
-	c.JSON(http.StatusOK, gin.H{"posts": posts})
+	// Transform posts with base64-encoded images for response
+	var postResponses []map[string]interface{}
+	for _, post := range posts {
+		// Encode the image data to base64
+		imageBase64 := base64.StdEncoding.EncodeToString(post.ImageData)
+
+		// Create a post response map
+		postResponse := map[string]interface{}{
+			"id":         post.ID,
+			"text":       post.Text,
+			"image":      imageBase64,
+			"created_at": post.CreatedAt.Format("2006-01-02 15:04:05"),
+			"user": map[string]interface{}{
+				"id":    post.User.ID,
+				"name":  post.User.Name,
+				"email": post.User.Email,
+			},
+			"comments": post.Comments, // Adapt if you want custom formatting for comments
+		}
+
+		postResponses = append(postResponses, postResponse)
+	}
+
+	// Return the custom response format
+	c.JSON(http.StatusOK, gin.H{"posts": postResponses})
 }
 
 // // CreatePost handles creating a new post
