@@ -91,7 +91,7 @@ onMounted(async () => {
                 v-if="userDetails"
                 class="text-[15px] text-gray-800 font-extrabold pl-3"
               >
-                {{ userDetails?.name }}
+                <!-- {{ userDetails?.name }} -->
               </div>
             </router-link>
             <button
