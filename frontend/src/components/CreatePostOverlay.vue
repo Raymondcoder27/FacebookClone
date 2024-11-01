@@ -146,6 +146,7 @@ onMounted(async () => {
             </div>
             <div class="max-h-[350px] overflow-auto">
               <textarea
+              v-model="form.text"
                 name=""
                 id=""
                 cols="30"
