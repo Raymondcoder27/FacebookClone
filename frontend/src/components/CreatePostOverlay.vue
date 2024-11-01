@@ -77,8 +77,8 @@ const createPost = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
-    // emit("postAdded")
-    emit(["showModal", false, "postAdded"]);
+    emit("postAdded")
+    emit("showModal", false);
   } catch (error) {
     console.error("Failed to create post", error);
     error.value = "Failed to create post. Please try again.";
