@@ -140,9 +140,15 @@ onMounted(async () => {
       {{ post.text }}
       <!-- Lorem ipsum dolor sit. -->
     </div>
-    <img
+    <!-- <img
       @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'"
       :src="post?.image ? `data:image/jpeg;base64,${post.image}` : 'default-placeholder-image.png'"
+      alt=""
+      class="mx-auto cursor-pointer"
+    /> -->
+    <img
+      @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'"
+      src="https://picsum.photos/id/189/800/800"
       alt=""
       class="mx-auto cursor-pointer"
     />

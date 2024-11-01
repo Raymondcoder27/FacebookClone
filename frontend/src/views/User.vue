@@ -69,6 +69,7 @@ onMounted(() => {
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
           <img
             src="https://picsum.photos/id/45/2000/320"
+            :src="post?.image ? `data:image/jpeg;base64,${post.image}` : 'default-placeholder-image.png'"
             alt=""
             class="rounded-b-xl"
           />
