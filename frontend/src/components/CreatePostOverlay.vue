@@ -24,7 +24,7 @@ import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isPostOverlay } = storeToRefs(useGeneral);
 
-const emit = defineEmits(["showModal"]);
+const emit = defineEmits(["showModal", "postAdded"]);
 
 let ImageDisplay = ref(null);
 
@@ -77,7 +77,7 @@ const createPost = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
-    emit("postAdded")
+    emit("postAdded");
     emit("showModal", false);
   } catch (error) {
     console.error("Failed to create post", error);
@@ -85,9 +85,9 @@ const createPost = async () => {
   }
 };
 
-const handlePostAdded = () => {
+// const handlePostAdded = () => {
 
-}
+// }
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
