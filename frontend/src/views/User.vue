@@ -22,7 +22,7 @@ const authStore = useAuthStore();
 const getPosts = async() => {
   try{
     const response = await api.get("/posts")
-    posts.value = response.data
+    posts.value = response.data.data
   }catch(error){
     console.error('error fetching posts', error)
   }
@@ -251,9 +251,9 @@ onMounted(() => {
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          Here
+          <!-- Here -->
           <div v-for="post in posts" :key="post.id">
-          <Post :user="post.user" :post="post.text" :comments="post.comments"/>
+          <Post :user="post.user" :post="post" :comments="post.comments"/>
           </div>
           <!-- <Post />
           <Post />
