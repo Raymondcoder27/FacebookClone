@@ -117,7 +117,7 @@ onMounted(async () => {
         <!-- {{posts}} -->
         <div>
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
-          <div class="font-extrabold text-[15px]">{{ post.user.name }}</div>
+          <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
           <div class="flex items-center text-xs text-gray-600">
             <!-- {{ posts.created_at }}   -->
             <!-- 14h -->
