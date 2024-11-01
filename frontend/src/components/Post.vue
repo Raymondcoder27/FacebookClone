@@ -132,7 +132,7 @@ onMounted(async () => {
       </div>
     </div>
     <div class="px-5 pb-2 font-semi-bold text-[17px]">
-      <!-- {{ post.text }} -->
+      {{ post.text }}
       <!-- Lorem ipsum dolor sit. -->
     </div>
     <img
