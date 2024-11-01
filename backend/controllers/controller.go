@@ -183,16 +183,22 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	// Handle image upload if provided
-	var imagePath string
-	fileHeader, err := c.FormFile("image")
-	if err == nil {
-		imagePath = "./public/" // Define the path where you want to save it
-		if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
-			return
-		}
+	image := c.PostForm("image")
+	if image == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
+		return
 	}
+
+	// Handle image upload if provided
+	// var imagePath string
+	// fileHeader, err := c.FormFile("image")
+	// if err == nil {
+	// 	imagePath = "./public/" // Define the path where you want to save it
+	// 	if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
+	// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
+	// 		return
+	// 	}
+	// }
 
 	userID, exists := c.Get("userID")
 	if !exists {
