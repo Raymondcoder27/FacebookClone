@@ -31,7 +31,7 @@ func GetAllPosts(c *gin.Context) {
 		postResponse := contracts.PostResponse{
 			ID:        post.ID,
 			Text:      post.Text,
-			Image:     post.Image,
+			Image:     string(post.ImageData),
 			CreatedAt: post.CreatedAt.Format("2006-01-02 15:04:05"),
 			User: contracts.UserResponse{
 				ID:    post.User.ID,
@@ -289,8 +289,8 @@ func DeletePost(c *gin.Context) {
 	}
 
 	// Check if the post has an associated image and delete it
-	if post.Image != "" {
-		imagePath := filepath.Join("public", filepath.Base(post.Image))
+	if string(post.ImageData) != "" {
+		imagePath := filepath.Join("public", filepath.Base(string(post.ImageData)))
 		if _, err := os.Stat(imagePath); err == nil {
 			if err := os.Remove(imagePath); err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not delete image"})

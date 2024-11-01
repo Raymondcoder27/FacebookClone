@@ -13,7 +13,7 @@ import (
 )
 
 // UpdateImage processes the image upload, deletes the old image if it exists, and saves the new one
-func UpdateImage(model *models.Post, fileHeader *multipart.FileHeader, width, height, left, top int) (*models.Post, error) {
+func UpdateImage(model *models.User, fileHeader *multipart.FileHeader, width, height, left, top int) (*models.User, error) {
 	// Define the placeholder image path (this can be customized)
 	placeholderImagePath := "./public/user-placeholder.png"
 	publicPath := "public/"
