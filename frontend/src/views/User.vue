@@ -16,7 +16,7 @@ const useGeneral = useGeneralStore();
 const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 const userDetails = ref(null);
-defineProps({ posts: Object, user: Object });
+defineProps({ posts: Array, user: Object });
 const authStore = useAuthStore();
 
 const getPosts = async() => {
