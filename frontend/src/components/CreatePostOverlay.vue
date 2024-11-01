@@ -85,9 +85,18 @@ const createPost = async () => {
   }
 };
 
-// const handlePostAdded = () => {
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data.data
+  }catch(error){
+    console.error('error fetching posts', error)
+  }
+}
 
-// }
+const handlePostAdded = () => {
+  getPosts()
+}
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
