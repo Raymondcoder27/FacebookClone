@@ -142,7 +142,7 @@ onMounted(async () => {
     </div>
     <img
       @click="isImageDisplay = 'https://picsum.photos/id/189/800/800'"
-      :src="post?.image ? `data:image/jpeg;base64,${userDetails.image}` : 'default-placeholder-image.png'"
+      :src="post?.image ? `data:image/jpeg;base64,${post.image}` : 'default-placeholder-image.png'"
       alt=""
       class="mx-auto cursor-pointer"
     />
