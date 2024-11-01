@@ -101,6 +101,7 @@ const handlePostAdded = () => {
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
+  getPosts()
 });
 </script>
 
