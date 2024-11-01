@@ -70,6 +70,8 @@ const createPost = async () => {
   formData.append("text", form.text);
   formData.append("image", form.image);
 
+  console.log(form.image);
+
   try {
     await api.post("/create-post", formData, {
       headers: {

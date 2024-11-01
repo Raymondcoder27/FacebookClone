@@ -183,22 +183,22 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	image := c.PostForm("image")
-	if image == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
-		return
-	}
+	// image := c.PostForm("image")
+	// if image == "" {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"error": "image is required"})
+	// 	return
+	// }
 
 	// Handle image upload if provided
-	// var imagePath string
-	// fileHeader, err := c.FormFile("image")
-	// if err == nil {
-	// 	imagePath = "./public/" // Define the path where you want to save it
-	// 	if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
-	// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
-	// 		return
-	// 	}
-	// }
+	var imagePath string
+	fileHeader, err := c.FormFile("image")
+	if err == nil {
+		imagePath = "./public/" // Define the path where you want to save it
+		if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
+			return
+		}
+	}
 
 	userID, exists := c.Get("userID")
 	if !exists {
@@ -210,7 +210,7 @@ func CreatePost(c *gin.Context) {
 	var post models.Post
 	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
-	post.Image = image
+	post.Image = imagePath
 	// post.Image = imagePath // Store the file path
 
 	// Save the post to the database
