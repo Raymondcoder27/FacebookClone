@@ -39,4 +39,5 @@ RUN npm install -g serve
 #Copy the built frontend to the image
 COPY --from=frontend_build /app/frontend/dist /usr/share/nginx/html
 
-#
+#Copy the backend binary and .env to the image
+COPY --from=backend_build /app/backend/main /usr/local/bin/main
