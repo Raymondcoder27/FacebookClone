@@ -45,3 +45,7 @@ COPY --from=backend_build /app/backend/main /usr/local/bin/main
 #Copy start.sh to the image and make it executable
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
+
+#Expose the port
+EXPOSE 2000
+EXPOSE 8000
