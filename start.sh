@@ -6,4 +6,4 @@ if [ -f /usr/local/bin/ .env ]; then
 /usr/local/bin/main &
 
 #Start nginx
-serve -s /usr/share
+serve -s /usr/share/nginx/html -l 80
