@@ -24,4 +24,9 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 FROM debian:bullseye-slim
 
 #Install required packages
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+netcat \
+postgresql-client \
+curl \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
