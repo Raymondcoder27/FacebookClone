@@ -242,7 +242,7 @@ onMounted(() => {
                 <img
                   v-if="photo.image"
                   @click="isImageDisplay = 'userDetails?.image'"
-                  :src="photo?.image"
+                  :src="userDetails?.image"
                   class="aspect-square object-cover p-1 rounded-lg cursor-pointer"
                 />
                 <!-- {{ userDetails }} -->
