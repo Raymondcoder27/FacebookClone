@@ -50,7 +50,7 @@ COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 #Expose the port
-EXPOSE 4000
+EXPOSE 4400
 EXPOSE 4100
 
 #Start the backend and frontend
