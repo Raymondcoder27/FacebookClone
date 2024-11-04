@@ -36,3 +36,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g serve
 
+#Copy the built frontend to the image
+COPY --from=frontend_build /app/frontend/dist /usr/share/nginx/html
+
+#
