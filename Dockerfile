@@ -30,3 +30,9 @@ postgresql-client \
 curl \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
+
+#Install nodeJS and npm to use serve
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install -g serve
+
