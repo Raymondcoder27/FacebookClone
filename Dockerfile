@@ -50,8 +50,8 @@ COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 #Expose the port
-EXPOSE 4400
-EXPOSE 4100
+EXPOSE 80
+EXPOSE 4200
 
 #Start the backend and frontend
 ENTRYPOINT [ "/usr/local/bin/start.sh" ]
