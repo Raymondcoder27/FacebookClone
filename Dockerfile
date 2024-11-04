@@ -43,14 +43,12 @@ COPY --from=frontend_build /app/frontend/dist /usr/share/nginx/html
 #Copy the backend binary and .env to the image
 COPY --from=backend_build /app/backend/main /usr/local/bin/main
 
-
-
 #Copy start.sh to the image and make it executable
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 #Expose the port
-EXPOSE 80
+EXPOSE 6677
 EXPOSE 4200
 
 #Start the backend and frontend
