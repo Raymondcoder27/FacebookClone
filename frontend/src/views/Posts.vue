@@ -209,7 +209,7 @@ onMounted(() => {
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 /> -->
                 <img
-                  :src="userDetails?.image"
+                  src="https://picsum.photos/id/140/300/320"
                   alt=""
                   class="rounded-full ml-1 min-w-[38px] max-h-[38px]"
                 />
