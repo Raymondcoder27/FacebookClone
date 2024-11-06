@@ -22,6 +22,8 @@ const userDetails = ref(null);
 const authStore = useAuthStore();
 
 
+const emit = defineEmits(['postDeleted', 'postAdded']);
+
 const posts = ref([]);
 
 const getPosts = async () => {
