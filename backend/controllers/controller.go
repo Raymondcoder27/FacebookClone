@@ -221,11 +221,11 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	fileHeader, err := c.FormFile("image")
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
-		return
-	}
+	// fileHeader, err := c.FormFile("image")
+	// if err != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
+	// 	return
+	// }
 
 	// Handle image upload if provided
 	// var imagePath string
