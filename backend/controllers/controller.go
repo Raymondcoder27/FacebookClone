@@ -239,20 +239,20 @@ func CreatePost(c *gin.Context) {
 	// }
 	// Open the image file
 
-	file, err := fileHeader.Open()
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not open image file"})
-		return
-	}
-	defer file.Close()
+	// file, err := fileHeader.Open()
+	// if err != nil {
+	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not open image file"})
+	// 	return
+	// }
+	// defer file.Close()
 
 	// Read the image file data into a byte slice
-	imageData := make([]byte, fileHeader.Size)
-	_, err = file.Read(imageData)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not read image data"})
-		return
-	}
+	// imageData := make([]byte, fileHeader.Size)
+	// _, err = file.Read(imageData)
+	// if err != nil {
+	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not read image data"})
+	// 	return
+	// }
 
 	userID, exists := c.Get("userID")
 	if !exists {
