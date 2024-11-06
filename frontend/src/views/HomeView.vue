@@ -31,6 +31,14 @@ onMounted(async () => {
     console.error("Failed to fetch user details", error);
   }
 };
+
+
+
+onMounted(() => {
+  // getUserDetails();
+  getPosts();
+  // getComments();
+});
 </script>
 
 <template>
