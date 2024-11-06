@@ -81,8 +81,12 @@ const createPost = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
+
+
+    console.log("Emitting postAdded with new post:", response.data.data);
+emit("postAdded", response.data.data);
     emit("showModal", false);
-    emit("postAdded");
+    // emit("postAdded");
   getPosts()
   } catch (error) {
     console.error("Failed to create post", error);
@@ -104,8 +108,8 @@ const getPosts = async() => {
 // }
 
 // In CreatePostOverlay
-console.log("Emitting postAdded with new post:", response.data.data);
-emit("postAdded", response.data.data);
+// console.log("Emitting postAdded with new post:", response.data.data);
+// emit("postAdded", response.data.data);
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
