@@ -178,6 +178,7 @@ onMounted(() => {
           class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto"
         >
           <CreatePostBox
+          @postAdded="handlePostAdded"
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
@@ -186,7 +187,8 @@ onMounted(() => {
 
           <!-- Render posts -->
           <div v-for="post in posts" :key="post.id">
-        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
+        <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
+        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted"/>
       </div>
 <!-- 
       <div v-for="post in posts" :key="post.id">
