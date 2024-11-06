@@ -43,7 +43,7 @@ const handlePostAdded = () => {
 
 onMounted(() => {
   getPosts();
-  getUserDetails();
+  // getUserDetails();
 });
 </script>
 
