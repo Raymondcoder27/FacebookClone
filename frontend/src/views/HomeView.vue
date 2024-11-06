@@ -8,6 +8,9 @@ const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
+
+const posts = ref([])
+
 onMounted(async () => {
   await getUserDetails();
 });
