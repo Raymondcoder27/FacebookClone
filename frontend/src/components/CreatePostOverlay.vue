@@ -28,6 +28,8 @@ const emit = defineEmits();
 
 let ImageDisplay = ref(null);
 
+const posts = ref([]) 
+
 const form = reactive({
   text: null,
   image: null,
