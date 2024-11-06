@@ -5,11 +5,11 @@ import { useAuthStore } from '@/stores/auth';
 import api from "@/config/api";
 
 const userDetails = ref(null);
-// defineProps({ posts: Object, user: Object });
+defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
 
-// const posts = ref([])
+const posts = ref([])
 
 onMounted(async () => {
   await getUserDetails();
@@ -37,20 +37,20 @@ onMounted(async () => {
 
 
 
-// const getPosts = async() => {
-//   try{
-//     const response = await api.get("/posts")
-//     posts.value = response.data.data
-//   }catch(error){
-//     console.error('error fetching posts', error)
-//   }
-// }
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data.data
+  }catch(error){
+    console.error('error fetching posts', error)
+  }
+}
 
-// onMounted(() => {
-//   // getUserDetails();
-//   getPosts();
-//   // getComments();
-// });
+onMounted(() => {
+  // getUserDetails();
+  getPosts();
+  // getComments();
+});
 </script>
 
 <template>
