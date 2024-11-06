@@ -48,7 +48,7 @@ onMounted(async () => {
 
 <template>
   <RouterView />
-  <!-- <Posts  @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
+  <Posts  @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
 </template>
 
 <style scoped>
