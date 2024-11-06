@@ -28,7 +28,7 @@ const emit = defineEmits();
 
 let ImageDisplay = ref(null);
 
-const posts = ref([]) 
+const posts = ref([]);
 
 const form = reactive({
   text: null,
@@ -82,26 +82,25 @@ const createPost = async () => {
       },
     });
 
-
     console.log("Emitting postAdded with new post:", response.data.data);
-emit("postAdded", response.data.data);
+    emit("postAdded", response.data.data);
     emit("showModal", false);
     // emit("postAdded");
-  getPosts()
+    getPosts();
   } catch (error) {
     console.error("Failed to create post", error);
     error.value = "Failed to create post. Please try again.";
   }
 };
 
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
   }
-}
+};
 
 // const handlePostAdded = () => {
 //   getPosts()
@@ -158,7 +157,7 @@ onMounted(async () => {
             </div>
             <div class="max-h-[350px] overflow-auto">
               <textarea
-              v-model="form.text"
+                v-model="form.text"
                 name=""
                 id=""
                 cols="30"
