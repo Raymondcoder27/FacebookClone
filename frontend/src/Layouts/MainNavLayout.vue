@@ -21,6 +21,9 @@ import ImageDisplay from "@/components/ImageDisplay.vue";
 
 // const handleLogout = () => {};
 
+const emit = defineEmits(['postDeleted', 'postAdded']);
+
+
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 import { useAuthStore } from "@/stores/auth";
