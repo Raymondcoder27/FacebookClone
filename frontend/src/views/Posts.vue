@@ -66,9 +66,15 @@ const handlePostDeleted = () => {
   getPosts()
 }
 
-const handlePostAdded = () => {
-  getPosts()
-}
+// const handlePostAdded = () => {
+//   getPosts()
+// }
+
+const handlePostAdded = (newPost) => {
+  console.log("Received postAdded event with post:", newPost);
+  posts.value = [...posts.value, newPost];
+};
+
 
 // const { post, user, comments } = toRefs(props);
 

@@ -103,6 +103,10 @@ const getPosts = async() => {
 //   getPosts()
 // }
 
+// In CreatePostOverlay
+console.log("Emitting postAdded with new post:", response.data.data);
+emit("postAdded", response.data.data);
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
