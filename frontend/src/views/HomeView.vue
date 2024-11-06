@@ -45,6 +45,10 @@ const getPosts = async() => {
   }
 }
 
+const handlePostAdded = () => {
+  getPosts()
+}
+
 onMounted(() => {
   // getUserDetails();
   getPosts();
