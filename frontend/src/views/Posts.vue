@@ -76,9 +76,9 @@ onMounted(() => {
  getUserDetails();
   getPosts();
 
-  emit("postAdded", async () => {
-    await getPosts();  // Re-fetch posts to get the latest data
-  });
+  // emit("postAdded", async () => {
+  //   await getPosts();  // Re-fetch posts to get the latest data
+  // });
 });
 </script>
 
