@@ -36,7 +36,6 @@ onMounted(async () => {
 };
 
 
-
 const getPosts = async() => {
   try{
     const response = await api.get("/posts")
