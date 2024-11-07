@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/base64"
+	"io"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -228,6 +229,12 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 	// defer file.Close()
+
+	mediaBytes, err := io.ReadAll(file)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error reading file: " + err.Error()})
+		return
+	}
 
 	// Upload the file (image or video) to MinIO
 	err = services.UploadFile("myBucket", "uploaded-media", file)
