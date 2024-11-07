@@ -51,4 +51,5 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 	}
 
 	log.Printf("Successfully uploaded %s to %s/%s\n", objectName, bucketName, objectName)
+	return nil
 }
