@@ -17,21 +17,30 @@ const form = ref({
     password_confirmation: '',
 });
 
-const updatePassword = () => {
-    form.put(route('password.update'), {
-        preserveScroll: true,
-        onSuccess: () => form.reset(),
-        onError: () => {
-            if (form.errors.password) {
-                form.reset('password', 'password_confirmation');
-                passwordInput.value.focus();
-            }
-            if (form.errors.current_password) {
-                form.reset('current_password');
-                currentPasswordInput.value.focus();
-            }
-        },
-    });
+const updatePass// Function to handle password update form submission
+const updatePassword = async () => {
+    try {
+        // Send form data to server via axios (or fetch)
+        const response = await axios.put('/password/update', form.value);
+
+        // Reset form if the request is successful
+        form.value = {
+            current_password: '',
+            password: '',
+            password_confirmation: '',
+        };
+
+        // Optionally redirect to another page on success
+        // router.push('/somewhere-else');
+    } catch (error) {
+        // Handle errors
+        if (error.response?.data?.errors?.password) {
+            passwordInput.value.focus();
+        }
+        if (error.response?.data?.errors?.current_password) {
+            currentPasswordInput.value.focus();
+        }
+    }
 };
 </script>
 
