@@ -28,3 +28,11 @@ const deleteUser = () => {
         onFinish: () => form.reset(),
     });
 };
+
+
+const closeModal = () => {
+    confirmingUserDeletion.value = false;
+
+    form.reset();
+};
+</script>
