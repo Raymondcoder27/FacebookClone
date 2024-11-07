@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"io"
+	"net/http"
 
 	"example.com/facebookclone/initializers"
 	"github.com/minio/minio-go/v7"
@@ -30,6 +31,9 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 	if err != nil {
 		return errors.New("unable to read file for content type detection")
 	}
+
+	//detect the content type (e.g image/jpeg, video/mp4)
+	contentType := http.DetectContentType(buffer)
 
 	//upload the file to minio
 	_, err := initializers.MinioClient.PutObject(context.Background(), bucketName, objectName, file, -1, minio.PutObjectOptions{
