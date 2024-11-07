@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"io"
+	"log"
 	"net/http"
 
 	"example.com/facebookclone/initializers"
@@ -43,6 +44,11 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 
 	//upload the file to minio
 	_, err := initializers.MinioClient.PutObject(context.Background(), bucketName, objectName, file, -1, minio.PutObjectOptions{
-		ContentType: "image",
+		ContentType: contentType,
 	})
+	if err != nil {
+		return err
+	}
+
+	log.Printf("Successfully uploaded %s to %s/%s\n", objectName, bucketName, objectName)
 }
