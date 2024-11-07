@@ -4,4 +4,9 @@
     import DeleteUserForm from './Partials/DeleteUserForm.vue';
     import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
     import UpdateProfileInformation from './Partials/UpdateProfileInformation.vue';
+
+    defineProps({
+        mustVerifyEmail: Boolean,
+        status, String,
+    })
 </script>
