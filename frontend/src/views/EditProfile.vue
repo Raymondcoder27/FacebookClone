@@ -13,7 +13,9 @@
 
 <template>
     <MainNavLayout >
-        <template #header />
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>
+        </template>
 
     </MainNavLayout>
 </template>
