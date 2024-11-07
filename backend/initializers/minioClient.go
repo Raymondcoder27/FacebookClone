@@ -8,7 +8,7 @@ import (
 	"github.com/minio/minio-go/v7/pkg/credentials"
 )
 
-var minioClient *minio.Client
+var MinioClient *minio.Client
 
 func InitMinioClient() {
 	var err error
