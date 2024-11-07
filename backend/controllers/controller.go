@@ -221,6 +221,14 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
+	// Get the file from the form
+	file, _, err := r.FormFile("media") // "media" is the form field name
+	if err != nil {
+		http.Error(w, "Unable to get file from form", http.StatusBadRequest)
+		return
+	}
+	defer file.Close()
+
 	// fileHeader, err := c.FormFile("image")
 	// if err != nil {
 	// 	c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
