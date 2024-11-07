@@ -230,9 +230,9 @@ func CreatePost(c *gin.Context) {
 	// defer file.Close()
 
 	// Upload the file (image or video) to MinIO
-	err = UploadFile("myBucket", "uploaded-media", file)
+	err = services.UploadFile("myBucket", "uploaded-media", file)
 	if err != nil {
-		http.Error(http.StatusInternalServerError, "Failed to upload file")
+		c.JSON(http.StatusInternalServerError, "Failed to upload file")
 		return
 	}
 
