@@ -22,6 +22,9 @@ func InitMinioClient() {
 
 	MinioClient, err = minio.New(minioURL, &minioOptions{
 		Creds: credentials.NewStaticV4(minioAccessKey, minioSecretKey, "")
-		Secure: false
+		Secure: false,
 	})
+	if err != nil {
+		log.Fatalf("Failed to create Minio Client: %v", err)
+	}
 }
