@@ -35,6 +35,9 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 	//detect the content type (e.g image/jpeg, video/mp4)
 	contentType := http.DetectContentType(buffer)
 
+	//reset the file reader position after detecting content type
+	_, err = file.Seek(0, io.SeekStart)
+
 	//upload the file to minio
 	_, err := initializers.MinioClient.PutObject(context.Background(), bucketName, objectName, file, -1, minio.PutObjectOptions{
 		ContentType: "image",
