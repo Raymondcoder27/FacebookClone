@@ -222,12 +222,19 @@ func CreatePost(c *gin.Context) {
 	}
 
 	// Get the file from the form
-	file, _, err := r.FormFile("media") // "media" is the form field name
+	file, err := c.FormFile("media") // "media" is the form field name
 	if err != nil {
-		http.Error(w, "Unable to get file from form", http.StatusBadRequest)
+		c.JSON(http.StatusBadRequest, "Unable to get file from form")
 		return
 	}
-	defer file.Close()
+	// defer file.Close()
+
+	// Upload the file (image or video) to MinIO
+	err = UploadFile("myBucket", "uploaded-media", file)
+	if err != nil {
+		http.Error(http.StatusInternalServerError, "Failed to upload file")
+		return
+	}
 
 	// fileHeader, err := c.FormFile("image")
 	// if err != nil {
@@ -273,7 +280,7 @@ func CreatePost(c *gin.Context) {
 	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
 	// post.ImageData = imageData
-	// post.Image = imagePath // Store the file path
+	// post.Image = file // Store the file path
 
 	// Save the post to the database
 	if err := initializers.DB.Create(&post).Error; err != nil {
