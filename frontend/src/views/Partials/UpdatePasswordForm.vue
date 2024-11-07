@@ -9,7 +9,9 @@ import { ref } from 'vue';
 const passwordInput = ref(null);
 const currentPasswordInput = ref(null);
 
-const form = useForm({
+
+// Use reactive object to hold form data
+const form = ref({
     current_password: '',
     password: '',
     password_confirmation: '',
