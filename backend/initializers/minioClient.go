@@ -12,4 +12,5 @@ func InitMinioClient() {
 	var err error
 
 	minioURL := os.Getenv("MINIO_URL")
+	minioAccessKey := os.Getenv("MINIO_ACCESS_KEY")
 }
