@@ -21,6 +21,7 @@ func InitMinioClient() {
 	}
 
 	MinioClient, err = minio.New(minioURL, &minioOptions{
-		Creds: credentials.NewStaticV4
+		Creds: credentials.NewStaticV4(minioAccessKey, minioSecretKey, "")
+		Secure: false
 	})
 }
