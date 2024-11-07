@@ -13,6 +13,7 @@ func init() {
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
 	initializers.MigrateDB()
+	initializers.InitMinioClient()
 }
 
 func main() {
