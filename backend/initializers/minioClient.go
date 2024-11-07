@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/minio/minio-go/v7"
+	"github.com/minio/minio-go/v7/pkg/credentials"
 )
 
 var minioClient *minio.Client
@@ -19,5 +20,7 @@ func InitMinioClient() {
 		log.Fatal("MINIO_URL, MINIO_ACCESS_KEY or MINIO_SECRET_KEY environment variable not set.")
 	}
 
-	
+	MinioClient, err = minio.New(minioURL, &minioOptions{
+		Creds: credentials.NewStaticV4
+	})
 }
