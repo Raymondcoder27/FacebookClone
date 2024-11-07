@@ -6,4 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetFileFromForm(c *gin.Context) (file multipart.File, header *multipart.FileHeader, err error)
+func GetFileFromForm(c *gin.Context) (file multipart.File, header *multipart.FileHeader, err error) {
+	return c.Request.FormFile("file")
+}
