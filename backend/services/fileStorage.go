@@ -24,6 +24,13 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 		return errors.New("file cannot be empty")
 	}
 
+	//read the first 512 bytes to determine the file type
+	buffer := make([]byte, 512)
+	_, err := file.Read(buffer)
+	if err != nil {
+		return errors.New("unable to read file for content type detection")
+	}
+
 	//upload the file to minio
 	_, err := initializers.MinioClient.PutObject(context.Background(), bucketName, objectName, file, -1, minio.PutObjectOptions{
 		ContentType: "image",
