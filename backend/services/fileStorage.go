@@ -19,6 +19,11 @@ func UploadFile(bucketName, objectName string, file io.Reader) error {
 		return errors.New("bucketName and objectName cannot be empty.")
 	}
 
+	//ensure the file is not nil
+	if file == nil {
+		return errors.New("file cannot be empty")
+	}
+
 	//upload the file to minio
 	_, err := initializers.MinioClient.PutObject(context.Background(), bucketName, objectName, file, -1, minio.PutObjectOptions{
 		ContentType: "image",
