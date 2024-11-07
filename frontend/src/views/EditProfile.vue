@@ -10,3 +10,10 @@
         status, String,
     })
 </script>
+
+<template>
+    <MainNavLayout >
+        <template #header />
+
+    </MainNavLayout>
+</template>
