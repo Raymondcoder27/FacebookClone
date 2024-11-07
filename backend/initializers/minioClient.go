@@ -17,10 +17,6 @@ func InitMinioClient() {
 	minioSecretKey := os.Getenv("MINIO_SECRET_KEY")
 
 	if minioURL == "" || minioAccessKey == "" || minioSecretKey == "" {
-		log.Fatalf("MINIO_URL, MINIO_ACCESS_KEY, or MINIO_SECRET_KEY environment variable not set")
-	}
-
-	if minioURL == "" || minioAccessKey = "" || minioSecretKey = "" {
 		log.Fatalf("MINIO_URL, MINIO_ACCESS_KEY or MINIO_SECRET_KEY environment variable not set.")
 	}
 
