@@ -37,7 +37,7 @@ func DeleteFile(bucketName, objectName string) error {
 	minioClient := initializers.MinioClient
 
 	//delete the object from minio
-	err := minioClient.RemoveObject(bucketName, objectName, minio.RemoveObjectOptions{})
+	err := minioClient.RemoveObject(context.Background(), bucketName, objectName, minio.RemoveObjectOptions{})
 	if err != nil {
 		return err
 	}
