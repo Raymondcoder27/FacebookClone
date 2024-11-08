@@ -166,7 +166,7 @@ onMounted(async () => {
                 class="w-full border-0 mt-4 focus:ring-0 text-[22px]"
               ></textarea>
               <div
-                v-if="form.image"
+                v-if="form.media"
                 class="p-2 border border-gray-300 rounded-lg relative"
               >
                 <Close
