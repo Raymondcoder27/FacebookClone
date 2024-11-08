@@ -25,12 +25,11 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	var buffer bytes.Buffer
 	_, err = io.Copy(&buffer, object)
 	if err != nil {
-		return nil,
+		return nil, err
 	}
 
 	return buffer.Bytes(), nil
 }
-
 
 func DeleteFile(bucketName, objectName string) error {
 	// Initialize minio client object.
