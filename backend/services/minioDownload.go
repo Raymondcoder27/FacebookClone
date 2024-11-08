@@ -1,6 +1,10 @@
 package services
 
-import "example.com/facebookclone/initializers"
+import (
+	"io"
+
+	"example.com/facebookclone/initializers"
+)
 
 
 func DownloadFile(bucketName, objectName string) ([]byte, error) {
@@ -13,3 +17,10 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 		return nil, err
 	}
 	defer object.Close()
+
+	//Read the object data into a byte buffer
+	var buffer bytes.Buffer
+	_, err = io.Copy(&buffer, object)
+	if err != nil {
+		return nil
+	}
