@@ -32,7 +32,7 @@ const posts = ref([]);
 
 const form = reactive({
   text: null,
-  image: null,
+  media: null,
 });
 let error = ref(null);
 
@@ -43,7 +43,7 @@ const getUploadedImage = (e) => {
 
 const clearImage = () => {
   ImageDisplay.value = null;
-  form.image = null;
+  form.media = null;
 };
 
 const getUserDetails = async () => {
@@ -70,9 +70,9 @@ const createPost = async () => {
 
   const formData = new FormData();
   formData.append("text", form.text);
-  formData.append("image", form.image);
+  formData.append("media", form.media);
 
-  console.log(form.image);
+  console.log(form.media);
 
   try {
    const response = await api.post("/create-post", formData, {
