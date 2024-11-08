@@ -151,9 +151,10 @@ onMounted(() => {
             </div>
 
             <RouterLink
-              to="/user"
+              to="/edit"
               class="flex justify-center w-7/12 md:w-[160px] items-baseline my-4 bg-gray-200 rounded-lg cursor-pointer"
             >
+
               <button class="flex items-center px-5 py-2 font-bold">
                 <Pen class="-mr-2 mr-1" :size="20" />Edit Profile
               </button>
