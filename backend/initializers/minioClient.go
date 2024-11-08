@@ -20,7 +20,7 @@ func InitMinioClient() {
 		log.Fatalf("MINIO_URL, MINIO_ACCESS_KEY or MINIO_SECRET_KEY environment variable not set.")
 	}
 
-	MinioClient, err = minio.New(minioURL, &minioOptions{
+	MinioClient, err = minio.New(minioURL, &minio.Options{
 		Creds:  credentials.NewStaticV4(minioAccessKey, minioSecretKey, ""),
 		Secure: false,
 	})
