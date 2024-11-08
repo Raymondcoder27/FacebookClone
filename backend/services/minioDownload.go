@@ -6,7 +6,7 @@ import (
 	"io"
 
 	"example.com/facebookclone/initializers"
-	"github.com/minio/minio-go"
+	// "github.com/minio/minio-go"
 	"github.com/minio/minio-go/v7"
 )
 
