@@ -3,7 +3,7 @@
 
     import DeleteUserForm from './Partials/DeleteUserForm.vue';
     import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-    import UpdateProfileInformation from './Partials/UpdateProfileInformationForm.vue';
+    import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 
     defineProps({
         mustVerifyEmail: Boolean,
