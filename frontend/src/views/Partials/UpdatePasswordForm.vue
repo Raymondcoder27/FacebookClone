@@ -17,7 +17,7 @@ const form = ref({
     password_confirmation: '',
 });
 
-const updatePass// Function to handle password update form submission
+// const updatePass// Function to handle password update form submission
 const updatePassword = async () => {
     try {
         // Send form data to server via axios (or fetch)
