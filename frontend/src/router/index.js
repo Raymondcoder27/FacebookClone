@@ -72,6 +72,15 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Posts.vue'),
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/EditProfile.vue'),
+      meta: { requiresAuth: true },
     }
   ]
 })
