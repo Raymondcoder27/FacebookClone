@@ -1,11 +1,12 @@
 package services
 
 import (
+	"bytes"
 	"io"
 
 	"example.com/facebookclone/initializers"
+	"github.com/minio/minio-go"
 )
-
 
 func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	// Initialize minio client object.
@@ -22,5 +23,8 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	var buffer bytes.Buffer
 	_, err = io.Copy(&buffer, object)
 	if err != nil {
-		return nil
+		return nil,
 	}
+	
+	return buffer.Bytes(), nil
+}
