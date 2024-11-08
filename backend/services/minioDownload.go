@@ -2,6 +2,7 @@ package services
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"io"
 
@@ -15,7 +16,7 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	minioClient := initializers.MinioClient
 
 	//download the object from minio
-	object, err := minioClient.GetObject(bucketName, objectName, minio.GetObjectOptions{})
+	object, err := minioClient.GetObject(context.Background(), bucketName, objectName, minio.GetObjectOptions{})
 	if err != nil {
 		return nil, err
 	}
