@@ -2,10 +2,12 @@ package services
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 
 	"example.com/facebookclone/initializers"
 	"github.com/minio/minio-go"
+	"github.com/minio/minio-go/v7"
 )
 
 func DownloadFile(bucketName, objectName string) ([]byte, error) {
@@ -25,6 +27,21 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	if err != nil {
 		return nil,
 	}
-	
+
 	return buffer.Bytes(), nil
+}
+
+
+func DeleteFile(bucketName, objectName string) error {
+	// Initialize minio client object.
+	minioClient := initializers.MinioClient
+
+	//delete the object from minio
+	err := minioClient.RemoveObject(bucketName, objectName, minio.RemoveObjectOptions{})
+	if err != nil {
+		return err
+	}
+	fmt.Println("Successfully deleted", objectName)
+
+	return nil
 }
