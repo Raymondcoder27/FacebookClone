@@ -75,7 +75,7 @@ const createPost = async () => {
   console.log(form.media);
 
   try {
-   const response = await api.post("/create-post", formData, {
+    const response = await api.post("/create-post", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${authStore.token}`,
