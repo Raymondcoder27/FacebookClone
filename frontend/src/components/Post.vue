@@ -85,7 +85,7 @@ const deleteComment = async (id) => {
 const deletePost = async (id) => {
   try {
     await api.delete("/delete-post/" + id);
-    emit("postDeleted")
+    emit("postDeleted");
   } catch (error) {
     console.error("error deleting post", error);
   }
@@ -122,14 +122,16 @@ onMounted(async () => {
           <!-- <div class="font-extrabold text-[15px]">Raymond Mwebe Dev</div> -->
           <div class="font-extrabold text-[15px]">{{ userDetails?.name }}</div>
           <div class="flex items-center text-xs text-gray-600">
-            {{ post.created_at }}  h
+            {{ post.created_at }} h
             <!-- 14h -->
             <AccountMultiple class="ml-1" :size="15" fillColor="#64676B" />
           </div>
         </div>
         <div class="flex items-center">
           <button
-          @click="deletePost(post.id)" class="rounded-full cursor-pointer p-1.5 hover:bg-[#F2F2F2]">
+            @click="deletePost(post.id)"
+            class="rounded-full cursor-pointer p-1.5 hover:bg-[#F2F2F2]"
+          >
             <Delete fillColor="#64676B" />
             <!-- Delete Post -->
           </button>
