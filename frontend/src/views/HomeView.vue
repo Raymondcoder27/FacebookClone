@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useAuthStore } from '@/stores/auth';
+import { ref, onMounted } from "vue";
+import { useAuthStore } from "@/stores/auth";
 
 import api from "@/config/api";
 
@@ -8,20 +8,19 @@ const userDetails = ref(null);
 defineProps({ posts: Object, user: Object });
 const authStore = useAuthStore();
 
-
-const posts = ref([])
+const posts = ref([]);
 
 onMounted(async () => {
   await getUserDetails();
 });
 
-  const getUserDetails = async () => {
+const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
     console.error("No token found");
     return;
   }
-  
+
   try {
     // const response = await api.get("/user", {
     const response = await api.get("/validate", {
@@ -35,19 +34,18 @@ onMounted(async () => {
   }
 };
 
-
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
   }
-}
+};
 
 const handlePostAdded = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 onMounted(() => {
   // getUserDetails();
