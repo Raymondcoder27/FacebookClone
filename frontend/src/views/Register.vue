@@ -109,6 +109,7 @@ const register = async () => {
           />
         </div>
 
+        
         <div class="mt-4">
           <TextInput
             v-model="confirmPassword"
