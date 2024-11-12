@@ -102,6 +102,9 @@ const createPost = async () => {
 //   }
 // };
 
+
+
+
 // const handlePostAdded = () => {
 //   getPosts()
 // }
