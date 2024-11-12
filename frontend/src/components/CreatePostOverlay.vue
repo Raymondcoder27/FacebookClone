@@ -102,14 +102,14 @@ const createPost = async () => {
   }
 };
 
-// const getPosts = async () => {
-//   try {
-//     const response = await api.get("/posts");
-//     posts.value = response.data.data;
-//   } catch (error) {
-//     console.error("error fetching posts", error);
-//   }
-// };
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
+  }
+};
 
 
 
