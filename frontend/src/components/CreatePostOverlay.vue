@@ -36,9 +36,18 @@ const form = reactive({
 });
 let error = ref(null);
 
+// const getUploadedImage = (e) => {
+//   ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
+//   form.image = e.target.files[0];
+// };
+
 const getUploadedImage = (e) => {
-  ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  form.image = e.target.files[0];
+  const file = e.target.files[0];
+  if (file) {
+    ImageDisplay.value = URL.createObjectURL(file);
+    form.image = file;
+    console.log("Selected file:", form.image); // Check if the file is being set
+  }
 };
 
 const clearImage = () => {
