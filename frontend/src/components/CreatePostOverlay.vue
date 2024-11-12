@@ -102,6 +102,42 @@ const getUserDetails = async () => {
 //   }
 // };
 
+
+
+
+const createPost = async () => {
+  error.value = null;
+
+  const formData = new FormData();
+  formData.append("text", form.text);
+
+  // Only append the image if it exists
+  if (form.image) {
+    formData.append("image", form.image);
+    console.log("Image appended to FormData:", formData.get("image"));
+  } else {
+    console.log("No image selected");
+  }
+
+  try {
+    const response = await api.post("/create-post", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${authStore.token}`,
+      },
+    });
+
+    emit("postAdded", response.data.data);
+    emit("showModal", false);
+    getPosts();
+  } catch (error) {
+    console.error("Failed to create post", error);
+    error.value = "Failed to create post. Please try again.";
+  }
+};
+
+
+
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
