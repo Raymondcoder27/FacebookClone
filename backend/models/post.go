@@ -11,4 +11,5 @@ type Post struct {
 	Comments  []Comment `gorm:"foreignKey:PostID" json:"comments"` // Relationship to Comments
 	ImageData []byte    `gorm:"type:bytea"`                        // Add 'Image' field to hold image URL
 	Text      string    `json:"text"`                              // Add 'Text' field to hold post text
+	MediaURL  string    `json:"media_url"`                         // URL or path to the optional media file
 }
