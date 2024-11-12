@@ -74,33 +74,33 @@ const getUserDetails = async () => {
   }
 };
 
-const createPost = async () => {
-  error.value = null; // Reset error state before attempting to create a post
+// const createPost = async () => {
+//   error.value = null; // Reset error state before attempting to create a post
 
-  const formData = new FormData();
-  formData.append("text", form.text);
-  formData.append("image", form.image);
+//   const formData = new FormData();
+//   formData.append("text", form.text);
+//   formData.append("image", form.image);
 
-  console.log(form.image);
+//   console.log(form.image);
 
-  try {
-    const response = await api.post("/create-post", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${authStore.token}`,
-      },
-    });
+//   try {
+//     const response = await api.post("/create-post", formData, {
+//       headers: {
+//         "Content-Type": "multipart/form-data",
+//         Authorization: `Bearer ${authStore.token}`,
+//       },
+//     });
 
-    console.log("Emitting postAdded with new post:", response.data.data);
-    emit("postAdded", response.data.data);
-    emit("showModal", false);
-    // emit("postAdded");
-    getPosts();
-  } catch (error) {
-    console.error("Failed to create post", error);
-    error.value = "Failed to create post. Please try again.";
-  }
-};
+//     console.log("Emitting postAdded with new post:", response.data.data);
+//     emit("postAdded", response.data.data);
+//     emit("showModal", false);
+//     // emit("postAdded");
+//     getPosts();
+//   } catch (error) {
+//     console.error("Failed to create post", error);
+//     error.value = "Failed to create post. Please try again.";
+//   }
+// };
 
 const getPosts = async () => {
   try {
