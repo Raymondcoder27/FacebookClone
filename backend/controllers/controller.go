@@ -246,6 +246,58 @@ func GetPosts(c *gin.Context) {
 // 	c.JSON(http.StatusOK, gin.H{"post": post})
 // }
 
+func CreatePost(c *gin.Context) {
+	// Get the text field
+	text := c.PostForm("text")
+	if text == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
+		return
+	}
+
+	// Optional media file handling
+	var mediaURL string
+	file, _, err := c.Request.FormFile("media")
+	if err == nil {
+		// File exists; proceed with uploading
+		defer file.Close()
+
+		// Upload the file (image or video) to MinIO
+		err = services.UploadFile("myBucket", "uploaded-media", file)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
+			return
+		}
+
+		// If upload is successful, set media URL
+		mediaURL = "uploaded-media" // Or set to the actual path or URL as returned by the UploadFile function
+	} else if err != http.ErrMissingFile {
+		// Other error occurred while reading the file, so handle it
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error reading media file"})
+		return
+	}
+	// If err == http.ErrMissingFile, media file is simply absent and will be ignored
+
+	userID, exists := c.Get("userID")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "User ID not found"})
+		return
+	}
+
+	// Populate post fields
+	var post models.Post
+	post.UserID = userID.(uint) // Adjust for your authentication setup
+	post.Text = text
+	post.MediaURL = mediaURL // Store media URL if available
+
+	// Save the post to the database
+	if err := initializers.DB.Create(&post).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"post": post})
+}
+
 // DeletePost deletes a post by its ID
 func DeletePost(c *gin.Context) {
 	// Get the post ID from the URL parameter
