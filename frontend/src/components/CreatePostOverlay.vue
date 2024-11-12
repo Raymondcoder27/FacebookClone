@@ -50,19 +50,17 @@ let error = ref(null);
 //   }
 // };
 
-
 const getUploadedImage = (e) => {
   if (e.target.files && e.target.files[0]) {
     const selectedFile = e.target.files[0];
     ImageDisplay.value = URL.createObjectURL(selectedFile);
     form.image = selectedFile;
-    
+
     console.log("Selected file:", form.image); // Check if the file is correctly assigned
   } else {
     console.log("No file selected or file input is empty");
   }
 };
-
 
 const clearImage = () => {
   ImageDisplay.value = null;
@@ -116,9 +114,6 @@ const getUserDetails = async () => {
 //   }
 // };
 
-
-
-
 const createPost = async () => {
   error.value = null;
 
@@ -150,8 +145,6 @@ const createPost = async () => {
   }
 };
 
-
-
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
@@ -160,9 +153,6 @@ const getPosts = async () => {
     console.error("error fetching posts", error);
   }
 };
-
-
-
 
 // const handlePostAdded = () => {
 //   getPosts()
