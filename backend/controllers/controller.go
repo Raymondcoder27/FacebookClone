@@ -135,6 +135,11 @@ func GetPosts(c *gin.Context) {
 		return
 	}
 
+	.Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not retrieve posts"})
+		return
+	}
+
 	// Transform posts with base64-encoded images for response
 	var postResponses []map[string]interface{}
 	for _, post := range posts {
