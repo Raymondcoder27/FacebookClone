@@ -32,7 +32,7 @@ const posts = ref([]);
 
 const form = reactive({
   text: null,
-  media: null,
+  image: null,
 });
 let error = ref(null);
 
@@ -43,7 +43,7 @@ const getUploadedImage = (e) => {
 
 const clearImage = () => {
   ImageDisplay.value = null;
-  form.media = null;
+  form.image = null;
 };
 
 const getUserDetails = async () => {
@@ -70,9 +70,9 @@ const createPost = async () => {
 
   const formData = new FormData();
   formData.append("text", form.text);
-  formData.append("media", form.media);
+  formData.append("image", form.image);
 
-  console.log(form.media);
+  console.log(form.image);
 
   try {
     const response = await api.post("/create-post", formData, {
@@ -166,7 +166,7 @@ onMounted(async () => {
                 class="w-full border-0 mt-4 focus:ring-0 text-[22px]"
               ></textarea>
               <div
-                v-if="form.media"
+                v-if="form.image"
                 class="p-2 border border-gray-300 rounded-lg relative"
               >
                 <Close
