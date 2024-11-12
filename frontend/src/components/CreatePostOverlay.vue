@@ -130,7 +130,7 @@ const createPost = async () => {
     formData.append("image", form.image);
     console.log("Image appended to FormData:", formData.get("image"));
   } else {
-    console.log("No image selected");
+    console.log("No image found when creating post");
   }
 
   try {
