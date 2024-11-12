@@ -162,46 +162,80 @@ func GetPosts(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"posts": postResponses})
 }
 
-// // CreatePost handles creating a new post
 // func CreatePost(c *gin.Context) {
-// 	// Validate the text field
+// 	// Get the text field
 // 	text := c.PostForm("text")
-// 	image := c.PostForm("image")
 // 	if text == "" {
 // 		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
 // 		return
 // 	}
 
-// 	if image == "" {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Image is required"})
+// 	// Get the file from the form
+// 	file, _, err := c.Request.FormFile("media") // "media" is the form field name
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, "Unable to get file from form")
+// 		return
+// 	}
+// 	// defer file.Close()
+
+// 	// mediaBytes, err := io.ReadAll(file)
+// 	// if err != nil {
+// 	// 	c.JSON(http.StatusInternalServerError, gin.H{"message": "Error reading file: " + err.Error()})
+// 	// 	return
+// 	// }
+
+// 	// Upload the file (image or video) to MinIO
+// 	err = services.UploadFile("myBucket", "uploaded-media", file)
+// 	if err != nil {
+// 		c.JSON(http.StatusInternalServerError, "Failed to upload file")
 // 		return
 // 	}
 
-// 	// Initialize a new post
-// 	var post models.Post
+// 	// fileHeader, err := c.FormFile("image")
+// 	// if err != nil {
+// 	// 	c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
+// 	// 	return
+// 	// }
 
 // 	// Handle image upload if provided
-// 	fileHeader, err := c.FormFile("image")
-// 	if err == nil && fileHeader != nil {
-// 		width, _ := strconv.Atoi(c.PostForm("width"))
-// 		height, _ := strconv.Atoi(c.PostForm("height"))
-// 		left, _ := strconv.Atoi(c.PostForm("left"))
-// 		top, _ := strconv.Atoi(c.PostForm("top"))
+// 	// var imagePath string
+// 	// fileHeader, err := c.FormFile("image")
+// 	// if err == nil {
+// 	// 	imagePath = "./public/" // Define the path where you want to save it
+// 	// 	if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
+// 	// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
+// 	// 		return
+// 	// 	}
+// 	// }
+// 	// Open the image file
 
-// 		updatedPost, err := services.UpdateImage(&post, fileHeader, width, height, left, top)
-// 		if err != nil {
-// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
-// 			return
-// 		}
-// 		post = *updatedPost
+// 	// file, err := fileHeader.Open()
+// 	// if err != nil {
+// 	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not open image file"})
+// 	// 	return
+// 	// }
+// 	// defer file.Close()
+
+// 	// Read the image file data into a byte slice
+// 	// imageData := make([]byte, fileHeader.Size)
+// 	// _, err = file.Read(imageData)
+// 	// if err != nil {
+// 	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not read image data"})
+// 	// 	return
+// 	// }
+
+// 	userID, exists := c.Get("userID")
+// 	if !exists {
+// 		c.JSON(http.StatusUnauthorized, gin.H{"error": "User ID not found"})
+// 		return
 // 	}
 
-// 	// Assume the user is authenticated, and their ID is available in the context
-// 	userID := c.MustGet("userID").(uint) // This depends on how you've set up authentication
-
-// 	post.UserID = userID
+// 	// Populate post fields
+// 	var post models.Post
+// 	post.UserID = userID.(uint) // Adjust for your authentication setup
 // 	post.Text = text
-// 	post.Image = image
+// 	// post.ImageData = imageData
+// 	// post.Image = file // Store the file path
 
 // 	// Save the post to the database
 // 	if err := initializers.DB.Create(&post).Error; err != nil {
@@ -209,93 +243,8 @@ func GetPosts(c *gin.Context) {
 // 		return
 // 	}
 
-// 	// Return success response
 // 	c.JSON(http.StatusOK, gin.H{"post": post})
 // }
-
-func CreatePost(c *gin.Context) {
-	// Get the text field
-	text := c.PostForm("text")
-	if text == "" {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Text is required"})
-		return
-	}
-
-	// Get the file from the form
-	file, _, err := c.Request.FormFile("media") // "media" is the form field name
-	if err != nil {
-		c.JSON(http.StatusBadRequest, "Unable to get file from form")
-		return
-	}
-	// defer file.Close()
-
-	// mediaBytes, err := io.ReadAll(file)
-	// if err != nil {
-	// 	c.JSON(http.StatusInternalServerError, gin.H{"message": "Error reading file: " + err.Error()})
-	// 	return
-	// }
-
-	// Upload the file (image or video) to MinIO
-	err = services.UploadFile("myBucket", "uploaded-media", file)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, "Failed to upload file")
-		return
-	}
-
-	// fileHeader, err := c.FormFile("image")
-	// if err != nil {
-	// 	c.JSON(http.StatusBadRequest, gin.H{"error": "Image upload failed"})
-	// 	return
-	// }
-
-	// Handle image upload if provided
-	// var imagePath string
-	// fileHeader, err := c.FormFile("image")
-	// if err == nil {
-	// 	imagePath = "./public/" // Define the path where you want to save it
-	// 	if err := c.SaveUploadedFile(fileHeader, imagePath); err != nil {
-	// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Image upload failed"})
-	// 		return
-	// 	}
-	// }
-	// Open the image file
-
-	// file, err := fileHeader.Open()
-	// if err != nil {
-	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not open image file"})
-	// 	return
-	// }
-	// defer file.Close()
-
-	// Read the image file data into a byte slice
-	// imageData := make([]byte, fileHeader.Size)
-	// _, err = file.Read(imageData)
-	// if err != nil {
-	// 	c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not read image data"})
-	// 	return
-	// }
-
-	userID, exists := c.Get("userID")
-	if !exists {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "User ID not found"})
-		return
-	}
-
-	// Populate post fields
-	var post models.Post
-	post.UserID = userID.(uint) // Adjust for your authentication setup
-	post.Text = text
-	// post.ImageData = imageData
-	// post.Image = file // Store the file path
-
-	// Save the post to the database
-	if err := initializers.DB.Create(&post).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"post": post})
-}
 
 // DeletePost deletes a post by its ID
 func DeletePost(c *gin.Context) {
