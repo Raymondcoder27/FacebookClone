@@ -41,14 +41,28 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
+// const getUploadedImage = (e) => {
+//   const file = e.target.files[0];
+//   if (file) {
+//     ImageDisplay.value = URL.createObjectURL(file);
+//     form.image = file;
+//     console.log("Selected file:", form.image); // Check if the file is being set
+//   }
+// };
+
+
 const getUploadedImage = (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    ImageDisplay.value = URL.createObjectURL(file);
-    form.image = file;
-    console.log("Selected file:", form.image); // Check if the file is being set
+  if (e.target.files && e.target.files[0]) {
+    const selectedFile = e.target.files[0];
+    ImageDisplay.value = URL.createObjectURL(selectedFile);
+    form.image = selectedFile;
+    
+    console.log("Selected file:", form.image); // Check if the file is correctly assigned
+  } else {
+    console.log("No file selected or file input is empty");
   }
 };
+
 
 const clearImage = () => {
   ImageDisplay.value = null;
