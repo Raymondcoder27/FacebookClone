@@ -155,10 +155,6 @@ const getPosts = async () => {
   }
 };
 
-
-
-
-
 // const handlePostAdded = () => {
 //   getPosts()
 // }
