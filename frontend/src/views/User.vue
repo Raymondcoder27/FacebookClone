@@ -257,7 +257,12 @@ onMounted(() => {
             image="https://picsum.photos/id/140/300/320"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           /> -->
-          <CreatePostBox
+          <!-- <CreatePostBox
+          @postAdded="handlePostAdded" 
+            :image="userDetails?.image"
+            :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
+          /> -->
+          <CreatePostOverlay
           @postAdded="handlePostAdded" 
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
