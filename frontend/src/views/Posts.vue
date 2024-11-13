@@ -33,14 +33,24 @@ const posts = ref([]);
 const useGeneral = useGeneralStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
-const getPosts = async () => {
-  try {
-    const response = await api.get("/posts");
-    posts.value = response.data.data;
-  } catch (error) {
-    console.error("Failed to fetch posts", error);
+// const getPosts = async () => {
+//   try {
+//     const response = await api.get("/posts");
+//     posts.value = response.data.data;
+//   } catch (error) {
+//     console.error("Failed to fetch posts", error);
+//   }
+// };
+
+
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data.data
+  }catch(error){
+    console.error('error fetching posts', error)
   }
-};
+}
 
 const getUserDetails = async () => {
   const token = authStore.token;
