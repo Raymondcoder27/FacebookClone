@@ -92,6 +92,7 @@ const handlePostDeleted = () => {
 const handlePostAdded = (newPost) => {
   console.log("Received postAdded event with post:", newPost);
   posts.value = [...posts.value, newPost];
+  getPosts()
 };
 
 
