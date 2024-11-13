@@ -57,5 +57,6 @@ onMounted(() => {
 <template>
   <main>
     <!-- <TheWelcome /> -->
+    <Posts  @postDeleted="handlePostDeleted"  />
   </main>
 </template>
