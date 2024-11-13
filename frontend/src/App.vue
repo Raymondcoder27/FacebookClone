@@ -35,9 +35,9 @@ const handlePostDeleted = () => {
   getPosts()
 }
 
-const handlePostAdded = () => {
-  getPosts()
-}
+// const handlePostAdded = () => {
+//   getPosts()
+// }
 
 // const { post, user, comments } = toRefs(props);
 
@@ -49,9 +49,9 @@ onMounted(() => {
 
 <template>
   <RouterView />
-  <MainNavLayout @postAdded="handlePostAdded" >
-  <!-- <Posts  @postDeleted="handlePostDeleted"  /> -->
-</MainNavLayout>
+  <!-- <MainNavLayout @postAdded="handlePostAdded" > -->
+  <Posts  @postDeleted="handlePostDeleted"  />
+<!-- </MainNavLayout> -->
 </template>
 
 <style scoped>
