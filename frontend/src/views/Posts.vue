@@ -29,7 +29,7 @@ const emit = defineEmits(['postDeleted', 'postAdded']);
 const posts = ref([]);
 
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } =
+const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
 
 const getPosts = async () => {
   try {
