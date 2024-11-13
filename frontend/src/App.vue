@@ -55,7 +55,12 @@ onMounted(() => {
 
 
   <MainNavLayout @postAdded="handlePostAdded" >
-    <Posts  @postDeleted="handlePostDeleted"  />
+    <!-- <Posts  @postDeleted="handlePostDeleted"  /> -->
+
+    <div v-for="post in posts" :key="post.id">
+        <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
+        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted"/>
+      </div>
 </MainNavLayout>
 </template>
 
