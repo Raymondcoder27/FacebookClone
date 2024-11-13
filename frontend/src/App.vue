@@ -22,6 +22,7 @@ const getPosts = async () => {
   }
 };
 
+
 // defineProps({
 //   // user: Object,
 //   posts: Object,
@@ -51,6 +52,7 @@ onMounted(() => {
 <template>
   <RouterView />
   <!-- <MainNavLayout @postAdded="handlePostAdded" > -->
+    <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
   <Posts  @postDeleted="handlePostDeleted"  />
    <User @postDeleted="handlePostDeleted" />
 <!-- </MainNavLayout> -->
