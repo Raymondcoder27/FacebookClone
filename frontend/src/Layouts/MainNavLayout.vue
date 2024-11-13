@@ -59,11 +59,24 @@ const logout = async () => {
   router.push("/login");
 };
 
+const handlePostAdded = () => {
+  getPosts()
+}
+
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("Failed to fetch posts", error);
+  }
+};
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
-
-  await api.get("/posts");
+  getPosts();
+  // await api.get("/posts");
 });
 
 // alert(JSON.stringify(userDetails));
