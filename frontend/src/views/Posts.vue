@@ -28,6 +28,9 @@ const emit = defineEmits(['postDeleted', 'postAdded']);
 
 const posts = ref([]);
 
+const useGeneral = useGeneralStore();
+const { isPostOverlay, isCropperModal, isImageDisplay } =
+
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
