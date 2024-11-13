@@ -105,7 +105,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <MainNavLayout>
+  <MainNavLayout @postAdded="handlePostAdded">
     <div class="fixed w-full bg-[#F1F2F5] h-[100%]">
       <div
         class="grid grid-rows-3 grid-flow-col w-full mt-[56px] max-w-[1600px] h-[calc(100%-56px)] mx-auto px-4"
