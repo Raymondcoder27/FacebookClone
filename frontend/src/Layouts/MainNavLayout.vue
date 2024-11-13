@@ -59,12 +59,30 @@ const logout = async () => {
   router.push("/login");
 };
 
-// Ensure this runs when the component mounts
-onMounted(async () => {
-  await getUserDetails();
 
-  await api.get("/posts");
+
+const handlePostDeleted = () => {
+  getPosts()
+}
+
+const handlePostAdded = () => {
+  getPosts()
+}
+
+
+// Ensure this runs when the component mounts
+// onMounted(async () => {
+//   await getUserDetails();
+
+//   await api.get("/posts");
+// });
+
+
+onMounted(() => {
+  getUserDetails();
+  getPosts();
 });
+
 
 // alert(JSON.stringify(userDetails));
 </script>
