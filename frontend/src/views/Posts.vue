@@ -21,6 +21,7 @@ import { ref, onMounted, toRefs } from "vue";
 import api from "@/config/api";
 import { useAuthStore } from "@/stores/auth";
 import { useGeneralStore } from "@/stores/general";
+import { storeToRefs } from "pinia";
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
