@@ -31,9 +31,9 @@ defineProps({
   posts: Array,
 });
 
-const handlePostDeleted = () => {
-  getPosts()
-}
+// const handlePostDeleted = () => {
+//   getPosts()
+// }
 
 const handlePostAdded = () => {
   getPosts()
