@@ -35,9 +35,9 @@ const handlePostDeleted = () => {
   getPosts()
 }
 
-// const handlePostAdded = () => {
-//   getPosts()
-// }
+const handlePostAdded = () => {
+  getPosts()
+}
 
 // const { post, user, comments } = toRefs(props);
 
