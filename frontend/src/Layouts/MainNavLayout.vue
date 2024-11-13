@@ -21,8 +21,7 @@ import ImageDisplay from "@/components/ImageDisplay.vue";
 
 // const handleLogout = () => {};
 
-const emit = defineEmits(['postDeleted', 'postAdded']);
-
+const emit = defineEmits(["postDeleted", "postAdded"]);
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
@@ -35,7 +34,7 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-const posts = ref([])
+const posts = ref([]);
 
 const getUserDetails = async () => {
   const token = authStore.token;
@@ -61,25 +60,22 @@ const logout = async () => {
   router.push("/login");
 };
 
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
   }
-}
-
-
+};
 
 const handlePostDeleted = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 const handlePostAdded = () => {
-  getPosts()
-}
-
+  getPosts();
+};
 
 // Ensure this runs when the component mounts
 // onMounted(async () => {
@@ -88,12 +84,10 @@ const handlePostAdded = () => {
 //   await api.get("/posts");
 // });
 
-
 onMounted(() => {
   getUserDetails();
   getPosts();
 });
-
 
 // alert(JSON.stringify(userDetails));
 </script>
@@ -238,7 +232,11 @@ onMounted(() => {
     </div>
   </div>
   <slot />
-  <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
+  <CreatePostOverlay
+    v-if="isPostOverlay"
+    @showModal="isPostOverlay = false"
+    @postAdded="handlePostAdded"
+  />
 
   <CropperModal v-if="isCropperModal" @showModal="isCropperModal = false" />
 
