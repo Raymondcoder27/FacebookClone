@@ -20,6 +20,7 @@ import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
 import { ref, onMounted, toRefs } from "vue";
 import api from "@/config/api";
 import { useAuthStore } from "@/stores/auth";
+import { useGeneralStore } from "@/stores/general";
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
