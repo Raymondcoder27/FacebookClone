@@ -209,7 +209,7 @@ onMounted(async () => {
     </div>
   </div>
   <slot />
-  <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
+  <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
 
   <CropperModal v-if="isCropperModal" @showModal="isCropperModal = false" />
 

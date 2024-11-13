@@ -50,7 +50,7 @@ onMounted(() => {
 <template>
   <RouterView />
   <MainNavLayout @postAdded="handlePostAdded" >
-  <Posts  @postDeleted="handlePostDeleted"  />
+  <!-- <Posts  @postDeleted="handlePostDeleted"  /> -->
 </MainNavLayout>
 </template>
 
