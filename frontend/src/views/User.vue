@@ -13,7 +13,8 @@ import api from "@/config/api";
 const posts = ref([])
 
 const useGeneral = useGeneralStore();
-const { isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+
 
 const userDetails = ref(null);
 defineProps({ posts: Array, user: Object });
