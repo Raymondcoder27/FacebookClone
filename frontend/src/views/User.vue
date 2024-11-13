@@ -19,14 +19,14 @@ const userDetails = ref(null);
 defineProps({ posts: Array, user: Object });
 const authStore = useAuthStore();
 
-// const getPosts = async() => {
-//   try{
-//     const response = await api.get("/posts")
-//     posts.value = response.data.data
-//   }catch(error){
-//     console.error('error fetching posts', error)
-//   }
-// }
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data.data
+  }catch(error){
+    console.error('error fetching posts', error)
+  }
+}
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
@@ -46,9 +46,9 @@ const getUserDetails = async () => {
   }
 };
 
-// const handlePostDeleted = () => {
-//   getPosts()
-// }
+const handlePostDeleted = () => {
+  getPosts()
+}
 
 const handlePostAdded = () => {
   getPosts()
@@ -56,7 +56,7 @@ const handlePostAdded = () => {
 
 onMounted(() => {
   getUserDetails();
-  // getPosts();
+  getPosts();
   // getComments();
 });
 </script>
