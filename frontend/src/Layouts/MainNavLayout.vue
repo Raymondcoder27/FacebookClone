@@ -73,8 +73,8 @@ const getPosts = async () => {
 };
 
 // Ensure this runs when the component mounts
-onMounted(async () => {
-  await getUserDetails();
+onMounted(() => {
+  getUserDetails();
   getPosts();
   // await api.get("/posts");
 });
