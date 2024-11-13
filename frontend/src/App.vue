@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import MainNavLayout from "./Layouts/MainNavLayout.vue";
 import Posts from "./views/Posts.vue";
+import Post from "./components/Post.vue";
 
 
 //import router from "@/router";
@@ -51,6 +52,7 @@ onMounted(() => {
   <RouterView />
   <!-- <MainNavLayout @postAdded="handlePostAdded" > -->
   <!-- <Posts  @postDeleted="handlePostDeleted"  /> -->
+   <!-- <User @postDeleted="handlePostDeleted" /> -->
 <!-- </MainNavLayout> -->
 
 
