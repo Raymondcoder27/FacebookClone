@@ -52,7 +52,7 @@ onMounted(() => {
 <template>
   <RouterView />
   <!-- <MainNavLayout @postAdded="handlePostAdded" > -->
-    <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
+    <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
   <Posts  @postDeleted="handlePostDeleted"  />
    <User @postDeleted="handlePostDeleted" />
 <!-- </MainNavLayout> -->
