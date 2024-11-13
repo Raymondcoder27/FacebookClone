@@ -35,6 +35,8 @@ let showMenu = ref(false);
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
+const posts = ref([])
+
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
