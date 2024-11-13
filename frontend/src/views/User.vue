@@ -269,7 +269,7 @@ onMounted(() => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
 
-          <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
+          <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
           <!-- Here -->
           <div v-for="post in posts" :key="post.id">
           <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
