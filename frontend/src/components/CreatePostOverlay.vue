@@ -137,6 +137,7 @@ const createPost = async () => {
     });
 
     emit("postAdded", response.data.data);
+    alert(JSON.stringify(response))
     emit("showModal", false);
     getPosts();
   } catch (error) {
