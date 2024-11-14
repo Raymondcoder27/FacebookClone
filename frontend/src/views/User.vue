@@ -277,7 +277,6 @@ onMounted(() => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           /> -->
           <CreatePostBox
-          @postAdded="handlePostAdded" 
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
