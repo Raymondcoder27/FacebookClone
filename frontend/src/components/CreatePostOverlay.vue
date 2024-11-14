@@ -136,6 +136,10 @@ const createPost = async () => {
   }
 };
 
+function emitPostCreated() {
+  useGeneral.postAdded = true
+}
+
 // const getPosts = async () => {
 //   try {
 //     const response = await api.get("/posts");
