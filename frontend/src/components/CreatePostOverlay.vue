@@ -122,6 +122,9 @@ const createPost = async () => {
       },
     });
 
+    //emit post created to update pinia store
+    emitPostCreated();
+
     // emit("postAdded", response.data);
     emit("postAdded");
 
