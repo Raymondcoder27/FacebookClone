@@ -83,6 +83,5 @@ const { image, placeholder } = toRefs(props);
       </button>
     </div>
 
-    <!-- <CreatePostOverlay v-if="isPostOverlay" @postAdded="emitPostCreated" /> -->
   </div>
 </template>
