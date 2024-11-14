@@ -20,14 +20,26 @@ const userDetails = ref(null);
 defineProps({ posts: Array, user: Object });
 const authStore = useAuthStore();
 
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+// const getPosts = async() => {
+//   try{
+//     const response = await api.get("/posts")
+//     posts.value = response.data.data
+//   }catch(error){
+//     console.error('error fetching posts', error)
+//   }
+// }
+
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = [...response.data.data];  // Use shallow copy for reactivity
+  } catch (error) {
+    console.error("Failed to fetch posts", error);
   }
-}
+};
+
+
+
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
