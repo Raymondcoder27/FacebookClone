@@ -16,6 +16,7 @@ const emit = defineEmits(['postAdded']);
 
 function emitPostCreated() {
   emit('postAdded');
+  isPostOverlay.value = false; // Close the overlay
 }
 
 
