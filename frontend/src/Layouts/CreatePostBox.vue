@@ -14,10 +14,16 @@ import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
 const emit = defineEmits(['postAdded']);
 
+// function emitPostCreated() {
+//   emit('postAdded');
+//   isPostOverlay.value = false; // Close the overlay
+// }
+
 function emitPostCreated() {
-  emit('postAdded');
   isPostOverlay.value = false; // Close the overlay
+  emit("postAdded");           // Notify parent
 }
+
 
 
 
