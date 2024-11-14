@@ -34,6 +34,7 @@ watch(postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
     useGeneral.postAdded = false;
+    
   }
 });
 
