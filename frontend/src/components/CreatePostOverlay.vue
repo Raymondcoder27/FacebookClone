@@ -140,8 +140,8 @@ const createPost = async () => {
     emit("postAdded");
 
     // alert(JSON.stringify(response.data))
-    // emit("showModal", false);
-    isPostOverlay.value = false;
+    emit("showModal", false);
+    // isPostOverlay.value = false;
 
     getPosts();
   } catch (error) {
