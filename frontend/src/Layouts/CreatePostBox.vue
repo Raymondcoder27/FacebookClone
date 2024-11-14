@@ -6,6 +6,20 @@ import EmoticonOutline from "vue-material-design-icons/EmoticonOutline.vue";
 
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
+
+
+
+import { defineEmits } from 'vue';
+import CreatePostOverlay from './CreatePostOverlay.vue';
+
+const emit = defineEmits(['post-created']);
+
+function emitPostCreated() {
+  emit('post-created');
+}
+
+
+
 const useGeneral = useGeneralStore();
 const { isPostOverlay } = storeToRefs(useGeneral);
 
