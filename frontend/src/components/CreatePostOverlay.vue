@@ -143,7 +143,7 @@ const createPost = async () => {
     emit("showModal", false);
     // isPostOverlay.value = false;
 
-    getPosts();
+    // getPosts();
   } catch (error) {
     console.error("Failed to create post", error);
     error.value = "Failed to create post. Please try again.";
