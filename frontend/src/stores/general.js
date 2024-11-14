@@ -8,7 +8,7 @@ export const useGeneralStore = defineStore('general', () => {
   const isPostOverlay = ref(false)
   const isCropperModal = ref(false)
   const isImageDisplay = ref(null)
-
+  const postAdded = ref(false)
 
   return { isPostOverlay, isCropperModal, isImageDisplay }
 },
