@@ -64,6 +64,8 @@ const { image, placeholder } = toRefs(props);
         @click="isPostOverlay = true"
         class="flex items-center justify-start p-2 rounded-full w-full cursor-pointer bg-[#EFF2F5]"
       >
+  <CreatePostOverlay v-if="isPostOverlay"  @postAdded="emitPostCreated" />
+
         <div class="text-left pl-2">{{ placeholder }}</div>
       </div>
     </div>
