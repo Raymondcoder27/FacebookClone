@@ -85,7 +85,7 @@ const handlePostDeleted = () => {
 
 const handlePostAdded = () => {
   console.log("Post added event detected, refetching posts...");
-  getPosts();
+  getPosts()
 };
 
 onMounted(() => {
