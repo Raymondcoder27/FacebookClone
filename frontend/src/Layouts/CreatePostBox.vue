@@ -39,7 +39,7 @@ const { image, placeholder } = toRefs(props);
 </script>
 
 <template>
-  <CreatePostOverlay  @postAdded="emitPostCreated" />
+  <CreatePostOverlay  @postAdded="emitPostCreated">
   <div
     id="CreatePostBox"
     class="w-full bg-white rounded-lg px-3 mt-4 shadow-md"
@@ -82,4 +82,5 @@ const { image, placeholder } = toRefs(props);
       </button>
     </div>
   </div>
+  </CreatePostOverlay>
 </template>
