@@ -12,7 +12,7 @@ import { storeToRefs } from "pinia";
 import { defineEmits } from 'vue';
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
-const emit = defineEmits(['post-created']);
+const emit = defineEmits(['postAdded']);
 
 function emitPostCreated() {
   emit('postAdded');
