@@ -197,7 +197,7 @@ onMounted(() => {
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
+          <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
           <!-- <Post /> -->
           <!-- <Post /> -->
 
