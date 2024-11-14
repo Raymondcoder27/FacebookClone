@@ -38,15 +38,24 @@ const authStore = useAuthStore();
 //   }
 // };
 
-const getPosts = async () => {
-  try {
-    const response = await api.get("/posts");
-    console.log("Posts fetched:", response.data.data);
-    posts.value = [...response.data.data];  // Update posts
-  } catch (error) {
-    console.error("Failed to fetch posts", error);
+// const getPosts = async () => {
+//   try {
+//     const response = await api.get("/posts");
+//     console.log("Posts fetched:", response.data.data);
+//     posts.value = [...response.data.data];  // Update posts
+//   } catch (error) {
+//     console.error("Failed to fetch posts", error);
+//   }
+// };
+
+const getPosts = async() => {
+  try{
+    const response = await api.get("/posts")
+    posts.value = response.data.data
+  }catch(error){
+    console.error('error fetching posts', error)
   }
-};
+}
 
 
 
