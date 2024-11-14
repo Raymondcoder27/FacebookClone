@@ -28,7 +28,7 @@ function emitPostCreated() {
 
 
 const useGeneral = useGeneralStore();
-const { isPostOverlay } = storeToRefs(useGeneral);
+const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
 const props = defineProps({
   image: String,
