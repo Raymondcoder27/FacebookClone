@@ -1,25 +1,17 @@
 <script setup>
-import { toRefs } from "vue";
-import VideoImage from "vue-material-design-icons/VideoImage.vue";
-import Image from "vue-material-design-icons/Image.vue";
-import EmoticonOutline from "vue-material-design-icons/EmoticonOutline.vue";
-
+import { ref, toRefs } from "vue";
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 
-
-
-import { defineEmits } from 'vue';
+import { defineEmits, defineProps } from 'vue';
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
-const emit = defineEmits(['postAdded']);
+const emit = defineEmits(['post-created']);
 
 function emitPostCreated() {
-  emit('postAdded');
+  emit('post-created'); // Make sure the emitted event matches in `User.vue`
   isPostOverlay.value = false; // Close the overlay
 }
-
-
 
 const useGeneral = useGeneralStore();
 const { isPostOverlay } = storeToRefs(useGeneral);
@@ -33,8 +25,10 @@ const { image, placeholder } = toRefs(props);
 </script>
 
 <template>
-  <CreatePostOverlay @postAdded="emitPostCreated" />
-  <!-- <div
+  <!-- Render the CreatePostOverlay only if isPostOverlay is true -->
+  <CreatePostOverlay v-if="isPostOverlay" @post-created="emitPostCreated" />
+  
+  <div
     id="CreatePostBox"
     class="w-full bg-white rounded-lg px-3 mt-4 shadow-md"
   >
@@ -47,7 +41,7 @@ const { image, placeholder } = toRefs(props);
         />
       </router-link>
       <div
-        @click="isPostOverlay = true"
+        @click="isPostOverlay.value = true" <!-- Set overlay to true on click -->
         class="flex items-center justify-start p-2 rounded-full w-full cursor-pointer bg-[#EFF2F5]"
       >
         <div class="text-left pl-2">{{ placeholder }}</div>
@@ -74,5 +68,5 @@ const { image, placeholder } = toRefs(props);
         <div class="font-bold text-gray-400">Feeling/Activity</div>
       </button>
     </div>
-  </div> -->
+  </div>
 </template>
