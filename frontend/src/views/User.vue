@@ -9,6 +9,7 @@ import { storeToRefs } from "pinia";
 import { onMounted, ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
+import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
 const posts = ref([])
 
