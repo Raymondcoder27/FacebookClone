@@ -11,11 +11,11 @@ import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
-const posts = ref([])
+const posts = ref([]);
 
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
-
+const { isPostOverlay, isCropperModal, isImageDisplay } =
+  storeToRefs(useGeneral);
 
 const userDetails = ref(null);
 defineProps({ posts: Array, user: Object });
@@ -31,17 +31,14 @@ const authStore = useAuthStore();
 //   }
 // };
 
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
   }
-}
-
-
-
+};
 
 const getUserDetails = async () => {
   const token = authStore.token;
@@ -63,11 +60,11 @@ const getUserDetails = async () => {
 };
 
 const handlePostDeleted = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 const handlePostAdded = () => {
-  getPosts()
+  getPosts();
   console.log("Post added event detected, refetching posts...");
 };
 
@@ -80,13 +77,17 @@ onMounted(() => {
 
 <template>
   <Head title="User" />
-  <MainNavLayout  @postAdded="handlePostAdded">
+  <MainNavLayout @postAdded="handlePostAdded">
     <div class="w-full pb-20 min-h-[100vh] bg-[#F1F2F5]">
       <div class="w-full bg-white">
         <div class="mx-auto pb-1 pt-[56px] max-w-[1100px]">
           <img
             src="https://picsum.photos/id/45/2000/320"
-            :src="post?.image ? `data:image/jpeg;base64,${post.image}` : 'default-placeholder-image.png'"
+            :src="
+              post?.image
+                ? `data:image/jpeg;base64,${post.image}`
+                : 'default-placeholder-image.png'
+            "
             alt=""
             class="rounded-b-xl"
           />
@@ -171,7 +172,6 @@ onMounted(() => {
               to="/edit"
               class="flex justify-center w-7/12 md:w-[160px] items-baseline my-4 bg-gray-200 rounded-lg cursor-pointer"
             >
-
               <button class="flex items-center px-5 py-2 font-bold">
                 <Pen class="-mr-2 mr-1" :size="20" />Edit Profile
               </button>
@@ -280,19 +280,26 @@ onMounted(() => {
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           /> -->
           <CreatePostBox
-          @postAdded="handlePostAdded" 
+            @postAdded="handlePostAdded"
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
-
+          <CreatePostOverlay
+            v-if="isPostOverlay"
+            @showModal="isPostOverlay = false"
+            @postAdded="handlePostAdded"
+          />
 
           <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
           <!-- Here -->
           <div v-for="post in posts" :key="post.id">
-          <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
-          <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted"/>
-          
+            <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
+            <Post
+              :user="post.user"
+              :post="post"
+              :comments="post.comments"
+              @postDeleted="handlePostDeleted"
+            />
           </div>
           <!-- <Post />
           <Post />
