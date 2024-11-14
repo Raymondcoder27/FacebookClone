@@ -7,12 +7,10 @@ import EmoticonOutline from "vue-material-design-icons/EmoticonOutline.vue";
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 
-
-
-import { defineEmits } from 'vue';
+import { defineEmits } from "vue";
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
-const emit = defineEmits(['postAdded']);
+const emit = defineEmits(["postAdded"]);
 
 // function emitPostCreated() {
 //   emit('postAdded');
@@ -21,11 +19,8 @@ const emit = defineEmits(['postAdded']);
 
 function emitPostCreated() {
   isPostOverlay.value = false; // Close the overlay
-  emit("postAdded");           // Notify parent
+  emit("postAdded"); // Notify parent
 }
-
-
-
 
 const useGeneral = useGeneralStore();
 const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
@@ -35,12 +30,12 @@ const props = defineProps({
   placeholder: String,
 });
 
-watch(postAdded, (newValue) =>{
+watch(postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
-    useGeneral.postAdded = false
+    useGeneral.postAdded = false;
   }
-})
+});
 
 const { image, placeholder } = toRefs(props);
 </script>
@@ -51,7 +46,6 @@ const { image, placeholder } = toRefs(props);
     id="CreatePostBox"
     class="w-full bg-white rounded-lg px-3 mt-4 shadow-md"
   >
-
     <div class="flex items-center py-3 border-b">
       <router-link class="mr-2">
         <img
@@ -64,7 +58,6 @@ const { image, placeholder } = toRefs(props);
         @click="isPostOverlay = true"
         class="flex items-center justify-start p-2 rounded-full w-full cursor-pointer bg-[#EFF2F5]"
       >
-
         <div class="text-left pl-2">{{ placeholder }}</div>
       </div>
     </div>
@@ -90,8 +83,6 @@ const { image, placeholder } = toRefs(props);
       </button>
     </div>
 
-
-  <CreatePostOverlay v-if="isPostOverlay"  @postAdded="emitPostCreated" />
-
+    <CreatePostOverlay v-if="isPostOverlay" @postAdded="emitPostCreated" />
   </div>
 </template>
