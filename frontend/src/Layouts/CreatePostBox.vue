@@ -54,7 +54,7 @@ const { image, placeholder } = toRefs(props);
         />
       </router-link>
       <div
-        @click="isPostOverlay = true"
+        @click="isPostOverlay.value = true"
         class="flex items-center justify-start p-2 rounded-full w-full cursor-pointer bg-[#EFF2F5]"
       >
         <div class="text-left pl-2">{{ placeholder }}</div>
