@@ -20,6 +20,7 @@ const emit = defineEmits(["postAdded"]);
 function emitPostCreated() {
   isPostOverlay.value = false; // Close the overlay
   emit("postAdded"); // Notify parent
+  console.log("post added emmitted")
 }
 
 const useGeneral = useGeneralStore();
