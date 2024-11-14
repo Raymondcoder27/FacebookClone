@@ -193,10 +193,11 @@ onMounted(() => {
           class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto"
         >
           <CreatePostBox
+          @postAdded="handlePostAdded"
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
+          <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
           <!-- <Post /> -->
           <!-- <Post /> -->
 
