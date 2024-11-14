@@ -29,14 +29,25 @@ const authStore = useAuthStore();
 //   }
 // }
 
+// const getPosts = async () => {
+//   try {
+//     const response = await api.get("/posts");
+//     posts.value = [...response.data.data];  // Use shallow copy for reactivity
+//   } catch (error) {
+//     console.error("Failed to fetch posts", error);
+//   }
+// };
+
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
-    posts.value = [...response.data.data];  // Use shallow copy for reactivity
+    console.log("Posts fetched:", response.data);
+    posts.value = [...response.data];  // Update posts
   } catch (error) {
     console.error("Failed to fetch posts", error);
   }
 };
+
 
 
 
