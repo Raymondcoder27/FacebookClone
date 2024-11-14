@@ -10,7 +10,7 @@ import { storeToRefs } from "pinia";
 
 
 import { defineEmits } from 'vue';
-import CreatePostOverlay from './CreatePostOverlay.vue';
+import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 
 const emit = defineEmits(['post-created']);
 
