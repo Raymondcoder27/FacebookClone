@@ -61,6 +61,7 @@ const getUserDetails = async () => {
 
 const handlePostDeleted = () => {
   getPosts();
+  console.log("Post deleted event detected, refetching posts...");
 };
 
 const handlePostAdded = () => {
