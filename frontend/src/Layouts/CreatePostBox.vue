@@ -15,7 +15,7 @@ import CreatePostOverlay from './CreatePostOverlay.vue';
 const emit = defineEmits(['post-created']);
 
 function emitPostCreated() {
-  emit('post-created');
+  emit('postAdded');
 }
 
 
