@@ -25,13 +25,13 @@ import { storeToRefs } from "pinia";
 const userDetails = ref(null);
 const authStore = useAuthStore();
 
-
-const emit = defineEmits(['postDeleted', 'postAdded']);
+const emit = defineEmits(["postDeleted", "postAdded"]);
 
 const posts = ref([]);
 
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral);
+const { isPostOverlay, isCropperModal, isImageDisplay } =
+  storeToRefs(useGeneral);
 
 // const getPosts = async () => {
 //   try {
@@ -42,15 +42,14 @@ const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useGeneral
 //   }
 // };
 
-
-const getPosts = async() => {
-  try{
-    const response = await api.get("/posts")
-    posts.value = response.data.data
-  }catch(error){
-    console.error('error fetching posts', error)
+const getPosts = async () => {
+  try {
+    const response = await api.get("/posts");
+    posts.value = response.data.data;
+  } catch (error) {
+    console.error("error fetching posts", error);
   }
-}
+};
 
 const getUserDetails = async () => {
   const token = authStore.token;
@@ -82,13 +81,13 @@ defineProps({
 });
 
 const handlePostDeleted = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 const handlePostAdded = () => {
-  getPosts()
+  getPosts();
   console.log("Post added event detected, refetching posts...");
-}
+};
 
 // const handlePostAdded = (newPost) => {
 //   console.log("Received postAdded event with post:", newPost);
@@ -96,11 +95,10 @@ const handlePostAdded = () => {
 //   getPosts()
 // };
 
-
 // const { post, user, comments } = toRefs(props);
 
 onMounted(() => {
- getUserDetails();
+  getUserDetails();
   getPosts();
 });
 </script>
@@ -193,20 +191,29 @@ onMounted(() => {
           class="row-span-6 max-w-[600px] lg:mx-0 mx-auto overflow-auto"
         >
           <CreatePostBox
-          @postAdded="handlePostAdded"
+            @postAdded="handlePostAdded"
             :image="userDetails?.image"
             :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
           />
-          <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" />
+          <CreatePostOverlay
+            v-if="isPostOverlay"
+            @showModal="isPostOverlay = false"
+            @postAdded="handlePostAdded"
+          />
           <!-- <Post /> -->
           <!-- <Post /> -->
 
           <!-- Render posts -->
           <div v-for="post in posts" :key="post.id">
-        <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
-        <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted"/>
-      </div>
-<!-- 
+            <!-- <Post :user="post.user" :post="post" :comments="post.comments" @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" /> -->
+            <Post
+              :user="post.user"
+              :post="post"
+              :comments="post.comments"
+              @postDeleted="handlePostDeleted"
+            />
+          </div>
+          <!-- 
       <div v-for="post in posts" :key="post.id">
           <Post :user="post.user" :post="post" :comments="post.comments"/>
           </div> -->
