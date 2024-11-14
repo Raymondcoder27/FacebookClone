@@ -39,12 +39,11 @@ const { image, placeholder } = toRefs(props);
 </script>
 
 <template>
-  <!-- <CreatePostOverlay  @postAdded="emitPostCreated" /> -->
+  <CreatePostOverlay  @postAdded="emitPostCreated" />
   <div
     id="CreatePostBox"
     class="w-full bg-white rounded-lg px-3 mt-4 shadow-md"
   >
-  <CreatePostOverlay  @postAdded="emitPostCreated" />
 
     <div class="flex items-center py-3 border-b">
       <router-link class="mr-2">
