@@ -19,25 +19,16 @@ const emit = defineEmits(['postAdded']);
 //   isPostOverlay.value = false; // Close the overlay
 // }
 
-// function emitPostCreated() {
-//   isPostOverlay.value = false; // Close the overlay
-//   emit("postAdded");           // Notify parent
-// }
+function emitPostCreated() {
+  isPostOverlay.value = false; // Close the overlay
+  emit("postAdded");           // Notify parent
+}
 
 
 
 
 const useGeneral = useGeneralStore();
-// const { isPostOverlay } = storeToRefs(useGeneral);
-
-// Directly use the store's property
-const { isPostOverlay } = useGeneral;
-
-// You can still mutate the value like this
-function emitPostCreated() {
-  useGeneral.isPostOverlay = false; // Directly modify the store
-  emit("postAdded"); // Notify parent
-}
+const { isPostOverlay } = storeToRefs(useGeneral);
 
 const props = defineProps({
   image: String,
