@@ -148,7 +148,9 @@ const createPost = async () => {
 };
 
 function emitPostCreated() {
-  useGeneral.postAdded = true;
+  // useGeneral.postAdded = true;
+  postAdded.value = true;
+  console.log("emitted");
 }
 
 // const handlePostAdded = () => {
