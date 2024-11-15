@@ -14,7 +14,7 @@ import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
 const posts = ref([]);
 
 const useGeneral = useGeneralStore();
-const { isPostOverlay, isCropperModal, isImageDisplay } =
+const { isPostOverlay, isCropperModal, isImageDisplay, postAdded } =
   storeToRefs(useGeneral);
 
 const userDetails = ref(null);
