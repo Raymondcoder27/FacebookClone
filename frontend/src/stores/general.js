@@ -12,4 +12,10 @@ export const useGeneralStore = defineStore('general', () => {
 
   return { isPostOverlay, isCropperModal, isImageDisplay, postAdded }
 },
-  { persist: true })
+  // { persist: true })
+  { 
+    persist: {
+     paths: ['isPostOverlay', 'isCropperModal', 'isImageDisplay'], // Persist only relevant states
+     }
+  })
+
