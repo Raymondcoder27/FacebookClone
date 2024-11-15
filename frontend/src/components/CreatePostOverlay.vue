@@ -157,6 +157,11 @@ const createPost = async () => {
 function emitPostCreated() {
   useGeneral.postAdded = true;
   // postAdded.value = true;
+
+  setTimeout(() => {
+    // Reset after all listeners have acted on it
+    generalStore.postAdded = false;
+  }, 0); 
   console.log(" post emitted");
 }
 
