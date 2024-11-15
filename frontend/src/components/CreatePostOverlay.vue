@@ -56,7 +56,6 @@ const getUploadedImage = (e) => {
   }
 };
 
-
 const clearImage = () => {
   ImageDisplay.value = null;
   form.image = null;
@@ -149,7 +148,7 @@ const createPost = async () => {
 };
 
 function emitPostCreated() {
-  useGeneral.postAdded = true
+  useGeneral.postAdded = true;
 }
 
 // const handlePostAdded = () => {
