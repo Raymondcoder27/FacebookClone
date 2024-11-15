@@ -17,10 +17,17 @@ const emit = defineEmits(["postAdded"]);
 //   isPostOverlay.value = false; // Close the overlay
 // }
 
+// function emitPostCreated() {
+//   isPostOverlay.value = false; // Close the overlay
+//   emit("postAdded"); // Notify parent
+// }
+
 function emitPostCreated() {
   isPostOverlay.value = false; // Close the overlay
   emit("postAdded"); // Notify parent
+  console.log("emitPostCreated triggered");
 }
+
 
 const useGeneral = useGeneralStore();
 const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
