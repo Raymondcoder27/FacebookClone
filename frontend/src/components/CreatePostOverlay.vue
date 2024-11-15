@@ -160,7 +160,7 @@ function emitPostCreated() {
 
   setTimeout(() => {
     // Reset after all listeners have acted on it
-    generalStore.postAdded = false;
+    useGeneral.postAdded = false;
   }, 0); 
   console.log(" post emitted");
 }
