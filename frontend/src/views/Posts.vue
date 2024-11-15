@@ -194,11 +194,13 @@ onMounted(() => {
           <CreatePostBox
             @postAdded="handlePostAdded"
             :image="userDetails?.image"
-            :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'" />
+            :placeholder="'What\'s on your mind ' + userDetails?.name + '?!'"
+          />
           <CreatePostOverlay
             v-if="isPostOverlay"
             @showModal="isPostOverlay = false"
-            @postAdded="handlePostAdded" />
+            @postAdded="handlePostAdded"
+          />
           <!-- <Post /> -->
           <!-- <Post /> -->
 
