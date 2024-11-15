@@ -22,7 +22,7 @@ const router = useRouter();
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
-const { isPostOverlay } = storeToRefs(useGeneral);
+const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
 const emit = defineEmits();
 
