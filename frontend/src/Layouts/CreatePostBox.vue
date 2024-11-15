@@ -35,6 +35,8 @@ watch(postAdded, (newValue) => {
     emitPostCreated();
     useGeneral.postAdded = false;
     console.log("watched")
+  }else{
+    console.log("not watched")
   }
 });
 
