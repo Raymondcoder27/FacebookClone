@@ -150,7 +150,7 @@ const createPost = async () => {
 function emitPostCreated() {
   // useGeneral.postAdded = true;
   postAdded.value = true;
-  console.log("emitted");
+  console.log(" post emitted");
 }
 
 // const handlePostAdded = () => {
