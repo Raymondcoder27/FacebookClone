@@ -46,6 +46,7 @@ const getPosts = async () => {
   try {
     const response = await api.get("/posts");
     posts.value = response.data.data;
+    console.log("Posts fetched successfully");
   } catch (error) {
     console.error("error fetching posts", error);
   }
