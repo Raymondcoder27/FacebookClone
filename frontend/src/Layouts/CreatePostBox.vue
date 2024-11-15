@@ -30,15 +30,26 @@ const props = defineProps({
   placeholder: String,
 });
 
+// watch(postAdded, (newValue) => {
+//   if (newValue) {
+//     emitPostCreated();
+//     useGeneral.postAdded = false;
+//     console.log("watched")
+//   }else{
+//     console.log("not watched")
+//   }
+// });
+
 watch(postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
-    useGeneral.postAdded = false;
-    console.log("watched")
-  }else{
-    console.log("not watched")
+    postAdded.value = false;  // Reset after action
+    console.log("watched");
+  } else {
+    console.log("not watched");
   }
 });
+
 
 const { image, placeholder } = toRefs(props);
 </script>
