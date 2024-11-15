@@ -31,6 +31,8 @@ const authStore = useAuthStore();
 //   }
 // };
 
+
+
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
@@ -68,6 +70,17 @@ const handlePostAdded = () => {
   getPosts();
   console.log("Post added event detected, refetching posts...");
 };
+
+
+
+  // Watch for changes to postAdded
+  watch(postAdded, (newValue) => {
+      if (newValue) {
+        getPosts(); // Refetch posts when postAdded is true
+        console.log("watched and fetched in User.vue");
+        postAdded.value = false; // Reset the state after fetching
+      }
+    });
 
 onMounted(() => {
   getUserDetails();
