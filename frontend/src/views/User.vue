@@ -6,7 +6,7 @@ import Camera from "vue-material-design-icons/Camera.vue";
 import Pen from "vue-material-design-icons/Pen.vue";
 import { useGeneralStore } from "@/stores/general";
 import { storeToRefs } from "pinia";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import api from "@/config/api";
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
