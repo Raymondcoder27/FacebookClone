@@ -28,7 +28,6 @@ function emitPostCreated() {
   console.log("emitPostCreated triggered");
 }
 
-
 const useGeneral = useGeneralStore();
 const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
@@ -50,13 +49,12 @@ const props = defineProps({
 watch(postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
-    postAdded.value = false;  // Reset after action
+    postAdded.value = false; // Reset after action
     console.log("watched");
   } else {
     console.log("not watched");
   }
 });
-
 
 const { image, placeholder } = toRefs(props);
 </script>
