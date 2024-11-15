@@ -4,7 +4,6 @@ import MainNavLayout from "./Layouts/MainNavLayout.vue";
 import Posts from "./views/Posts.vue";
 import Post from "./components/Post.vue";
 
-
 //import router from "@/router";
 import { ref, onMounted, toRefs } from "vue";
 import api from "@/config/api";
@@ -22,7 +21,6 @@ const getPosts = async () => {
   }
 };
 
-
 // defineProps({
 //   // user: Object,
 //   posts: Object,
@@ -34,12 +32,12 @@ defineProps({
 });
 
 const handlePostDeleted = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 const handlePostAdded = () => {
-  getPosts()
-}
+  getPosts();
+};
 
 // const { post, user, comments } = toRefs(props);
 
@@ -53,11 +51,9 @@ onMounted(() => {
   <RouterView />
   <MainNavLayout>
     <!-- <CreatePostOverlay v-if="isPostOverlay" @showModal="isPostOverlay = false" @postAdded="handlePostAdded" /> -->
-  <Posts  @postDeleted="handlePostDeleted" @postAdded="handlePostAdded"  />
-   <User @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
-</MainNavLayout>
-
-
+    <Posts @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
+    <User @postDeleted="handlePostDeleted" @postAdded="handlePostAdded" />
+  </MainNavLayout>
 </template>
 
 <style scoped>
