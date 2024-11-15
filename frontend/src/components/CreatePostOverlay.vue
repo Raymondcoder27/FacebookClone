@@ -147,9 +147,16 @@ const createPost = async () => {
   }
 };
 
+// function emitPostCreated() {
+//   // useGeneral.postAdded = true;
+//   postAdded.value = true;
+//   console.log(" post emitted");
+// }
+
+
 function emitPostCreated() {
-  // useGeneral.postAdded = true;
-  postAdded.value = true;
+  useGeneral.postAdded = true;
+  // postAdded.value = true;
   console.log(" post emitted");
 }
 
