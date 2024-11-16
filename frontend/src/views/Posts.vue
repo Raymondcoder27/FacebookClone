@@ -4,7 +4,6 @@ import CreatePostBox from "@/Layouts/CreatePostBox.vue";
 import Post from "@/components/Post.vue";
 
 import CreatePostOverlay from "@/components/CreatePostOverlay.vue";
-
 import Magnify from "vue-material-design-icons/Magnify.vue";
 import TelevisionPlay from "vue-material-design-icons/TelevisionPlay.vue";
 import StorefrontOutline from "vue-material-design-icons/StorefrontOutline.vue";
