@@ -153,7 +153,6 @@ const createPost = async () => {
 //   console.log(" post emitted");
 // }
 
-
 function emitPostCreated() {
   useGeneral.postAdded = true;
   // postAdded.value = true;
@@ -161,7 +160,7 @@ function emitPostCreated() {
   setTimeout(() => {
     // Reset after all listeners have acted on it
     useGeneral.postAdded = false;
-  }, 0); 
+  }, 0);
   console.log(" post emitted");
 }
 
