@@ -28,7 +28,7 @@ const emit = defineEmits();
 
 let ImageDisplay = ref(null);
 
-let imageFile = ref(null)
+let imageFile = null
 
 // const posts = ref([]);
 
