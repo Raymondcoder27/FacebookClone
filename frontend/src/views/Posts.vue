@@ -95,6 +95,17 @@ const handlePostAdded = () => {
 //   getPosts()
 // };
 
+
+watch(
+    () => useGeneral.postAdded,
+    (newPost) => {
+        if (newPost) {
+            console.log("New post added in Posts.vue:", newPost);
+            getPosts(); // Reload posts
+        }
+    }
+);
+
 // const { post, user, comments } = toRefs(props);
 
 onMounted(() => {
