@@ -261,14 +261,14 @@ func CreatePost(c *gin.Context) {
 		defer file.Close()
 
 		// Upload the file (image or video) to MinIO
-		err = services.UploadFile("myBucket", "uploaded-media", file)
+		err = services.UploadFile("myBucket", "image", file)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
 			return
 		}
 
 		// If upload is successful, set media URL
-		mediaURL = "uploaded-media" // Or set to the actual path or URL as returned by the UploadFile function
+		// mediaURL = "uploaded-media" // Or set to the actual path or URL as returned by the UploadFile function
 	} else if err != http.ErrMissingFile {
 		// Other error occurred while reading the file, so handle it
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error reading media file"})
@@ -282,7 +282,7 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	if err := services.UploadFile("myBucket", "uploaded-media", file); err != nil {
+	if err := services.UploadFile("postimages", "uploaded-media", file); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file to minio"})
 		return
 	}
