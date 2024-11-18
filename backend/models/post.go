@@ -1,6 +1,10 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 // Post model
 type Post struct {
@@ -12,4 +16,5 @@ type Post struct {
 	ImageData []byte    `gorm:"type:bytea"`                        // Add 'Image' field to hold image URL
 	Text      string    `json:"text"`                              // Add 'Text' field to hold post text
 	MediaURL  string    `json:"media_url"`                         // URL or path to the optional media file
+	CreatedAt time.Time `json:"created_at"`
 }
