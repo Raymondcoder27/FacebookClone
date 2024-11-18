@@ -154,7 +154,8 @@ const createPost = async () => {
 // }
 
 function emitPostCreated() {
-  useGeneral.postAdded = true;
+  // useGeneral.postAdded = true;
+  useGeneral.postAdded(response.data.data);
   // postAdded.value = true;
 
   setTimeout(() => {
