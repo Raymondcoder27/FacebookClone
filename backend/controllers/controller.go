@@ -282,6 +282,11 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
+	if err := services.UploadFile("myBucket", "uploaded-media", file); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
+		return
+	}
+
 	// Populate post fields
 	var post models.Post
 	post.UserID = userID.(uint) // Adjust for your authentication setup
