@@ -52,7 +52,7 @@ let error = ref(null);
 
 const getUploadedImage = (e) => {
   ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  file.value = e.target.files[0];
+  form.image = e.target.files[0];
 };
 
 // const getUploadedImage = (e) => {
