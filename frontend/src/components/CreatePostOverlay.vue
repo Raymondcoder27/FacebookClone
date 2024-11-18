@@ -134,7 +134,9 @@ const createPost = async () => {
     emitPostCreated();
 
     // emit("postAdded", response.data);
-    emit("postAdded", response.data.data);
+    // emit("postAdded", response.data.data);
+      // Emit the new post details to the Pinia store
+  useGeneral.emitPostAdded(response.data.data);
 
     // alert(JSON.stringify(response.data))
     emit("showModal", false);
@@ -157,10 +159,10 @@ function emitPostCreated() {
   // useGeneral.postAdded = true;
   // useGeneral.postAdded(response.data.data);
 
-  
-  // Emit the new post details to the Pinia store
-  useGeneral.emitPostAdded(response.data.data);
-  // postAdded.value = true;
+
+  // // Emit the new post details to the Pinia store
+  // useGeneral.emitPostAdded(response.data.data);
+  postAdded.value = true;
 
   setTimeout(() => {
     // Reset after all listeners have acted on it
