@@ -66,8 +66,8 @@ const handlePostDeleted = () => {
   console.log("Post deleted event detected, refetching posts...");
 };
 
-const handlePostAdded = () => {
-  getPosts();
+const handlePostAdded = async () => {
+  await getPosts();
   console.log("Post added event detected, refetching posts...");
 };
 
