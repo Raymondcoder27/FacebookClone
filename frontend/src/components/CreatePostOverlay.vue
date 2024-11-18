@@ -159,21 +159,21 @@ const createPost = async () => {
 //   console.log(" post emitted");
 // }
 
-function emitPostCreated() {
-  // useGeneral.postAdded = true;
-  // useGeneral.postAdded(response.data.data);
+// function emitPostCreated() {
+//   // useGeneral.postAdded = true;
+//   // useGeneral.postAdded(response.data.data);
 
 
-  // // Emit the new post details to the Pinia store
-  // useGeneral.emitPostAdded(response.data.data);
-  postAdded.value = true;
+//   // // Emit the new post details to the Pinia store
+//   // useGeneral.emitPostAdded(response.data.data);
+//   postAdded.value = true;
 
-  setTimeout(() => {
-    // Reset after all listeners have acted on it
-    useGeneral.postAdded = false;
-  }, 0);
-  console.log(" post emitted");
-}
+//   setTimeout(() => {
+//     // Reset after all listeners have acted on it
+//     useGeneral.postAdded = false;
+//   }, 0);
+//   console.log(" post emitted");
+// }
 
 // const handlePostAdded = () => {
 //   getPosts()
