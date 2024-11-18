@@ -31,8 +31,6 @@ const authStore = useAuthStore();
 //   }
 // };
 
-
-
 const getPosts = async () => {
   try {
     const response = await api.get("/posts");
@@ -71,16 +69,16 @@ const handlePostAdded = () => {
   console.log("Post added event detected, refetching posts in User.vue...");
 };
 
-  watch(
-    () => useGeneral.postAdded,
-    (newPost) => {
-        if (newPost) {
-            getPosts(); // Reload posts
-            console.log("New post added in User.vue:", newPost);
-        }else{
-            console.log("No new post added in User.vue");
-        }
+watch(
+  () => useGeneral.postAdded,
+  (newPost) => {
+    if (newPost) {
+      getPosts(); // Reload posts
+      console.log("New post added in User.vue:", newPost);
+    } else {
+      console.log("No new post added in User.vue");
     }
+  }
 );
 
 onMounted(() => {
