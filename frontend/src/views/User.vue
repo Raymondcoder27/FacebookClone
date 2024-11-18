@@ -81,7 +81,7 @@ const handlePostAdded = () => {
   //   });
 
   watch(
-    () => useGeneral.postAdded,
+    () => useGeneral.emitPostAdded,
     (newPost) => {
         if (newPost) {
             console.log("New post added in User.vue:", newPost);

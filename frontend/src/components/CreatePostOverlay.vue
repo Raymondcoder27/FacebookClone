@@ -139,7 +139,7 @@ const createPost = async () => {
 
 
       // Emit the new post details to the Pinia store
-  useGeneral.emitPostAdded(response.data.data);
+  // useGeneral.emitPostAdded(response.data.data);
 
     // alert(JSON.stringify(response.data))
     // emit("showModal", false);
