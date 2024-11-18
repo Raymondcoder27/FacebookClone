@@ -66,8 +66,8 @@ const handlePostDeleted = () => {
   console.log("Post deleted event detected, refetching posts...");
 };
 
-const handlePostAdded = async () => {
-  await getPosts();
+const handlePostAdded = () => {
+  getPosts();
   console.log("Post added event detected, refetching posts in User.vue...");
 };
 
