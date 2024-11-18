@@ -36,16 +36,6 @@ const props = defineProps({
   placeholder: String,
 });
 
-// watch(postAdded, (newValue) => {
-//   if (newValue) {
-//     emitPostCreated();
-//     useGeneral.postAdded = false;
-//     console.log("watched")
-//   }else{
-//     console.log("not watched")
-//   }
-// });
-
 watch(useGeneral.postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
