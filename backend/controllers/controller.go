@@ -283,7 +283,7 @@ func CreatePost(c *gin.Context) {
 	}
 
 	if err := services.UploadFile("myBucket", "uploaded-media", file); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file to minio"})
 		return
 	}
 
