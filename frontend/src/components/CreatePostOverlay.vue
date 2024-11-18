@@ -28,7 +28,7 @@ const emit = defineEmits();
 
 let ImageDisplay = ref(null);
 
-let imageFile = null
+let imageFile = null;
 
 // const posts = ref([]);
 
@@ -57,8 +57,7 @@ const getUploadedImage = (e) => {
     // form.image = selectedFile;
     imageFile = selectedFile;
 
-
-    console.log("Selected Image:", selectedFile);  // Debugging log
+    console.log("Selected Image:", selectedFile); // Debugging log
   }
 };
 
@@ -250,7 +249,11 @@ onMounted(async () => {
                   class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
                   fillColor="#5E6771"
                 />
-                <img :src="ImageDisplay.value" alt="" class="rounded-lg mx-auto" />
+                <img
+                  :src="ImageDisplay.value"
+                  alt=""
+                  class="rounded-lg mx-auto"
+                />
               </div>
             </div>
 
