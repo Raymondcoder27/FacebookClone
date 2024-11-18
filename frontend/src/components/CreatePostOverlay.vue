@@ -115,12 +115,12 @@ const createPost = async () => {
   formData.append("text", form.text);
 
   // Only append the image if it exists
-  // if (form.image) {
+  if (form.image) {
   formData.append("image", form.image);
   console.log("Image appended to FormData:", formData.get("image"));
-  // } else {
-  // console.log("No image found when creating post");
-  // }
+  } else {
+  console.log("No image found when creating post");
+  }
 
   try {
     const response = await api.post("/create-post", formData, {
