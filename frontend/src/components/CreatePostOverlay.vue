@@ -52,7 +52,9 @@ const getUploadedImage = (e) => {
   if (e.target.files && e.target.files[0]) {
     const selectedFile = e.target.files[0];
     ImageDisplay.value = URL.createObjectURL(selectedFile);
-    form.image = selectedFile;
+    // form.image = selectedFile;
+    imageFile = selectedFile;
+
 
     console.log("Selected Image:", selectedFile);  // Debugging log
   }
@@ -60,7 +62,7 @@ const getUploadedImage = (e) => {
 
 const clearImage = () => {
   ImageDisplay.value = null;
-  form.image = null;
+  imageFile = null;
 };
 
 const getUserDetails = async () => {
