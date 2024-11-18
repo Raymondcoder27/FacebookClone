@@ -20,7 +20,7 @@ export const useGeneralStore = defineStore('general', () => {
     }, 0);
   };
 
-  return { isPostOverlay, isCropperModal, isImageDisplay, postAdded }
+  return { isPostOverlay, isCropperModal, isImageDisplay, postAdded, emitPostAdded }
 },
   // { persist: true })
   { 
