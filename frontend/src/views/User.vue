@@ -71,8 +71,6 @@ const handlePostAdded = () => {
   console.log("Post added event detected, refetching posts...");
 };
 
-
-
   // Watch for changes to postAdded
   watch(postAdded, (newValue) => {
       if (newValue) {
