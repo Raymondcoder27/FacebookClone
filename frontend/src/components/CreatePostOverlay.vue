@@ -131,12 +131,12 @@ const createPost = async () => {
     });
 
     //emit post created to update pinia store
-    // emitPostCreated();
+    emitPostCreated();
 
     // emit("postAdded", response.data);
     // emit("postAdded", response.data.data);
       // Emit the new post details to the Pinia store
-  useGeneral.emitPostAdded(response.data.data);
+  // useGeneral.emitPostAdded(response.data.data);
 
     // alert(JSON.stringify(response.data))
     // emit("showModal", false);
@@ -153,27 +153,27 @@ const createPost = async () => {
   }
 };
 
-// function emitPostCreated() {
-//   // useGeneral.postAdded = true;
-//   postAdded.value = true;
-//   console.log(" post emitted");
-// }
+function emitPostCreated() {
+  // useGeneral.postAdded = true;
+  postAdded.value = true;
+  console.log(" post emitted");
+}
 
-// function emitPostCreated() {
-//   // useGeneral.postAdded = true;
-//   // useGeneral.postAdded(response.data.data);
+function emitPostCreated() {
+  // useGeneral.postAdded = true;
+  // useGeneral.postAdded(response.data.data);
 
 
-//   // // Emit the new post details to the Pinia store
-//   // useGeneral.emitPostAdded(response.data.data);
-//   postAdded.value = true;
+  // // Emit the new post details to the Pinia store
+  // useGeneral.emitPostAdded(response.data.data);
+  postAdded.value = true;
 
-//   setTimeout(() => {
-//     // Reset after all listeners have acted on it
-//     useGeneral.postAdded = false;
-//   }, 0);
-//   console.log(" post emitted");
-// }
+  setTimeout(() => {
+    // Reset after all listeners have acted on it
+    useGeneral.postAdded = false;
+  }, 0);
+  console.log(" post emitted");
+}
 
 // const handlePostAdded = () => {
 //   getPosts()
