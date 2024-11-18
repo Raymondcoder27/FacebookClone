@@ -17,7 +17,7 @@ export const useGeneralStore = defineStore('general', () => {
     // Reset the value after emitting so it doesn't stay persistent
     setTimeout(() => {
       postAdded.value = null;
-    }, 0);
+    }, 100);
   };
 
   return { isPostOverlay, isCropperModal, isImageDisplay, postAdded, emitPostAdded }
