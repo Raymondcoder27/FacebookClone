@@ -17,4 +17,5 @@ type Post struct {
 	Text      string    `json:"text"`                              // Add 'Text' field to hold post text
 	MediaURL  string    `json:"media_url"`                         // URL or path to the optional media file
 	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
