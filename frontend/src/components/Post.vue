@@ -95,7 +95,7 @@ const logout = async () => {
   await authStore.logout();
   router.push("/login");
 };
-console.log("Fetched posts:", posts.value);
+// console.log("Fetched posts:", posts.value);
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
