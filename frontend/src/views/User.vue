@@ -86,6 +86,8 @@ const handlePostAdded = () => {
         if (newPost) {
             console.log("New post added in User.vue:", newPost);
             getPosts(); // Reload posts
+        }else{
+            console.log("No new post added in User.vue");
         }
     }
 );
