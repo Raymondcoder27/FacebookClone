@@ -46,7 +46,7 @@ const props = defineProps({
 //   }
 // });
 
-watch(postAdded, (newValue) => {
+watch(useGeneral.postAdded, (newValue) => {
   if (newValue) {
     emitPostCreated();
     postAdded.value = false; // Reset after action
