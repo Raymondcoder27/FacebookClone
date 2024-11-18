@@ -13,6 +13,7 @@ import (
 	"example.com/facebookclone/models"
 	"example.com/facebookclone/services"
 	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
 )
 
 func GetAllPosts(c *gin.Context) {
@@ -282,7 +283,10 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	if err := services.UploadFile("postimages", "image", file); err != nil {
+	id := uuid.New().String()
+	objectName := id
+
+	if err := services.UploadFile("postimages", objectName, file); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file to minio"})
 		return
 	}
