@@ -139,7 +139,11 @@ const createPost = async () => {
   useGeneral.emitPostAdded(response.data.data);
 
     // alert(JSON.stringify(response.data))
-    emit("showModal", false);
+    // emit("showModal", false);
+
+
+    // Close the modal
+   useGeneral.isPostOverlay = false;
     // isPostOverlay.value = false;
 
     // getPosts();
