@@ -80,6 +80,16 @@ const handlePostAdded = () => {
   //     }
   //   });
 
+  watch(
+    () => useGeneral.postAdded,
+    (newPost) => {
+        if (newPost) {
+            console.log("New post added in User.vue:", newPost);
+            getPosts(); // Reload posts
+        }
+    }
+);
+
 onMounted(() => {
   getUserDetails();
   getPosts();
