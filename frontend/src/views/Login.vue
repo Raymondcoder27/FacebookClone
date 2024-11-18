@@ -77,7 +77,7 @@ const submit = async () => {
 <template>
   <!-- <Head title="Log in" /> -->
   <!-- <img src="/public/icons/FacebookLogo.png" class="w-[200px]" alt=""> -->
-  <div v-if="error" class="text-red-500">{{ error }}</div>
+  <div v-if="error" class="text-red-500 text-center">{{ error }}</div>
 
   <GuestLayout>
     <div
