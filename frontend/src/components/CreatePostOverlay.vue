@@ -116,10 +116,10 @@ const createPost = async () => {
 
   // Only append the image if it exists
   // if (form.image) {
-    formData.append("image", form.image);
-    console.log("Image appended to FormData:", formData.get("image"));
+  formData.append("image", form.image);
+  console.log("Image appended to FormData:", formData.get("image"));
   // } else {
-    // console.log("No image found when creating post");
+  // console.log("No image found when creating post");
   // }
 
   try {
@@ -136,17 +136,14 @@ const createPost = async () => {
     // emit("postAdded", response.data);
     // emit("postAdded", response.data.data);
 
-
-
-      // Emit the new post details to the Pinia store
-  // useGeneral.emitPostAdded(response.data.data);
+    // Emit the new post details to the Pinia store
+    // useGeneral.emitPostAdded(response.data.data);
 
     // alert(JSON.stringify(response.data))
     // emit("showModal", false);
 
-
     // Close the modal
-   useGeneral.isPostOverlay = false;
+    useGeneral.isPostOverlay = false;
     // isPostOverlay.value = false;
 
     // getPosts();
@@ -163,7 +160,6 @@ const createPost = async () => {
 // }
 
 function emitPostCreated() {
-
   // // Emit the new post details to the Pinia store
   // useGeneral.emitPostAdded(response.data.data);
   postAdded.value = true;
