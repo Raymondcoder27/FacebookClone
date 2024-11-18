@@ -53,6 +53,8 @@ const getUploadedImage = (e) => {
     const selectedFile = e.target.files[0];
     ImageDisplay.value = URL.createObjectURL(selectedFile);
     form.image = selectedFile;
+
+    console.log("Selected Image:", selectedFile);  // Debugging log
   }
 };
 
