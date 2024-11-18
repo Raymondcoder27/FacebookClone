@@ -155,7 +155,11 @@ const createPost = async () => {
 
 function emitPostCreated() {
   // useGeneral.postAdded = true;
-  useGeneral.postAdded(response.data.data);
+  // useGeneral.postAdded(response.data.data);
+
+  
+  // Emit the new post details to the Pinia store
+  useGeneral.emitPostAdded(response.data.data);
   // postAdded.value = true;
 
   setTimeout(() => {
