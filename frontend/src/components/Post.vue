@@ -87,7 +87,7 @@ const CreateComment = async () => {
     }
 
     //clear the form
-    form.comment = null;
+    // form.comment = null;
 
     alert(JSON.stringify(response.data.comment.text));
 
