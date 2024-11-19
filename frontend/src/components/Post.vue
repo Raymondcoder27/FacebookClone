@@ -201,7 +201,7 @@ onMounted(async () => {
       >
         <div
           class="flex items-center justify-between pb-2"
-          v-for="comment in comments.comment"
+          v-for="comment in comments"
           :key="comment.ID"
         >
           <div class="flex items-center w-full mb-1">
