@@ -71,6 +71,8 @@ const CreateComment = async () => {
     });
     comments.value = response.data.comment;
     // alert(JSON.stringify(response.data.comment));
+
+    console.log('API Response:', response.data); // Check response structure
   } catch (error) {
     console.error("error creating tweet:", error);
   }
