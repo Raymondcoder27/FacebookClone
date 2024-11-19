@@ -119,8 +119,7 @@ onMounted(async () => {
         <!-- <img src="./public/user-placeholder.png" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]"> -->
       </button>
 
-      <iframe src="https://roadmap.sh/r/embed?id=673c4f7939f50dbedc5f2ffd" width="100%" height="500px" frameBorder="0"
-></iframe>
+    
       <div class="flex items-center justify-between p-2 rounded-full w-full">
         <!-- {{posts}} -->
         <div>
