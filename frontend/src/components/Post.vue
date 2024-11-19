@@ -55,11 +55,21 @@ const getUserDetails = async () => {
   }
 };
 
+// const props = defineProps({
+//   user: Object,
+//   post: Object,
+//   comments: Object,
+// });
+
 const props = defineProps({
   user: Object,
   post: Object,
-  comments: Object,
+  comments: {
+    type: Array,
+    default: () => [] // Initialize as an empty array if not provided
+  },
 });
+
 
 const { post, user, comments } = toRefs(props);
 
