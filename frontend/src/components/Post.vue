@@ -80,7 +80,7 @@ const CreateComment = async () => {
       text: form.comment,
     });
     comments.value = response.data.comment;
-    // alert(JSON.stringify(response.data.comment));
+    alert(JSON.stringify(response.data.comment.text));
 
     console.log('API Response:', response.data); // Check response structure
   } catch (error) {
