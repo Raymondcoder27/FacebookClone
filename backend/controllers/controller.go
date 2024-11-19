@@ -323,7 +323,7 @@ func DeletePost(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Post deleted"})
 }
 
-func CommentStore(c *gin.Context) {
+func CreateComment(c *gin.Context) {
 	// Get request data
 	var requestBody struct {
 		Text   string `json:"text" binding:"required"`
