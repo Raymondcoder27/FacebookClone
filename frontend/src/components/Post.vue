@@ -66,10 +66,9 @@ const props = defineProps({
   post: Object,
   comments: {
     type: Array,
-    default: () => [] // Initialize as an empty array if not provided
+    default: () => [], // Initialize as an empty array if not provided
   },
 });
-
 
 const { post, user, comments } = toRefs(props);
 
@@ -82,7 +81,7 @@ const CreateComment = async () => {
     comments.value = response.data.comment;
     alert(JSON.stringify(response.data.comment.text));
 
-    console.log('API Response:', response.data); // Check response structure
+    console.log("API Response:", response.data); // Check response structure
   } catch (error) {
     console.error("error creating tweet:", error);
   }
@@ -131,7 +130,6 @@ onMounted(async () => {
         <!-- <img src="./public/user-placeholder.png" alt="" class="rounded-full ml-1 min-w-[42px] max-h-[42px]"> -->
       </button>
 
-    
       <div class="flex items-center justify-between p-2 rounded-full w-full">
         <!-- {{posts}} -->
         <div>
