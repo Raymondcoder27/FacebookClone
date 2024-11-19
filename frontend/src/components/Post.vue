@@ -70,7 +70,7 @@ const CreateComment = async () => {
       text: form.comment,
     });
     comments.value = response.data.comment;
-    alert(JSON.stringify(response.data.comment));
+    // alert(JSON.stringify(response.data.comment));
   } catch (error) {
     console.error("error creating tweet:", error);
   }
