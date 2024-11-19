@@ -59,8 +59,8 @@ const getUploadedImage = (e) => {
   if (e.target.files && e.target.files[0]) {
     const selectedFile = e.target.files[0];
     ImageDisplay.value = URL.createObjectURL(selectedFile);
-    // form.image = selectedFile;
-    imageFile = selectedFile;
+    form.image = selectedFile;
+    // imageFile = selectedFile;
 
     console.log("Selected Image:", selectedFile); // Debugging log
   }
@@ -126,7 +126,7 @@ const createPost = async () => {
 
   // Only append the image if it exists
   // if (form.image) {
-  formData.append("image", imageFile);
+  formData.append("image", form.image);
   console.log("Image appended to FormData:", formData.get("image"));
   // } else {
   // console.log("No image found when creating post");
