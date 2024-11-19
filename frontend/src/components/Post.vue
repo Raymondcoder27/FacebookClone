@@ -78,7 +78,14 @@ const CreateComment = async () => {
       post_id: post.value.id,
       text: form.comment,
     });
-    comments.value = response.data.comment;
+    // comments.value = response.data.comment;
+
+    if (Array.isArray(response.data.comment)) {
+      comments.value = [...comments.value, ...response.data.comment];
+    } else {
+      comments.value = [...comments.value, response.data.comment];
+    }
+    
     alert(JSON.stringify(response.data.comment.text));
 
     console.log("API Response:", response.data); // Check response structure
