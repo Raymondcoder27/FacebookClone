@@ -68,7 +68,8 @@ const getUploadedImage = (e) => {
 
 const clearImage = () => {
   ImageDisplay.value = null;
-  imageFile = null;
+  // imageFile = null;
+  form.image = null;
 };
 
 const getUserDetails = async () => {
