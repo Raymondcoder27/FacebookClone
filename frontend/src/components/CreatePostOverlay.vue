@@ -50,21 +50,21 @@ let error = ref(null);
 //   }
 // };
 
-const getUploadedImage = (e) => {
-  ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  form.image = e.target.files[0];
-};
-
 // const getUploadedImage = (e) => {
-//   if (e.target.files && e.target.files[0]) {
-//     const selectedFile = e.target.files[0];
-//     ImageDisplay.value = URL.createObjectURL(selectedFile);
-//     // form.image = selectedFile;
-//     imageFile = selectedFile;
-
-//     console.log("Selected Image:", selectedFile); // Debugging log
-//   }
+//   ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
+//   form.image = e.target.files[0];
 // };
+
+const getUploadedImage = (e) => {
+  if (e.target.files && e.target.files[0]) {
+    const selectedFile = e.target.files[0];
+    ImageDisplay.value = URL.createObjectURL(selectedFile);
+    // form.image = selectedFile;
+    imageFile = selectedFile;
+
+    console.log("Selected Image:", selectedFile); // Debugging log
+  }
+};
 
 const clearImage = () => {
   ImageDisplay.value = null;
