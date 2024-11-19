@@ -200,8 +200,8 @@ onMounted(async () => {
       >
         <div
           class="flex items-center justify-between pb-2"
-          v-for="comment in comments.comments"
-          :key="comment"
+          v-for="comment in comments.comment"
+          :key="comment.ID"
         >
           <div class="flex items-center w-full mb-1">
             <RouterLink to="/">
