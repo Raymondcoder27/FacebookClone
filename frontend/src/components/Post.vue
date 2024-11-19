@@ -183,6 +183,7 @@ onMounted(async () => {
             />
             <button
               type="button"
+              @click="CreateComment"
               class="flex items-center text-sm pl-2 pr-3.5 rounded-full bg-blue-500 hover:bg-blue-800 text-white font-bold"
             >
               <Check fillColor="#FFF" :size="20" /> Send
