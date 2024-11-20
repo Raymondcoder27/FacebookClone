@@ -293,7 +293,7 @@ func CreatePost(c *gin.Context) {
 	imageBytes, err := services.DownloadFile("postimages", objectName)
 	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
-	c.JSON(http.StatusOK, gin.H{"code": 200, "post": post})
+	c.JSON(http.StatusOK, gin.H{"code": 200, "post": post, "image": imageBase64})
 }
 
 // DeletePost deletes a post by its ID
