@@ -369,6 +369,7 @@ func CreateComment(c *gin.Context) {
 }
 
 // Destroy a comment by ID
+
 func CommentDestroy(c *gin.Context) {
 	// Get comment ID from the URL
 	id := c.Param("id")
