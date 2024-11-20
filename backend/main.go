@@ -54,6 +54,7 @@ func main() {
 		authGroup.POST("/user/update-image", controllers.UpdateUserImage) // Route to update user image
 
 		// authGroup.GET("/profile", controllers.EditProfile)      // Route to edit profile
+
 		// authGroup.PATCH("/profile", controllers.UpdateProfile)  // Route to update profile
 		// authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
 	}
