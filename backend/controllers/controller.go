@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/base64"
+	"fmt"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -249,7 +250,8 @@ func CreatePost(c *gin.Context) {
 		// Upload the file (image or video) to MinIO
 		err = services.UploadFile("postimages", "image", file)
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
+			// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
+			fmt.Printf("Failed to upload file: %v\n", err)
 			return
 		}
 
@@ -290,11 +292,12 @@ func CreatePost(c *gin.Context) {
 
 	// objectName := uuid.New().String()
 
-	imageBytes, err := services.DownloadFile("postimages", objectName)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
-		return
-	}
+	// imageBytes, err := services.DownloadFile("postimages", objectName)
+	// if err != nil {
+	// 	// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+	// 	fmt.Printf("Failed to download image: %v\n", err)
+	// 	return
+	// }
 
 	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
