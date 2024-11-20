@@ -26,7 +26,6 @@ const authStore = useAuthStore();
 const router = useRouter();
 
 // const posts = ref([]);
-
 // const getPosts = async () => {
 //   try {
 //     const response = await api.get("/posts");
