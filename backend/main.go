@@ -59,6 +59,5 @@ func main() {
 
 		// authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
 	}
-
 	r.Run(":2000")
 }
