@@ -50,6 +50,7 @@ func main() {
 		// authGroup.DELETE("/comment/:id", controllers.DeleteComment) // Route to delete a comment
 
 		// authGroup.GET("/user/:id", controllers.GetUser)                   // Route to get user details
+
 		authGroup.POST("/user/update-image", controllers.UpdateUserImage) // Route to update user image
 
 		// authGroup.GET("/profile", controllers.EditProfile)      // Route to edit profile
