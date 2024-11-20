@@ -72,7 +72,7 @@ const props = defineProps({
 
 const { post, user, comments } = toRefs(props);
 
-const CreateComment = async () => {
+const createComment = async () => {
   try {
     const response = await api.post("/create-comment", {
       post_id: post.value.id,
@@ -88,7 +88,7 @@ const CreateComment = async () => {
 
     //clear the form
     form.comment = null;
-    
+
     alert(JSON.stringify(response.data.comment.text));
 
     console.log("API Response:", response.data); // Check response structure
@@ -207,7 +207,7 @@ onMounted(async () => {
             />
             <button
               type="button"
-              @click="CreateComment"
+              @click="createComment"
               class="flex items-center text-sm pl-2 pr-3.5 rounded-full bg-blue-500 hover:bg-blue-800 text-white font-bold"
             >
               <Check fillColor="#FFF" :size="20" /> Send
