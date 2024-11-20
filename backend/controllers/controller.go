@@ -291,6 +291,10 @@ func CreatePost(c *gin.Context) {
 	// objectName := uuid.New().String()
 
 	imageBytes, err := services.DownloadFile("postimages", objectName)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+		return
+	}
 
 	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
