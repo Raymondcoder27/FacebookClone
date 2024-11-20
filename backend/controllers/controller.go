@@ -287,6 +287,8 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
+	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
+
 	c.JSON(http.StatusOK, gin.H{"post": post})
 }
 
