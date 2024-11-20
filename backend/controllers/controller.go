@@ -291,6 +291,7 @@ func CreatePost(c *gin.Context) {
 	// objectName := uuid.New().String()
 
 	imageBytes, err := services.DownloadFile("postimages", objectName)
+
 	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
 	c.JSON(http.StatusOK, gin.H{"code": 200, "post": post, "image": imageBase64})
