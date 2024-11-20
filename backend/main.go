@@ -56,6 +56,7 @@ func main() {
 		// authGroup.GET("/profile", controllers.EditProfile)      // Route to edit profile
 
 		// authGroup.PATCH("/profile", controllers.UpdateProfile)  // Route to update profile
+
 		// authGroup.DELETE("/profile", controllers.DeleteProfile) // Route to delete profile
 	}
 
