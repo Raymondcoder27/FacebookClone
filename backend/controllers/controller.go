@@ -350,7 +350,6 @@ func CreateComment(c *gin.Context) {
 	}
 
 	// Get user from context (set by authentication middleware)
-
 	user, _ := c.Get("user")
 
 	// Create the comment
