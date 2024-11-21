@@ -256,7 +256,7 @@ onMounted(async () => {
                   fillColor="#5E6771"
                 />
                 <img
-                  :src="ImageDisplay.value"
+                  :src="ImageDisplay"
                   alt=""
                   class="rounded-lg mx-auto"
                 />
