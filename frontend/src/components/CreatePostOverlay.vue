@@ -155,7 +155,6 @@ function emitPostCreated() {
   // // Emit the new post details to the Pinia store
   // useGeneral.emitPostAdded(response.data.data);
   postAdded.value = true;
-
   setTimeout(() => {
     // Reset after all listeners have acted on it
     useGeneral.postAdded = false;
