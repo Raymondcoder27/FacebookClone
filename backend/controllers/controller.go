@@ -299,7 +299,7 @@ func CreatePost(c *gin.Context) {
 
 	// imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
-	c.JSON(http.StatusOK, gin.H{"code": 200, "post": post, "image": imageBase64})
+	// c.JSON(http.StatusOK, gin.H{"code": 200, "post": post, "image": imageBase64})
 	// c.JSON(http.StatusOK, gin.H{"code": 200, "post": post})
 
 }
