@@ -290,14 +290,14 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	imageBytes, err := services.DownloadFile("postimages", objectName)
-	if err != nil {
-		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
-		fmt.Printf("Failed to download image: %v\n", err)
-		return
-	}
+	// imageBytes, err := services.DownloadFile("postimages", objectName)
+	// if err != nil {
+	// 	// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+	// 	fmt.Printf("Failed to download image: %v\n", err)
+	// 	return
+	// }
 
-	imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
+	// imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
 	c.JSON(http.StatusOK, gin.H{"code": 200, "post": post, "image": imageBase64})
 	// c.JSON(http.StatusOK, gin.H{"code": 200, "post": post})
