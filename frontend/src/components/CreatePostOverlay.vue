@@ -26,7 +26,7 @@ const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
 const emit = defineEmits();
 
-let ImageDisplay = ref(null);
+let ImageDisplay = ref('');
 
 // let imageFile = ref(null);
 
