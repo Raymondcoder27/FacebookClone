@@ -38,22 +38,21 @@ const form = reactive({
 });
 let error = ref(null);
 
-// const getUploadedImage = (e) => {
-//   if (e.target.files && e.target.files[0]) {
-//     const selectedFile = e.target.files[0];
-//     ImageDisplay.value = URL.createObjectURL(selectedFile);
-//     form.image = selectedFile;
-
-//     console.log("Selected file:", form.image); // Check if the file is correctly assigned
-//   } else {
-//     console.log("No file selected or file input is empty");
-//   }
-// };
-
 const getUploadedImage = (e) => {
-  ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  file.value = e.target.files[0];
+  if (e.target.files && e.target.files[0]) {
+    const selectedFile = e.target.files[0];
+    ImageDisplay.value = URL.createObjectURL(selectedFile); // For preview
+    form.image = selectedFile; // Bind the file to the reactive form object
+  } else {
+    console.log("No file selected or file input is empty");
+  }
 };
+
+const clearImage = () => {
+  ImageDisplay.value = null; // Clear the preview
+  form.image = null; // Reset the form's image field
+};
+
 
 // const getUploadedImage = (e) => {
 //   if (e.target.files && e.target.files[0]) {
