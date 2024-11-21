@@ -134,15 +134,6 @@ const createPost = async () => {
     //emit post created to update pinia store
     emitPostCreated();
 
-    // emit("postAdded", response.data);
-    // emit("postAdded", response.data.data);
-
-    // Emit the new post details to the Pinia store
-    // useGeneral.emitPostAdded(response.data.data);
-
-    // alert(JSON.stringify(response.data))
-    // emit("showModal", false);
-
     // Close the modal
     useGeneral.isPostOverlay = false;
     // isPostOverlay.value = false;
