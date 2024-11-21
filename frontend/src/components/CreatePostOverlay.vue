@@ -113,7 +113,6 @@ const getUserDetails = async () => {
 
 const createPost = async () => {
   error.value = null;
-
   const formData = new FormData();
   formData.append("text", form.text);
 
