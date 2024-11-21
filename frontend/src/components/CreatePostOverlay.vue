@@ -69,11 +69,11 @@ const getUploadedImage = (e) => {
 //   }
 // };
 
-const clearImage = () => {
-  ImageDisplay.value = null;
-  // imageFile = null;
-  form.image = null;
-};
+// const clearImage = () => {
+//   ImageDisplay.value = null;
+//   // imageFile = null;
+//   form.image = null;
+// };
 
 const getUserDetails = async () => {
   const token = authStore.token;
