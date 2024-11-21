@@ -53,6 +53,11 @@ let error = ref(null);
 const getUploadedImage = (e) => {
   ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
   form.image = e.target.files[0];
+
+
+  console.log("Uploaded file:", e.target.files[0]);
+console.log("Form image value:", form.image);
+
 };
 
 
