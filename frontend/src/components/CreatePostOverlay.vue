@@ -37,7 +37,7 @@ const createPost = async () => {
   }
 
   try {
-    const response = await fetch('/create-post', {
+    const response = await api.post('/create-post', {
       method: 'POST',
       body: formData,
     });
