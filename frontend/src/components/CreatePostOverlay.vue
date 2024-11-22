@@ -38,20 +38,20 @@ const form = reactive({
 });
 let error = ref(null);
 
-const getUploadedImage = (e) => {
-  try {
-    if (e.target.files && e.target.files[0]) {
-      console.log("Selected file:", e.target.files[0]);
-      const selectedFile = e.target.files[0];
-      ImageDisplay.value = URL.createObjectURL(selectedFile); // For preview
-      form.image = selectedFile; // Bind the file to the reactive form object
-    } else {
-      console.log("No file selected or file input is empty");
-    }
-  } catch (error) {
-    console.error("Error in getUploadedImage:", error);
-  }
-};
+// const getUploadedImage = (e) => {
+//   try {
+//     if (e.target.files && e.target.files[0]) {
+//       console.log("Selected file:", e.target.files[0]);
+//       const selectedFile = e.target.files[0];
+//       ImageDisplay.value = URL.createObjectURL(selectedFile); // For preview
+//       form.image = selectedFile; // Bind the file to the reactive form object
+//     } else {
+//       console.log("No file selected or file input is empty");
+//     }
+//   } catch (error) {
+//     console.error("Error in getUploadedImage:", error);
+//   }
+// };
 
 const getUploadedImage = (e) => {
   uploadedImage.value = URL.createObjectURL(e.target.files[0]);
