@@ -10,6 +10,8 @@ import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 
 import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
+import api from "@/config/api";
+
 
 const useGeneral = useGeneralStore();
 const { isPostOverlay } = storeToRefs(useGeneral);
