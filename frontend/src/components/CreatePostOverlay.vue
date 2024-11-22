@@ -126,7 +126,7 @@ const clearImage = () => {
             <div class="flex items-center">
               <img class="rounded-full ml-1 min-w-[45px] max-h-[45px]" :src="userDetails?.image" alt="User avatar">
               <div class="ml-4">
-                <div class="font-extrabold">{{ user.name }}</div>
+                <div class="font-extrabold">{{ userDetails?.name }}</div>
                 <div class="flex items-center justify-between w-[100px] bg-gray-200 p-0.5 px-2 rounded-lg">
                   <Earth :size="18"/>
                   <span class="font-bold pl-1.5 text-[13px]">Public</span>
