@@ -19,10 +19,10 @@ const { isPostOverlay } = storeToRefs(useGeneral);
 const emit = defineEmits(['showModal']);
 
 // Replace this with your own way of fetching user data
-const user = reactive({
-  name: "John Doe",
-  image: "https://via.placeholder.com/150", // Example image URL
-});
+// const user = reactive({
+//   name: "John Doe",
+//   image: "https://via.placeholder.com/150", // Example image URL
+// });
 
 let imageDisplay = ref('');
 const form = reactive({
