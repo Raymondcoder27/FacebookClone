@@ -12,6 +12,10 @@ import { useGeneralStore } from '@/stores/general';
 import { storeToRefs } from 'pinia';
 import api from "@/config/api";
 
+import { useAuthStore } from "@/stores/auth";
+
+const userDetails = ref(null);
+const authStore = useAuthStore();
 
 const useGeneral = useGeneralStore();
 const { isPostOverlay } = storeToRefs(useGeneral);
