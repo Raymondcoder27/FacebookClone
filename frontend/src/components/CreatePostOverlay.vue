@@ -26,7 +26,7 @@ const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
 const emit = defineEmits(["showModal"]);
 
-let ImageDisplay = ref("");
+let imageDisplay = ref("");
 
 // let imageFile = ref(null);
 
@@ -43,7 +43,7 @@ let error = ref(null);
 //     if (e.target.files && e.target.files[0]) {
 //       console.log("Selected file:", e.target.files[0]);
 //       const selectedFile = e.target.files[0];
-//       ImageDisplay.value = URL.createObjectURL(selectedFile); // For preview
+//       imageDisplay.value = URL.createObjectURL(selectedFile); // For preview
 //       form.image = selectedFile; // Bind the file to the reactive form object
 //     } else {
 //       console.log("No file selected or file input is empty");
@@ -54,17 +54,17 @@ let error = ref(null);
 // };
 
 const getUploadedImage = (e) => {
-  ImageDisplay.value = URL.createObjectURL(e.target.files[0]);
+  imageDisplay.value = URL.createObjectURL(e.target.files[0]);
   form.image = e.target.files[0];
 };
 
 const clearImage = () => {
-  ImageDisplay.value = null; // Clear the preview
+  imageDisplay.value = null; // Clear the preview
   form.image = null; // Reset the form's image field
 };
 
 // const clearImage = () => {
-//   ImageDisplay.value = null;
+//   imageDisplay.value = null;
 //   // imageFile = null;
 //   form.image = null;
 // };
@@ -232,7 +232,7 @@ onMounted(async () => {
                   class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
                   fillColor="#5E6771"
                 />
-                <img class="rounded-lg mx-auto"  :src="ImageDisplay" alt="" />
+                <img class="rounded-lg mx-auto"  :src="imageDisplay" alt="" />
               </div>
             </div>
 
