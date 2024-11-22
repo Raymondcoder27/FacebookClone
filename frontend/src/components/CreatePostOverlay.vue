@@ -53,6 +53,11 @@ const getUploadedImage = (e) => {
   }
 };
 
+const getUploadedImage = (e) => {
+  uploadedImage.value = URL.createObjectURL(e.target.files[0]);
+  file.value = e.target.files[0];
+};
+
 const clearImage = () => {
   ImageDisplay.value = null; // Clear the preview
   form.image = null; // Reset the form's image field
