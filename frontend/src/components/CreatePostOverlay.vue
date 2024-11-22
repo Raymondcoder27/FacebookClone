@@ -59,6 +59,40 @@ let error = ref(null);
 //   }
 // };
 
+
+const createPost = async () => {
+  error.value = null; // Reset error
+
+  const formData = new FormData();
+  formData.append("text", form.text);
+  if (form.image) {
+    formData.append("image", form.image);
+  }
+
+  try {
+    const response = await fetch("http://localhost:2000/create-post", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${authStore.token}`, // Ensure your token is valid
+      },
+      body: formData, // Use FormData for the request payload
+    });
+
+    if (!response.ok) {
+      const result = await response.json();
+      error.value = result.error || "An error occurred.";
+    } else {
+      form.text = null;
+      form.image = null;
+      ImageDisplay.value = null;
+      emit("showModal", false);
+    }
+  } catch (err) {
+    console.error("Failed to create post", err);
+    error.value = "Network error, please try again.";
+  }
+};
+
 const getUploadedImage = (e) => {
   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
   form.image = e.target.files[0];
