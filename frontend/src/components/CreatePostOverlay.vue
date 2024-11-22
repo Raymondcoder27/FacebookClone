@@ -24,7 +24,7 @@ import { storeToRefs } from "pinia";
 const useGeneral = useGeneralStore();
 const { isPostOverlay, postAdded } = storeToRefs(useGeneral);
 
-const emit = defineEmits();
+const emit = defineEmits(['showModal']);
 
 let ImageDisplay = ref('');
 
