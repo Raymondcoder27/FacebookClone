@@ -31,33 +31,33 @@ const form = reactive({
 });
 let error = ref(null);
 
-const createPost = async () => {
-  const formData = new FormData();
-  formData.append('text', form.text || '');
-  if (form.image) {
-    formData.append('image', form.image);
-  }
+// const createPost = async () => {
+//   const formData = new FormData();
+//   formData.append('text', form.text || '');
+//   if (form.image) {
+//     formData.append('image', form.image);
+//   }
 
-  try {
-    const response = await api.post('/create-post', {
-      method: 'POST',
-      body: formData,
-    });
+//   try {
+//     const response = await api.post('/create-post', {
+//       method: 'POST',
+//       body: formData,
+//     });
 
-    if (response.ok) {
-      const result = await response.json();
-      form.text = null;
-      form.image = null;
-      imageDisplay.value = null;
-      emit('showModal', false);
-    } else {
-      const errors = await response.json();
-      error.value = errors.text || errors.image || 'An error occurred.';
-    }
-  } catch (err) {
-    error.value = 'Network error, please try again later.';
-  }
-};
+//     if (response.ok) {
+//       const result = await response.json();
+//       form.text = null;
+//       form.image = null;
+//       imageDisplay.value = null;
+//       emit('showModal', false);
+//     } else {
+//       const errors = await response.json();
+//       error.value = errors.text || errors.image || 'An error occurred.';
+//     }
+//   } catch (err) {
+//     error.value = 'Network error, please try again later.';
+//   }
+// };
 
 const getUploadedImage = (e) => {
   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
