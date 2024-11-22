@@ -232,7 +232,7 @@ onMounted(async () => {
                   class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
                   fillColor="#5E6771"
                 />
-                <img class="rounded-lg mx-auto" :src="imageDisplay.value" alt="" />
+                <img class="rounded-lg mx-auto" :src="imageDisplay" alt="" />
               </div>
             </div>
 
