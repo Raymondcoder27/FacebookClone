@@ -233,7 +233,11 @@ onMounted(async () => {
                   fillColor="#5E6771"
                 />
                 <p>Why isn't the image appearing here?</p>
-                <img class="rounded-lg mx-auto" :src="imageDisplay" alt="Image should be here!" />
+                <img
+                  class="rounded-lg mx-auto"
+                  :src="imageDisplay"
+                  alt="Image should be here!"
+                />
               </div>
             </div>
 
