@@ -38,6 +38,40 @@ const form = reactive({
 });
 let error = ref(null);
 
+const createPost = async () => {
+  error.value = null;
+  const formData = new FormData();
+  formData.append("text", form.text);
+  // Only append the image if it exists
+  // if (form.image) {
+  formData.append("image", form.image);
+  console.log("Image appended to FormData:", formData.get("image"));
+  // } else {
+  // console.log("No image found when creating post");
+  // }
+
+  try {
+    const response = await api.post("/create-post", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${authStore.token}`,
+      },
+    });
+
+    //emit post created to update pinia store
+    emitPostCreated();
+
+    // Close the modal
+    useGeneral.isPostOverlay = false;
+    // isPostOverlay.value = false;
+
+    // getPosts();
+  } catch (error) {
+    console.error("Failed to create post", error);
+    error.value = "Failed to create post. Please try again.";
+  }
+};
+
 // const getUploadedImage = (e) => {
 //   try {
 //     if (e.target.files && e.target.files[0]) {
@@ -116,39 +150,7 @@ const getUserDetails = async () => {
 //   }
 // };
 
-const createPost = async () => {
-  error.value = null;
-  const formData = new FormData();
-  formData.append("text", form.text);
-  // Only append the image if it exists
-  // if (form.image) {
-  formData.append("image", form.image);
-  console.log("Image appended to FormData:", formData.get("image"));
-  // } else {
-  // console.log("No image found when creating post");
-  // }
 
-  try {
-    const response = await api.post("/create-post", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${authStore.token}`,
-      },
-    });
-
-    //emit post created to update pinia store
-    emitPostCreated();
-
-    // Close the modal
-    useGeneral.isPostOverlay = false;
-    // isPostOverlay.value = false;
-
-    // getPosts();
-  } catch (error) {
-    console.error("Failed to create post", error);
-    error.value = "Failed to create post. Please try again.";
-  }
-};
 
 // function emitPostCreated() {
 //   // useGeneral.postAdded = true;
