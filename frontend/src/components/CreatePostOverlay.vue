@@ -28,7 +28,7 @@ const emit = defineEmits(["showModal"]);
 
 let imageDisplay = ref("");
 
-let image = ref(null);
+// let imageFile = ref(null);
 
 // const posts = ref([]);
 
@@ -41,7 +41,7 @@ let error = ref(null);
 const createFormData = (data) => {
   const formData = new FormData();
  formData.append("text", form.text)
- formData.append("image", image)
+ formData.append("image", form.image)
   return formData;
 }
 
@@ -102,7 +102,7 @@ const getUploadedImage = (e) => {
     if (e.target.files && e.target.files[0]) {
         const file = e.target.files[0];
         imageDisplay.value = URL.createObjectURL(file); // For preview
-        image = file; // Bind the file to the form
+        form.image = file; // Bind the file to the form
         console.log("Image selected:", file.name);
     } else {
         console.error("No file selected");
@@ -242,7 +242,7 @@ onMounted(async () => {
                 class="w-full border-0 mt-4 focus:ring-0 text-[22px]"
               ></textarea>
               <div
-                v-if="image"
+                v-if="form.image"
                 class="p-2 border border-gray-300 rounded-lg relative"
               >
                 <Close
