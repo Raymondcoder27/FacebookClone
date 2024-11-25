@@ -50,12 +50,12 @@ let error = ref(null);
 // });
 // form.image = fakeImage;
 
-const createFormData = (data) => {
-  const formData = new FormData();
-  formData.append("text", form.text);
-  formData.set("image", form.image);
-  return formData;
-};
+// const createFormData = (data) => {
+//   const formData = new FormData();
+//   formData.append("text", form.text);
+//   formData.append("image", form.image);
+//   return formData;
+// };
 
 // const fakeImage = new File(["test content"], "test-image.jpg", {
 //   type: "image/jpeg",
@@ -64,17 +64,17 @@ const createFormData = (data) => {
 
 const createPost = async () => {
   error.value = null;
-  // const formData = new FormData();
-  // formData.append("text", form.text);
+  const formData = new FormData();
+  formData.append("text", form.text);
   // // Only append the image if it exists
   // // if (form.image) {
-  // formData.append("image", form.image);
+  formData.set("image", form.image);
   // console.log("Image appended to FormData:", formData.get("image"));
   // } else {
   // console.log("No image found when creating post");
   // }
 
-  const formData = createFormData(form);
+  // const formData = createFormData(form);
 
   try {
     // const response = await api.post("/create-post", formData, {
