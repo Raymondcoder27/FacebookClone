@@ -120,6 +120,8 @@ func GetPosts(c *gin.Context) {
 		return
 	}
 
+	// services.DownloadFile()
+
 	// Transform posts with base64-encoded images for response
 	var postResponses []map[string]interface{}
 	for _, post := range posts {
@@ -290,12 +292,12 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	// imageBytes, err := services.DownloadFile("postimages", objectName)
-	// if err != nil {
-	// 	// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
-	// 	fmt.Printf("Failed to download image: %v\n", err)
-	// 	return
-	// }
+	imageBytes, err := services.DownloadFile("postimages", objectName)
+	if err != nil {
+		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+		fmt.Printf("Failed to download image: %v\n", err)
+		return
+	}
 
 	// imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
