@@ -40,6 +40,10 @@ const form = reactive({
 });
 let error = ref(null);
 
+const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+form.image = fakeImage;
+
+
 const createFormData = (data) => {
   const formData = new FormData();
  formData.append("text", form.text)
@@ -47,8 +51,8 @@ const createFormData = (data) => {
   return formData;
 }
 
-const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
-form.image = fakeImage;
+// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+// form.image = fakeImage;
 
 
 const createPost = async () => {
