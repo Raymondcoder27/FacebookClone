@@ -48,16 +48,20 @@ const createFormData = (data) => {
 }
 
 
-const loadImageFromUrl = async (url) => {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const file = new File([blob], "test-image.jpg", { type: blob.type });
-    form.image = file;
-    console.log("Image loaded from URL and set to form:", file);
-};
+// const loadImageFromUrl = async (url) => {
+//     const response = await fetch(url);
+//     const blob = await response.blob();
+//     const file = new File([blob], "test-image.jpg", { type: blob.type });
+//     form.image = file;
+//     console.log("Image loaded from URL and set to form:", file);
+// };
 
-// Example usage
-await loadImageFromUrl("https://via.placeholder.com/150");
+// // Example usage
+// await loadImageFromUrl("https://via.placeholder.com/150");
+
+// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+// form.image = fakeImage;
+
 
 const createPost = async () => {
   error.value = null;
@@ -124,10 +128,10 @@ const createPost = async () => {
 // };
 
 
-// const getUploadedImage = (e) => {
-//   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
-//   form.image = e.target.files[0];
-// };
+const getUploadedImage = (e) => {
+  imageDisplay.value = URL.createObjectURL(e.target.files[0]);
+  form.image = e.target.files[0];
+};
 
 const clearImage = () => {
   imageDisplay.value = null; // Clear the preview
