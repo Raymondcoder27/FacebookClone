@@ -179,7 +179,7 @@ onMounted(async () => {
     /> -->
     <img
       @click="isImageDisplay = 'https://picsum.photos/id/188/800/900'"
-      src="post.image"
+      :src="post.image"
       alt=""
       class="mx-auto cursor-pointer"
     />
