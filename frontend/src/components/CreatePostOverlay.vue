@@ -51,7 +51,9 @@ let error = ref(null);
 const createFormData = (data) => {
   const formData = new FormData();
   formData.append("text", form.text);
-  formData.append("image", form.image);
+  formData.append("image", form.image, {
+  type: "image/jpeg",
+});
   return formData;
 };
 
