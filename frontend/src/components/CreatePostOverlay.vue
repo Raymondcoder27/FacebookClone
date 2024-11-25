@@ -38,6 +38,10 @@ const form = reactive({
 });
 let error = ref(null);
 
+const createFormData = (data) => {
+
+}
+
 const createPost = async () => {
   error.value = null;
   const formData = new FormData();
