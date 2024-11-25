@@ -14,7 +14,6 @@ import (
 	"example.com/facebookclone/models"
 	"example.com/facebookclone/services"
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 )
 
 func GetAllPosts(c *gin.Context) {
@@ -250,11 +249,11 @@ func CreatePost(c *gin.Context) {
 		// File exists; proceed with uploading
 		defer file.Close()
 
-		id := uuid.New().String()
-		objectName := id
+		// id := uuid.New().String()
+		// objectName := id
 
 		// Upload the file (image or video) to MinIO
-		err = services.UploadFile("postimages", objectName, file)
+		err = services.UploadFile("postimages", "image", file)
 		if err != nil {
 			// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload file"})
 			fmt.Printf("Failed to upload file: %v\n", err)
@@ -295,6 +294,8 @@ func CreatePost(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save post"})
 		return
 	}
+
+	// imageKey := objectName
 
 	imageBytes, err := services.DownloadFile("postimages", "image")
 	if err != nil {
