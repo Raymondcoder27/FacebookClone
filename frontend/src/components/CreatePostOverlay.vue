@@ -59,8 +59,8 @@ const createFormData = (data) => {
 // // Example usage
 // await loadImageFromUrl("https://via.placeholder.com/150");
 
-// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
-// form.image = fakeImage;
+const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+form.image = fakeImage;
 
 
 const createPost = async () => {
