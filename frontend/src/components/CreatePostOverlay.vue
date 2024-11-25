@@ -45,17 +45,7 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-const getUploadedImage = (e) => {
-  if (e.target.files && e.target.files[0]) {
-    const file = e.target.files[0];
-    imageDisplay.value = URL.createObjectURL(file); // Generate preview URL
-    form.image = file; // Bind the file to the form object
-    console.log("File selected:", file);
-    console.log("Image Display URL:", imageDisplay.value);
-  } else {
-    console.error("No file selected");
-  }
-};
+
 
 // const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
 // form.image = fakeImage;
@@ -106,20 +96,17 @@ const createPost = async () => {
   }
 };
 
-// const getUploadedImage = (e) => {
-//   try {
-//     if (e.target.files && e.target.files[0]) {
-//       console.log("Selected file:", e.target.files[0]);
-//       const selectedFile = e.target.files[0];
-//       imageDisplay.value = URL.createObjectURL(selectedFile); // For preview
-//       form.image = selectedFile; // Bind the file to the reactive form object
-//     } else {
-//       console.log("No file selected or file input is empty");
-//     }
-//   } catch (error) {
-//     console.error("Error in getUploadedImage:", error);
-//   }
-// };
+const getUploadedImage = (e) => {
+  if (e.target.files && e.target.files[0]) {
+    const file = e.target.files[0];
+    imageDisplay.value = URL.createObjectURL(file); // Generate preview URL
+    form.image = file; // Bind the file to the form object
+    console.log("File selected:", file);
+    console.log("Image Display URL:", imageDisplay.value);
+  } else {
+    console.error("No file selected");
+  }
+};
 
 // const getUploadedImage = (e) => {
 //     if (e.target.files && e.target.files[0]) {
