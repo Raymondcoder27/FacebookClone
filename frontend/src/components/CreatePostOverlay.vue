@@ -28,20 +28,20 @@ const emit = defineEmits(["showModal"]);
 
 let imageDisplay = ref("");
 
-// let imageFile = ref(null);
+let image = ref(null);
 
 // const posts = ref([]);
 
 const form = reactive({
   text: null,
-  image: "",
+  // image: null,
 });
 let error = ref(null);
 
 const createFormData = (data) => {
   const formData = new FormData();
  formData.append("text", form.text)
- formData.append("image", form.image)
+ formData.append("image", image)
   return formData;
 }
 
@@ -242,7 +242,7 @@ onMounted(async () => {
                 class="w-full border-0 mt-4 focus:ring-0 text-[22px]"
               ></textarea>
               <div
-                v-if="form.image"
+                v-if="image"
                 class="p-2 border border-gray-300 rounded-lg relative"
               >
                 <Close
