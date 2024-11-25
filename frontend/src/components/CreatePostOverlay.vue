@@ -189,6 +189,14 @@ function emitPostCreated() {
   console.log(" post emitted");
 }
 
+
+import { watch } from "vue";
+
+watch(() => form.image, (newImage) => {
+  console.log("form.image has changed to:", newImage);
+});
+
+
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
