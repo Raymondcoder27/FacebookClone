@@ -55,7 +55,9 @@ const createFormData = (data) => {
   return formData;
 };
 
-const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+const fakeImage = new File(["test content"], "test-image.jpg", {
+  type: "image/jpeg",
+});
 form.image = fakeImage;
 
 const createPost = async () => {
@@ -203,7 +205,7 @@ onMounted(async () => {
     id="CreatePostOverly"
     class="fixed z-50 top-0 left-0 w-full h-full bg-white bg-opacity-70"
   >
-    <div class="grid h-screen place-items-center p-4" style="z-index: 100;">
+    <div class="grid h-screen place-items-center p-4" style="z-index: 100">
       <div class="bg-white w-full mx-auto shadow-xl rounded-xl max-w-[600px]">
         <div class="flex items-center relative mx-1 my-3.5">
           <div class="font-extrabold w-full text-center text-[22px]">
