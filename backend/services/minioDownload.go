@@ -28,7 +28,7 @@ func DownloadFile(bucketName, objectName string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	fmt.Println("File downloaded successfully from minio")
 	return buffer.Bytes(), nil
 }
 
