@@ -28,7 +28,7 @@ const emit = defineEmits(["showModal"]);
 
 let imageDisplay = ref("");
 
-let fileInput = ref(null);
+// let fileInput = ref(null);
 
 // let imageFile = ref(null);
 
@@ -276,8 +276,7 @@ onMounted(async () => {
                   id="image"
                   type="file"
                   class="hidden"
-                  ref="fileInput"
-                  @change="getUploadedImage($event)"
+                  @input="getUploadedImage($event)"
                 />
                 <button
                   class="hover:bg-gray-200 rounded-full p-2 cursor-pointer"
