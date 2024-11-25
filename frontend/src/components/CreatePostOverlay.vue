@@ -47,6 +47,18 @@ const createFormData = (data) => {
   return formData;
 }
 
+
+const loadImageFromUrl = async (url) => {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const file = new File([blob], "test-image.jpg", { type: blob.type });
+    form.image = file;
+    console.log("Image loaded from URL and set to form:", file);
+};
+
+// Example usage
+await loadImageFromUrl("https://via.placeholder.com/150");
+
 const createPost = async () => {
   error.value = null;
   // const formData = new FormData();
