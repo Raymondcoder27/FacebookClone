@@ -45,8 +45,6 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-
-
 // const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
 // form.image = fakeImage;
 
