@@ -50,11 +50,25 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
+const getUploadedImage = (e) => {
+  console.log("File event:", e.target.files);
+  if (e.target.files && e.target.files[0]) {
+    const file = e.target.files[0];
+    console.log("Selected file:", file);
+    imageDisplay.value = URL.createObjectURL(file); // For preview
+    form.image = file; // Bind the file to the form
+    console.log("Preview URL:", imageDisplay.value);
+  } else {
+    console.error("No file selected");
+  }
+};
 
 
 
-const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
-form.image = fakeImage;
+
+
+// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+// form.image = fakeImage;
 
 
 const createFormData = (data) => {
