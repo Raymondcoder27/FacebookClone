@@ -45,6 +45,7 @@ const createFormData = (data) => {
       formData.append(key, data[key])
     }
   }
+  return formData();
 }
 
 const createPost = async () => {
