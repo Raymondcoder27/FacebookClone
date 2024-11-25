@@ -45,8 +45,8 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
-// form.image = fakeImage;
+const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+form.image = fakeImage;
 
 const createFormData = (data) => {
   const formData = new FormData();
@@ -97,15 +97,30 @@ const createPost = async () => {
 const getUploadedImage = (e) => {
   if (e.target.files && e.target.files[0]) {
     const file = e.target.files[0];
-    console.log("File selected:", file); // Debugging log
-    form.image = file; // Bind the file to the form object
-    console.log("form.image updated:", form.image); // Check reactivity
     imageDisplay.value = URL.createObjectURL(file); // Generate preview URL
-    console.log("Preview URL set to:", imageDisplay.value); // Debugging log
+    form.image = file; // Bind the file to the form object
+    console.log("File selected:", file);
+    console.log("Image Display URL:", imageDisplay.value);
   } else {
     console.error("No file selected");
   }
 };
+
+// const getUploadedImage = (e) => {
+//     if (e.target.files && e.target.files[0]) {
+//         const file = e.target.files[0];
+//         imageDisplay.value = URL.createObjectURL(file); // For preview
+//         form.image = file; // Bind the file to the form
+//         console.log("Image selected:", file.name);
+//     } else {
+//         console.error("No file selected");
+//     }
+// };
+
+// const getUploadedImage = (e) => {
+//   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
+//   form.image = e.target.files[0];
+// };
 
 const clearImage = () => {
   imageDisplay.value = null; // Clear the preview
@@ -176,15 +191,6 @@ function emitPostCreated() {
   console.log(" post emitted");
 }
 
-import { watch } from "vue";
-
-watch(
-  () => form.image,
-  (newImage) => {
-    console.log("form.image has changed to:", newImage);
-  }
-);
-
 // Ensure this runs when the component mounts
 onMounted(async () => {
   await getUserDetails();
@@ -197,7 +203,7 @@ onMounted(async () => {
     id="CreatePostOverly"
     class="fixed z-50 top-0 left-0 w-full h-full bg-white bg-opacity-70"
   >
-    <div class="grid h-screen place-items-center p-4">
+    <div class="grid h-screen place-items-center p-4" style="z-index: 100;">
       <div class="bg-white w-full mx-auto shadow-xl rounded-xl max-w-[600px]">
         <div class="flex items-center relative mx-1 my-3.5">
           <div class="font-extrabold w-full text-center text-[22px]">
