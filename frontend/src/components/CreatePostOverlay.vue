@@ -65,10 +65,10 @@ let error = ref(null);
 const createPost = async () => {
   error.value = null;
   const formData = new FormData();
-  formData.set("text", form.text);
+  formData.append("text", form.text);
   // // Only append the image if it exists
   // // if (form.image) {
-  formData.set("image", form.image);
+  formData.append("image", form.image);
   // console.log("Image appended to FormData:", formData.get("image"));
   // } else {
   // console.log("No image found when creating post");
