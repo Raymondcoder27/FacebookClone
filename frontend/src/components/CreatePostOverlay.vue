@@ -41,6 +41,7 @@ let error = ref(null);
 const createFormData = (data) => {
   const formData = new FormData();
  formData.append("text", form.text)
+ formData.append("image", form.image)
   return formData;
 }
 
