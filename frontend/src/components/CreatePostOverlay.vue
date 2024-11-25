@@ -94,7 +94,6 @@ const createPost = async () => {
   }
 };
 
-
 const getUploadedImage = (e) => {
   if (e.target.files && e.target.files[0]) {
     const file = e.target.files[0];
@@ -107,7 +106,6 @@ const getUploadedImage = (e) => {
     console.error("No file selected");
   }
 };
-
 
 const clearImage = () => {
   imageDisplay.value = null; // Clear the preview
@@ -178,13 +176,14 @@ function emitPostCreated() {
   console.log(" post emitted");
 }
 
-
 import { watch } from "vue";
 
-watch(() => form.image, (newImage) => {
-  console.log("form.image has changed to:", newImage);
-});
-
+watch(
+  () => form.image,
+  (newImage) => {
+    console.log("form.image has changed to:", newImage);
+  }
+);
 
 // Ensure this runs when the component mounts
 onMounted(async () => {
