@@ -34,16 +34,11 @@ let imageDisplay = ref("");
 
 // const posts = ref([]);
 
-
-
-
 const form = reactive({
   text: null,
   image: null,
 });
 let error = ref(null);
-
-
 
 // const getUploadedImage = (e) => {
 //   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
@@ -62,24 +57,18 @@ const getUploadedImage = (e) => {
   }
 };
 
-
-
-
-
 // const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
 // form.image = fakeImage;
-
 
 const createFormData = (data) => {
   const formData = new FormData();
- formData.append("text", form.text)
- formData.append("image", form.image)
+  formData.append("text", form.text);
+  formData.append("image", form.image);
   return formData;
-}
+};
 
 // const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
 // form.image = fakeImage;
-
 
 const createPost = async () => {
   error.value = null;
@@ -92,7 +81,6 @@ const createPost = async () => {
   // } else {
   // console.log("No image found when creating post");
   // }
-
 
   const formData = createFormData(form);
 
@@ -133,7 +121,6 @@ const createPost = async () => {
 //   }
 // };
 
-
 // const getUploadedImage = (e) => {
 //     if (e.target.files && e.target.files[0]) {
 //         const file = e.target.files[0];
@@ -144,7 +131,6 @@ const createPost = async () => {
 //         console.error("No file selected");
 //     }
 // };
-
 
 // const getUploadedImage = (e) => {
 //   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
@@ -202,8 +188,6 @@ const getUserDetails = async () => {
 //     error.value = "Failed to create post. Please try again.";
 //   }
 // };
-
-
 
 // function emitPostCreated() {
 //   // useGeneral.postAdded = true;
