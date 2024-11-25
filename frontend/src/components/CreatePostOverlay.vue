@@ -45,9 +45,7 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-const fakeImage = new File(["test content"], "test-image", {
-  type: "image/jpeg",
-});
+const fakeImage = new File(["test content"]);
 form.image = fakeImage;
 
 const createFormData = (data) => {
