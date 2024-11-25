@@ -34,7 +34,7 @@ let imageDisplay = ref("");
 
 const form = reactive({
   text: null,
-  image: null,
+  image: '',
 });
 let error = ref(null);
 
