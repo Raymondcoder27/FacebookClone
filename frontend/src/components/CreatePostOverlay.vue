@@ -28,6 +28,8 @@ const emit = defineEmits(["showModal"]);
 
 let imageDisplay = ref("");
 
+let fileInput = ref(null);
+
 // let imageFile = ref(null);
 
 // const posts = ref([]);
@@ -274,6 +276,7 @@ onMounted(async () => {
                   id="image"
                   type="file"
                   class="hidden"
+                  ref="fileInput"
                   @change="getUploadedImage($event)"
                 />
                 <button
