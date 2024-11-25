@@ -283,11 +283,19 @@ func CreatePost(c *gin.Context) {
 	// 	return
 	// }
 
+	imageBytes, err := services.DownloadFile("postimages", "image")
+	if err != nil {
+		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+		fmt.Printf("Failed to download image: %v\n", err)
+		return
+	}
+
 	// Populate post fields
 	var post models.Post
 	post.UserID = userID.(uint) // Adjust for your authentication setup
 	post.Text = text
 	post.MediaURL = mediaURL // Store media URL if available
+	post.ImageData = imageBytes
 
 	// Save the post to the database
 	if err := initializers.DB.Create(&post).Error; err != nil {
@@ -297,12 +305,12 @@ func CreatePost(c *gin.Context) {
 
 	// imageKey := objectName
 
-	imageBytes, err := services.DownloadFile("postimages", "image")
-	if err != nil {
-		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
-		fmt.Printf("Failed to download image: %v\n", err)
-		return
-	}
+	// imageBytes, err := services.DownloadFile("postimages", "image")
+	// if err != nil {
+	// 	// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
+	// 	fmt.Printf("Failed to download image: %v\n", err)
+	// 	return
+	// }
 
 	// imageBase64 := base64.StdEncoding.EncodeToString(imageBytes)
 
