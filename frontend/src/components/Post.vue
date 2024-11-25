@@ -188,7 +188,7 @@ onMounted(async () => {
       :src="post.image"
       alt=""
       class="mx-auto cursor-pointer"
-    ></div> 
+    /> 
     <div id="Likes" class="px-5">
       <div class="flex items-center justify-between py-3 border-b">
         <!-- <ThumbUp fillColor="#1D72E2" /> -->
