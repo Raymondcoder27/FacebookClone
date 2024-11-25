@@ -242,6 +242,7 @@ func CreatePost(c *gin.Context) {
 	// Optional media file handling
 	var mediaURL string
 	file, _, err := c.Request.FormFile("image")
+	//  err := c.PostForm("image")
 	if err == nil {
 		// File exists; proceed with uploading
 		defer file.Close()
