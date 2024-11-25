@@ -100,10 +100,23 @@ const createPost = async () => {
 //   }
 // };
 
+
 const getUploadedImage = (e) => {
-  imageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  form.image = e.target.files[0];
+    if (e.target.files && e.target.files[0]) {
+        const file = e.target.files[0];
+        imageDisplay.value = URL.createObjectURL(file); // For preview
+        form.image = file; // Bind the file to the form
+        console.log("Image selected:", file.name);
+    } else {
+        console.error("No file selected");
+    }
 };
+
+
+// const getUploadedImage = (e) => {
+//   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
+//   form.image = e.target.files[0];
+// };
 
 const clearImage = () => {
   imageDisplay.value = null; // Clear the preview
