@@ -55,8 +55,8 @@ const createFormData = (data) => {
   return formData;
 };
 
-// const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
-// form.image = fakeImage;
+const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+form.image = fakeImage;
 
 const createPost = async () => {
   error.value = null;
