@@ -273,7 +273,7 @@ onMounted(async () => {
                   id="image"
                   type="file"
                   class="hidden"
-                  @change="getUploadedImage($event)"
+                  @input="getUploadedImage($event)"
                 />
                 <button
                   class="hover:bg-gray-200 rounded-full p-2 cursor-pointer"
