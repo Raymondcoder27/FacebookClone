@@ -296,7 +296,7 @@ func CreatePost(c *gin.Context) {
 		return
 	}
 
-	imageBytes, err := services.DownloadFile("postimages", objectName)
+	imageBytes, err := services.DownloadFile("postimages", "image")
 	if err != nil {
 		// c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to download image"})
 		fmt.Printf("Failed to download image: %v\n", err)
