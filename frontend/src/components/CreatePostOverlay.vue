@@ -39,7 +39,8 @@ const form = reactive({
 let error = ref(null);
 
 const createFormData = (data) => {
-
+  const formData = new FormData();
+  
 }
 
 const createPost = async () => {
