@@ -97,12 +97,6 @@ const clearImage = () => {
   form.image = null; // Reset the form's image field
 };
 
-// const clearImage = () => {
-//   imageDisplay.value = null;
-//   // imageFile = null;
-//   form.image = null;
-// };
-
 const getUserDetails = async () => {
   const token = authStore.token;
   if (!token) {
