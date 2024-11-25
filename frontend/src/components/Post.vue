@@ -171,24 +171,18 @@ onMounted(async () => {
       alt=""
       class="mx-auto cursor-pointer"
     /> -->
-    <!-- <img
+    <img
       @click="isImageDisplay = 'https://picsum.photos/id/188/800/900'"
       src="https://picsum.photos/id/188/800/900"
       alt=""
       class="mx-auto cursor-pointer"
-    /> -->
+    />
     <!-- <img
       @click="isImageDisplay = 'https://picsum.photos/id/188/800/900'"
       :src="post.image"
       alt=""
       class="mx-auto cursor-pointer"
     /> -->
-    <div
-      @click="isImageDisplay = 'https://picsum.photos/id/188/800/900'"
-      :src="post.image"
-      alt=""
-      class="mx-auto cursor-pointer"
-    /> 
     <div id="Likes" class="px-5">
       <div class="flex items-center justify-between py-3 border-b">
         <!-- <ThumbUp fillColor="#1D72E2" /> -->
