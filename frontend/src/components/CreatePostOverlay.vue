@@ -45,20 +45,23 @@ const createFormData = (data) => {
       formData.append(key, data[key])
     }
   }
-  return formData();
+  return formData;
 }
 
 const createPost = async () => {
   error.value = null;
-  const formData = new FormData();
-  formData.append("text", form.text);
-  // Only append the image if it exists
-  // if (form.image) {
-  formData.append("image", form.image);
-  console.log("Image appended to FormData:", formData.get("image"));
+  // const formData = new FormData();
+  // formData.append("text", form.text);
+  // // Only append the image if it exists
+  // // if (form.image) {
+  // formData.append("image", form.image);
+  // console.log("Image appended to FormData:", formData.get("image"));
   // } else {
   // console.log("No image found when creating post");
   // }
+
+
+  const formData = createFormData(form);
 
   try {
     const response = await api.post("/create-post", formData, {
