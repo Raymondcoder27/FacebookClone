@@ -45,7 +45,9 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
+const fakeImage = new File(["test content"], "test-image.jpg", {
+  type: "image/jpeg",
+});
 form.image = fakeImage;
 
 const createFormData = (data) => {
@@ -108,9 +110,6 @@ const getUploadedImage = (e) => {
     console.error("No file selected");
   }
 };
-
-
-
 
 // const getUploadedImage = (e) => {
 //   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
