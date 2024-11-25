@@ -40,7 +40,9 @@ let error = ref(null);
 
 const createFormData = (data) => {
   const formData = new FormData();
-  
+  for (const key in data){
+    if (data[key] !== null && data[key] !== undefined)
+  }
 }
 
 const createPost = async () => {
