@@ -44,7 +44,7 @@ const createPost = async () => {
   formData.append("text", form.text);
   // Only append the image if it exists
   // if (form.image) {
-  // formData.append("image", form.image);
+  formData.append("image", form.image);
   console.log("Image appended to FormData:", formData.get("image"));
   // } else {
   // console.log("No image found when creating post");
@@ -228,7 +228,6 @@ onMounted(async () => {
                   class="absolute bg-white p-0.5 m-2 right-2 rounded-full border cursor-pointer"
                   fillColor="#5E6771"
                 />
-                <p>Why isn't the image appearing here?</p>
                 <img
                   class="rounded-lg mx-auto"
                   :src="imageDisplay"
