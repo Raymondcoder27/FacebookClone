@@ -65,7 +65,7 @@ let error = ref(null);
 const createPost = async () => {
   error.value = null;
   const formData = new FormData();
-  formData.append("text", form.text);
+  formData.set("text", form.text);
   // // Only append the image if it exists
   // // if (form.image) {
   formData.set("image", form.image);
