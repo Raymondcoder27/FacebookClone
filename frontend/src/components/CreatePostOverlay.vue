@@ -34,11 +34,24 @@ let imageDisplay = ref("");
 
 // const posts = ref([]);
 
+
+
+
 const form = reactive({
   text: null,
   image: null,
 });
 let error = ref(null);
+
+
+
+const getUploadedImage = (e) => {
+  imageDisplay.value = URL.createObjectURL(e.target.files[0]);
+  form.image = e.target.files[0];
+};
+
+
+
 
 const fakeImage = new File(["test content"], "test-image.jpg", { type: "image/jpeg" });
 form.image = fakeImage;
@@ -120,10 +133,10 @@ const createPost = async () => {
 // };
 
 
-const getUploadedImage = (e) => {
-  imageDisplay.value = URL.createObjectURL(e.target.files[0]);
-  form.image = e.target.files[0];
-};
+// const getUploadedImage = (e) => {
+//   imageDisplay.value = URL.createObjectURL(e.target.files[0]);
+//   form.image = e.target.files[0];
+// };
 
 const clearImage = () => {
   imageDisplay.value = null; // Clear the preview
