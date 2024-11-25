@@ -87,7 +87,6 @@ const crop = () => {
                   type="file"
                   id="image"
                   ref="fileInput"
-                  class="hidden"
                   @input="getUploadedImage($event)"
                 />
                 <!-- <input id="image" type="file" class="hidden" @input="getUploadedImage($event)"> -->
