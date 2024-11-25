@@ -102,7 +102,7 @@ const getUploadedImage = (e) => {
     if (e.target.files && e.target.files[0]) {
         const file = e.target.files[0];
         imageDisplay.value = URL.createObjectURL(file); // For preview
-        form.image = file; // Bind the file to the form
+        image = file; // Bind the file to the form
         console.log("Image selected:", file.name);
     } else {
         console.error("No file selected");
