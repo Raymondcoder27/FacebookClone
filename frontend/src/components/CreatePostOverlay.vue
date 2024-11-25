@@ -45,15 +45,15 @@ let error = ref(null);
 //   form.image = e.target.files[0];
 // };
 
-const fakeImage = new File(["test content"], "test-image.jpg", {
-  type: "image/jpeg",
-});
-form.image = fakeImage;
+// const fakeImage = new File(["test content"], "test-image.jpg", {
+//   type: "image/jpeg",
+// });
+// form.image = fakeImage;
 
 const createFormData = (data) => {
   const formData = new FormData();
   formData.append("text", form.text);
-  formData.append("image", form.image);
+  formData.set("image", form.image);
   return formData;
 };
 
