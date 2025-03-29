@@ -11,7 +11,6 @@ import Login from '../views/Login.vue'
 //     redirect: "/login"
 //   }
 // ]
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
